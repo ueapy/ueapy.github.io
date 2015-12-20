@@ -1,0 +1,9 @@
+li.code,code{
+ padding:2px 4px;
+ font-size:100%;
+ white-space:nowrap;
+ background-color:#f2f2f2;
+ color:#000000;
+ font-weight:bold;
+ border-radius:4px;
+}
