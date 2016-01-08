@@ -9,7 +9,6 @@ comments: enabled
 * `lambda` functions
 * Optimising loops
 * Timing scripts
-* What's new in Python 3
 
 ### Jupyter
 * Using Jupyter notebooks on a remote server
@@ -53,6 +52,13 @@ comments: enabled
 * iris
 * skewt and tephi
 * eofs and windspharm
+
+### Creating and deploying Python packages
+* Testing
+* Versioning
+* Publishing on PyPi
+* Travis-CI
+* Anaconda cloud
 
 ## Other tools
 ### Git
