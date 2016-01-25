@@ -113,17 +113,28 @@ Python Group UEA            </a>
 
 </div>
 </div>
-</div>{!-*- F90 -*-}
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>{!-*- F90 -*-}
 #INITVALUES
-O3	=7.50e+11;
-CH4	=4.55e+13;
-CO	=2.55e+12;
+O3    =7.50e+11;
+CH4    =4.55e+13;
+CO    =2.55e+12;
 #INLINE F90_INIT
 TSTART = 0*3600
 TEND = TSTART + 7*3600
 DT = 3600
 TEMP = 298
-#ENDINLINE
+#ENDINLINE</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -191,12 +202,23 @@ TEMP = 298
 
 </div>
 </div>
-</div>"""
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>"""
 #INITVALUES
 O3\t=%(O3_nd).2e;
 CH4\t=%(CH4_nd).2e;
 CO\t=%(CO_nd).2e;"""\
-%{"O3":O3_nd, "CH4":CH4_nd, "CO_nd":CO_nd}
+%{"O3":O3_nd, "CH4":CH4_nd, "CO_nd":CO_nd}</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
