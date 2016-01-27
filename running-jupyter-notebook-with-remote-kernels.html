@@ -9,6 +9,7 @@
 
 
 
+
 <link rel="canonical" href="http://ueapy.github.io/running-jupyter-notebook-with-remote-kernels.html">
 
         <meta name="author" content="Denis Sergeev" />
@@ -134,16 +135,6 @@ Python Group UEA            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Contents</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Jupyter-Kernels">Jupyter Kernels<a class="anchor-link" href="#Jupyter-Kernels">&#182;</a></h2>
 </div>
 </div>
@@ -185,6 +176,16 @@ Python Group UEA            </a>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Anaconda-environment-on-Grace">Anaconda environment on Grace<a class="anchor-link" href="#Anaconda-environment-on-Grace">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red; background-color:pink; font-weight:bold; font-size:12pt">This is done for the login node on Grace, and you should not actually use Python on it. An update on this post is to come soon.</span></p>
+
 </div>
 </div>
 </div>
@@ -348,7 +349,7 @@ prepending /gpfs/home/abc12xyz/.conda/envs/myenv/bin to PATH`
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">!</span>cat ~/anaconda/lib/python2.7/site-packages/rk/config/rk.ini
+<div class=" highlight hl-ipython3"><pre><span class="o">!</span>cat ~/anaconda/lib/python2.7/site-packages/rk/config/rk.ini
 </pre></div>
 
 </div>
@@ -487,7 +488,7 @@ script = &quot;rkscript&quot;
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">!</span>jupyter kernelspec list
+<div class=" highlight hl-ipython3"><pre><span class="o">!</span>jupyter kernelspec list
 </pre></div>
 
 </div>
@@ -661,7 +662,7 @@ script = &quot;rkscript&quot;
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 </pre></div>
 
 </div>
