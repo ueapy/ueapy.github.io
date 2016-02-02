@@ -15,9 +15,10 @@ EXTRA_PATH_METADATA = {
 CUSTOM_CSS = 'extra/custom.css'
 
 THEME = '../modified-bootstrap3'
-BOOTSTRAP_THEME = 'yeti'
-PYGMENTS_STYLE = 'friendly'
-OVERWRITE_NB_HEADER = False
+BOOTSTRAP_THEME = 'cosmo'
+PYGMENTS_STYLE = 'default'
+OVERWRITE_NB_HEADER = True
+EXTRA_HEADER = open('_nb_header.html').read()
 
 TIMEZONE = 'Europe/London'
 

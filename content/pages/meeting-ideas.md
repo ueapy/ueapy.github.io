@@ -19,6 +19,7 @@ comments: enabled
 * Masked arrays
 
 ### Basic plotting: Matplotlib
+* Preparing publication-quality figures
 * Best way of handling matplotlib instances: figures, axes, colorbars, etc.
 * Grid of subplots
 * Applications of pcolor/pcolormesh/contourf/imshow
