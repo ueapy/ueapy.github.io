@@ -682,7 +682,7 @@ Python Group UEA            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The examples below were bluntly taken from Nikolay Koldunov's <a href="http://earthpy.org/pyncview_pm.html">post</a> on his awesome EarthPy blog. Note that since that post <code>IPython.html.widgets</code> migrated into a separate package.</p>
+<p>The examples below were bluntly taken from Nikolay Koldunov's <a href="http://earthpy.org/pyncview_pm.html">post</a> on his awesome EarthPy blog. Note that since then <code>IPython.html.widgets</code> migrated into a separate package.</p>
 
 </div>
 </div>
@@ -705,11 +705,10 @@ Python Group UEA            </a>
 <div class="alert alert-warning">
 In the static HTML version of this notebook the interactive mode is unavailable. 
 
-<b>To play with figures you can switch to <a href=http://mybinder.org/repo/ueapy/interactive_notebooks>binder</a>.</b>
-
+**To play with figures you can switch to [binder](http://mybinder.org/repo/ueapy/interactive_notebooks).**
 Or download the notebook using the link in the end and launch it on your machine.
 
-Hopefully, future releases of ipywidgets will include <a href=https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/>static widgets</a>.
+Hopefully, future releases of ipywidgets will include [static widgets](https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/).
 </div>
 </div>
 </div>
@@ -1424,7 +1423,7 @@ ihkGfiKimPl/1eePxTZ7zIwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>How can we apply <code>interact()</code> to real data analysis in earth sciences? Well, one of the trivial application is to explore N-dimensional fields stored NetCDF files.</p>
+<p>How can we apply <code>interact()</code> to real data analysis in Earth sciences? Well, one of the trivial application is to explore N-dimensional fields stored NetCDF files.</p>
 
 </div>
 </div>
@@ -1470,7 +1469,13 @@ ihkGfiKimPl/1eePxTZ7zIwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here we create a function <code>ncfun()</code>, whose arguments are a NetCDF file name, a name of one of the variables stored in that file, and, assuming we have 4d-arrays, time and level indices (<code>=0</code> by default). In a nutshell, the function opens a file using a netCDF4 module, reads a variable labelled <code>varname</code>, as well as longitude and latitude arrays, and then displays a horizontal cross-sectionin lon-lat coordinates.</p>
+<p>Here we create a function <code>ncfun()</code>, whose arguments are:</p>
+<ul>
+<li>NetCDF file name</li>
+<li>name of one of the variables stored in that file</li>
+<li>assuming we have 4d-arrays, time and level indices (<code>=0</code> by default).</li>
+</ul>
+<p>In a nutshell, the function opens a file using netCDF4 module, reads the variable labelled <code>varname</code>, as well as longitude and latitude arrays, and then displays lon-lat horizontal cross-section.</p>
 
 </div>
 </div>
@@ -2811,7 +2816,7 @@ VKhQocKc4X8BvItBUGL700kAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can keep tweaking the code above forever: we can make it more generic, we can add a second subplot, we can substitute time an level indices by their actual values, we can update colormap depending on data range and so on. By the way, any comments, suggestions and PRs are very welcome.</p>
+<p>We can keep tweaking the code above forever: we can make it more generic, we can add a second subplot, we can substitute time and level indices by their actual values, we can update colormap depending on data range and so on. By the way, any comments, suggestions and PRs are very welcome.</p>
 
 </div>
 </div>
