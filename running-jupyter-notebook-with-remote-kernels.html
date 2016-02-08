@@ -725,8 +725,19 @@ Python Group UEA            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post we will look at the simplest case of connecting Jupyter interface to a <strong>Python 2.7</strong> kernel on <strong>Grace</strong> via <strong>ssh</strong>. <span style="color:red">The following instruction has worked only for Linux, but other OS solutions would be similar. Note that all the necessary packages are installed using Anaconda.</span></p>
+<p>In this post we will look at the simplest case of connecting Jupyter interface to a <strong>Python 2.7</strong> kernel on <strong>Grace</strong> via <strong>ssh</strong>.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-warning">
+The following instruction has worked only for Linux, but other OS solutions would be similar. Note that all the necessary packages are installed using Anaconda.
+</div>
 </div>
 </div>
 </div>
@@ -744,8 +755,9 @@ Python Group UEA            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span style="color:red; background-color:pink; font-weight:bold; font-size:12pt">This is done for the login node on Grace, and you should not actually use Python on it. An update on this post is to come soon.</span></p>
-
+<div class="alert alert-warning">
+This is done for the <b>login</b> node on Grace, and you should not actually use it for any computations. An update on this post is to come soon.
+</div>
 </div>
 </div>
 </div>
@@ -843,6 +855,21 @@ prepending /gpfs/home/abc12xyz/.conda/envs/myenv/bin to PATH`
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We will use one of the simplest add-ons for managing Jupyter kernels: <a href="https://github.com/korniichuk/rk">rk</a>.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-warning", style="white-space: pre">Windows users should instead use <a href=https://bitbucket.org/tdaff/remote_ikernel>remote_ikernel</a> utility
+
+remote_ikernel manage --add 
+                      --name='Python on Grace' 
+                      --kernel_cmd='ipython kernel -f {connection_file}' 
+                      --interface=ssh --verbose 
+                      --host='abc12xyz@grace.uea.ac.uk'</div>
 </div>
 </div>
 </div>
