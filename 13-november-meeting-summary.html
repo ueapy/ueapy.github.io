@@ -731,6 +731,17 @@ Python Group UEA            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-warning", style="font-size: 120%">
+The instructions below have been summarised in a script which is available here: <a href=https://github.com/ueapy/grace-python#option-a-anaconda-python-environment-on-grace>grace-python</a>.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Login-to-Grace-and-load-Anaconda-module">Login to Grace and load Anaconda module<a class="anchor-link" href="#Login-to-Grace-and-load-Anaconda-module">&#182;</a></h3>
 </div>
 </div>
@@ -918,8 +929,8 @@ Now, typing</p>
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
 </div>
@@ -970,7 +981,7 @@ Now, typing</p>
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="kn">as</span> <span class="nn">nc</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
 </pre></div>
 
 </div>
@@ -993,7 +1004,7 @@ Now, typing</p>
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;../data/data.nc&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;../data/data.nc&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1016,7 +1027,7 @@ Now, typing</p>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -1055,7 +1066,7 @@ Now, typing</p>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ds</span><span class="o">.</span><span class="n">dimensions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">ds</span><span class="o">.</span><span class="n">dimensions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -1094,11 +1105,11 @@ Now, typing</p>
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">u</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Name of u: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">long_name</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Units of u: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">units</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Shape of u: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;First element of u array: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">u</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Name of u: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">long_name</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Units of u: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">units</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of u: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First element of u array: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -1137,7 +1148,7 @@ First element of u array: 12.1834030015
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">xray</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">xray</span>
 </pre></div>
 
 </div>
@@ -1160,7 +1171,7 @@ First element of u array: 12.1834030015
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">xds</span> <span class="o">=</span> <span class="n">xray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;../data/data.nc&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">xds</span> <span class="o">=</span> <span class="n">xray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;../data/data.nc&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1183,7 +1194,7 @@ First element of u array: 12.1834030015
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">xds</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span><span class="p">(</span><span class="n">xds</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1235,8 +1246,8 @@ Attributes:
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">u</span> <span class="o">=</span> <span class="n">xds</span><span class="o">.</span><span class="n">u</span>
-<span class="k">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">u</span> <span class="o">=</span> <span class="n">xds</span><span class="o">.</span><span class="n">u</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1293,7 +1304,7 @@ Attributes:
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 </pre></div>
 
 </div>
