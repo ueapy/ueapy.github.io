@@ -44,7 +44,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('EarthPy', 'http://earthpy.org/'),
+LINKS = (('Learn Python online', 'http://bafflednerd.com/learn-python-online/'),
+         ('EarthPy', 'http://earthpy.org/'),
          ('Python4Oceanographers', 'https://ocefpaf.github.io/python4oceanographers/'),
          ('PyAOS', 'http://pyaos.johnny-lin.com/'),
          ('PyHOGs', 'http://pyhogs.github.io/'),
