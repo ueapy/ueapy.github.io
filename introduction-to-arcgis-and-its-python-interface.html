@@ -23805,7 +23805,7 @@ Python Group UEA            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-10T10:15:00+01:00"> Fri 10 June 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-06-10T10:17:00+01:00"> Fri 10 June 2016</time>
     </span>
 
 
@@ -23860,7 +23860,7 @@ Python Group UEA            </a>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># embed pdf into an automatically resized window (requires imagemagick)</span>
 <span class="n">w_h_str</span> <span class="o">=</span> <span class="o">!</span>identify -format <span class="s2">&quot;%w %h&quot;</span> ../pdfs/arcgis-intro.pdf<span class="o">[</span>0<span class="o">]</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe src=../pdfs/arcgis-intro.pdf width=</span><span class="si">{0[0]}</span><span class="s1"> height=</span><span class="si">{0[1]}</span><span class="s1">&gt;&lt;/iframe&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.9</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w_h_str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()]))</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe src=../pdfs/arcgis-intro.pdf width=</span><span class="si">{0[0]}</span><span class="s1"> height=</span><span class="si">{0[1]}</span><span class="s1">&gt;&lt;/iframe&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.8</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w_h_str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()]))</span>
 </pre></div>
 
 </div>
@@ -23874,7 +23874,7 @@ Python Group UEA            </a>
 <div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe src=../pdfs/arcgis-intro.pdf width=648.0 height=486.0></iframe>
+<iframe src=../pdfs/arcgis-intro.pdf width=576.0 height=432.0></iframe>
 </div>
 
 </div>
