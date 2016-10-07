@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>text format - Python Group UEA</title>
+    <title>Creating NetCDF datasets - Python Group UEA</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -23721,16 +23721,22 @@ jQuery(document).ready(function($) {
 
 
 
+<link rel="canonical" href="http://ueapy.github.io/creating-netcdf-datasets.html">
 
-    <meta name="author" content="Python Group" />
-    <meta name="keywords" content="text format" />
+        <meta name="author" content="Denis Sergeev" />
+        <meta name="keywords" content="netcdf,io" />
+        <meta name="description" content="What is NetCDF?¶ NetCDF (network Common Data Form) is a set of interfaces for array-oriented data access and a freely distributed collection of data access libraries for C, Fortran, C++, Java, and other languages. NetCDF data is: Self-Describing. A netCDF file includes information about the data it contains. Portable. A ..." />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="Python Group UEA" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Python Group UEA"/>
-        <meta property="og:url" content="http://ueapy.github.io"/>
-        <meta property="og:description" content="Python Group UEA"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Creating NetCDF datasets"/>
+        <meta property="og:url" content="http://ueapy.github.io/creating-netcdf-datasets.html"/>
+        <meta property="og:description" content="What is NetCDF?¶ NetCDF (network Common Data Form) is a set of interfaces for array-oriented data access and a freely distributed collection of data access libraries for C, Fortran, C++, Java, and other languages. NetCDF data is: Self-Describing. A netCDF file includes information about the data it contains. Portable. A ..."/>
+        <meta property="article:published_time" content="2016-10-07" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="netcdf" />
+            <meta property="article:tag" content="io" />
+            <meta property="article:author" content="Denis Sergeev" />
 
 
     <!-- Bootstrap -->
@@ -23781,19 +23787,2028 @@ Python Group UEA            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="http://ueapy.github.io/writing-text-files-using-new-python-string-formatting.html">Writing text files using new Python string formatting</a></h2>
-                <div class="summary"><p>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://ueapy.github.io/creating-netcdf-datasets.html"
+                       rel="bookmark"
+                       title="Permalink to Creating NetCDF datasets">
+                        Creating NetCDF datasets
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-10-07T16:12:00+01:00"> Fri 07 October 2016</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="http://ueapy.github.io/author/denis-sergeev.html"><i class="fa fa-user"></i> Denis Sergeev</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://ueapy.github.io/tag/netcdf.html">netcdf</a>
+        /
+	<a href="http://ueapy.github.io/tag/io.html">io</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sometimes in order to run some programming software we need to prepare an input description file which specifies the model setup (e.g., chemical mechanism, intergration method, desired type of results, etc). If we are planning to run the model several times with different, for example, initial conditions, constracting such ...</p></div></div></div></p>
-                    <a class="btn btn-default btn-xs" href="http://ueapy.github.io/writing-text-files-using-new-python-string-formatting.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+<h3 id="What-is-NetCDF?">What is NetCDF?<a class="anchor-link" href="#What-is-NetCDF?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='http://www.unidata.ucar.edu/images/logos/netcdf-50x50.png'></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NetCDF (network Common Data Form) is a set of interfaces for array-oriented data access and a freely distributed collection of data access libraries for C, Fortran, C++, Java, and other languages.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NetCDF data is:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Self-Describing. A netCDF file includes information about the data it contains.</li>
+<li>Portable. A netCDF file can be accessed by computers with different ways of storing integers, characters, and floating-point numbers.</li>
+<li>Scalable. A small subset of a large dataset may be accessed efficiently.</li>
+<li>Appendable. Data may be appended to a properly structured netCDF file without copying the dataset or redefining its structure.</li>
+<li>Sharable. One writer and multiple readers may simultaneously access the same netCDF file.</li>
+<li>Archivable. Access to all earlier forms of netCDF data will be supported by current and future versions of the software.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Opening-a-file,-creating-a-new-Dataset">Opening a file, creating a new Dataset<a class="anchor-link" href="#Opening-a-file,-creating-a-new-Dataset">&#182;</a></h2><p>Let's create an empty NetCDF file named <code>'../data/new.nc'</code>, opened for <em>writing</em>. Note, opening a file with 'w' will clobber any existing data (unless <code>clobber=False</code> is used, in which case an exception is raised if the file already exists).</p>
+<ul>
+<li><code>mode='r'</code> is the default.</li>
+<li><code>mode='a'</code> opens an existing file and allows for appending (does not clobber existing data)</li>
+<li><code>format</code> can be one of<ul>
+<li><code>NETCDF3_CLASSIC</code></li>
+<li><code>NETCDF3_64BIT</code></li>
+<li><code>NETCDF4_CLASSIC</code></li>
+<li><code>NETCDF4</code> (default).</li>
+</ul>
+</li>
+</ul>
+<p><code>NETCDF4_CLASSIC</code> uses HDF5 for the underlying storage layer (as does <code>NETCDF4</code>) but enforces the classic netCDF 3 data model so data can be read with older clients.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Load-essential-modules">Load essential modules<a class="anchor-link" href="#Load-essential-modules">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>  <span class="c1"># py2to3 compatibility</span>
+<span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NetCDF package version: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NetCDF package version: 1.2.4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Just to be safe, make sure dataset is not already open</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ncfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># another way of checking this:</span>
+<span class="c1"># if ncfile.isopen():</span>
+<span class="c1">#     ncfile.close()</span>
+
+<span class="n">ncfile</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;../data/new.nc&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;NETCDF4_CLASSIC&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">ncfile</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;
+root group (NETCDF4_CLASSIC data model, file format HDF5):
+    dimensions(sizes): 
+    variables(dimensions): 
+    groups: 
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-dimensions">Creating dimensions<a class="anchor-link" href="#Creating-dimensions">&#182;</a></h3><p>The <strong>ncfile</strong> object we created is a container for <em>dimensions</em>, <em>variables</em>, and <em>attributes</em>.   First, let's create some dimensions using the <a href="http://unidata.github.io/netcdf4-python/netCDF4.Dataset-class.html#createDimension"><code>createDimension</code></a> method.</p>
+<ul>
+<li>Every dimension has a name and a length.  </li>
+<li>The name is a string that is used to specify the dimension to be used when creating a variable, and as a key to access the dimension object in the <code>ncfile.dimensions</code> dictionary.</li>
+</ul>
+<p>Setting the dimension length to <code>0</code> or <code>None</code> makes it unlimited, so it can grow.</p>
+<ul>
+<li>For <code>NETCDF4</code> files, any variable's dimension can be unlimited.  </li>
+<li>For <code>NETCDF4_CLASSIC</code> and <code>NETCDF3*</code> files, only one per variable can be unlimited, and it must be the leftmost (slowest varying) dimension.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Decide-what-dimensions-our-data-will-have">Decide what dimensions our data will have<a class="anchor-link" href="#Decide-what-dimensions-our-data-will-have">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nlat</span> <span class="o">=</span> <span class="mi">73</span>
+<span class="n">nlon</span> <span class="o">=</span> <span class="mi">144</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lat_dim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createDimension</span><span class="p">(</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="n">nlat</span><span class="p">)</span>     <span class="c1"># latitude axis</span>
+<span class="n">lon_dim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createDimension</span><span class="p">(</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span> <span class="n">nlon</span><span class="p">)</span>    <span class="c1"># longitude axis</span>
+<span class="n">time_dim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createDimension</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># unlimited axis (can be appended to).</span>
+<span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">dimensions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(&#39;lat&#39;, &lt;class &#39;netCDF4._netCDF4.Dimension&#39;&gt;: name = &#39;lat&#39;, size = 73
+)
+(&#39;lon&#39;, &lt;class &#39;netCDF4._netCDF4.Dimension&#39;&gt;: name = &#39;lon&#39;, size = 144
+)
+(&#39;time&#39;, &lt;class &#39;netCDF4._netCDF4.Dimension&#39;&gt; (unlimited): name = &#39;time&#39;, size = 0
+)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Creating-attributes">Creating attributes<a class="anchor-link" href="#Creating-attributes">&#182;</a></h4><p>netCDF attributes can be created just like you would for any python object.</p>
+<ul>
+<li>Best to adhere to established conventions (like the <a href="http://cfconventions.org/">CF</a> conventions)</li>
+<li>We won't try to adhere to any specific convention here though.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ncfile</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;UEA Python Group&#39;</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;My model data&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ncfile</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;
+root group (NETCDF4_CLASSIC data model, file format HDF5):
+    author: UEA Python Group
+    title: My model data
+    dimensions(sizes): lat(73), lon(144), time(0)
+    variables(dimensions): 
+    groups: 
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also easily delete a netCDF attribute of a Dataset by using <code>delncattr</code> method:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ncfile</span><span class="o">.</span><span class="n">delncattr</span><span class="p">(</span><span class="s1">&#39;some_unnecessary_attribute&#39;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Creating-variables">Creating variables<a class="anchor-link" href="#Creating-variables">&#182;</a></h2><p>Now let's add some variables and store some data in them.</p>
+<ul>
+<li>A variable has a name, a type, a shape, and some data values.  </li>
+<li>The shape of a variable is specified by a tuple of dimension names.  </li>
+<li>A variable should also have some named attributes, such as 'units', that describe the data.</li>
+</ul>
+<p>The <a href="http://unidata.github.io/netcdf4-python/netCDF4.Dataset-class.html#createVariable"><code>createVariable</code></a> method takes 3 mandatory args.</p>
+<ul>
+<li>the 1st argument is the variable name (a string). This is used as the key to access the variable object from the <code>variables</code> dictionary.</li>
+<li>the 2nd argument is the datatype (most numpy datatypes supported).  </li>
+<li>the third argument is a tuple containing the dimension names (the dimensions must be created first).  Unless this is a <code>NETCDF4</code> file, any unlimited dimension must be the leftmost one.</li>
+<li>there are lots of optional arguments (many of which are only relevant when <code>format='NETCDF4'</code>) to control compression, chunking, fill_value, etc.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define two variables with the same names as dimensions,</span>
+<span class="c1"># a conventional way to define &quot;coordinate variables&quot;.</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createVariable</span><span class="p">(</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;lat&#39;</span><span class="p">,))</span>
+<span class="n">lat</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="s1">&#39;degrees_north&#39;</span>
+<span class="n">lat</span><span class="o">.</span><span class="n">long_name</span> <span class="o">=</span> <span class="s1">&#39;latitude&#39;</span>
+<span class="c1">#</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createVariable</span><span class="p">(</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;lon&#39;</span><span class="p">,))</span>
+<span class="n">lon</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="s1">&#39;degrees_east&#39;</span>
+<span class="n">lon</span><span class="o">.</span><span class="n">long_name</span> <span class="o">=</span> <span class="s1">&#39;longitude&#39;</span>
+<span class="c1">#</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createVariable</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,))</span>
+<span class="n">time</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="s1">&#39;hours since 1800-01-01&#39;</span>
+<span class="n">time</span><span class="o">.</span><span class="n">long_name</span> <span class="o">=</span> <span class="s1">&#39;time&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Define-a-3D-variable-to-hold-the-data">Define a 3D variable to hold the data<a class="anchor-link" href="#Define-a-3D-variable-to-hold-the-data">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createVariable</span><span class="p">(</span><span class="s1">&#39;temp&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">))</span> <span class="c1"># note: unlimited dimension is leftmost</span>
+<span class="n">temp</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="s1">&#39;K&#39;</span> <span class="c1"># degrees Kelvin</span>
+<span class="n">temp</span><span class="o">.</span><span class="n">standard_name</span> <span class="o">=</span> <span class="s1">&#39;air_temperature&#39;</span> <span class="c1"># this is a CF standard name</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float64 temp(time, lat, lon)
+    units: K
+    standard_name: air_temperature
+unlimited dimensions: time
+current shape = (0, 73, 144)
+filling on, default _FillValue of 9.969209968386869e+36 used
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Pre-defined-variable-attributes-(read-only)">Pre-defined variable attributes (read only)<a class="anchor-link" href="#Pre-defined-variable-attributes-(read-only)">&#182;</a></h4><p>The netCDF4 module provides some useful pre-defined Python attributes for netCDF variables, such as dimensions, shape, dtype, ndim.</p>
+<p>Note: since no data has been written yet, the length of the 'time' dimension is 0.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Some pre-defined attributes for variable temp:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;temp.dimensions:&quot;</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;temp.shape:&quot;</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;temp.dtype:&quot;</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;temp.ndim:&quot;</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-- Some pre-defined attributes for variable temp:
+
+temp.dimensions: (&#39;time&#39;, &#39;lat&#39;, &#39;lon&#39;)
+temp.shape: (0, 73, 144)
+temp.dtype: float64
+temp.ndim: 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Writing-data">Writing data<a class="anchor-link" href="#Writing-data">&#182;</a></h2><p>To write data a netCDF variable object, just treat it like a numpy array and assign values to a slice.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Write latitudes, longitudes.</span>
+<span class="c1"># Note: the &quot;:&quot; is necessary in these &quot;write&quot; statements</span>
+<span class="n">lat</span><span class="p">[:]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">90.</span> <span class="o">+</span> <span class="p">(</span><span class="mi">180</span> <span class="o">/</span> <span class="n">nlat</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nlat</span><span class="p">)</span> <span class="c1"># south pole to north pole</span>
+<span class="n">lon</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">180</span> <span class="o">/</span> <span class="n">nlat</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nlon</span><span class="p">)</span> <span class="c1"># Greenwich meridian eastward</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ntimes</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a 3D array of random numbers</span>
+<span class="n">data_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">330</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">ntimes</span><span class="p">,</span> <span class="n">nlat</span><span class="p">,</span> <span class="n">nlon</span><span class="p">))</span>
+<span class="c1"># Write the data.  This writes the whole 3D netCDF variable all at once.</span>
+<span class="n">temp</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">data_arr</span>  <span class="c1"># Appends data along unlimited dimension</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Wrote data, temp.shape is now &quot;</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># read data back from variable (by slicing it), print min and max</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Min/Max values:&quot;</span><span class="p">,</span> <span class="n">temp</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">temp</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-- Wrote data, temp.shape is now  (5, 73, 144)
+-- Min/Max values: 280.00165729 329.997969223
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>You can just treat a netCDF Variable object like a numpy array and assign values to it.</li>
+<li>Variables automatically grow along unlimited dimensions (unlike numpy arrays)</li>
+<li>The above writes the whole 3D variable all at once,  but you can write it a slice at a time instead.</li>
+</ul>
+<p>Let's add another time slice....</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a 2D array of random numbers</span>
+<span class="n">data_slice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">290</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nlat</span><span class="p">,</span> <span class="n">nlon</span><span class="p">))</span>
+<span class="n">temp</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">data_slice</span>   <span class="c1"># Appends the 6th time slice</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Wrote more data, temp.shape is now &quot;</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> Wrote more data, temp.shape is now  (6, 73, 144)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that we have not yet written any data to the time variable.  It automatically grew as we appended data along the time dimension to the variable <code>temp</code>, but the data is missing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">times_arr</span> <span class="o">=</span> <span class="n">time</span><span class="p">[:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">times_arr</span><span class="p">),</span><span class="n">times_arr</span><span class="p">)</span>  <span class="c1"># dashes indicate masked values (where data has not yet been written)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float64 time(time)
+    units: hours since 1800-01-01
+    long_name: time
+unlimited dimensions: time
+current shape = (6,)
+filling on, default _FillValue of 9.969209968386869e+36 used
+
+&lt;class &#39;numpy.ma.core.MaskedArray&#39;&gt; [-- -- -- -- -- --]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To work with time objects we will need some extra imports:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">netCDF4</span> <span class="k">import</span> <span class="n">date2num</span><span class="p">,</span> <span class="n">num2date</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1st 6 days of October.</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[datetime.datetime(2014, 10, 1, 0, 0), datetime.datetime(2014, 10, 2, 0, 0), datetime.datetime(2014, 10, 3, 0, 0), datetime.datetime(2014, 10, 4, 0, 0), datetime.datetime(2014, 10, 5, 0, 0), datetime.datetime(2014, 10, 6, 0, 0)]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">times</span> <span class="o">=</span> <span class="n">date2num</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="p">)</span> <span class="c1"># numeric values</span>
+<span class="n">time</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">times</span>
+<span class="c1"># read time data back, convert to datetime instances, check values.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num2date</span><span class="p">(</span><span class="n">time</span><span class="p">[:],</span> <span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[ 1882440.  1882464.  1882488.  1882512.  1882536.  1882560.] hours since 1800-01-01
+[datetime.datetime(2014, 10, 1, 0, 0) datetime.datetime(2014, 10, 2, 0, 0)
+ datetime.datetime(2014, 10, 3, 0, 0) datetime.datetime(2014, 10, 4, 0, 0)
+ datetime.datetime(2014, 10, 5, 0, 0) datetime.datetime(2014, 10, 6, 0, 0)]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Closing-a-netCDF-file">Closing a netCDF file<a class="anchor-link" href="#Closing-a-netCDF-file">&#182;</a></h2><p>It's <strong>important</strong> to close a netCDF file you opened for writing:</p>
+<ul>
+<li>flushes buffers to make sure all data gets written</li>
+<li>releases memory resources used by open netCDF files</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first print the Dataset object to see what we&#39;ve got</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ncfile</span><span class="p">)</span>
+<span class="c1"># close the Dataset.</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;
+root group (NETCDF4_CLASSIC data model, file format HDF5):
+    author: UEA Python Group
+    title: My model data
+    dimensions(sizes): lat(73), lon(144), time(6)
+    variables(dimensions): float32 lat(lat), float32 lon(lon), float64 time(time), float64 temp(time,lat,lon)
+    groups: 
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ncdump -h ../data/new.nc
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>netcdf new {
+dimensions:
+	lat = 73 ;
+	lon = 144 ;
+	time = UNLIMITED ; // (6 currently)
+variables:
+	float lat(lat) ;
+		lat:units = &#34;degrees_north&#34; ;
+		lat:long_name = &#34;latitude&#34; ;
+	float lon(lon) ;
+		lon:units = &#34;degrees_east&#34; ;
+		lon:long_name = &#34;longitude&#34; ;
+	double time(time) ;
+		time:units = &#34;hours since 1800-01-01&#34; ;
+		time:long_name = &#34;time&#34; ;
+	double temp(time, lat, lon) ;
+		temp:units = &#34;K&#34; ;
+		temp:standard_name = &#34;air_temperature&#34; ;
+
+// global attributes:
+		:author = &#34;UEA Python Group&#34; ;
+		:title = &#34;My model data&#34; ;
+}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Appending-data-to-NetCDF-dataset">Appending data to NetCDF dataset<a class="anchor-link" href="#Appending-data-to-NetCDF-dataset">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ncfile</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;../data/new.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_ave</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">createVariable</span><span class="p">(</span><span class="s1">&#39;zonal_mean_temp&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">))</span>
+<span class="n">temp_ave</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="s1">&#39;K&#39;</span>
+<span class="n">temp_ave</span><span class="o">.</span><span class="n">standard_name</span> <span class="o">=</span> <span class="s1">&#39;zonally_averaged_air_temperature&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">temp_ave</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float64 zonal_mean_temp(time, lat)
+    units: K
+    standard_name: zonally_averaged_air_temperature
+unlimited dimensions: time
+current shape = (6, 73)
+filling on, default _FillValue of 9.969209968386869e+36 used
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Create an averaged array using the existing "air_temperature" field:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">][:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">ave_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">temp</span><span class="p">[:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ave_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(6, 73, 144)
+(6, 73)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Write the data</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_ave</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">ave_arr</span>  <span class="c1"># again, note the square brackets!</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ncfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Open-the-resulting-dataset-and-plot-some-data">Open the resulting dataset and plot some data<a class="anchor-link" href="#Open-the-resulting-dataset-and-plot-some-data">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Open the file for <em>reading</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ncfile</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;../data/new.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, try this handy methods of extracting variables: <a href="http://unidata.github.io/netcdf4-python/#netCDF4.Dataset.get_variables_by_attributes"><code>get_variables_by_attributes</code></a>. Note: it's available in netCDF4&gt;1.2.0.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ncfile</span><span class="o">.</span><span class="n">get_variables_by_attributes</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
+    <span class="n">ncfile</span><span class="o">.</span><span class="n">get_variables_by_attributes</span><span class="p">(</span><span class="n">ndim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;zonal_mean_temp&#39;</span><span class="p">]</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">num2date</span><span class="p">(</span><span class="n">times</span><span class="p">[:],</span> <span class="n">times</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">lats</span><span class="p">[:],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">t</span><span class="p">[:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;inferno&#39;</span><span class="p">)</span>
+<span class="n">cb</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">lats</span><span class="o">.</span><span class="n">long_name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">long_name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">standard_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="n">t</span><span class="o">.</span><span class="n">units</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Here is the plot&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Here is the plot
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+It1fOt8AURHxadKAVJeSnmE7mxR4za2et43yHQFsRRoa/C5S6/L9pGB5z4h4c0TMbJLG3Ih4D7AT
+8AvSI3CezXm8hBTsrh8Rt3aaTyaCzHZe9fIbEXEAsAvpwsI9Ob/35M87RUQr/etbzUfH+4cmZTHr
+hitWNqp87Noo8nFrNhrGpmW2IiKeIN0/enRJ6QVwSn61u+wJzN+C2m1+rgSuLCGd85m/xbgUeUCk
+stM8lzSAVSfLXkzzxxF1JV9o6LRbtpmZmZmZtWmsWmbNzMzMzMxscnAwa2ZmZmZmZiPHwayZmZmZ
+mZmNHAezZmZmZmZmNnIczJqZmU1yr15+Cq9e3lUCMzMbLWM3mrGZmZm1pjqALX6+7MFunlRmMLE9
+R2Fbet+b2ShyMGs2QBssLW5/YtC5sF4YhophdaDiCmrvddu62eo+qreebpevN4+Pnfra3ZZQ/vbs
+Jmiulf9RCsJtuNQ6nnwcWS85mDUbsH5VfnvBwdL8GlUMGylr2zValyuo5elVl9xu020WgHaaflmB
+7auXn9L18dePILvXXa67LUO9/LXzHW81CPf5or5OjpNx3J7NtoMDXOslB7NmI67TAKUXlbWy8tKv
+H7lm26Cf27Sbym276x2GoLbsbd9ro3g/aT8C7k6Cpk6P9WYXijo9Zga9bwdxLm5nnWWmVeYFlmbp
+1tLqunqVz0bp9PKc14vf2F5feOv18q2m/Z9nxRX3lpq8lczBrNmYaPXE3o+KW6vBUhmtC83S6sag
+tmm/Ktedtrr08xiC3lTyBh3AjIt6+6nV7dvKd73dtIrpTfb9XL1NyrrgNsg0+pHuII6bbi8ydnKB
+oqLT3+qylFVnKBp0Pcj6x8Gs2Riq/mEY1Im71g9Upz+41T9M/S5Tt2UZVsVyDWt5xqH1bTIoI1Aq
+6/vl/T0/b5PRUHZX8XbWOWhlXpAaljJZ7zmYNRtjw3IyH+Yr+u0alnyUbVTK1WoXvVEpj83L+80s
+GaaLuYMwGcpo5XAwa2ZmI88VHzMbVz6/mdXnb4eZmZmZmZmNHAezZmZmZmZmNnIczJqZmZmZmdnI
+cTBrZmZmZmZmI8fBrJmZmZmZmY0cB7NmZmZmZmY2chzMmpmZmZmZ2chxMGtmZmZmZmYjx8GsmZmZ
+mZmZjRwHs2ZmZmZmZjZyHMyamfXAq1a8j1eteN+gs2ED5GPAzMystxYcdAbMJrMNln2YB59aYdDZ
+sJIVA5hmwczl96/U8zz0el02odZ2H/Z9Mez5G2aVbeftZWY2GA5mzQasXrAzSpUjV+gmtNsSV/a2
+a7T+V614n/dRD3TS+jro732zPBen+5hJmn236unl9psMFyIGdUGwDNV5H+a8lqWV8+Fk2A7WPw5m
+zYZUOxXkfv4wtFqhG8Yfq15v0266lHYTaLaz3kFeeBiXix697DrcyyC303xPxgo5lLefy96nrV6I
+aDX9svLXadDZ7Xbu5LzSi4sArZRjXM6BtXTyOwTlfA96sT0r6d/y9KNwb+nJW4kUEYPOg9mkI2lj
+4Nofrrsdaz5v6dLS7eaE3ssKeruVmDJ/mLotV7cVwl6ts4z19bvFqJFhrdz5ntfmGu27slsse9kS
+Oa77uowgsleBaC+UmdfqtHpR3kEcv2Wfb8vaLmX99pV5oeiWpx/lQ//4I8AmEXFdRwn3SKUueem5
+O7PhesuWmvbfbniY1+x4Dgxhuas5mDUbgF4FsxXNTuTDWAFppOwWgjLz0M+LAIOoSA3qWOnllXYb
+Pp0GxO2m1U26o+7y+1eadGUeJf3omdOJMr+b3axzUMeug9nhK3c1dzM2G0O1ujKNciVmGPI+iG3a
+j3JXl2sYtjWU2x1vWMpk9ZX5/fL+rs3bZbi12222X/tzEMeNj1Vrh4NZszHmH4Tyjes2HdZydXpf
+1LCWxxrzfjNrfN7zd8RsXg5mzcxsJLgSZ2aTjc97Zo1NGXQGzMzMzMzMzNrlYNbMzMzMzMxGjoNZ
+MzMzMzMzGzkOZs3MzMzMzGzkOJg1MzMzMzOzkeNg1szMzMzMzEaOg1kzMzMzMzMbOQ5mzczMzMzM
+bOQ4mDUzMzMzM7ORs+CgM2BmNm7WfdlNTef5x7/W7kNOknVfdlNf12dJ8Tjw9jczMyufg1kzswHo
+daBTHVA7oO2PehcyHNiOH+/T/qv+fnm7m5mDWbMBWuPFd7Lusg/M879R/HGuVDBGIe+9zmsrrbK1
+likjP83W7YC2d9rZ78MYBI3Sd3jQau3rQW+/Qa+/bK1+n0ah3MP4fR+0UdhvNjoczJoNmU6CoUFX
+oOp9rhiWH6xi/ppt507y3Mm+Ky7b6XZqN5AaxP4Y1wpdN/u81vL92jattCDDeO2rbgxjcDVsQXWj
+bdQoP91+hypptFvmXp6TGn2/xv071c/fo15vz3VfdhNzH54B/+jZKqwEiohB58Fs0pG0MXDt+W96
+Kesvu2gpaQ66EtypQVX6WtVq/sraLu1sj36Uq1udVnCHUdnHfivK2kZl5n3U9lunBvGdbqbdPA37
++bUXmpW5FxcyW027jHW0s+5ufr/6fUG3rN++sns5Xf/wDHY461aATSLiuq4TL1GlLnnpuTuz4XrL
+lpr23254mNfseA4MYbmrOZg1G4BeBLMVw9R9thvDVInvtnI0rOvrtKJTdv76PRjWqGtle41CObvt
+idCvgGActHPM9PsCXi/UKkOn+e3l960ft5dUr6/d+XuRj07X2euea7XSdzA7fOWu5mDWbAB6GczC
+YH6A+mHQ5SqzgtTJunqxvn6tpxW97i42rtqtoA6bMoOFfrcmjZpujpXKth2V7TUq+e1HS3C3et1N
+vNn6er2ORuk7mB2+cldzMGs2AL0OZiv6GXwNg35U6lv9ARyldfWzTK0appZ5659hPBbN+mHQF2ub
+mWz1iQoHs8NX7moeAMpsjE2GH5qifpS3n9u0MrhFr9c5jMdJN11Jh7E81hrvO5usWr2dY1Dfkepz
+sr+rNiwczJqZDbHJXmFoNaid7NvJzMbLsJ7ThjVfNnlNGXQGzMzMmln3ZTfN92il4svMzMz6Q9IH
+Jf1d0uP5dbmkHQvTp0r6gaSHJD0p6UxJK1SlMbfqNUfSbu3mxS2zZmY2Mhy4mpmZDdzdwKHArfnz
+fsBvJG0YEf8CvgPsBLwdeAL4AfAL4DVV6ewLnAsof36s3Yw4mDUzMzMzM7OWRMTZVf/6rKQPAVtI
+ugd4L7BHRFwMIOk9wL8kbRYRVxeWezwiHuwmL+5mbGZmZmZmZm2TNEXSHsBiwBXAJqQG0z9W5omI
+m4C7gC2rFv+BpAclXZUD3ra5ZdbMzMzMzMxaJmldUvC6CPAk8NaImCZpI2BmRDxRtcj9wEqFz4cB
+FwLTgR2AoyU9LyK+304+HMyamZmZmZlZO6YBGwBLke6NPVnS1g3mFxCVDxFxZGHa3yU9H/gk4GDW
+zMzMzMxs3E294g8sem/nd46efuUcTr9q7jz/e3x61Jl7QkTMBv6dP14naTPgYOAMYGFJS1S1zq5A
+ap2t5yrSvbcLR8TMVvPvYNbMrAeW2+bmmv9/6OK1+pwTMzMzs9r22GIB9thigXn+d90dc9nsiFnt
+JjUFmApcC8wGtgN+BSBpLWA1UrfkejYCHm0nkAUHs2ZmpasXyNaa1uvgtrI+B9H91e/9bDYZ+Htl
+NhwkHQn8nvSInsWBvYFtgB0i4glJxwPfkvQo6X7a7wKXVUYylvRGUkvtlcCzpHtm/xv4ert5cTBr
+ZlaiRoFsvfl7USGrzkev1mPzqrf/fVFh/BT3tfdr7zS7OOhtbzYQKwInAysDjwPXkwLZC/P0Q4A5
+wJmk1tpzgQ8Xlp8FfAT4Nule2luBj0bEce1mxMGs2QAttfGdLLf6xH0Oo/qj3GoANwzlq5XXsvLV
+biBbXK6MPDRbvyt+vdXK/ndQO/pq7Wd/t8ozLBcEy+Lv/Py8TUZfROzfZPqzwEH5VWv6ecB5ZeTF
+wazZEOkkGBrkj0EnlQ4YXJ6btZpVjNoPbDv7YVAVv3Fuxerkezvo74K1r5WLRdDffdrLi3Od6CQ/
+nV4ErE5j2L5Lo9g7phfHcC9b1nu9TZfb5maWumMunNWzVVgJFNF8tCozK5ekjYFrrz58ITZevfMR
+6CoGHZx0o1957/WFgjK2R7vbotN1DrqyPYh89EJZ34GKYdkvFaO+f8oyjBcZh23/lf1d6FSrZe71
+AH3Ntkc/bi3p9ver2yCzXWX93pa9DwsDIW0SEdeVknhJyq5LFg1zuas5mDUbgF6dgPpReelVpaVX
+ee82v63kq8xt0m1lrOz1VK+r7AC/3wFTu3kaZCV90N3fOzUuQXA/v2OtGNWgut/KaAnudLu1sz2G
+IXDuRdDdzTFRdit+Gfkf5qDOwWziYNZsAHp5AhrWoLBT/b463Ek++t1C189W8U6ugPejwtGJYax4
+t6NfLff9MMwBb7++z/3cP/1oCRwmtcrb654sg7jY0Mm5tpfn5172UOpH76da6xjmoM7BbOJg1mwA
+enkCgv7d7zIo/W4tbbTefq2nV+srOyDt5VX5Tg3jMdyNfl3s6JcygoV+DKA2DibTdirjnNQP/WgF
+7tYgzjm93n+t9sAZ5qDOwWziYNZsAHodzFaMW6W3nupy9rJc/eqC2q/AuXpdgz4mxv1CTNmGad+V
+oczv8qAuepm1axR6XQxDD4NBGOagzsFs4tGMzcZYcaS/cf7B6WfZ+rWu6lEae7neYTo2yhidcpjK
+02vjVtYyyzNu28bGV6vnvUEe07Xy6O+YDQMHs2Zjzj82o6tSeZhs+7DTx0NMtu1kZuNjFM5fk+UC
+uY0WB7NmZkNsMlcYWg1qJ/M2MjPrJ59vbdj07ma9AZG0hKQDJZ0t6XZJT0t6TNJNkk6VtJukkS23
+pC0lnSLpDkkzJN0r6VxJe7Sw7OGS5rb42rrLfG4i6TBJ50m6W9Izkp7M++EESa9uM72dJP2ykNbd
++fOOLSy7sKTNJX1E0smSpkmak8s5p/NSPpf+18vcdmY2r+W2ufm5V6P/mZmZ2eQyVi2zkvYHvgIs
+CxRHtloEWBxYE9gLuFHSByLish7lY1/gxJyHF0fEXSWl+3ngs6SLEJXyrQDsAOwgaW/g7RExs0lS
+zUb96mpUMEmXAFvVSGsh4KWk/bCfpFOA/SNiVoO0BPwYeG9VeqsAbwHeIunHEfGBBln6EbBv4XNp
+o55J2gD4aJlpmll9Dl7NzMysYmyCWUnfAD5OCipmAz8DfgvcCSwMrE0KZF8HvBy4QNI+EfGLweS4
+PZI+AHyOVL5bgSOBf5CCuoOB1wI7AycA+7SQ5LqAGky/vYvsrpzz+R/g58ClwF3AAsCWpP30AuBd
++X+N8vtlUiAbwHXAN4DbgDWATwEbAftLejAiPtsgnUqw+WROZ+2cz44VAu0FgAeAFXFQa2ZmZmbW
+F2MRzEr6MBOB7N3AmyLihqrZLgdOlLQ78BNgKnCqpFsi4vp+5rddkpYCvkoq313A5hHxaJ58raTf
+Ab8G3gTsKenYiLikUZoR8a8eZvlfwKeBX8b8z366OrfIXg6sRcrvMRHx5+pEJK3JxH69BtgmIp7N
+k6+VdBZwMfBK4JOSToyI22rk5xzgIuCaSrklXUSXwSzpIsIrSeX9FfD/ukzPzMzMzMxaNPLBrKTV
+SK11ATwNbFcnoAEgIv5X0gLAqaQW21OADfqR1y68H1iSVMZPFQJZACIiJB1IapmdAnwSaBjM9lJE
+vLnJ9EckfRw4K//rHcB8wSxwCOkYDeCgQiBbSWeGpIOAK/J8HwUOqrG+n7ddiCYkrQp8IeftQ6SW
+cbPnzNhht/n+t+j5ZwwgJ2ZmZmbjaWQHQio4hHRPLMARjQLZiog4Dfg9qZvtupJ2qTevkj0knSnp
+TknT86syoNTbc3CMpG0kzSXdL0tO/44SBlfaNf99gtQCWKtM9wAX5HVuJ+l5ba6j3/5UeL9GnXne
+TAoWp0XENbVmiIirgJtI5d611jw98kPgecBPmrWC2+RTK5Ct/L/4svHm/WxWPp9DzaxoHILZd+W/
+M0j3L7bqqML799SaQdLqpPsrTwPeBqxK6p48lTSQ0V6ke0KLI/MG8943GVWvuW3kEUkLAZvmZa+I
+iNkNZr84/51K6v46zBYuvJ9vRGFJLybdDwwT5aqnMv0Fkl5UQt4akrQbsAvwCOm+XbOO9KMy5krf
+YBS3ube/WXfqBbD+bpnZSHczlvQKYBlSoHdpRDzRxuIXANOBxZgYebeY9grAZUwMZvRH4GRgWv78
+YtJgUu8sLHY1sB5plN0v5fl2AO6tSr6dwZXWYqKr7bQm8xanv4wGQaCk84ANgaWAx4AbgXOBH0XE
+Y23kr1PbFt7Xun/35YX37Zb7zg7z1JSkJUkXQipdvh/u1brGRbGyMQzdbHudn3YrVzN22K0v+ejV
+emx+tY6Byv+8D8bHsJ3bxlEr51Of28wmt5EOZpn3Xtfr2lkwIuZKuh7YAlhe0koRcV9hlmOYCGQ/
+FRH/U5XEtcCZkj5BeuQMETGD9NifTQvz3dLlo3lWLbz/vybz3l14/8Im876+8H45YGtgG+BQSftF
+xG9bz2J78ijAhxb+VetXqFfl7tY3SKMW/zkiTmw2czPPbrk9M9ZbFhjtylCrAdygK/SNruqXkadO
+WwnKqow1W/+gK32DXn+vueI9OdS7WOH9Wo5OzqPDvP0H/bs3jEZpmzy75fakcURtWI16MLtc4f19
+deeq7/7C+2UraUhai3T/ZQC/rhHIPicipnew3nYsXnj/VJN5ny68f36dea4njXx8NenROQuRHlOz
+N6kVeSlSkP6miDivoxw39zFgM9L2/UVE/LXGPGWXu2uStgLeB8wCPlh2+tU/4KNwkofRqXi0EuhV
+jMq2h9HpZlfJ5zBXOrvRzn4YpYqczavRfh7ksT0sx1QnA9+VdQ4bxnNL9e0Gw5a/ol7XQXpxEajX
+23TGDrvBDe6AN+xGPZhtJ+CppbjMEoX3u5AGFArg2x2kW6ZFCu9nNpm3ONrvojWmfzsijqjx/2tI
+jyl6P6lFegHgOEkvrR5BuFuStgG+kj/eDxxYZ9Yyy921fO/ysfnjtyLixl6sp6idH/hBV6C6WXYY
+f9w7yVu3FbJOfpRH9ULCsFfq2jGu3wGbVzu9T/q1P4etO3ujge+G0SgGb62urx+/JWWl2+1vX68u
+RA/rcWvzG/Vg9snC+05a5IrLFO+33Sj/nQVc2UG6ZXqm8H7hunMlUwvvZ1RPbHZPcUQcm7tIv480
++NLbgJ+1mM+m8j3OvyQddzOAd0bEQ3VmL63cJfkMsA5wB+mRPEOl38FBmSf5flS+et39dxAtC90G
+UZ1WHsoK8IehFavaoCqA/QxAWsmzg+t5Dct98MX0B52H6nUNi27O2WV9D/t9u0c3ZenVObqT7wy0
+tu2b5bmoX/m3wRr1YLYYCK3UwfIrFt4X+xFUui8/0mT04H5oJ2AvPo6nk5ZqgB+RgllI99CWEszm
+0YnPA5YGZgO7R8RlDRbpd7nrkrQ28Gkmnnfbq4C5K/2qvIzaSX4QLabjpldd5YahlbjetEq++nm8
+9yqo7bRiWdEoP43SHofvzaDvg6+V7qDzUL2OYdOs3MMwtkC/f69rrasfraZl68eFpWE8pq2xUQ9m
+ry+836juXDVImgKsnz8+WDX4U0XU+F+/FQc/WrXuXElx8KO7687VWLH77As6TGMeklYhjR69CunR
+RO+JiN81Wazf5W7kEFLr8G3A8yXtXmOedQvvt5O0cn7/20bB76cP/wtLLDFvw/M737I673zLi7vM
+8uhx0Gg2WlzpMxt+/l1t3elXzuGnp100z/+eeKLZnW42aCMdzEbEPyQ9Qno8z9aSFo+IJ5stl21P
+eixPAJdWTau0+C4racEBt87eTHoO6xRSN9dGitNrPe6mFaUG8JKWBf5AepRRAB+JiJ+2sGgxqO5H
+uRupdGNeg+Yt1QIOy+8rj3CqO5r1V494JRvm0YxHxaLnn+FK7BjodRfqUT5GitvFx7t1wgGENeLj
+o7ZeXNRuJ809tliAXT/32nn+97cbHuY1O3o042E2ZdAZKMHJ+e+iwAFtLHdQ4X31I1Yqj/lZCNiy
+gzyVFhBGxCzSyMMCtpTU6ALENvnvs8BfOlxl8fmu/+kwDQAkLQGcT3r2awCHRsQxrSwbEbcX1r9N
+o3lJjxUCuCcievWM2WjhVWteMxtxrnjOr9UuilYuH4tmZvMah2D2KNJgQQIOl/SSZgtI2gPYOX/8
+R0RUX3I5m4lA5JAO8lQcvGhq3bla9+v8dwnSoEzzkbQq6dmxAVwQEU/Xmq8FxUfOXNxhGkhalPRg
+ro1ynr4UEd9sM5nfkPbrOpI2q7OeLUgts8HEdipVRLwnIhZo9GJiUKgAts3/X7DLZwybWZ/VCxYm
+cxDhoNTMzIbVyAezuSXuU/nj4sCFktavN7+k3YCf5I/PAvvUSPMW4FekQGpXSR9vkN5ikpaq+ve9
+hfdrNCtDC44DHs/5+aqkpavyMAU4mvRIHYD5gkZJ60pqmJf8aJ7K4E/3kbZB2/JjbH4NvIoU3H0n
+Ig7vIKnvkAaLAviepOLjesifv5s/ziZd2BgGGtSKXek0a6yboHQyB7RmtYzjd2Icy2Q2zkb6ntmK
+iJ7N08IAACAASURBVPh+bpE9GFgN+IuknwG/Be4kdRdeB9gbeF1e7Flgr4i4oU6yBwJbACsD35C0
+EykInkYK0FbPae1Oai29pLDsX0mts1OBL0qanfMxN0+/JyKKrbfNyveopENJz4BdHbha0pHADaRB
+lQ4Bts35Oi0iLqmRzCakZ8deBPw+L/sw6RhYhxTUb5/nnQ28v4tRe0/PaQVwIXBCfixPPTPzBYR5
+RMQtkr5JGkl4U+AySV8jDcS0BnAoEy2/X4+I22olLmlFYMeqf69UmL5v1bRLI+LfDfJrNqmN62Bd
+rZTJ99D6otmoGMfvqE1uPv9aLWMRzAJExMckTQOOJA0I9a78mme2/LoR+EBEXN4gvQckbUXq6rou
+8FomAuHqNKuXfUrSd4FPAhuT7hst2pZ5g9+m8jNgVyYNLvQS4IQa+TibiZbVWqYA25G6I9dcDSnA
+fW9EnN1O/qq8Nf9VXl+9CwYVd5DKVMtngOWB9wIbkgLlisr+PC4iDquxbMU6zH9fdIVqTNsPcDBr
+Nom0U/GfjBWqcb2AYWZmo23kuxkXRcSxpBa7g0itj3cBM0jPLL2VFAjtCazfKJAtpHcHKYDajxQo
+/geYCUwHbgJOAnZl/tGQiYhPkwakupQUIM4mBV5zq+dto3xHAFsBp+WyPQvcTwqW94yIN0dEvTHE
+K4HucaTBoe7O5ZgB3EO6v/Vg4CUtPDanaVY7eNVOKDkA2IV0YeEeUrnvyZ93iogPlJinjvcPTcpi
+g+EK+PDyvjFrn7833fH2MxsvY9MyWxERT5DuHz26pPQCOCW/2l32BOZvQe02P1cCV3aw3EOkbtI/
+KTM/dda1QPO52k7zXODcDpe9mIn7iXsiX2g4opfrMLPe6KRyOxlbZ8FdjM3MbLiMVcusmVm/lVm5
+d4tB/3mb95aDXxslPh+YjR4Hs2ZjxpVHK4uPJSvy8WDWnANis/5yMGtmZpNKpbLpSqeNKx/b1oyP
+ERsXDmbNzJpwi9T8Rn2buCJno8zHr5lZ4mDWzMxKNeqBrlk3HGiamfWPg1kzMzMzMzMbOQ5mzaxt
+bnkYPO8DGxVuqbdR4HPqaPB+smoOZs3GkCuPZmbdGfbzqCv1nRvktvN+MyuXg1kzs0lq2CvrZtY+
+B0tmNpk4mDWzoeHgyqxc/k6Zja9+fL/bXUe3F1N8zrJ2OZg1M7P5tFKh6KbS4dYjMzMz65aDWTMz
+MzObtMq+uOaLdWb942DWzMzMbAQ5aDKzyc7BrNmY8n0nZr3lQKJ1Ph+ZmVkvOJg1MxsCDowMfBxY
+d3z8mNlk42DWzMaeK3j94xY4MzMz6xcHs2ZmLXCQZmbDyBfrOuPtZjYeHMyamVnHHOSbTXCANHq8
+z0aP95kVOZg1MzMzMzOzkeNg1myMudXMOuHjxnrBx5WZmZXNwayZmZmZTTrurmo2+hzMmllHXAkw
+s7LN2GE3t+B2YNHzz/A52cwmJQezZmZmZmYlqnVxwRcczMrnYNbMhopbZcafK3RWi7/7ZmbWLgez
+ZmbWFQch1q3qY8jHlJmZtcLBrNmYc6Wwd8Zh245DGWx01DrefAyONve0MJt8JH1Q0t8lPZ5fl0va
+sTB9qqQfSHpI0pOSzpS0QlUaL5R0tqSnJd0n6euS2o5NHcyamZnZQDiQnXwc/FozPi+MhLuBQ4FN
+8utC4DeSXpanfwfYBXg7sDWwCvCLysI5aD0HWBDYAtgX2A/4QrsZcTBrZmalcAXE2uHjxay3xvnC
+wTiXbRRExNkRcW5E3JpfnwWeAraQtATwXuCQiLg4Iv4KvAd4taTNchJvANYB9o6IGyLiPOAw4MOS
+FmwnLw5mzcwGbJh+lB1gWD+0cpz5WDQzG36SpkjaA1gMuILUUrsg8MfKPBFxE3AXsGX+1xbADRHx
+UCGp84AlgVe0s34Hs2ZmLXLl2qx7/h6ZmY0+SetKehJ4FjgaeGtETANWAmZGxBNVi9yfp5H/3l9j
+OoV5WtJWM66ZjaYZO+w2VK1/ZmbjZtTPsZWLDKNeDiuf6xDj7fQr53D6VXPn+d/j06OVRacBGwBL
+ke6NPVnS1g3mF9BKwi2tvMLBrJnZiFr0/DOGppVrWPJhZu3z99dsdD123Yt46M5FO17+9cDrN5z3
+f9c/PIMdbr614XIRMRv4d/54Xb4f9mDgDGBhSUtUtc6uwETr633AplVJrpj/VrfYNuRuxmY2Kfiq
+sk02DlCsFT5ObNz5GO+bKcBU4FpgNrBdZYKktYDVgMvzv64A1pO0XGH5HYDHgRvbXamZmZnZ0HEl
+tHdm7LCbt2+P+SKqjStJR0raStKL8r2zXwG2AU7NrbHHA9+StK2kTYATgcsi4pqcxPmkoPUUSetL
+egPwReD7ETGrnby4m7GZmZnZJDKoINbBndnYWBE4GViZ1Jp6PbBDRFyYpx8CzAHOJLXWngt8uLJw
+RMyV9Ebgh6TW2qeBnwCHt5sRB7Nm1rFhumfTzMya8znbzLoVEfs3mf4scFB+1ZvnbuCN3ebF3YzN
+JolRqsCMUl6tPePWMjNu5bHx1Wq3Yp9/e8PnivJ5mxo4mDUzs8yVWDMzMxslDmbNzMxsaA3iIosv
+7PSWW9TMrCwOZs3MzMwBhpmZjRwHs2ZmZmZmZjZyHMyaTSLuOmdmtbhV1szMRpGDWbMR5crnYJR9
+QWAY9qMvctiwG/ZjdBi+x2Zmk5GDWTMzsyHggMjGmY9va8ewX8Cy4eFg1szMzMye40CiPMMcxA9z
+3lo1DmWw7jiYNTMzMzOzSc0XcUaTg1kzM+vLj7ivoJuZjT+f662fHMyajaDKD0UnPxi+8mhmo8jn
+LhtVDu7MesfBrJlNGq5QmJmZmY0PB7NmNpTcCtMaB+hm1ozPp2Y2rhzMmllXHEyZmZlZkesG1i8O
+Zs3MOlBGS4d/7M1sWJXZmutz3ehz674NKwezZiOmjEpBv3+UXJExszK4Qm1m1VzHmNwczJpZT3Uz
+8rKZmZmZWT0OZs3MBsDBvZmZmVl3HMyaWc+Ma8Dmro427HyM9s+4nufa4W1gtfi4sH5wMGtm1mdl
+/8CPQoVhFPJoZmZmo8XBrNkIGaWAYJTyamajw63OZmZW4WDWbJLqZYXQgayZmZl1wxeurBUOZs3M
++siB/vjxPrVx1cvnaft7Mzl4P1uvOZg1s1L5h8vMzMz6yXWPycvBrJmVptmPyWT/sZns5e8Xd00b
+f97HZmYGDmbNbIi5wto6B8pWBh9HZmY2ShzMmo2IXlQyywoWFz3/DFeCzUaUv7tm42eYvtfDlBcb
+Pw5mzcz6wD/m/eHWfOsnf6/NzAbLwayZTSqufJqZmZmNBwezZmY9NtkD6MlefrNR5t4OZjbMHMya
+mZmZWel8Iat3fJHBLHEwazYCXCEol7enmZlZ//Tjd9e/7ZOTg1mzSa7fV3cn249NP8s72bZtI261
+GH+92setpjsq3zd/F8xsnDmYNTOzseBKu5nZePF53ZoZu2BW0hKSDpR0tqTbJT0t6TFJN0k6VdJu
+kka23JK2lHSKpDskzZB0r6RzJe3RRZor5W00N78uLCGfm0g6TNJ5ku6W9IykJ/N+OEHSq9tMbydJ
+vyykdXf+vGMLyy4saXNJH5F0sqRpkubkss7pvJTPpf/1wrabK2nrbtNsx6i0Dgwbd3kyMzMzG20j
+G9TVIml/4Dbg+8COwGrAIsDiwEuBvYDTgevbDabazMe+lUBJ0molpvt54FJgb+CFwMLACsAOwGmS
+zpK0cAdJfx9YAoj86jaflwDXAEcArwdWARYCFiPth/2ASyWdJGmhJmlJ0nHA2cBbCmmtkj+fI+lH
+TbL0I+AK4LvAPsCanZWsZv42AD7KxLbrevuZ2eTjCx9mNuy6bSUd5HnOLbzja2yCWUnfAI4FlgFm
+A6cCuwGbA68B9gf+SAo2Xg5cIOntg8lt+yR9APgcIOBW4L3AZqSA7kJSuXYGTmgz3TcBbwPuz2mX
+YeWcn3uAo4B35LxuCXwM+L88/V3AiU3S+jKprAFcC+yZ09oTuC7/f39JX2qSTiXQfAK4GLiv3UJV
+kyTgx8ACwAOUt/3m4UruaPJ+MzMzM+utsQhmJX0Y+DgpWLkb2CQi9o2IX0TEXyLi8og4MSK2J7XO
+PgtMBU6VtP7gct4aSUsBXyWV7y5g84g4KSKujYizgO2B35GCqT1b7eYq6XnAD3K6nygxy/8iXUhY
+LSI+FhG/ynm9OiKOAjYEbsnz7ilpqzr5W5OJ/XoNsFVEnJHTOoN0keJaUrk/KWmNOvk5B3gPsG5E
+LBURrwNuLqGcBwOvBKYBx3eSwNQr/lBCNszMzHrHrVpmNqxGPpjN3Xi/QQp4nga2i4gb6s0fEf/7
+/9m783BZqvJQ4+8HBw6gTKIMSmQwECUIDkFAmQQlCIkQkVENOGKIJFdR1BivEjUap4gaRPSiAqKC
+EeIsIioIIoITBDFImEQEBeQwHA8cznf/WNXuOs3uvbt7d+/d1f3+nqefru5etWpVdXV1fbVWrQW8
+tHq5OnDa0As5d68A1q2mj8vMO+sfZmYCRwOt+z9f12W+7wQ2Bc7PzE8PoqBVeZ5bXUiYtsltZt5B
+CVJbnt8hq1cDi6rpYzJzWVs+S4FjqpeLKM19p1veWZl5amb+vNt1mE1EbAr8C2W/+zvggX7zsgZv
+ZsM8iRrHbT+O6ySNGn9nkjQaGh/MUgKeNarp4zPz2tlmyMwzgK9RavS2jYj9OqWt7tk8NCI+HxE3
+RMR91aPVodSBEbFqlXb3iFjBVNPZAK5v6xyonw6C9q+elwBnd1inm4HzqmXuVdW6dhQRT6MEwMso
+wdh8+05tulON6nMpweLVmfnD6RJk5g+AX1DWe//p0gzJR4CHAZ/MzAvmmtma5545UfeSjPuJ4Liv
+Xy/ma1tYcySNFo+DWgjud5NnHILZF1XPSyn3L3brhNr0i6dLEBGbU+7LPINyX+mmlObJi5nqUOos
+oN6ZVHsnQNn2WNFDGak6SNqhmvf7mbl8huTfrZ4XU5q/dspzVcr9xQG8KzN/2UuZBqTeUdVDehSO
+iC0onTzB1Hp10vr8MRGx2QDKNqOIOBjYD7gDOG6QeXsQlqTueRFDahbPczRojQ5mI+LPKR0+JXBh
+Zi7pYfbzgPsoAd1D7tmMiA2Bi4Dtq/zPA46gdCj1NOAQ4CTg9tpslwJPBN5cvU5KT8NPrD22o9z/
+2a2tmWpqe/UsaeufP2GGdK+ryvFLSlPjhbBHbXq65r/b1KYHtd5zFhHrUi6EJKXJ9+2zzNKz+oHe
+g/7wDXob+51poRngSZImxaLZk4y07WvTP+plxsxcERE/A3YCHhURG2dmvYfbk5jqlfe4zHxfWxaX
+A5+PiNdShopp3cN5VUTsUEt3TWbe2EvZ2mxam/7VLGlvqk3/yXQJImJLSrCdwNGZef8cytaXqhfg
+19femu7sf6DrPUDvATYCvpeZs/XE3DcDIkmSJGlmja6ZBR5Zm+5nqJVba9MbtCYiYmvK/ZcJnDNN
+IPtHmXlfZt7Vx7K7tXZt+p5Z0t5bm354hzQfpdxj/NnM/NZcCjYHr6HUbifwn5n542nSDHq956zq
+dfmllM6eXjms5ai5vAghjT9/54MzDtvSlhDSwmp6MNtLwDOd+jzr1Kb3Y2rM0H/vI99BWqM2PVst
+ar233zXbP4yIvwX2onQk9Zq5F613EbE7U02bb6V0QjWdga33IFT3Lp9cvXx/Zl41jOVoYYzDCZUk
+DZNBmwal1/9c9z3NpOnB7N216X5q5Orz1O+3fXL1/ABwSR/5DtIfatOrd0xVLK5NL61/EBEbAO+l
+1Ib+U2bWa6XnRXWP8xcozduXAgdl5u86JB/Ieg/Qm4DHAzdQhuSRVjJKAfEolWU+jMKJzqRtc0mS
+RkHTg9l6ILRxH/NvVJuud+TTar58xyy9B8+HXgL2+nA87TXV/05Zrx9m5kcGUbBeVL0TfwNYH1gO
+HJKZF80wy6DWe84i4s+AN1AuBBxT3RstSZIkaQE1vQOon9Wmn9wx1TQiYhVKj74Av23r/Kklp3lv
+vtU7P9q0Y6qi3vnRHztFiohNgBdS1ufbEXHINPNGbXrDWprrMvPSHsr70IwjHk3pDfrRlKGJXpyZ
+X55ltjmv9wC9mlI7fC3w8A7bb9va9F7VNgf44kzB77GfWc66a8VK7x264yocutOqcyyyJtko1FSq
+udY890z3IUkT56xzruOsc65f6b0lS+a9n1T1qNHBbGZeGRF3UIbn2S0i1s7Mu2ebr/JsYC2qYX3a
+PmvV+G4QEYsWuHb2fyjjsK5CaeY6k/rn9eFuWs1023sRnk5QhsX5TPX6k5Qhh/pSNW/+JrAFZVu/
+KjM/3cWs9XtS+13vQWk1Y34cU9ulk2DloZm2ADr2Zv2+wxbxlM2b3kBCNjFdWKMQfC308iVJc3PQ
+AVtw0AFbrPTeT664nV33+eoClUjdGIez6FOr5zWBl/cw3zG16fYhVlrD/KwG7NxHmQZWo5uZD1CC
+yQB2joiZLkDsXj0vAy6bpkyzPTql7UtErAOcSxn7NYHXZ+ZJ3cybmdcBv65e7j5TWmC36vnmzLyh
+n7J2U6QuHtOllSRprHkxR9JCGYdg9gRKZ0EBvKUaR3VGEXEosG/18srMbL/k8hWmApFX91GmeudF
+izum6t451fM6wPOmSxARmwLPopT7vMz843A1mXlDZq4626OVHPhu7f2X9lPgiFgT+Cql+XcCb8/M
+9/aYzX9RvtfHR8TTOixnJ0rNbDK1nQYqM1/cxbZrdQqVwB7V+4v6HWN46d4He3KgvrjfSJL0UP4/
+jqfGB7NVTdxx1cu1gfMjYrtO6SPiYErTWSg1mC+cJs9rgLMpgdT+EXHsDPmtFRHrtb19S236cbOt
+Qxc+DtxVleddEbF+WxlWAU4EWgFpr0HjQFXD2JwDPJ0S3H0gM9/SR1YfoHQWBfChiKgP10P1+oPV
+y+WUCxujIGZPMr32INYD7+izibEkTa5J+w8YxHmJ5zYapEbfM9uSmR+uamT/EXgscFlEfAb4ImUo
+ldUotXcvAPasZlsGHJ6ZV3TI9mhgJ2AT4D0R8RxKEHw1JUDbvMrrEEpt6QW1eX9MqZ1dDLwtIpZX
+5VhRfX5zZtZrb2dbvzsj4vXASdVyL42IdwBXUDpVejWwR1WuMzLzgg5ZzZfPUu5JTuB84JRqWJ5O
+7q8uIKwkM6+JiPdSehLeAbgoIv6N0hHT4yj3/7Zqft+dmddOl3lEbATs0/b2xrXPj2j77MLM/N8Z
+yjtQHtQXnt/B8Czd++CJO9mTJonHT82HYf+XuB8311gEswCZ+ZqIuBp4B6VDqBdVj5WSVY+rgKMy
+8+IZ8rstInahNHXdFngmU4Fwe57t894TER8EXgc8hXLfaN0erBz8ziozT656yH0zsCVwyjTl+ArQ
+V7Pgmr5rFWv+ppbXXpSgeybXU9ZpOm8CHgW8BHgSJVBuaX2fH8/MN08zb8vjeeh90S0xzWdHAvMS
+zC7b+dnzsZiR0+ufhgGRZjMKnUBJ6p2/XQ2S+9LkaXwz47rMPJlSY3cM8DVKL7JLKWOW/pISCB0G
+bDdTIFvL73pKAHUkJVD8NXA/cB/wC+BTwP48tDdkMvMNlA6pLqSMYbucEnitaE/bw/odD+wCnFGt
+2zLgVkqwfFhmPjcz59KH+KA6Luqms6SuOpnK4uXAfpQLCzdT1vvm6vVzMvOoAZap7++HwWy7BeMf
+QO9GLcD2O5Qkj4XSsEXEGyPi0ohYEhG3RsTZEbF1W5otI+ILEXFbRNwVEZ+NiA3b0lwfEStqjwcj
+4jh6MDY1sy2ZuYRy/+iJA8ovgdOqR6/znsJDa1DnWp5LgEsGmWct74EMbjqofNry/Drw9T7n/S5T
+9xMPRXWh4fhhLkOSNFwGQb1xe6lpbOk1MLsCH6KMnrIIeCdwbkQ8ITOXRsRalMq2n1BapAbwduBL
+wI61fBL4Z+BjTLUO7XaYVWAMg1lJkiRpXHkRQQstM/etv46II4HbgKcC36O0JN0M2L41wkrVR82d
+EbFnZp5fm/2ezPxtv2UZq2bG0jjyT0vdcD+R5sck/9Z6WfdJ3k7SBFqPUst6R/V69ep1/fbHZZTb
++XZpm/cNEfG7iPhRRLw2InpqTWnNrKSJ5gmXJPXOY6ckgIgIynCa38vMq6q3LwHuBd4dEf9EqUB9
+V/W8SW32E4AfUYLgp1dpNgZe2+3yrZmVNK/G5QTIe266N1/feVO/k6aWW5Lm06D+S8blPGSEnAhs
+AxzaeiMzfwccBPwVcA9wJ7AOZfjSB2vpPpCZF2TmlVVHvscCx0TEat0u3JpZqeE8KMt94KEMECVp
+skzqf+G1123GKret3/f85//uRr59+00rvXfPgw90NW9EfBjYF9g1M2+pf5aZ5wFbRcQjgOWZuSQi
+bgGumyHLH1Di082Ba7opg8GsJEmSujbooMGxZqWFs+cjH8uej3zsSu9dc++d/N2V35pxviqQ3R/Y
+PTNv7JQuM++o0u8JPAr44gzZPplyX+1tXRWeIQWzVdXwFsAjgNUz84JhLEeSpIXmSbikSeLwNoqI
+E4HDgOcC90bERtVHd2XmH6o0RwI/B35LuR/2A8D7M/Oa6vOdKMP0fJsyHM/TgfcDp2XmXd2WZaDB
+bBVxH0sZT2iN6u1sX05EHA08CfhVZv7LIMsgjSP/ONSJgZQkSf3zf7Qvr6TEeN9pe//FwKnV9J9R
+xp9dH7geeFtmnlBLu4xyn+1bgMWU5sfvA/69l4IMJJiNiFWA/wBe0Xprlll+C7wMWBERn8rMGwZR
+DknqhX9gktQbj5saB1YSzE1mztqJcGa+EXjjDJ//GNh5rmUZVG/GHwCOogSxdwOfAb4wQ/pzgCVV
++r8eUBkkSRPOk5PBcDtKkppgzsFsRDwVeBWlqvl8YMvMfAFwWqd5MvMB4DxKMLv7XMsgqRm8oj+5
+/O4lSXP9L/C/RO0GUTN7VPV8K/A3rR6ruvCj6nmbAZRBkiRJ0gQyyJ1cgwhmd6PUyn4yM+/uYb7W
+gEaPGUAZJEkCbCIrjQoDjMFzm0orG0Qw2wpGf9bjfPdVz2sNoAzS2PMPTJI0rrwIpfnmedV4GEQw
+28pjRY/zrVM991KbK0kD4Z+YpDqPCZLUPIMIZm+rnjfrcb7tq+dfD6AMkiRJkqQJMohg9oeUXon3
+63aGiFgEPJ9yr+3FAyiDpAGwZkKSxovNdyWNs0EEs+dUz7tGxL5dzvM24NHV9FkDKIOkEWd3/PI7
+lCTNVft/yVz+W/xfar5BBLOfBX5BqZ39XEQc1ilhRDwqIj4CHEeplf1BZp43gDJI0sTxT1haGP72
+NOn8DWhUzDmYzcwVwEGUjpweBpweETcC/9RKExFnRsQlwM3AKyiB7++BF8x1+dIk8c9jNNhsT5Ik
+aeENomaWzLwS2AO4jhKobgr8BaX2FeBAYAdgUfX59cDumXndIJYvabSNWhA+auWRJHmhUFLvFg0q
+o8z8cURsC7wc+FvgSTw0WP5v4FPAf2Tm0kEtW9JoMmjUuHMflyRp4QwsmAWoAtQPAh+MiLWBPwHW
+A+4Bbs7M2we5PEmjaSFP8FvL9gq/JEnSeBtoMFuXmXcDVw0rf0mjZRRqqOplMKiVJEkabwO5Z1bS
+ZBuFQLaTpXsfPNLlmzR+F9Jk8TevlmHsC+5fMpiVGsYDd39aQa3bTxoftrzQJPH/a4rbQi0DbWYc
+EYuAHYFtgPWBNbqZLzP/ZZDlkCRJkiSNt4EEsxGxOmVc2VdRgtheGcxKmhOv0kqSJE2WOTczjojV
+gK8Bb6YEstHjQ5IkjRib8GohjON+58VWaXgGUTP7D8Azq+k/AJ8GLgR+AywbQP6SpDGydO+Dx/KE
+VZIkza9BBLMvrJ7vAHbJzKsHkKekGRgMrMyr3pLmwmOI1DvPRTQKBtGb8VZAAh8ykJXmlydgkiSN
+Lv+nh8dtKxhMMPuH6vm/B5CXJEmSJEmzGkQw+7/V87oDyEuSeuKVWUmSpMk0iGD2s5ReiZ89gLwk
+SV0wiNeguC9p1HgfpqRuDSKY/RjwS+D5EbHXAPKTtIA8sZ2ZJ1mD4X6mpnMf7p7bym0gDcucg9nM
+vBv4K+DXwBcj4rURsfacSyZpRpP4xziJ6zwIBuDD4f4oDc9cj1v+PqXJMIihecjM/4mIJwLnAf8G
+/GtE/AK4HVgx++xpja6knnmyIkmSNLkGEsxGxGOA04Cn1PLdpptZKcP6SJI0caw1l9SNYVy89YKw
+xsGcmxlHxCOA7wK7U4LTaH3UxUOSJEl6CC/2jA8DZw3LIDqAOhbYspq+EnghsDmwRmau0sVj1QGU
+QdKE8Y9RkjTK/J+Shm8QwewB1fPPgZ0y84zMvDEz7x9A3pJGnH/W6pf7jqTZWDs72jyOa6ENIpjd
+nHLf68mZed8A8pMkSZIkaUaDCGaXVM+/HkBekjQrrwRLkiRpEMHsf1fPjxlAXpIkSdIf2dRYUieD
+CGZPpfRMbFWJJEmSJGlezDmYzcxTgW8CO0fEm+deJElqPptCS83gb3V+zHU7j0PtrPuaNHiDqJkF
+eB5wFvDWiPhaROwXERsMKG9J+iNPBsaL3+doG4cAQpI0vhbNNYOIeLD+Eti7ehAR3WSRmTnnckiS
+NF8MwjUMM+1XXlgo28DfnqS6QQSR7RFrVxGsJKk/nsxJ48Pf83jye5XmxyCC2Qso48xK0lizZkSS
+JkcrIF3oY7+BsdTZnIPZzNxjAOWQJElSB0v3PrjvoGqcmufOx7qMy7aSJsGgOoCSJLXxhEgab/7G
+x8fSvQ/+40NScxjMSmOs36v4/plrPrm/SerFIJv9GsDOndtPC8lgVpIkSRPHIGx+uJ01TAazkiRJ
+migGWNJ46LoDqIg4pZrMzHzpNO/3a6X8JA3WOHX8IUmTbC6dQEnSOOqlN+MjmRqC56Ud3u+Xwawk
+qRG8OCT1Z5DB+Fwu1C7kb9gLEtJg9drMOGZ4v9+HJGnCGSBKmg/zcazxeCbNn15qZrfo8X1JhsOG
+NAAAIABJREFUC8grv6qzubmawn1VktStroPZzLyhl/cljT9POEefFzUkqfA/Sxo/c+7NOCJ2qx6P
+6HG+9VrzzrUMkiRJk8CAbMokXKzz+5ZmNoiheb4DfBvYpcf5dqzmPX8AZZAkSQ3XCk7mK0gxUJgc
+ftfSeBqFcWbtBEqSRtwk1IBI0nQMhKXRtZDBbCuIneuwPpI0MRbypGrYAa0njJKGwWOLNL4WMphd
+r3q+bwHLII0la9Gk4fCkeP54HOvM/XDKbPuJ22p+uJ0nS0S8MSIujYglEXFrRJwdEVu3pdkyIr4Q
+EbdFxF0R8dmI2LAtzfoR8enq8zsj4uMR8bBeyrKQwezzqucbF7AM0kTwpHDu3IaaVPO17/sbk6TG
+2BX4EKUPpGcBqwHnRsSaABGxFnAusALYA3g6sBj4Uls+ZwBPAPYC9gN2Az7aS0F6GWeWiNgf2L/D
+x/8QEQfMlgXwMOBJwOMoTYwv6KUMkiRJBr+azajWFi7d+2D3XzVaZu5bfx0RRwK3AU8FvkfpGHgz
+YPvMvLdKcwRwZ0TsmZnnR8QTgL8EnpqZP67SHAN8JSJem5m/6aYsPQWzlCD0SB56n2sAz+wxrwDu
+Bd7f43ySJGkCrHnumSMbkKg/wwjkRmk/GZVyjAq3x8RYjxIf3lG9Xr16fX8tzTJKTe0ulNFsdgLu
+bAWylfOq+XYE/qubBffbzDhqj+nem+2xBPgC8PTM/GWfZZAkzTNrEyRJUktEBPAB4HuZeVX19iWU
+Sst3R8Sa1X2w76XEnptUaTam1Ob+UWY+SAmIN+52+b3WzH4A+GS9/MD/UiLoo4BvzjL/CuCezLyz
+x+VK6pLBhprM5neTye+8d/5WJA3C+b+7kW/fftNK793z4AO9ZHEisA3wjNYbmfm7iDgI+AjwD8CD
+wGeAH1fTMwl6GO2mp2A2M+8C7lppaRGthd6WmTf0kt8wRMQ6wAspNxFvA2wIPADcCvwQ+CLw+cxc
+sWCFnIOI2Bk4mnLj9UbA74GfAp/MzM/OMu9Tgd2BHSjb5lHAIyhNAH5NuYryycz8zgDK+QTKd7A7
+sC3lCssKyvfwA+DUzPxaD/nNZb1XBZ4IPI2y7k+jrP+qVZLNM7Pvjsgi4mjgw7W3jszMU/vNT5I0
+ZZSakErSqPnp7Rvw23s2nD1hB2uwMc9Z72krvffrZbdxxd2zXyyLiA8D+wK7ZuYt9c8y8zxgq4h4
+BLA8M5dExC3AdVWS31DitHp+qwLrU+KFrvRaMzudLarn22ZMNQ8i4mXAO4ENWDmiXwNYG9gKOBy4
+KiKOysyLhlSOI4BPVGXYYi6BUlu+bwX+mVJF31q/DYG9gb0j4gXAgZl5//Q5cAKlN7H2qx2rUbbN
+1sDfRsRZwItmyGe2cn4KeFH1sn1ZmwGbA4dExNeBw6qLJDPl91bmtt5vAt5ae50dpnsWEZsA/zrX
+fEaRV/0lSU0xjhc9xm19NF6qQHZ/YPeZYp3MvKNKvyelIu2L1UffB9aLiCfX7pvdi1JJ+oNuyzHn
+oXky84bqsXSuec1FRLwHOJlS07gcOB04mHID8a7Ay4BvUYKObYDzIuLAhSlt7yLiKOD/Ur7gXwIv
+odQwHkC5iTopV0ZOmSGbpcB3KAH/31KCwacC+wCvZ6rJ+PNZuTl5rx5d5XM75Ts5nBJEP43SHP3q
+6vN9mNqhpzWg9W41V0jKNrgEuLavNXuo/wDWoVzMiVnSSmNh2Bc5PIGTJGl0RcSJwAso5/j3RsRG
+1WONWpojI2LHarzZFwJnAu/PzGsAMvNq4BvAxyJih4h4BmW4n89025MxLOw4swMTEX8PHEsJVm6i
+dPF8RGb+Z2ZelpkXZ+YnMvPZlI2+jDLW0ekRsd3Clbw7EbEe8C7K+t0I7JiZn8rMyzPzS8CzgS9T
+gqnDImK3Dln9ZWbumZn/nJmfzsxvZeZPMvObmfle4M8pV0KCUnO6bZ9Fvgl4BfDozPy7zPxcZv6g
+Ku/HgacArVrxXaodfJjrfTHwSkrgvnZmPqO2/L5VQ1UdQAlk/22u+UmaMooB7SiWaRx0c3HEViKS
+NFJeSanM+Q7lVsXWo/5H+WfAOcBVlBaWb8vM49ryOZxSyXUe5Zz+AkrFV9caH8xGxGOB91ACnnuB
+vTLzik7pM/NzwEurl6sDpw29kHP3CmDdavq49g60MjMp95O2bqh+3XSZzHafcGYuozRFbtm1n8Jm
+5ksy8/9l5rR3j2fmH4C/q731/A5ZDWq9v5mZH6sC94HcKx0RD6fcJ5uUCyl2aqaxZSAhjaZeLrD4
+O5Y0KJm5SmauOs3j1FqaN2bmJpm5RmY+PjNPmCaf32fmCzNz3cxcPzNfnpn39VKWxgezwKsp98QC
+HJ+ZszYfzcwzgK9RavS2jYj9OqWN4tCI+HxE3BAR91WPX0TE6RFxYHWzMhGxe0SsoNwvS5X/9RGx
+ou3RqQaxk/2r5yXA2R3W6WbKVY0A9qq6wO7H3bXpNTqmmqPM/G/gd9XLx3VINp/r3at3AY8Bvp2Z
+n56nZc5qppMVT2TUNNaESuqF/3PS5BmHYLbV0dBS4GM9zFe/OvDi6RJExObAj4AzgOcBm1KaJy8G
+/pRSNX4Wta6ombo3s/1169FTzWBErEbpgTeB72fm8hmSf7d6Xgz8RS/LqTmsNn11n3l0a/Xq+SFd
+dC/AenctInakNK9Yxso1zJIGzIBWLQYqWkjdHIsm/Xg16euvhdHoYDYi/pzS4VMCF2bmkh5mPw+4
+j1Kjt8s0eW9Iua9y+yr/84AjKB1KPQ04BDiJ0slRy6WUIWDeXL1OSidLT6w9tqMMEdStrZnqdXq2
+4LL++RO6ybyqed4wIp4ZEWdTbuYG+DnlpuyhiIgnUdrat5bVbqjr3a+IWES5aBLAu1s3sU8i/7Q6
+m4RtY2ChQVjI/WgUfqejUAYtDL97aTAaHcxSAs2WH/UyY3Xv5M+ql4+KiI3bkpwEbEIJSI/LzL0z
+8/SqQ6nLM/PzmXk0ZaiZn1Z5Ls3Mq4Cba/lck5lXtT166fl509r0r2ZJWx/x+E9mShgR11dNoh+k
+jPP0LUqz3qT0GnzgkMfifVNt+nPTfD6U9R6A4yjj5l5LGZJHmjeTevIzqestdaOJv48mllnSaGp6
+MPvI2nTXXTjX1Afk3aA1ERFbMxXYnZOZ7+uUQWbeN9s4qXO0dm36nlnS3lubfvgsadubPyfwAKW3
+sSdn5i96LGfXqiGRDqyWeVlmnjNNsmGtd98i4k8p2yeBv686zJI0Dzz5ldQNW41Ik6XpwWwvAc90
+6vOsU5vej6kxQ/+9j3wHqd4J0/2zpK0HV2vOkvbZlGbP2wN7UppG3wa8BThxWB0pRcTjmRoTdilT
+9zy3G9Z6z8VJlPtyz8zMbw5xORojBmHS4BioSJLqmh7M1nve7adGrj5P/X7bJ1fPDwCX9JHvIP2h
+Nr16x1TF4tr0jE2ZM/OXVZPnKzPzu5n5r5Tmsz+lBJjfG3RAGxGPBr5KuQixAnhxZv5Ph+RDWe9+
+RcSRlKB/CaUH7ZHjSd7wjMu2bfp6eGFgeBZi2zZ9f2xxv5SkhdP0YPZ3ten2e167sVFtut6RU6v5
+8h2z9KI7H3oJ2OvBZ8811VVz6SOql9sBb+w1j04iYn3gXGBzSjPdV2XmWTPMMm/rPZuIeCRTYxn/
+c2b206RdGjsLEYwsVOBgwCJpPo3DMWcc1kGjb9HsSUbaz2rTT+6YahoRsQolYAP4bYcAJad5b77V
+Oz/atGOqot750U0dU80gM6+OiGuArYDnU+4RnZOIeDilZ+RtmAoIT5pltnld71m8jHJP9Z3AnRFx
+yDRpdqxPR0Sr6fO3MvN306QH4A1vuYx11lm54vmgAzbnoAO2mGORpeHzRGV8jEstqWa25rln+ruV
+OjjrnOs465zrV3pvyZLZ7nTTQmt0MJuZV0bEHZTheXaLiLUz8+7Z5qs8G1iLalifts9awccGEbFo
+gWtn/4fS4/AqwONnSVv/fLrhbrr1W0owu9kc8gAgItYAvkwZ/zUpw9m8s4tZF2K9O2k1Y14fOH2W
+tEEZe7Y1/uwewAWdEr/r+L/gSU/coNPHGgMGCZI0fwzWu+N2eqiDDtjiIZUJP7nidnbd56sLVCJ1
+o+nNjAFOrZ7XBF7ew3zH1KY/0fZZa5if1YCd+yjTwGp0M/MByvi1AexcjXPaye7V8zLgsjks9jHV
+85ya7FZl/QKwG2WbfCQzu2q6vEDrPWORuni0px3m0EYLziBNmht/Q9JgGaBJk2ccgtkTKJ0FBfCW
+iNhythki4lBg3+rllZnZfsnlK0wFJ/109lPvvGhxx1Tdaw1dsw7wvOkSRMSmwLMo5T4vM++dLt1s
+ImIHSo1sAlf0k0eVzyrAZ4B9qrxOzcxX9ZjNvK33TDLz+MxcdaYH8JJWckrHVqtm5qLM7FgruxA8
+eZ4fbmeNm3Hcp8dxnaSF5gUFzbfGB7OZeQNwXPVybeD8iNiuU/qIOBj4ZPVyGfDCafK8BjibEiDv
+HxHHzpDfWhGxXtvbt9SmHzfbOnTh48BdVXneVXWmVC/DKsCJwKrVW++dppw7RMSM9xVHxGOY2jYA
+n5pjmVtjyX6eqWCv1zzmtN6Sxo8nS1L/xjWI97ggTaZG3zPbkpkfrmpk/xF4LHBZRHwG+CJwA6W5
+8OOBF1CGV4ESyB6emZ1qH48GdgI2Ad4TEc+hBHpXUwK0zau8DqHUGtZr4H5MqZ1dDLwtIpZX5Wg1
+O705M+u1t7Ot350R8XrKOKebA5dGxDsoNaePptQe71GV64wOtYHbAJ+IiIuBLwE/odwbC6VZ8Z7A
+kcC6VT7fzMy+gtmIeF+VVwJXAu8EtomIjvNk5n9P894g1ptqiKHnt739p7XpgyKi3knTTzLzp53X
+UNKknTjacc7oWbr3wWMbmE2CQX5/4/jb9JgjdWcsglmAzHxNRFwNvIPSIdSLqsdKyarHVcBRmXnx
+DPndFhG7AP9FGX/1mUwFwu15ts97T0R8EHgd8BTKkDR1ezBDp0AdynNyRGwCvBnYEjhlmnJ8BXjp
+TNlQ7gF++gyfJ+Ue4l6bBNe1mgQH8ESm7kGeybStBAa03o/kofdFtwRl2J26t1LG220UT+wkSdIo
+MBDXfGl8M+O6zDyZ0qz3GOBrwI3AUsqYpb8EPgscBmw3UyBby+964EmUWsavAL8G7gfuA35BaYa7
+Pw/tDZnMfAOlQ6oLKWPYLmeOnQJl5vHALsAZ1botA26lBMuHZeZzM7NTH+KfBQ4APliV6VpKB0/L
+gNuAiynNdLfPzJf1UnPcqbg9PGbcJnNc737K06+5zi9Jc+ZFLc1mnPYRgyZpso1NzWxLZi6h3Ed5
+4oDyS+C06tHrvKfw0JrEuZbnEuCSPuZbRmle/KVBlqfDsgY+SGq/613NewNT99UORdUkey73GEsD
+N8gmfON08quV+d022yR/fwayksaqZlbS4EzyCZJm5gmkNHf+jiRp7gxmJWkGBvWSZtPEwLTpx7Ym
+bvP55PbRpDCYlSRJE6npAZ0kTTqDWUl980RQkiTVWSus+WQwK0mSpHnXb9BjsCSpxWBWktQ1TyKl
+8WHrGklNZzArSWocg+rBMJiRJDWZwawkSWoEL2JIkuoMZiVJksZcpwsB1s5rVLlvqhsGs5Kkrlgr
+JmmSeQyURo/BrCRJY2ZSajQGEVw0eVs1uez9MqCcDK19exL3cfXGYFaShmSc/oQ9gZQkNck4/Qer
+M4NZSerAP0JJ3erlgs+oXRxayGPdqG0LjZ5+9k//vyeHwaw0YQZ9gPcPQ5IkSQvBYFaShsAgX6PO
+fVQab5Na6+2xbbIYzEqSJE04AwCNMvdPdWIwK42RQV2F9U9DkjRqJrWmcdLM5RzE85fJYzArSWok
+T2wlaXIYqGo6BrOSJGmieZKsSTKuFwL9HU8mg1lJkiQtmHENrjR4vQasBrjjz2BWkiSpYXo5STdY
+1LgzaJ1cBrOSJI0hT+4kjSOPbaozmJU0Z/6xSM3ib1bTGeX9wtpldTLK+62Gz2BWkiTNaqFPGJsQ
+zHRTxiash7RQvCdWvTKYlaRp+AcpPdSa55650mMUGBx2z22lcTEqxx8tvEULXQBJktRM7SeUBkuS
+5osBrcCaWUmSJE+MJamBDGYlSZK0oKzVHw63q8adwaykgbBWY7RMyvfhiZo0/vydS+rEYFaSpAky
+KRc6JDXLsI5NHvPGm8GsJElSgwzz5NwTf0lNYjAraSWeyEjql8cPSdJ8MpiVJpAnnJIkSWo6g1lJ
+amOwr3HhvixJGmcGs9KYWcheHz1xltRkgziG2fPuYLk9Jc3EYFaSJogXHKSFY2A2M7fP5PK/Sf0y
+mJUkSZIkNY7BrCRJE8LaD0nSODGYlUaQJ5ySmmohjl82Tx0s/4MkzSQi3hgRl0bEkoi4NSLOjoit
+29JsFBGnRcQtEXFPRFweEc9rS3N9RKyoPR6MiON6KYvBrDSiPJlYGG735jGQGX9+x5Lmwv/2gdsV
++BCwI/AsYDXg3IhYs5bmNGAr4K+AbYEvAGdGxPa1NAn8M7ARsDGwSZVv1wxmpRHT9ANu08svafg8
+TqipmnhhpYll1mjLzH0z87TM/HlmXgEcCTwWeGot2c7AhzLz8sy8PjPfAfy+LQ3APZn528y8rXos
+7aUsBrOSJEkN0euFgCYHMk0uuzRh1qPUst5Re+8i4JCIWD+KQ4HFwHfa5n1DRPwuIn4UEa+NiFV7
+WbDBrDRCrK2QpIXlcXhhNTmAdd/pj9ut2SIigA8A38vMq2ofHQKsDtwOLAM+AvxNZv5vLc0JwKHA
+HsBJwD8B/9bL8hf1XXJJkiRJjdHkiwUaWScC2wDPaHv/7cC6wJ6UgPYA4KyI2CUz/xsgMz9QS39l
+RDwAnBQRb8zMB7pZuMGsNCK8MilpGNY890xPYCVpTP30zuS6VVf0Pf8ty6/hluXXrPTe8lzW1bwR
+8WFgX2DXzLyl9v6WwN8D22Tm1dXbV0TEbtX7R3fI8geU+HRz4JoOaVZiMCuNAANZScM2n8eZSQ+g
+l+59sMd1SY2wyaKt2GTRViu9t+TB3/L9P5w143xVILs/sHtm3tj28VqUe2iz7f0Hmfk21ycDK4Db
+Zi954T2zkgauqSdxTS23JA1aP8dDj6HSZIiIE4EXAIcD91Zjym4UEWtUSa4GrgU+GhE7RMSWEXEs
+ZRifs6s8doqIf4yI7SJii4h4AfB+4LTMvKvbslgzKy2wUfrzH6WySNI4meSa6n64vaSR9kpKret3
+2t5/MXBqZi6PiOcA7wK+CDwc+CXwt5n5jSrtMkrnT2+h9HJ8HfA+4N97KYjBrCRJkgZi0puYqzde
+RG+mzJy1dW9mXgscNMPnP6aMRTsnNjOWFtDi739zoYsgaQJ4wihJGkcGs5KkxrMmSINk8L+w/D1r
+GPxdjyeDWWlCeVCXNE4mIQAa5eP2KJdN0vgymJXG0Cic1DXtxKZp5ZUkqVujcF4gDYPBrCQ1gCci
+ahovEDWf36GkUWcwK0mSJGleebFEg2AwK0nSPPMkrnu2SpAkdWIwK0mSNGCTFIQ39eJMU8staYrB
+rCSNGU/QpLnzdyRJo89gVtLQeDIoSZNVSytJ88lgVtLEM+iWJElqHoNZSZI0FF4okjRKPCaNH4NZ
+SdJYsCmnBm2UTnwHVZZefyezLXeUtpGkyWMwK0mSNIa8wNOZQfjCcvtrUAxmJQH+sUiSJKlZDGYl
+DZVBsiRJkobBYFYaYQaCktS9YTSr9TjcO7fZaLLZucaRwaykieZJlyT1x+OnpIVmMCtJkoZmkgMe
+a8IkabgMZiVJkiRJjWMwK0mSNINJrl0G11/S6DKYlcZUN83b5usExRMhSZPKpsbSaPGcZLyMXTAb
+EetExNER8ZWIuC4i7o2I30fELyLi9Ig4OCIau94RsXNEnBYR10fE0oi4JSK+HhGHdjHvOhFxeESc
+EhE/qbbL/RFxW0ScHxGviYh1B1TOp0bEmyPiGxFxU0T8ISLurr6HUyLiGT3m95yI+EItr5uq1/t0
+Me/qEbFjRLwqIk6NiKsj4sGIWBERD/a/ln/M/91VXq3HbnPNU5JkIKjhM7CRmm3RQhdgkCLiZcA7
+gQ2ArH20BrA2sBVwOHBVRByVmRcNqRxHAJ+oyrBFZt44oHzfCvwz5SJEa/02BPYG9o6IFwAHZub9
+08y7D3AOsHr1Vn37bADsDuwBvDYiDs/M78yhnBcAu0yznNWAP6V8D0dGxGnAyzLzgRnyCuBjwEva
+8ns0cABwQER8LDOPmqFIHwWOqL3OTgl7FRHbA/9nkHlq/ngSM36W7n2w36vGziju06NYpm7Ntewe
+Z6TR0dgaynYR8R7gZOARwHLgdOBgYEdgV+BlwLcoQcc2wHkRceDClLZ3EXEU8H+BAH5JCe6eRgno
+zqes177AKR2y2IASyD4IfB14NbAn8BTgucDnqjw2Br4UEdvNobibVHndDJwAPL8q687Aa4BfVZ+/
+iBL0z+RfKeuawOXAYVVehwE/qt5/WUS8fZZ8snosAb4L/KbXlWpXC7RXBW6jfDeSpDFk8CJJo2cs
+amYj4u+BYynByk3AX2fmFW3JLgY+ERGHAJ8EFgOnR8Q1mfmz+SxvryJiPeBdlPW7EdgxM++sPr48
+Ir5MqXX9a+CwiDg5My9oy+YB4CTgHZl5c9tnPwW+EhEXAR8C1gLeDzyrzyL/HHgD8IXMbK+xvLSq
+kb0Y2Loq70mZ+b32TCJiK6a+1x8Cu2fmsurjyyPiS5TA9C+A10XEJzLz2mnK81Xg28APM/PnVd7f
+pgTdc/GP1bJ/DpwN/NMc85MkSZLUpcbXzEbEY4H3UAKee4G9pglk/ygzPwe8tHq5OnDa0As5d68A
+WveyHlcLZAGoAsajKbWuAK9rzyAzz8zMo6cJZOtp/gO4jFLDuHtEPKKfwmbmczPzP6cJZFuf30EJ
+Ulue3yGrVzN1weWYWiDbymcpcEz1chGlue90yzsrM09tBbKDEBGbAv9C2e/+jnKxQJI0DWs1JUnD
+0PhglhLwrFFNH9+hZm4lmXkG8DVK0LZtROzXKW0Uh0bE5yPihoi4r3q0OpQ6MCJWrdLuHhErmGo6
+G8D1bZ0D9dNB0P7V8xJKDeB063QzcF61zL0i4mE9LqPlO9XzKsAWfebRy3IAHtchzXMpweLVmfnD
+6RJk5g+AX1DWe//p0gzJR4CHAZ+cphZckiSpUdY890wvPKlxxiGYfVH1vJRy/2K3TqhNv3i6BBGx
+OeW+zDOA5wGbUponL6Z0ZHQ4cBZQ75m3dW9m++vWY0UPZSQiVgN2qOb9fmYunyH5d6vnxZTmr/1Y
+XJuec0+/M1i9Nv2Q5UTEFpROnmBqvTppff6YiNhsAGWbUUQcDOwH3AEcN+zljQv/ICU13SQfx+rr
+PsnbYVz5naqpGn3PbET8OaXDpwQuzMwlPcx+HnAf5f7QXdo/jIgNgYuY6szoW8CpwNXV6y0oHSgd
+VJvtUuCJlE6Z3l6l2xu4pS3763oo59aU7ymrZc+k/vkTmD0InM7u1fMDlI6mhmWP2vR0zX+3qU33
+ut439FmmWVVDF51A+T6Oy8zbh7Ws+eSfmCRJmg+ec2iQml4zu31t+ke9zJiZK4BWx0+PioiN25Kc
+xFQge1xm7p2Zp2fmZZl5eWZ+PjOPBjajdKBEZi7NzKsovfi2XJOZV7U9lvZQ1E1r07+aJe1Ntek/
+6WEZAFTNrbejrPPXM/OeXvPocjkBvL721nRHtXlb7x69B9gIuCgzZ+uJWSPMP9PJ5vil48vvVuqN
+/4dqskbXzAKPrE33M9TKrbXpDVp5RMTWlPsvEzgnM9/XKYPMvK+P5fZi7dr0bMHlvbXph/eykIhY
+H/hw9fJByjBAw/IayvA6CfxnZv54mjTzst69iIhdKJ2HPQC8cljLkTQ8BjqSJI2PptfM9hLwTKc+
+zzq16f2YGjP03/vId5DWqE3fP0vaem+/a3a7gIhYhXJf8GaUAPNtwxquKCJ2B95ZvbyV0gvzdIa+
+3r2o7l0+uXr5/qoGXlKDGMhqEKzF0jiZbn+ehH18EtZxUjQ9mL27Nt1PjVx9nvr9tk+unh8ALukj
+30H6Q2169Y6pinrnTb00Zf4I8JeUQPZLlPt9B666x/kLlBYBS4GDMvN3HZLPx3r34k3A4yn34/7L
+kJYhaUgMZBeeJ4/jodvvcVS/71Etl6T+ND2YrQdC7fe8dmOj2nS9I59W8+U7Zuk9eD70ErDXh+Pp
+qqY6It4JvJwSyF4AHNJpfNi5qHon/gawPrC8Ws5FM8wy1PXuRUT8GfAGyjY6psd7nkeef+wadway
+arJ+j9HD2O/9vxgvfp8aB02/Z7beFPbJHVNNo2pau1318reZOd09twMP6vpQ7/xo046pinrnRzd1
+TFWJiNdTOmJK4HLgrzNz2cxz9S4iHk3pPfrRlKGJXpyZX55ltqGtdx9eTakdvhZ4eEQcMk2abWvT
+e0XEJtX0F2cKfo/9zHLWXStWeu/QHVfh0J1WnWORJUmS1K2zzrmOs865fqX3liyZ7U43LbRGB7OZ
+eWVE3EEZnme3iFg7M++ebb7KsynD8iRwYdtnrRrfDSJi0QLXzv4PpUOmVSjNXGdS/3y64W7+KCKO
+pty7msBVwD7D6L04IjYAvkkZyiiBV2Xmp7uYtX5P6sDWu0+tZsyPAz4zS9oA3lxNt4ZwurFT4vcd
+toinbN70BhLSZFjz3DMnupZ36d4HW5OjxmvSfjzsY06TtsV8OOiALTjogC1Weu8nV9zOrvt8dYFK
+pG6Mw1n0qdXzmpTmst06pjbdPsRKa5if1YCd+yjTwGp0M/MByvi1AewcETNdgGiNEbsMuKxTooh4
+EfChqpzXAs/OzDsGU+KVlrMOcC5l7NcEXp+ZJ3Uzb2ZeB/y6ern7TGmB3arnmzNzWGPMZheP6dLO
+mX80ksZN0y8KzOdxuenbSpKGaRyC2RMonQUF8JaI2HK2GSLiUGDf6uWVmdl+yeUrTAWchQSlAAAg
+AElEQVQir+6jTPXOixZ3TNW9c6rndYDnTZcgIjYFnkUp93mZeW+HdM8DTqle3gTs1aGJ9ZxExJrA
+VynNvxN4e2a+t8ds/ovyvT4+Ip7WYTk7UWpmk6ntNFCZ+eLMXHWmB1OdQiWwR/X+oszsWCsraXIZ
+oMzObaSmcZ+V5l/jg9mqJu646uXawPkRsV2n9BFxMPDJ6uUy4IXT5HkNcDYlkNo/Io6dIb+1ImK9
+trdvqU0/brZ16MLHgbuq8ryrGhO2XoZVgBOB1o2W0waNEbE3ZQieVSjD4jwrMwd+j2k1jM05wNMp
+wd0HMvMtfWT1AUpnUQAfioj6cD1Urz9YvVxOubAxCmL2JJLUHU+Qpcll6yxpZo2+Z7YlMz9c1cj+
+I/BY4LKI+AzwRcpQKqtRau9eAOxZzbYMODwzr+iQ7dHATsAmwHsi4jmUIPhqSoC2eZXXIZTa0gtq
+8/6YUju7GHhbRCyvyrGi+vzmzKzX3s62fndWnTWdVC330oh4B3AFpVOlVwN7VOU6IzMvaM8jInak
+DIuzGmXIodcAi6vhcjr5VWbe1W05az5LuSc5gfOBU2ZZzv3VBYSVZOY1EfFeSk/COwAXRcS/UZpG
+P47SeVWr5vfdmXntdJlHxEbAPm1vb1z7/Ii2zy7MzP+dobyN4f0wUrONSiA7KuXQYPjfMHduQ2k0
+jEUwC5CZr4mIq4F3UDqEelH1WCkZUx0eHZWZF8+Q320RsQulqeu2wDOZCoTb82yf956I+CDwOuAp
+lPtG6/Zg5eB3Vpl5ctVD7puBLZlqKlwvx1eAl3bIYh9Kh1dQeuY9o4vFHsnUPcm9+JvqOYC9KEH3
+TK6nrNN03gQ8CngJ8CRKoNzS+j4/nplvnmbelsfz0PuiW2Kaz44ExiKYldSZJ6OSJp3HQTVd45sZ
+12XmyZQau2OAr1F6kV1KGbP0l5RA6DBgu5kC2Vp+11MCqCMpgeKvgfuB+4BfAJ8C9uehvSGTmW+g
+dEh1IWUM2+WUwGtFe9oe1u94YBdKIHojpXb5VkqwfFhmPjczZ+pDvJtOjFqPvsvZ43Jm7Cgpi5cD
++1EuLNxMWe+bq9fPycyjBlimQay3JM1ZvTbUmlFpcs13sDnM442BswZtbGpmWzJzCeX+0RMHlF8C
+p1WPXuc9hYfWoM61PJcAl/Qx3/HA8YMsywzLGvggqZn5deDrfc77XabuJx6K+dy+kqRmmPThnEaV
+tZHS+BirmllJkjQ8cwnM2ucd9yDPYKkZxn0/lMadwawkSSNmuhNsT7olSVqZwawkSRor8xH4z1Tz
+aq3s5GnyxaYml10ymJU0L/yznD9u62bo9D2N2vc3auUZdQay6ob7iTQYBrNSA/inJwkMLEfdqByr
+3U8kTQqDWUmaIJ7kjja/n+YalUBW88ffq7TwDGYlSdKCGJdgwEC2eZq27w17H2va9pBaDGYlSROr
+iSdwTSzzODOQlaSFYzArSRobTQ4sDFKbp8n7mzTJPN6OD4NZSZKkCePJvOabF380DAazkiQtsFEN
+LEa1XNIoGaffyTitiyaDwawkSQuk3xNHTzibw9qo0eXvaGVuDzWRwawkSQto0k8gJ339JalpIuKN
+EXFpRCyJiFsj4uyI2LotzUYRcVpE3BIR90TE5RHxvLY060fEpyPiroi4MyI+HhEP66UsBrOSJGmk
+GOBK0kjbFfgQsCPwLGA14NyIWLOW5jRgK+CvgG2BLwBnRsT2tTRnAE8A9gL2A3YDPtpLQQxmpYbo
+t6maJ4XSePK3LS08f4eaRJm5b2aelpk/z8wrgCOBxwJPrSXbGfhQZl6emddn5juA37fSRMQTgL8E
+XpqZl2XmxcAxwKERsXG3ZTGYlSRJkiT1az0ggTtq710EHFI1JY6IOBRYDHyn+nwn4M7M/HFtnvOq
+fHbsdsGL5lJqSZIkSdJkiogAPgB8LzOvqn10CPA54HZgOXAv8DeZ+b/V5xsDt9XzyswHI+KO6rOu
+WDMrSWPIpm9TZmui3+RtNcyyN3m7TDK/t/Flz9gahluWX8OP/vDVlR5X3/+9XrI4EdgGOLTt/bcD
+6wJ7UpoWvx84KyL+fJb8glI72xVrZiVJkkbY0r0PNpCRNK2frvghq7Lm7Ak7CWC1led/cAVwfxez
+RnwY2BfYNTNvqb2/JfD3wDaZeXX19hURsVv1/tHAb4AN2/JbFVgfuLXb4lszK0lSlwwohmMYtYnW
+UEqjw2Pn+KkC2f2BZ2bmjW0fr0WpXW2vYX2Qqfjz+8B6EfHk2ud7UcLrH3RbDoNZSZoQntyPJ79X
+SdJ8iogTgRcAhwP3VmPKbhQRa1RJrgauBT4aETtExJYRcSxlGJ+zAaoa228AH6vSPIMy3M9nMvM3
+3ZbFYFaSJHXN4FmSJt4rgXUoPRP/uvY4GCAzlwPPAX4LfBH4KfBC4G8z8xu1fA6nBL7nAV8GLgCO
+6qUg3jMrSZI0gbwXV1I/MnPWCtHMvBY4aJY0v6cEuX2zZlaSpIYbdG2pta+SpCYwmJUkSZIkNY7B
+rNQgNgeTOvP30WzjXBvsvilJw2EwK2noxvkkVZIkSQvDYFaSJEmS1DgGs5KkiTcOrQfGYR0kSeqF
+wawkSdKI82KFwPuvpXYGs9IE8CRIUrc8XkgaJANwDZPBrCSNKYMSNc3SvQ92v50Dt52kSWMwK6kx
+vLorzcxgRpI0SQxmJUmSGsCLFZK0MoNZSZIkSVLjGMxKDWNTW0nSoFjbK6nJDGYlaQJ4wiqNB3/L
+kjTFYFZSo1gzLc1sLsHOuAVK47Y+kqSVGcxKkkbGQl6sMPCRJKlZDGYlSZIkSY1jMCtJkobKWu/B
+tjpwe042b7eRphjMSmoE/7yl7g072DGYktQN/7s1bAazkqTG84RJkqTJYzArSRoJBqQLy9rWZvH7
+kiSDWUmSpMYzuJU0iQxmpQayBkvd8gR3cvndS5LGncGsNCE8sZUGw4tJkiSNBoNZSY1jMCFJXqSU
+JINZSZIqBgeaRMPa773wKGnYDGYljTxPiCRJktTOYFaSpDHVbY2bNdKSpCYymJWkMWegopm4fzSb
+3580PIu//82FLoJmYTArSdKEamIgtOa5Z3rrgRptEPtvE34DTSijms9gVpKkCdTEQFaSpDqDWUmS
+xtikB62TsP6TsI6SNB2DWUmSJozBz8Kw2aUkDZbBrNRQTTkp8qRZGi3+JiVJ48JgVlIjNSWY12hw
+fykMZCVJ48RgVtJIMwgZHaP6XYxquUaNgawkadwYzEpSHwwMBmuUAtJx/G7HZZ1GaT+RJC08g1lJ
+6tG4BAb9MJjQqHBflDRMHmOawWBWkiRpwk3yRTpJzWUwK00QT1amDGJbTNL2rF+h9mq1YLL2f0m9
+8X9C88VgVpI0UsblJGhc1kPSaPIYIxnMSo3mH5kkSZImlcGsJPWgvWnlpDa19ELKzNw+kiQNn8Gs
+JEkaeV4gkFTX78XkSb0IPa4MZiWNrNlOXj25XVhuf0lSy5rnnvnHhzRfFi10ASRJGieeyM2fNc89
+01oWaZ55jNMosWZWkuZokk+mx/WkZpK/Uw3XuP5mpPk07GO0v9PmMJiVpC4Z4Gg2ngBJ0vzxf1lj
+F8xGxDoRcXREfCUirouIeyPi9xHxi4g4PSIOjojGrndE7BwRp0XE9RGxNCJuiYivR8ShXcy7akQ8
+KSJeEREfi4ifRsQDEbGiejx2gOV8akS8OSK+ERE3RcQfIuLu6ns4JSKe0WN+z4mIL9Tyuql6vU8X
+864eETtGxKsi4tSIuDoiHqzW+cH+1/KP+b+7tg1XRMRuc82zF548S5IkaRI1NqibTkS8DLgW+DCw
+D/BYYA1gbeBPgcOBzwI/6zWY6rEcR7QCpQEHiG8FLgReAPwJsDqwIbA3cEZEfCkiVp8hizcBPwJO
+Al4KbMvUPpADLOcFwA+B44FnAY8GVgPWonwPRwIXRsSnImK1WfKKiPg48BXggFpej65efzUiPjpL
+kT4KfB/4IPBCYKv+1mza8m0P/B/K9ms9NIEm+erwJF5QmcR1brJJ/n1K0jgbm2A2It4DnAw8AlgO
+nA4cDOwI7Aq8DPgWJdjYBjgvIg5cmNL2LiKOAv4vEMAvgZcAT6MEdOdT1mtf4JSZsmEq4FoKXEIJ
+/gdtk2oZNwMnAM+vyroz8BrgV9XnLwI+MUte/0pZ1wQuBw6r8jqMEpgn8LKIePss+bTWewnwXeA3
+va5Uu4gI4GPAqsBtlO0raUIZ4A6P21aSNJ2xCGYj4u+BYynByk3AUzPziMz8z8y8LDMvzsxPZOaz
+KbWzy4DFwOkRsd3Clbw7EbEe8C7K+t0I7JiZn8rMyzPzS8CzgS9TgqnDZmjmejHwSuCpwNqZ+Qzg
+oiEU+eeUCwmPzczXZObZVVkvzcwTgCcB11RpD4uIXabLJCK2Yup7/SGwS2aeWeV1JuUixeWU9X5d
+RDyuQ3m+CrwY2DYz18vMPYH/GcB6/iPwF8DVwP8bQH5SYxlsSM1nDbakpml8MFs1430PJeC5F9gr
+M6/olD4zP0dpYgulme5pQy/k3L0CWLeaPi4z76x/mJkJHA207v983XSZZOY3M/NjmfmTzFwxrMJm
+5nOrCwnTNrnNzDsoQWrL8ztk9Wqmho86JjOXteWzFDimermI0tx3uuWdlZmnZubPu12H2UTEpsC/
+UPa7vwMeGFTeGk2e5A3PXALhUQ+iR718kpptEo8x/h+rrvHBLCXgWaOaPj4zZ202m5lnAF+j1Oht
+GxH7dUpb3bN5aER8PiJuiIj7qkerQ6kDI2LVKu3uEbGCqaazAVzf1jlQPx0E7V89LwHO7rBONwPn
+VcvcKyIe1uMy5tt3atOdalSfSwkWr87MH06XIDN/APyCst77T5dmSD4CPAz4ZGZeMI/LnRhN/IP2
+D3ZyNXF/HRdue0maXOMQzL6oel5KuX+xWyfUpl88XYKI2JxyX+YZwPOATSnNkxcz1aHUWUC9M6n2
+ToCy7dFTjWjVQdIO1bzfz8zlMyT/bvW8mNL8dZTVO6p6SI/CEbEFpZMnmFqvTlqfPyYiNhtA2WYU
+EQcD+wF3AMcNe3mamSeyGhYvTkjSyvzP1ahpdDAbEX9O6fApgQszc0kPs58H3Eep0XvIPZsRsSHl
+ftLtq/zPA46gdCj1NOAQSq/At9dmuxR4IvDm6nVSehp+Yu2xHeX+z25tzVRT26tnSVv//Ak9LGMh
+7FGbnq757za16ZFZ74hYl3IhJClNvm+fZZZ50cufiyfozXTWOdct2LK73b/G8SSnm9/LOK73IH32
+kjmPgCbNu4U85qo3gz6v8Zg+u4h4Y0RcGhFLIuLWiDg7Iraufb5ZbWSX9haqB9bStX/2YFVp1LVG
+B7OUQLPlR73MWN0z+rPq5aMiYuO2JCcx1SvvcZm5d2aeXnUodXlmfj4zjwY2A35a5bk0M6+i9OLb
+ck1mXtX2WNpDUTetTf//9u48XI6qTuP49wUkJEAA2fd9WHRQQHZDQEDZBgRZXVgH0BkYQEVUwIAC
+o2yCICCgLDKuEAKjCLKDqARHEJQ1kLAvYScJJIT85o9T7a10qnq73fd2576f5+mnT3edOnWqb6XT
+vzrbs3XyPpNLr9jEMQZUNgvwsbm3ir41uvW8TweWBu6OiHozMdsQ1KmbBb8eN6kj5Vp9vgHUP7+4
+p2NTNJh1jL9zzWoaBZxLauTblrRs5u8lDc+2Pw0sQ4qllskeY4AppKGeefuTfltX8o9rpiLz1c/S
+1ZbIpVtZauWlXHrxShnZnYVdSYHsuIg4s6yAiJjWwnGbsXAuPaVO3qm59EIdqEu7fJnUuh3A1RFx
+X0GerjvvbNblg0mTPX2xU8ex7uNgxirXgO/YN+/9JZern6kGf+ZmVuH/j7tDROyYfy3pANIylRsC
+f8gmgX25Ks9uwC8KYqc3I2Jyq3Xp9ZbZZgKeIvl9RubSO9G3Zuj3Wyi3nRbIpWfUyZuf7Xd4aa5B
+JGk08N/Zy5dIszAX6arzzsYuX5S9PCtrgTezIab6h5QDLTMzMxYlNVK9VrRR0oakpTmLlrL8oaTJ
+ku6RVDiPUS29Hsy+nUu30iKX3yc/3nb97Pk94M8tlNtO7+bS85fmSobl0s10ZR4Q2RjnsaQeAe8A
+e0bEKyXZu+28jwPWBp4iLcljVmoo3zkeCsGdW2nNzMySbPjg2aQW2bLGnoOBh7JVSPJOAPYidVW+
+Cjhf0uHNHL/XuxnnA6HqMa+NWDqXzk/kU+m+/Fqd2YMHQjMBe345nlZaqjsmm534RmAxYCawd0Tc
+XWOXrjlvSWsBXyfdcTqiyTHPZRYAeOSFpie4LjX9wcbnoho2aeDGsDVTr7xm6tjpY7RSfrs/47fe
+msH9LZ5nfzV7Ls1+XkXlN1rGQFwnhZbdhmF/umngj9ttGvgc+nvtNvI3buQzHsjvvXq6+Zpo9+fU
+zedaSye/c3v5Mx7sf0dl59rO/wvyZaXfacDsPQa7yqyY0a6fkrOX2bjzSRO3blG0UdICwL7ASdXb
+IuKU3Mu/SVoIOAY4r9GD93ow+0AuvX5prgKS5iHNLAwwOSKKxtxGwXsDLT/50QqluZL85EfPlOYa
+YJKWI80GvRzpn9uBEfGbOrt103kfTWodfgJYSNLeBXk+nEtvI2nZLH1dSfC7CsB+F7XzXsn1bSyr
+nQaiXp0+Rjd8ti8zavtuqEcj2lHPTpzrYH1+vfJ365SBuHZ77TPutfr2R++e69D6zu0Vg/b/yyrA
+H9tw8HZ6BZj27nvPj+hQ+dOZveFwDpLOA3YERkXECyXZ9iQNA/xpA8e8Bzhe0vwRjUXUPR3MRsTf
+Jb1GWp5nS0kLR8Tb9fbLbAeMIFvWp2pb5Q+3uKT5Brl19jHSOqzzkLq51pLfXrTczYCTtDhwE7Aq
+6bM+PCL+p4Fd890UBvu8K92YVwd+XievmH1pplVJM7pVuxH4HDCJ2btUm5mZmVl3WIAUyN44yPWY
+Q0Q8LWkdZp8Qt51eiYii37DAPwPZXYHRtfIBB5EadxrpQrA+8HqjgSz0eDCbuQI4ihTxHwKc1eB+
+R+TS1Uus/BX4PGma6c2YM9itp20tuhHxnqTxWT02qxNcj86epwN/aVcdWiVpJPB70tqvARwbERc2
+sm9ETJT0PGmK7tF1sm+ZPT8XEU+1Wt96VWogT2XSsKh6nrOw9A/6Z/2tlJmZmZl1VLe1yP5TFkTW
+CiQ7QtL5pK7DuwBTJVWGbr4ZEe/m8q1B+p2+fUEZOwNLkeYnmg58EvgGcFozden1CaAAziG1bAkY
+I2m1ejtI2ofUJA7w94io7m/wW/oCkaNbqFO+pW1Yaa7GVdZbGgnsXpRB0gqkwdMB3BwRU4vyDZRs
+nanrSXdYAjg5Is5osphrSX/XtSVtXHKcTUkts0GT61I1KiIOjIh5az3omxQqgK2y9+erc6fKzMzM
+zKzXfJEUl9wOPJ97VM+AeSDwTEQUTa7wHnA48CfgPlKj5FER0dREqz0fzGYtcV/LXi4M3CppvbL8
+kvYCLsteTie1wFaX+ThwDSmQ2lXSV2qUN0LSolVv5/uMr17vHBpwCfBmVp/vSlqsqg7zkAZfz5u9
+1WzQ2FbZMjbjgM1Jwd3ZETGmhaLOJk0WBXBuNoA8f5wFgB9kL2eSbmx0A9XPYmZmZmbWeyJinpIG
+niuq8h0XEauUlHFjRGwQEYtExMgsfUmzdZkbuhkTEedlLbJHAisBf5H0c+A60lIqHyC13n0O+ES2
+23TgsxHxYEmx/wFsSurmerqkHUhB8COkAG2VrKy9Sa2ld+b2vY/UOjsM+I6kmVk9KnONPZdvgm/g
+/F6XdCxwYXbc8ZJOAR4kTap0NLBVVq+fRcSdReVIWhDYo+rtNXLpPSXlB3rfHxF/a7SeOb8gjUkO
+4FbgJ9myPGVmZDcQZhMRj0s6gzST8EbA3ZK+R5qIaXXgWPpafk+LiCeKCs+6PlR3b1gmt33/qm13
+RcSTNeprZmZmZmaDTBHdMGFve0g6FDiFNCFUUetY5WQfAg6LiJp94CWtQurqWpmptqzMrasDSEnf
+JU0tXbTfVmUBZ536jCFNLqSCMoPUPXqPskHTklYGJjZxyBObberPjtPsBOGTIqKwe3i2dtVFpMHj
+MPt5V/6el0TEYTXqMxq4rYn6HFB9Z6me7G8zhpLrwczMzMzM2qvnuxnnRcRFpBa7I4DfkQZEv0Na
+s3QCqcVwX2C9eoFsVt4k4KPAAaRA8XlgBjANeBS4nDSL1xwTREXE10l9v+8irWE7kxTotLwSVESc
+BHycNHHQ06TW5ZdIkyztGxG7NDD7VzTxaLmqLTyKC0oOAXYi3Vh4jnTez2Wvd6gVyLZQp/6s1NXf
+z81sNpJulzSrkUeD5X1I0o8kTZA0TdLLku6UdJikeeuXYNYYSStJOlPSw5KmSHpV0nhJX83mVDAb
+EI1+h0q6tYGydpA0VtIzkt7NnsdKmmNyGzMbGHNVy6yZ2dxE0m30zdZdS0REzWEjkg4BziWtmVz9
+xS9gPLBjRLzWSl3NKiT9G2k9wZEUX2uPATuVDQ0xa6fsZl8jP3Zvj4htSsoQcDF9vcTy5VV6jF3c
+4M11M2ujuWLMrJnZXEzAvaQZAVsrII35vyAr60XgZFLw+kFSD5LdSePSr5G0Vfgup7VI0vqkXlAL
+kHpFnUqa7XI4sA/pelsT+I2kjw32zPs2pFxAmiyzTK1r8VRSIBuk5RtPp2/+jq+R5u/4d0mTI+L4
+9lTXzBrhllkzsy6VtcyOJrUYfKJe/pIy5gMeJv3oehNYPxtCkc9zHmnSuwAObHbMuFmFpDuAUaQl
+F0ZFxPiq7V8hBQIBnNTKvAxmzci1zLZ0vUlaE/gHacWIe4HRETE9t304cAfwMdJ1v657HZgNnLlq
+zKyZmc1hN1IgG8Cp1YFs5hjg9VzarGmSNiIFskGamG98QbazSDdXBBzpsdrWA46mryfjEflAFiAi
+3iHN1UKW76gBrJvZkOdg1sxs7vbpXPryogzZj7FfkQKMdSWtUZTPrI78tXZZUYasC3ul5X9RYOsO
+18msv3Yh3aB5JCLuLcoQEfeQJgYVaWJQMxsgDmbNzOZuH8+eH42Il2vkuyOX3qKD9bG5V+Vamwr8
+X418vtasJ0haFVgue3lHrby57ctnSyGa2QBwMGtm1v3WkfRnSa9LeidbDmKcpC9kY2ILSVoQWJGs
+VaHOMfLb12lDnW3oWYd0rU2IiFrLRflas8Gwl6R/SJoq6S1Jj0m6TNJWNfZZN5f2d6hZF3Iwa2bW
+/ZYizTY8krS0znKkrm+XA/dLWrtkvxVy6WfrHOOZXHrFFutpQ5SkYcAS2cua11pEvEHfzLG+1myg
+rAOsTZppe0HSXAL7Abdma8WOLNjH36FmXc5L85iZda9ZwM3A9cDfgFeBhYENgMNIP87WJf0Y2zgi
+qn9sLZxLT6lzrPyyFAv1p9I2JDVzrUG63kbga806bypwLXArqfV0CrAkaab4LwKLk8Z7j5O0XUS8
+n9vX36FmXc7BrJlZ99otIt4qeP9uSecDFwMHAEsDZwN7VOVbIJeeUedY+Rk6hzdZT7NmrjVI15vw
+tWadt3zJ9+gtks4FbiCtEzsa+BJwXi6Pv0PNupy7GZuZ9YOkWW147FdUdskPsMq294FD6JtBczdJ
+y1ZlezeXnr/OqQzLpd+pk9esWjPXGqTrLfC1Zh1W53t0Mukm4HvZW0dUZfF3qFmXczBrZtY/0YZH
+awdOAe2Pc2+Nrsrydi5dr9vbgrl0I91EzfKaudag73rztWaDKiImAjeRbgquIWmZ3GZ/h5p1OXcz
+NjPrn3bMWvlCP/Z9KJdevmpbfgztCtSWn7DkmdJcZgUiYrqkV0jjD2tea5IWJf3wD3ytWXd4CNgx
+Sy8PvJil/R1q1uUczJqZ9UNEPDbYVSjdEDFV0jOkH1llMx5X5Lc/3I6K2ZDzMDCK1Lo1T43leXyt
+Wbcp+x7N3yz0d6hZF3I3YzOz3pZfB/H5gu1/yJ7XkrRUjXLyXZTv7netbCiqXGsLAhvWyOdrzbpN
+4fdo1gW58rp6GEe1LbPn5yLiqTbWzcxqcDBrZtajJM0LHJR7686CbONy6QNKyhkO7EVqnXgoIia0
+q442pOSvtQOLMkgSaW1PgDeA2zpdKbNaJK0KbEf6/nsyIqqHfVxLGk+7tqSNS8rYlNQyG8z+78DM
+OszBrJlZF5K0laRFamyfjzT50zqkH1DXRcRzBVmvAZ4g/Rj7RvbDrdoZwGJZ+rR+VdyGrIi4F7iL
+dK0dLGmTgmxfpe+aPbtqTU+ztpK0c3bTr2z70sDV9M1UfF5BtrOBmVn6XEn55XrIXv8gezkTOKdf
+lTazpiii5Yk0zcysQyRdCnwGuA64nbQEz1ukGTU3BA6lr2vci8BmZV3bJO0A/C/pBuZLwMnAeFIA
+eyiwOym4uAvYOvwfg7VI0kdJXYeHk2Z0PZXU+joc2Je0nBTAI8BGETF1MOppQ4OkSaT5Ya4G/gRM
+Ii2bswSwNen7bwn6vv+2i4j3Cso5Ffh69vI+4Hukm4SrA8eS1qkN4NSIOKFjJ2Rmc3Awa2bWhbJg
+ttIdUwVZKl/eDwD7RMSjdco7mNTqMH9BeQHcA+wcEa+1XGkzQNJOwJXASIqvtUeBnbLxiGYdI2ki
+sBLF36HQ9z16FXBI2Zq0Wff4i+gb1pEvr1LGJRFxWP9qbGbNcjBrZtaFJK0FfArYjNQCuyTwQWA6
+qXX1L6QfYNc02pIqaV3gv4BtgOWAqaRZN68Eflxj9lmzpkhaETgS2Im0pMkMYALwK+CHEfHuIFbP
+hghJo0gTN20GrEZqhR1J6jXwDPBH4PKIuKfB8rYnteZulJX1CnAvcGFE/L7tJ2BmdTmYNTMzMzMz
+s57jCaDMzMzMzMys5ziYNTMzMzMzs57jYNbMzMzMzMx6joNZMzMzMzMz6zkOZs3MzMzMzKznOJg1
+MzMzMzOznuNg1szMzMzMzHqOg1kzMzMzMzPrOQ5mzczMzMzMrOc4mDUzMzMzM5xT9HIAAAeiSURB
+VLOe42DWzMzMzMzMeo6DWTMzswEkaWVJs7LHTwa7PnmSJmX1enKw69If3fwZm5lZ+8w32BUwMzMb
+oqLTB5B0JLAo8EZEnNPALjXrJOkjwKezl9dExAP9rGKndfwzNjOzweNg1szMbO51FLAyMAloJJiF
+FACWBYEfBcZk2ycC3R7MmpnZXMzBrJmZ2dyt4dbJiFi1kxUxMzNrJ4+ZNTMzm7tpsCtgZmbWCQ5m
+zczMzMzMrOc4mDUzM+syktaUdLSksZIek/S2pOmSXpJ0h6TjJC1eY/9JkmaRxssCrJKb3Tf/+FbR
+ftWzGUvaPyvv0spbwGVFZVbtd2lu20p1znn/XN796uTdWNKVkp6W9I6kZyX9TtKetfarUd4oST+S
+9JCk17Myn5Z0laTdWynTzMw6z2NmzczMuoikLwCXZy+rx7suAXwcGAUcI+mzEXF9QTH5SZxUUE6Z
+WpM/5csrqlvZe7XebzqvpDHACaQb8pW8y2aPT0naAziukQNJWgT4KbBzwbGXB3YHdpd0J/CZiHi1
+0ZMwM7POczBrZmbWXUYAs4D7gbuAR4DXsm0rANsC2wMjgaskbR4R91eVcUhWzsXAksBk4NCCYz1S
+8F7RGNtbgN2AbYAjSEHfucCtDZ9VG0g6mr7ZlAMYC9wAvA2sAxwE7AHM20BZCwN/zPYL4HHg18DD
+wAxgNWBfYD1gS+AmSZtGxIz2npWZmbXKwayZmVl3uRP4l4h4smT79yVtA1wLDAdOAz6ZzxARNwNI
+qizHMy0irmu1QhHxLPCspMVyb/+1P2U2S9KqwCmkwPN9YO+IuKYqz5nAb0gtqvVcRF8geyJwckRU
+twqfJuk04KvAR4DjgW9hZmZdwWNmzczMukhEPFwjkK3kuQU4i9SKuo2kZQekcoPrCGCBLH1WdSAL
+EBFTgH1ILbWl3ZUl/Suwd5bnkoj4TkEgWynza8DdpM/6cEkf6NdZmJlZ2ziYNTMz601/yKU3HbRa
+DJzdsudZwDllmSLiReBKai9JtH8ufXoDx74ie14E2KSB/GZmNgDczdjMzKwLSdqCNGZzY9L4zYWB
+slbBFQaqXoNB0pKkmZkDeCQiXqizyy3Al2ps3zJ7fhf4kKQP1Slv+Vx6XWa/kWBmZoPEwayZmVkX
+kbQgqWVx1+ytfPfX6q6wldbHkZ2u1yBbLpee0ED+enlWIX2Ww4E5uivX8cEm85uZWYc4mDUzM+su
+vwJ2IAVbU4HfAvcBzwPTgJlZvg8DJ2fpurP39riFculpDeSfWmf7otlzM0sGVczfwj5mZtYBDmbN
+zMy6hKTN6QtkHwS2i4jJJXlnFr3fw2oF5FNy6RENlLVgne1TSAHtKxGxVAPlmZlZF/IEUGZmZt0j
+v8TON8oC2cyqna5MG0zPpeu1aC5RY9vzufQaDRy3Xp5ns+fFJDUSHJuZWRdyMGtmZtY9lsmln6iT
+d4cGypuVPdea2bcZs3LpRsp8PZdevjRXsnnZhiyon5Qdc21Jy5TlzWxTZ/sd2fM8wKfq5DUzsy7l
+YNbMzKx75Md6lrYuStqMvu7ItVS659brdtuofHffRsr8Ry69bVkmSWsBO9YpqzJR0zzAkTXKWhr4
+HLU/myty6W9J8jhYM7Me5GDWzMyse9ybS4+RNKw6g6T1gKsqL+uUNzF7XlxSO5bvmZhLb9BA/ptI
+E1YJ+E9Jq1dnkLQ8cDX1J7E6j7SUjoAvS/p0QVkLAb8kLWNU+tlExL3Ar7M86wHXSarVzRlJW0hq
+ZE1aMzMbIJ4AyszMrHuMBZ4GVgI2Ah6VdAlpqZkRwFbA3qT/vy8HDqhT3s3ALll6nKQLgefo6y48
+ISLqdWfOexB4CVga+LykV4E/k5thOCJuzKVfknQFcBBpwqXxki4AHgCGkdbQ3Y+0RM4vgX3KDhwR
+EyV9EziLtN7uWEljgd8BbwPrAAeTujOPBT5T51wOBtYEPkIaqzxJ0tXZ+UzOjrE0KdjdlrSW7wTg
+mDrlmpnZAFFEK7PSm5mZWSskrUxq4Qzg8og4qGr7BqQAbQmKWxdnAt8kteLelpVzUkR8u+BYI7J8
+a5eUdWJ+P0kTgZWBSRGxWkn9DwIurrys2hwRMW9V/pHADcAmJftMAw4lBY+XZudzYERcQQFJY4AT
+snLmOD5paaPjgccp+YxzZY0Afgh8oaS8fLkAt0dEvfG4ZmY2QNzN2MzMbOBF1XPfhoi/kloDzwQe
+Ad4htTw+ClwAbBwRZ5TtX1XWNGBT4NukoPYN4P1sv7J9a20jIn4CbEfqGvxUVr8o2y8i3gJGA0cB
+9wBvZvtMIHUdXj8iftbIsbPyTiJNFvVz0qzE00mzHd8A7B0R+5IC/tLPOFfWtIg4kLRm7+lZ/V4G
+3iONX54E3AicCGziQNbMrLu4ZdbMzMzMzMx6jltmzczMzMzMrOc4mDUzMzMzM7Oe42DWzMzMzMzM
+eo6DWTMzMzMzM+s5DmbNzMzMzMys5ziYNTMzMzMzs57jYNbMzMzMzMx6joNZMzMzMzMz6zkOZs3M
+zMzMzKznOJg1MzMzMzOznuNg1szMzMzMzHqOg1kzMzMzMzPrOQ5mzczMzMzMrOc4mDUzMzMzM7Oe
+42DWzMzMzMzMes7/A4KrZ0sqxpsXAAAAAElFTkSuQmCC
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="References">References<a class="anchor-link" href="#References">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This notebook is build upon the great materials of the <a href="https://unidata.github.io/unidata-python-workshop/">Unidata Python Workshop</a>:</p>
+<ul>
+<li><a href="https://github.com/Unidata/unidata-python-workshop/blob/master/notebooks/writing_netCDF.ipynb">https://github.com/Unidata/unidata-python-workshop/blob/master/notebooks/writing_netCDF.ipynb</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Other-interesting-and-useful-projects-using-netcdf4-python">Other interesting and useful projects using netcdf4-python<a class="anchor-link" href="#Other-interesting-and-useful-projects-using-netcdf4-python">&#182;</a></h2><ul>
+<li><a href="http://xarray.pydata.org">xarray</a>: N-dimensional variant of the core <a href="http://pandas.pydata.org">pandas</a> data structure that can operate on netcdf variables.</li>
+<li><a href="http://scitools.org.uk/iris/">Iris</a>: their data model creates a data abstraction layer which isolates analysis and visualisation code from data format specifics.  Can also handle GRIB and PP formats.</li>
+<li><a href="https://github.com/SciTools/biggus">Biggus</a>: Virtual <a href="https://www.youtube.com/watch?v=zPGb4STRfKw">large</a> arrays (from netcdf variables) with lazy evaluation.</li>
+<li><a href="http://cfpython.bitbucket.org/">cf-python</a>: Implements the <a href="http://cfconventions.org">CF</a> data model for the reading, writing and processing of data and metadata. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2016-10-07-creating-netcdf-datasets.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></p>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <!-- AddThis Button END -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'creating-netcdf-datasets';
+                var disqus_url = 'http://ueapy.github.io/creating-netcdf-datasets.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -24026,5 +26041,7 @@ Python Group UEA            </a>
     </script>
     <!-- End Disqus Code -->
 
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar": false};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-564e4d3ff0b9f071"></script>
 </body>
 </html>
