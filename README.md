@@ -1,1 +1,1 @@
-### Website for Python Users Group at UEA ENV and beyond
+### UEA ENV Python Users Group website
