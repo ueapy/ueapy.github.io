@@ -25,7 +25,7 @@ TIMEZONE = 'Europe/London'
 DEFAULT_LANG = u'en'
 
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS = ['liquid_tags.notebook','tag_cloud','summary']
+PLUGINS = ['liquid_tags.notebook', 'tag_cloud', 'summary']
 
 NOTEBOOK_DIR = 'notebooks'
 
@@ -34,7 +34,13 @@ DISPLAY_TAGS_INLINE = True
 SHOW_ARTICLE_CATEGORY = False
 SHOW_ARTICLE_AUTHOR = True
 DISPLAY_CATEGORIES_ON_MENU = False
-#SOCIAL = (('github', 'http://github.com/ueapy'))
+MENUITEMS = [
+             ('Python Course 2016', '/enveast_python_course.html'),
+             #  ('Meetings calendar', '/meetings-calendar.html'),
+             #  ('Ideas for meetings', '/meetings-ideas.html'),
+             #  ('Archives', '/archives.html')
+            ]
+# SOCIAL = (('github', 'http://github.com/ueapy'))
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -44,20 +50,21 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Learn Python online', 'http://bafflednerd.com/learn-python-online/'),
+LINKS = (('Learn Python online', 'http://bafflednerd.com/learn-python-online'),
          ('Python Videos', 'http://pyvideo.org/'),
          ('EarthPy', 'http://earthpy.org/'),
-         ('Python4Oceanographers', 'https://ocefpaf.github.io/python4oceanographers/'),
+         ('Python4Oceanographers',
+          'https://ocefpaf.github.io/python4oceanographers/'),
          ('PyAOS', 'http://pyaos.johnny-lin.com/'),
          ('PyHOGs', 'http://pyhogs.github.io/'),
          ('Pythonic Perambulations', 'https://jakevdp.github.io/'),
-         ('Meteodenny', 'http://dennissergeev.github.io/'),
+         ('Meteodenny', 'https://dennissergeev.github.io/'),
          )
 
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 # Sharing
 GITHUB_URL = 'https://github.com/ueapy'
