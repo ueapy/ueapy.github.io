@@ -35,7 +35,8 @@ SHOW_ARTICLE_CATEGORY = False
 SHOW_ARTICLE_AUTHOR = True
 DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = [
-             ('Python Course 2016', '/enveast_python_course.html'),
+             ('Python Course 2016',
+              'https://ueapy.github.io/enveast_python_course/'),
              #  ('Meetings calendar', '/meetings-calendar.html'),
              #  ('Ideas for meetings', '/meetings-ideas.html'),
              #  ('Archives', '/archives.html')
