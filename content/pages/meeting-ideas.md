@@ -6,17 +6,18 @@ comments: enabled
 ## Python
 ### Basic programming
 * Running scripts from command line and argument parsing
-* `lambda` functions
-* Optimising loops
 * Timing scripts
+* Using `try`/`except` and creating your own excceptions
+* Regular expressions
+
+### Regridding, interpolating and extrapolating
+* What is the best way to interpolate observational data?
+* How to compare model data with irregularly spaced observations?
 
 ### Jupyter
 * Using Jupyter notebooks on a remote server
 * Teaching with Jupyter notebooks
-
-### Numpy
-* Vector operations
-* Masked arrays
+* Making slides from notebooks
 
 ### Basic plotting: Matplotlib
 * Preparing publication-quality figures
@@ -24,17 +25,16 @@ comments: enabled
 * Grid of subplots
 * Applications of pcolor/pcolormesh/contourf/imshow
 
-### Regridding, interpolating and extrapolating
-* What is the best way to interpolate observational data?
-* How to compare model data with irregularly spaced observations?
-
-### Visualisation
+### Advanced visualisation
 * Interactive plots in Jupyter Notebooks
-* Plot.ly
+* 3D-vis libraries
+
+### Pandas
+* Cleaning up data
+* Basic statistics
 
 ### IO
 * Working with NetCDF, HDF, PP files
-* Parsing simple text files
 * Reading Excel files
 
 ### Rewriting or calling programs written in other languages
@@ -48,9 +48,10 @@ comments: enabled
 * gdal
 * pykml
 * geopandas
+* shapely
 
 #### Atmospheric and Oceanic Sciences
-* iris
+* iris and xarray
 * skewt and tephi
 * eofs and windspharm
 
@@ -58,8 +59,6 @@ comments: enabled
 * Testing
 * Versioning
 * Publishing on PyPi
-* Travis-CI
-* Anaconda cloud
 
 ## Other tools
 ### Git
