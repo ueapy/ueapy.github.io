@@ -53,6 +53,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Learn Python online', 'http://bafflednerd.com/learn-python-online'),
          ('Python Videos', 'http://pyvideo.org/'),
+         ('From Python to Numpy', 'http://www.labri.fr/perso/nrougier/from-python-to-numpy/'),
          ('EarthPy', 'http://earthpy.org/'),
          ('Python4Oceanographers',
           'https://ocefpaf.github.io/python4oceanographers/'),
