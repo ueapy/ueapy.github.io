@@ -37,8 +37,8 @@ DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = [
              ('Python Course 2016',
               'https://ueapy.github.io/enveast_python_course/'),
-             #  ('Meetings calendar', '/meetings-calendar.html'),
-             #  ('Ideas for meetings', '/meetings-ideas.html'),
+             ('Meetings calendar', 'https://ueapy.github.io/meetings-calendar.html'),
+             ('Ideas for meetings', 'https://ueapy.github.io/meetings-ideas.html'),
              #  ('Archives', '/archives.html')
             ]
 # SOCIAL = (('github', 'http://github.com/ueapy'))
