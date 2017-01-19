@@ -14,19 +14,22 @@ EXTRA_PATH_METADATA = {
 }
 CUSTOM_CSS = 'extra/custom.css'
 
-THEME = '../pelican-themes/pelican-mockingbird'
-JINJA_EXTENSIONS = ['jinja2.ext.i18n']
+THEME = '../pelican-themes/pelican-bootstrap3'
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 BOOTSTRAP_THEME = 'cosmo'
 PYGMENTS_STYLE = 'default'
 OVERWRITE_NB_HEADER = True
-#EXTRA_HEADER = open('_nb_header.html').read()
+EXTRA_HEADER = open('_nb_header.html').read()
 
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
 
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS = ['liquid_tags.notebook', 'tag_cloud', 'summary', 'i18n_subsites']
+PLUGINS = ['tag_cloud', 'summary', 'i18n_subsites',
+           'liquid_tags.img', 'liquid_tags.video',
+           'liquid_tags.youtube', 'liquid_tags.vimeo',
+           'liquid_tags.include_code', 'liquid_tags.notebook']
 
 NOTEBOOK_DIR = 'notebooks'
 
