@@ -39,12 +39,13 @@ SHOW_ARTICLE_CATEGORY = False
 SHOW_ARTICLE_AUTHOR = True
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
+ARCHIVES_SAVE_AS = 'year'
 #MENUITEMS = [
+#             ('Archives', '/archives.html')
 #             ('Python Course 2016',
 #              'https://ueapy.github.io/enveast_python_course/'),
 #             ('Meetings calendar', 'https://ueapy.github.io/meetings-calendar.html'),
 #             ('Ideas for meetings', 'https://ueapy.github.io/meetings-ideas.html'),
-#             #  ('Archives', '/archives.html')
 #            ]
 # SOCIAL = (('github', 'http://github.com/ueapy'))
 
