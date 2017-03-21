@@ -14,7 +14,7 @@ EXTRA_PATH_METADATA = {
 }
 CUSTOM_CSS = 'extra/custom.css'
 
-THEME = '../pelican-themes/pelican-bootstrap3'
+THEME = 'theme'
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 BOOTSTRAP_THEME = 'cosmo'
 PYGMENTS_STYLE = 'default'
