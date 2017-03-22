@@ -12,7 +12,7 @@ STATIC_PATHS = ['extra/robots.txt', 'pdfs', 'figures',
                 'extra/favicon.ico', 'extra/custom.css']
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
-    'extra/custom.css': {'path': 'extra/custom.css'}
+    'extra/custom.css': {'path': 'extra/custom.css'},
     'extra/robots.txt': {'path': 'extra/robots.txt'}
 }
 CUSTOM_CSS = 'extra/custom.css'
