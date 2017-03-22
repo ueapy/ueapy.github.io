@@ -8,7 +8,8 @@ SITENAME = u'Python Group UEA'
 SITEURL = ''
 
 PATH = 'content'
-STATIC_PATHS = ['robots.txt', 'pdfs', 'figures', 'extra/favicon.ico', 'extra/custom.css']
+STATIC_PATHS = ['extra/robots.txt', 'pdfs', 'figures',
+                'extra/favicon.ico', 'extra/custom.css']
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/custom.css': {'path': 'extra/custom.css'}
