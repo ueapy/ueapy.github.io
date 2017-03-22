@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from pathlib import Path
 
 AUTHOR = u'Python Group'
 SITENAME = u'Python Group UEA'
@@ -19,6 +20,8 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 BOOTSTRAP_THEME = 'cosmo'
 PYGMENTS_STYLE = 'default'
 OVERWRITE_NB_HEADER = True
+if not Path('_nb_header.html').exists():
+    Path('_nb_header.html').touch()
 EXTRA_HEADER = open('_nb_header.html').read()
 
 TIMEZONE = 'Europe/London'
