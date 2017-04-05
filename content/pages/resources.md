@@ -12,6 +12,9 @@ Some modern Python programming tutorials and resources
 * [Software Carpentry's Programming with Python](http://swcarpentry.github.io/python-novice-inflammation/)
 * Want more? Check out this [extensive list of online Python courses](http://bafflednerd.com/learn-python-online/)
 
+### Jupyter Notebooks
+* [A gallery of interesting Jupyter Notebooks](https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks)
+
 ### Blogs and websites
 * [The Hitchhiker’s Guide to Python](http://docs.python-guide.org/en/latest/)
 * [Pythonic Perambulations](https://jakevdp.github.io/)
@@ -24,8 +27,10 @@ Some modern Python programming tutorials and resources
 * [Reproducible Data Analysis in Jupyter](https://www.youtube.com/playlist?list=PLYCpMb24GpOC704uO9svUrihl-HY1tTJJ)
 * [SciPy 2016 playlist](https://www.youtube.com/playlist?list=PLYx7XA2nY5Gf37zYZMw6OqGFRPjB1jCy6)
 
-### Jupyter Notebooks
-* [A gallery of interesting Jupyter Notebooks](https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks)
+### Podcasts
+* [Talk Python To Me](https://talkpython.fm/)
+* [Python Bytes](https://pythonbytes.fm/)
+* [`podcast.__init__`](https://www.podcastinit.com/), especially [this](https://www.podcastinit.com/episode-100-metpy-with-ryan-may-sean-arms-and-john-leeman/) episode
 
 ## Scientific Python
 * [Cutting-edge guide to Numerical Python (NumPy)](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
