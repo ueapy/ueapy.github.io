@@ -11819,13 +11819,13 @@ jQuery(document).ready(function($) {
 
         <meta name="author" content="Denis Sergeev" />
         <meta name="keywords" content="matplotlib" />
-        <meta name="description" content="Today we covered a very important part of matplotlib - how to create multiple subplots in one figure. We touched upon the following topics: Table of Contents¶1  Matplotlib Axes2  Matplotlib subplots2.1  Simple way: plt.subplot() / plt.subplots() / fig.add_subplot()2.2  More sophisticated way: GridSpec2.3 …" />
+        <meta name="description" content="Today we covered a very important part of matplotlib - how to create multiple subplots in one figure. We touched upon the following topics: 1  Matplotlib Axes2  Matplotlib subplots2.1  Simple way: plt.subplot() / plt.subplots() / fig.add_subplot()2.2  More sophisticated way: GridSpec2.3  GridSpec with Varying …" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="More on subplots in matplotlib"/>
         <meta property="og:url" content="https://ueapy.github.io/more-on-subplots-in-matplotlib.html"/>
-        <meta property="og:description" content="Today we covered a very important part of matplotlib - how to create multiple subplots in one figure. We touched upon the following topics: Table of Contents¶1  Matplotlib Axes2  Matplotlib subplots2.1  Simple way: plt.subplot() / plt.subplots() / fig.add_subplot()2.2  More sophisticated way: GridSpec2.3 …"/>
+        <meta property="og:description" content="Today we covered a very important part of matplotlib - how to create multiple subplots in one figure. We touched upon the following topics: 1  Matplotlib Axes2  Matplotlib subplots2.1  Simple way: plt.subplot() / plt.subplots() / fig.add_subplot()2.2  More sophisticated way: GridSpec2.3  GridSpec with Varying …"/>
         <meta property="article:published_time" content="2017-05-05" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="matplotlib" />
@@ -11940,7 +11940,7 @@ Python Group UEA            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Matplotlib-Axes" data-toc-modified-id="Matplotlib-Axes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Matplotlib Axes</a></div><div class="lev1 toc-item"><a href="#Matplotlib-subplots" data-toc-modified-id="Matplotlib-subplots-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Matplotlib subplots</a></div><div class="lev2 toc-item"><a href="#Simple-way:--plt.subplot()-/-plt.subplots()-/-fig.add_subplot()" data-toc-modified-id="Simple-way:--plt.subplot()-/-plt.subplots()-/-fig.add_subplot()-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Simple way:  <code>plt.subplot()</code> / <code>plt.subplots()</code> / <code>fig.add_subplot()</code></a></div><div class="lev2 toc-item"><a href="#More-sophisticated-way:-GridSpec" data-toc-modified-id="More-sophisticated-way:-GridSpec-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>More sophisticated way: <code>GridSpec</code></a></div><div class="lev2 toc-item"><a href="#GridSpec-with-Varying-Cell-Sizes" data-toc-modified-id="GridSpec-with-Varying-Cell-Sizes-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span><code>GridSpec</code> with Varying Cell Sizes</a></div><div class="lev1 toc-item"><a href="#Manual-adjustment-for-complex-plots" data-toc-modified-id="Manual-adjustment-for-complex-plots-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Manual adjustment for complex plots</a></div><div class="lev1 toc-item"><a href="#AxesGrid-toolbox" data-toc-modified-id="AxesGrid-toolbox-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>AxesGrid toolbox</a></div><div class="lev2 toc-item"><a href="#AxesGrid" data-toc-modified-id="AxesGrid-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span><code>AxesGrid</code></a></div><div class="lev2 toc-item"><a href="#Blending-it-with-cartopy-to-create-maps" data-toc-modified-id="Blending-it-with-cartopy-to-create-maps-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Blending it with cartopy to create maps</a></div><div class="lev2 toc-item"><a href="#AxesDivider" data-toc-modified-id="AxesDivider-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span><code>AxesDivider</code></a></div><div class="lev2 toc-item"><a href="#Anchored-Artists" data-toc-modified-id="Anchored-Artists-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Anchored Artists</a></div><div class="lev1 toc-item"><a href="#Extra-question:-time-axis" data-toc-modified-id="Extra-question:-time-axis-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Extra question: time axis</a></div></p>
+<p><p><div class="lev1 toc-item"><a href="#Matplotlib-Axes" data-toc-modified-id="Matplotlib-Axes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Matplotlib Axes</a></div><div class="lev1 toc-item"><a href="#Matplotlib-subplots" data-toc-modified-id="Matplotlib-subplots-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Matplotlib subplots</a></div><div class="lev2 toc-item"><a href="#Simple-way:--plt.subplot()-/-plt.subplots()-/-fig.add_subplot()" data-toc-modified-id="Simple-way:--plt.subplot()-/-plt.subplots()-/-fig.add_subplot()-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Simple way:  <code>plt.subplot()</code> / <code>plt.subplots()</code> / <code>fig.add_subplot()</code></a></div><div class="lev2 toc-item"><a href="#More-sophisticated-way:-GridSpec" data-toc-modified-id="More-sophisticated-way:-GridSpec-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>More sophisticated way: <code>GridSpec</code></a></div><div class="lev2 toc-item"><a href="#GridSpec-with-Varying-Cell-Sizes" data-toc-modified-id="GridSpec-with-Varying-Cell-Sizes-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span><code>GridSpec</code> with Varying Cell Sizes</a></div><div class="lev1 toc-item"><a href="#Manual-adjustment-for-complex-plots" data-toc-modified-id="Manual-adjustment-for-complex-plots-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Manual adjustment for complex plots</a></div><div class="lev1 toc-item"><a href="#AxesGrid-toolbox" data-toc-modified-id="AxesGrid-toolbox-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>AxesGrid toolbox</a></div><div class="lev2 toc-item"><a href="#AxesGrid" data-toc-modified-id="AxesGrid-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span><code>AxesGrid</code></a></div><div class="lev2 toc-item"><a href="#Blending-it-with-cartopy-to-create-maps" data-toc-modified-id="Blending-it-with-cartopy-to-create-maps-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Blending it with cartopy to create maps</a></div><div class="lev2 toc-item"><a href="#AxesDivider" data-toc-modified-id="AxesDivider-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span><code>AxesDivider</code></a></div><div class="lev2 toc-item"><a href="#Anchored-Artists" data-toc-modified-id="Anchored-Artists-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Anchored Artists</a></div><div class="lev1 toc-item"><a href="#Extra-question:-time-axis" data-toc-modified-id="Extra-question:-time-axis-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Extra question: time axis</a></div></p>
 
 </div>
 </div>
@@ -17895,6 +17895,36 @@ AJgiRgAAgCliBAAAmPo/pDHKitCnGy4AAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="panel-plots">panel-plots<a class="anchor-link" href="#panel-plots">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you are still struggling with subplots, try this little package: <a href="https://github.com/ajdawson/panel-plots">https://github.com/ajdawson/panel-plots</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>A simple to use and understand system for making panel plots with matplotlib. The panel-plots package is designed to make it easy to create panel plots with specific sizes, either panel size or overall figure size, maing it particularly suitable for generating figures for journal articles where you need to prepare an image of a particular size and ensure consistent and correct font sizing.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Extra-question:-time-axis">Extra question: time axis<a class="anchor-link" href="#Extra-question:-time-axis">&#182;</a></h2>
 </div>
 </div>
@@ -18314,6 +18344,20 @@ icGDiIiI9IbBg4iIiPSGwYOIiIj05v8DHa9uSQxoBzUAAAAASUVORK5CYII=
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ul>
+<li><a href="http://www.labri.fr/perso/nrougier/teaching/matplotlib/matplotlib.html">Matplotlib tutorial</a></li>
+<li><a href="https://matplotlib.org/users/gridspec.html">Customizing Location of Subplot Using GridSpec</a></li>
+<li><a href="http://matplotlib.org/mpl_toolkits/axes_grid/users/overview.html">Overview of AxesGrid toolkit</a></li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
