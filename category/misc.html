@@ -11879,10 +11879,140 @@ Python Group UEA            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://ueapy.github.io/filled-contour-plots-and-colormap-normalization.html">Filled contour plots and colormap normalization</a></h2>
+                <div class="summary"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Today we are going to learn some tricks about plotting two dimensional data with matplotlib contourf function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.mlab</span> <span class="k">as</span> <span class="nn">mlab</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us start with creating two sample 2D arrays, Z1 and Z2.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Array …</span></pre></div></div></div></div></div></p>
+                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/filled-contour-plots-and-colormap-normalization.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://ueapy.github.io/sneak-peek-at-dask.html">Sneak peek at dask</a></h2>
+                <div class="summary"><p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dask.diagnostics</span> <span class="k">import</span> <span class="n">ProgressBar</span>
+<span class="n">ProgressBar</span><span class="p">()</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">dask</span>
+<span class="kn">from</span> <span class="nn">dask</span> <span class="k">import</span> <span class="n">array</span> <span class="k">as</span> <span class="n">da</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">nbytes</span><span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>32.04345703125
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">darr</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In …</div></div></div></p>
+                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/sneak-peek-at-dask.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://ueapy.github.io/more-on-subplots-in-matplotlib.html">More on subplots in matplotlib</a></h2>
                 <div class="summary"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11891,8 +12021,7 @@ Python Group UEA            </a>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11901,8 +12030,7 @@ Python Group UEA            </a>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11914,8 +12042,7 @@ Python Group UEA            </a>
             <article>
                 <h2><a href="https://ueapy.github.io/an-example-of-using-dictionaries-with-plotting-functions.html">An example of using dictionaries with plotting functions</a></h2>
                 <div class="summary"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11927,8 +12054,7 @@ Python Group UEA            </a>
             <article>
                 <h2><a href="https://ueapy.github.io/two-ways-of-preparing-climate-model-output-for-analysis.html">Two ways of preparing climate model output for analysis</a></h2>
                 <div class="summary"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11937,8 +12063,7 @@ Python Group UEA            </a>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11947,49 +12072,12 @@ Python Group UEA            </a>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Luckily, the model output is quite small and stored in a …</p></div></div></div></p>
                     <a class="btn btn-default btn-xs" href="https://ueapy.github.io/two-ways-of-preparing-climate-model-output-for-analysis.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/some-examples-on-numerical-differentiation-in-python.html">Some examples on numerical differentiation in Python</a></h2>
-                <div class="summary"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Going through Mark's <a href="https://github.com/multilingualtricker/CretinousCode">Ocean World climate model code</a>, one of the improvements that we discussed this Friday was moving from nested <code>for</code>-loops to array-wide operations. Sometimes this is called <em>vectorisation</em>, even though operations are performed not only on 1D-vectors, but on N-dimensional arrays.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The most interesting part was to …</p></div></div></div></p>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/some-examples-on-numerical-differentiation-in-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/regular-expressions-and-how-to-use-them.html">Regular expressions and how to use them</a></h2>
-                <div class="summary"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A regular expression (regex, RE) is a sequence of characters that define a search pattern. Usually this pattern is used by string searching algorithms for "find" or "find and replace" operations on strings. For example, search engines use regular expressions to find matches to your query as do various text …</p></div></div></div></p>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/regular-expressions-and-how-to-use-them.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -12057,6 +12145,11 @@ Python Group UEA            </a>
                     <li class="list-group-item tag-4">
                         <a href="https://ueapy.github.io/tag/command-line.html">
                             command line
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/dask.html">
+                            dask
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -12132,6 +12225,11 @@ Python Group UEA            </a>
                     <li class="list-group-item tag-3">
                         <a href="https://ueapy.github.io/tag/oop.html">
                             oop
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/parallel-computing.html">
+                            parallel computing
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
