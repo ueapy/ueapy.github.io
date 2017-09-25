@@ -45,7 +45,7 @@ SHOW_ARTICLE_AUTHOR = True
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 ARCHIVES_SAVE_AS = 'archives.html'
-DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
+# DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
 #MENUITEMS = [
 #             ('Archives', '/archives.html')
 #             ('Python Course 2016',
