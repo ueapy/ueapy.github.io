@@ -63,7 +63,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Python Course 2016', 'https://ueapy.github.io/enveast_python_course/'),
+LINKS = (
+         ('Python Course 2018', 'https://ueapy.github.io/pythoncourse2018'),
+         ('Python Course 2016', 'https://ueapy.github.io/enveast_python_course/'),
          ('Learn Python online', 'http://bafflednerd.com/learn-python-online'),
          ('Python Videos', 'http://pyvideo.org/'),
          ('From Python to Numpy', 'http://www.labri.fr/perso/nrougier/from-python-to-numpy/'),
