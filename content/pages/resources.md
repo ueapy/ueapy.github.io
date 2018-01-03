@@ -38,6 +38,12 @@ Some modern Python programming tutorials and resources
 * [xarray tutorial](https://geohackweek.github.io/nDarrays/)
 * [Iris and Cartopy tutorials](https://github.com/SciTools/courses)
 
+### Matlab to Python
+* [NumPy for Matlab users](https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html)
+* [Webinar: Python for MATLAB Users](https://www.youtube.com/watch?v=YkCegjtoHFQ)
+* [MATLAB to Python guide](https://www.enthought.com/white-paper-matlab-to-python)
+* [Scientists of the world unite!](https://www.youtube.com/watch?v=1lBeungEnx4)
+
 ## Data Science Workshops
 * [Software Carpentry workshops](https://software-carpentry.org/workshops/)
 * [Unidata’s Python Training Workshop](https://unidata.github.io/unidata-python-workshop/)
