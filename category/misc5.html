@@ -11775,26 +11775,18 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-<script type="text/javascript">
-init_mathjax = function() {
-    if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-            },
-            displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+        displayMath: [['$$','$$'], ["\\[","\\]"]]
     }
-}
-init_mathjax();
+});
 </script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -11878,6 +11870,27 @@ Python Group UEA            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
+            <article>
+                <h2><a href="https://ueapy.github.io/object-oriented-programming-in-meteorological-data-analysis.html">Object-Oriented Programming in meteorological data analysis</a></h2>
+                <div class="summary"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Object-oriented programming (OOP) was discussed in the context of a real, fairly complex (meteorological data analysis) situation, as opposed to the very simple <code>class</code> examples usually given.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The example chosen was the calculation of an annual cycle from many years of gridded data, the subsequent smoothing of that annual cycle …</p></div></div></div></p>
+                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/object-oriented-programming-in-meteorological-data-analysis.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
             <article>
                 <h2><a href="https://ueapy.github.io/introduction-to-xarray.html">Introduction to xarray</a></h2>
                 <div class="summary"><p>
@@ -12037,35 +12050,6 @@ Python Group UEA            </a>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/using-python-scripts-and-modules.html">Using Python scripts and modules</a></h2>
-                <div class="summary"><p>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can type all the instructions in the Python interpreter. But for longer sets of instructions you definitely need to change track and write the code in text files, that are usually called <em>scripts</em>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Ways-of-running-scripts">Ways of running scripts<a class="anchor-link" href="#Ways-of-running-scripts">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are several ways of executing, or running, a script. If you …</p></div></div></div></p>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/using-python-scripts-and-modules.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://ueapy.github.io/category/misc4.html">&laquo;</a>
@@ -12142,7 +12126,7 @@ Python Group UEA            </a>
                             dask
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
+                    <li class="list-group-item tag-2">
                         <a href="https://ueapy.github.io/tag/dataviz.html">
                             dataviz
                         </a>
@@ -12369,7 +12353,7 @@ Python Group UEA            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Python Group
+         <div class="col-xs-10">&copy; 2019 Python Group
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
