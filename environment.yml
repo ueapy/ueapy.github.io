@@ -1,4 +1,4 @@
-name: ghpages
+name: ueapy_web
 channels:
 - conda-forge
 dependencies:
