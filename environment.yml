@@ -2,7 +2,7 @@ name: ueapy_web
 channels:
 - conda-forge
 dependencies:
+- ghp-import
 - markdown
 - pelican
 - python=3.7
-- requests

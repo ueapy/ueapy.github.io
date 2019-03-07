@@ -1,13 +1,13 @@
 # UEA Python Users Group website
 
-Built using *pelican* static website generator.
+Built using [pelican](https://github.com/getpelican/pelican) static website generator.
 
 ## Requirements for building the website
 ### Packages
+- ghp-import
 - markdown
 - pelican
-- python=3.7
-- requests
+- python>=3.6
 
 You can create a separate conda environment using the [environment.yml](environment.yml) file provided in this repo.
 ```bash
