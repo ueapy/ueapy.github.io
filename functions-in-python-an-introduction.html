@@ -13,13 +13,13 @@
 
         <meta name="author" content="Wilhelm Hodder" />
         <meta name="keywords" content="functions,basics" />
-        <meta name="description" content="{% notebook 2019-02-28-functions-will.ipynb cells[2:] %}" />
+        <meta name="description" content="Basic principles and features¶Functions are exactly that: they usually take an input and return an output. When you do your typical Python coding you will be using functions all the time, for example np.mean() or np.arange() from the numpy library. The great thing is you can write …" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Functions in Python, an introduction"/>
         <meta property="og:url" content="https://ueapy.github.io/functions-in-python-an-introduction.html"/>
-        <meta property="og:description" content="{% notebook 2019-02-28-functions-will.ipynb cells[2:] %}"/>
+        <meta property="og:description" content="Basic principles and features¶Functions are exactly that: they usually take an input and return an output. When you do your typical Python coding you will be using functions all the time, for example np.mean() or np.arange() from the numpy library. The great thing is you can write …"/>
         <meta property="article:published_time" content="2019-02-28" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="functions" />
@@ -111,7 +111,823 @@ Python Group UEA            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>{% notebook 2019-02-28-functions-will.ipynb cells[2:] %}</p>
+                <p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-principles-and-features">Basic principles and features<a class="anchor-link" href="#Basic-principles-and-features">&#182;</a></h2><p>Functions are exactly that: they usually take an input and return an output. 
+When you do your typical Python coding you will be using functions all the time, for example <strong>np.mean()</strong> or <strong>np.arange()</strong> from the numpy library.
+The great thing is you can write them yourself!</p>
+<p>Below is a very simple example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_a_phrase</span><span class="p">():</span> <span class="c1"># we start the definition of a function with &quot;def&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Academics of the world unite! You have nothing to lose but your over-priced proprietary software licenses.&quot;</span><span class="p">)</span>
+    <span class="c1">#return 0;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_a_phrase</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Academics of the world unite! You have nothing to lose but your over-priced proprietary software licenses.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We define the function using <strong>def</strong>, followed by whatever name we choose for the function, which is immediately followed by a round bracket <strong>()</strong>. The bracket is where you would write your <em>arguments</em> in, for example your input variable.</p>
+<p>The function above doesn't take an input, but it prints a pre-defined phrase. If we were to make it more dynamic and make it print any input we want to give it, it would just become <strong>print()</strong>, so not much use for this here: Do not re-invent the wheel!</p>
+<p>It also doesn't actually <em>return</em> anything, it just <em>does</em> something. In C++ this function would be defined as <strong>void</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if we do give it an input? Below are two examples of simple functions for unit conversion:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_pa_to_mb</span><span class="p">(</span><span class="n">pascal</span><span class="p">):</span>
+    <span class="n">millibar</span> <span class="o">=</span> <span class="n">pascal</span> <span class="o">*</span> <span class="mf">0.01</span>
+    <span class="k">return</span> <span class="n">millibar</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See how the above takes the input, operates on it, and then <strong>returns</strong> your output. Note how we didn't specifify what form <strong>Pascal</strong> has to take: we could put in an integer or a float. This is due to Python's <em>polymorphism</em>. We could also put a string in, and it wouldn't complain until it has to do maths on it, which is when it causes an error. More on this later.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">convert_pa_to_mb</span><span class="p">(</span><span class="mi">80000</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>800.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But if your function is that simple, you can save a line by calculating and returning the result in one go:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_mb_to_pa</span><span class="p">(</span><span class="n">millibar</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">millibar</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">convert_mb_to_pa</span><span class="p">(</span><span class="mi">1050</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>105000</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now all of this was very basic, and you might think, why not just write the calculation directly into my main code?</p>
+<p>For a start, as your work becomes more sophisticated the longer and more complex your calculations and operations become. Then consider that you'll probably end up wanting to reuse the same task in your code or in another code. If you wrote out the same stuff again and again your code would get very messy very quickly. Instead it really does help to keep recurring functions neatly titied away at the top or bottom of your code, or in a seperate file.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">check_integer_and_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">remainder</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">while</span> <span class="n">remainder</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">remainder</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># reduce number to smallest positive value</span>
+        <span class="k">if</span> <span class="n">remainder</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>  <span class="c1"># if half ovr above, round up</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">remainder</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">remainder</span>  <span class="c1"># round down</span>
+    <span class="k">return</span> <span class="n">value</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above is just another example of a function; it figures out if a value is an integer, and if it is not, it rounds it up or down, as appropriate.</p>
+<p>Notice <strong>is_integer()</strong> is also a function, from the main python library. Here it doesn't take an input in it's brackets <strong>()</strong>, but instead it's "attached" to the variable <strong>value</strong>. This is because it is a <em>class function</em>, and in Python variables are <em>class objects</em>, but that's a story for another presentation. In fact, you can find an excellent tutorial on classes here: <a href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a> .</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># need this to make array</span>
+
+<span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># make an array of integers</span>
+<span class="n">new_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">])</span>  <span class="c1">#  make another array to insert into our main array</span>
+<span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">my_array</span><span class="p">,</span> <span class="n">new_array</span><span class="p">))</span>  <span class="c1"># let&#39;s add some non-integers to our little array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0.  1.  2.  3.  4.  1.2 8.  4.5]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_array</span><span class="p">)):</span>
+    <span class="n">my_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">check_integer_and_change</span><span class="p">(</span><span class="n">my_array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># we perform our function from above on each array element</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0. 1. 2. 3. 4. 1. 8. 5.]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another good reason for using functions is how it deals with <em>memory</em>: If you use arrays a lot, and you do all your calculations in line with your main code then you might start piling up a lot of <em>stuff</em>, i.e. you use up your memory, which can lead to your program to slow, or even memory leackage. Instead, functions take your input, temporarily take some extra space in your memory, and once they spit out their output, they delete whatever extra stuff they needed for their calculation, but without affecting your input, unless you want it to. - <strong>for</strong> and <strong>while</strong> loops, or when you use <strong>if</strong>, also delete any variables that were defined within them, but they might change your input from before the loop, if you're not careful!</p>
+<p>To illustrate this danger:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">double_something</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># we actively modify the original input variable; in many cases the original value would be irretrievable</span>
+    <span class="k">return</span> <span class="n">value</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_value</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">new_value</span> <span class="o">=</span> <span class="n">double_something</span><span class="p">(</span><span class="n">input_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;new_value =&quot;</span><span class="p">,</span> <span class="n">new_value</span><span class="p">)</span>
+<span class="c1"># now check if our original input is the same</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;input =&quot;</span><span class="p">,</span> <span class="n">input_value</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>new_value = 10.0
+input = 5.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now let&#39;s do the same the function does, but in a loop for 1 iteration:</span>
+<span class="n">value</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">new_value</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># we copy the function above exactly</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">new_value</span> <span class="o">=</span> <span class="n">value</span> <span class="c1"># our &quot;return&quot;</span>
+    
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;new_value =&quot;</span><span class="p">,</span> <span class="n">new_value</span><span class="p">)</span>
+<span class="c1"># now check if our original input is the same</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;input =&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>new_value = 10.0
+input = 10.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So we can see that due to sloppy coding we now changed our original input in the <strong>for</strong> loop, but preserved it when we used a function instead.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are instances where a function could permanently affect your input data, due to the fact that in python when you use the <strong>=</strong> operator, the variables you get are really just pointers to the same data. It is recommended to make sure you've properly copied vital data before passing it to a function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's look at putting different variable types in, see what we can get out, and think of how what we'll find could be useful to us.
+Say you want a function that can operate on a single quantity, as well as multiple quantities, e.g. in an array. For this example we will do a unit conversion and then calculate the average of all the input values.
+But we will use <strong>try</strong> and <strong>except</strong> to make a distinction between single values and arrays.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_JeV_and_mean</span><span class="p">(</span><span class="n">eV_values</span><span class="p">):</span> <span class="c1"># take input in eV</span>
+    
+    <span class="n">joule_values</span> <span class="o">=</span> <span class="mf">1.60218e-18</span> <span class="o">*</span> <span class="n">eV_values</span> <span class="c1"># here just do the simple conversion</span>
+    
+    <span class="c1"># if we want the mean from numpy we need to make sure we only do that for an array input</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">array_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">joule_values</span><span class="p">)</span> <span class="c1"># if we have a single value, this line will cause an error</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">joule_values</span><span class="p">)</span> 
+    <span class="k">except</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">joule_values</span> <span class="c1"># if it&#39;s just a single value, return it by itself</span>
+    
+    <span class="k">return</span> <span class="n">joule_values</span><span class="p">,</span> <span class="n">mean</span> <span class="c1"># if it&#39;s an array, we can return both it and its mean</span>
+        
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's put in a float...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">convert_JeV_and_mean</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.60218e-18</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Only a single output was returned: the converted float.</p>
+<p>Now let's input a <strong>numpy array</strong>. (Btw, the values seen below are of the order GeV, which is a common sight in high energy particle physics, and in astrophysics)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">some_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.0956e-11</span><span class="p">,</span> <span class="mf">5.1130e-11</span><span class="p">,</span> <span class="mf">4.8856e-11</span> <span class="p">])</span>
+<span class="n">convert_JeV_and_mean</span><span class="p">(</span><span class="n">some_data</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([8.16406841e-29, 8.19194634e-29, 7.82761061e-29]), 8.061208452e-29)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The output above looks complicated, but it is essentially first the array of converted values, and then the mean. But this bracketed output looks messy and in your own code you would do something like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">convert_JeV_and_mean</span><span class="p">(</span><span class="n">some_data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;results =&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mean =&quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>results = [8.16406841e-29 8.19194634e-29 7.82761061e-29]
+mean = 8.061208452e-29 J
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As the function potentially outputs two different objects, we can assign them to seperate variables as shown above.</p>
+<p>Notice how the order of the output (i.e. values <em>then</em> mean) corresponds to the order in which we wrote them after <strong>return</strong> at the bottom of our function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examples-of-advanced-features">Examples of advanced features<a class="anchor-link" href="#Examples-of-advanced-features">&#182;</a></h2><h3 id="Decorators-and-Wrappers">Decorators and Wrappers<a class="anchor-link" href="#Decorators-and-Wrappers">&#182;</a></h3><p>Quite neatly, we can define functions within functions, and also return functions from functions. An example where this is applied is the use of <strong>decorators</strong> and <strong>wrappers</strong>, which are types of functions. Below is a demonstration of a very simple example: we have a function called <strong>func()</strong>, and we <em>wrap</em> it up in another function, which will just measure time, inside the decorator.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
+<span class="kn">import</span> <span class="nn">time</span> 
+
+<span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> 
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="c1"># here we run the function f</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time taken =&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="c1"># difference in points in time gives duration of f run</span>
+        <span class="k">return</span> <span class="n">rv</span>
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># we return the function called wrapper</span>
+
+<span class="nd">@decorator</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">pass</span> <span class="c1"># does nothing, just for demonstration</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>@</code> followed by the name of a function, here <strong>wraps</strong> and <strong>decorator</strong>, acts like a kind of override. You place the @ right above a function definition, which, for example, tells the program that whenever <strong>func</strong> is run, it is <em>decorated</em> by the function called <strong>decorator</strong>. decorator returns <strong>wrapper</strong>, which will now run everytime func is run. <strong>*args</strong> and <strong>**kwargs</strong> are ways of allowing you to pass a flexible number of arguments to your function, and are explained here: <a href="http://book.pythontips.com/en/latest/args_and_kwargs.html">http://book.pythontips.com/en/latest/args_and_kwargs.html</a> .</p>
+<p>Let's see if it works:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">func</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Time taken = 9.5367431640625e-07
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Running  <strong>func()</strong> printed the time taken, which will naturally be negligible, due to the simplicity of the function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Docstrings">Docstrings<a class="anchor-link" href="#Docstrings">&#182;</a></h3><p>Finally, not necessarily an "advanced" feature but still useful, we have <strong>docstrings</strong>, which are known to be <em>documentation</em> inside your code. You can insert a docstring anywhere in your code, but it's not advised as that can slow your program down, and in most places you should use <em>comments</em> instead. However, they are very useful, say, at the top of a function definition to explain <em>what</em> the function does. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">check_integer_and_round</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function takes a float or integer value and tests the quantity for its type.</span>
+<span class="sd">    If the input is an integer ther function does nothing more and returns the original input</span>
+<span class="sd">    If the input is a non-integer it rounds it to the nearest whole integer, and returns the result.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">remainder</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">while</span> <span class="n">remainder</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">remainder</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># reduce number to smallest positive value </span>
+        <span class="k">if</span> <span class="n">remainder</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span> <span class="c1"># if half ovr above, round up</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">remainder</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">remainder</span> <span class="c1"># round down</span>
+    <span class="k">return</span> <span class="n">value</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We reused the previous function for rounding numbers to integers, with a small change to its name to avoid any issues with doubly defining it. We also addedd some text within two triple quotation marks <code>"""</code>; this is a docstring. Like a comment, which starts with a hash <code>#</code>, it does nothing functionally when the code is run, it simply serves to help the user understand what the function does. In your terminal you can call it with the <strong>help()</strong> function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">check_integer_and_round</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on function check_integer_and_round in module __main__:
+
+check_integer_and_round(value)
+    Function takes a float or integer value and tests the quantity for its type.
+    If the input is an integer ther function does nothing more and returns the original input
+    If the input is a non-integer it rounds it to the nearest whole integer, and returns the result.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A few more examples can be found in an earlier post: <a href="https://ueapy.github.io/some-peculiarities-of-using-functions-in-python.html">Some peculiarities of using functions in Python</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2019-02-28-functions-will.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -191,7 +1007,7 @@ Python Group UEA            </a>
                             binder
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
+                    <li class="list-group-item tag-2">
                         <a href="https://ueapy.github.io/tag/cartopy.html">
                             cartopy
                         </a>

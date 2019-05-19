@@ -72,37 +72,197 @@ Python Group UEA            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://ueapy.github.io/loading-netcdf-datasets.html">Loading NetCDF datasets</a></h2>
+                <div class="summary"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Continuing the previous week's topic, today we went through the basics of loading netCDF datasets.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this notebook we explore a netCDF file from the Atlantic Real-Time Ocean Forecast System (downloaded from the Unidata Python Workshop's <a href="https://unidata.github.io/unidata-python-workshop/">GitHub repository</a>. The filename is <a href="https://github.com/Unidata/tds-python-workshop/blob/master/data/rtofs_glo_3dz_f006_6hrly_reg3.nc">rtofs_glo_3dz_f006_6hrly_reg3.nc</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">path_to_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path …</span></pre></div></div></div></div></div></p>
+                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/loading-netcdf-datasets.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://ueapy.github.io/creating-netcdf-datasets.html">Creating NetCDF datasets</a></h2>
-                <div class="summary"><p>{% notebook 2016-10-07-creating-netcdf-datasets.ipynb cells[2:] %}</p>
+                <div class="summary"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-NetCDF?">What is NetCDF?<a class="anchor-link" href="#What-is-NetCDF?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='http://www.unidata.ucar.edu/images/logos/netcdf-50x50.png'></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NetCDF (network Common Data Form) is a set of interfaces for array-oriented data access and a freely distributed collection of data access libraries for C, Fortran, C++, Java, and other languages.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NetCDF data are:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Self-Describing. A netCDF file includes information about the data it contains.</li>
+<li>Portable. A …</li></ul></div></div></div></p>
                     <a class="btn btn-default btn-xs" href="https://ueapy.github.io/creating-netcdf-datasets.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="https://ueapy.github.io/using-python-scripts-and-modules.html">Using Python scripts and modules</a></h2>
-                <div class="summary"><p>{% notebook 2016-09-30-scripts-and-modules.ipynb cells[2:] %}</p>
+                <div class="summary"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can type all the instructions in the Python interpreter. But for longer sets of instructions you definitely need to change track and write the code in text files, that are usually called <em>scripts</em>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ways-of-running-scripts">Ways of running scripts<a class="anchor-link" href="#Ways-of-running-scripts">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are several ways of executing, or running, a script. If you …</p></div></div></div></p>
                     <a class="btn btn-default btn-xs" href="https://ueapy.github.io/using-python-scripts-and-modules.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="https://ueapy.github.io/introduction-to-arcgis-and-its-python-interface.html">Introduction to ArcGIS and its Python interface</a></h2>
-                <div class="summary"><p>{% notebook 2016-06-10-arcgis-intro.ipynb cells[2:] %}</p>
+                <div class="summary"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Today Melanie lead the meeting with a session on the ArcGIS software and how we can use Python to automatise the geospatial data processing. The slides are available below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We started with a brief introduction to the types of data and analysis you can do in ArcGIS. Then Melanie demonstrated …</p></div></div></div></p>
                     <a class="btn btn-default btn-xs" href="https://ueapy.github.io/introduction-to-arcgis-and-its-python-interface.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="https://ueapy.github.io/customizing-colorbars-and-colormaps-in-matplotlib.html">Customizing colorbars and colormaps in matplotlib</a></h2>
-                <div class="summary"><p>{% notebook 2016-05-13-custom-colorbar-colormap.ipynb cells[2:] %}</p>
+                <div class="summary"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Today's meeting started with a question.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>I have a colorbar such as this:
+<img src="../figures/help1.JPG" alt=""></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>How can I get a colorbar to look like in the figure below?</p>
+<p><img src="../figures/help2.JPG" alt=""></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="0.-some-necessary-imports-and-fake-data">0. some necessary imports and fake data<a class="anchor-link" href="#0.-some-necessary-imports-and-fake-data">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4 …</div></div></div></p>
                     <a class="btn btn-default btn-xs" href="https://ueapy.github.io/customizing-colorbars-and-colormaps-in-matplotlib.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/python-basics-classes.html">Python basics: classes</a></h2>
-                <div class="summary"><p>{% notebook 2016-05-06-classes.ipynb cells[2:] %}</p>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/python-basics-classes.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -169,7 +329,7 @@ Python Group UEA            </a>
                             binder
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
+                    <li class="list-group-item tag-2">
                         <a href="https://ueapy.github.io/tag/cartopy.html">
                             cartopy
                         </a>

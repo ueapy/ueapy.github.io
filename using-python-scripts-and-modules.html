@@ -13,13 +13,13 @@
 
         <meta name="author" content="Denis Sergeev" />
         <meta name="keywords" content="basics" />
-        <meta name="description" content="{% notebook 2016-09-30-scripts-and-modules.ipynb cells[2:] %}" />
+        <meta name="description" content="You can type all the instructions in the Python interpreter. But for longer sets of instructions you definitely need to change track and write the code in text files, that are usually called scripts. Ways of running scripts¶ There are several ways of executing, or running, a script. If you …" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Using Python scripts and modules"/>
         <meta property="og:url" content="https://ueapy.github.io/using-python-scripts-and-modules.html"/>
-        <meta property="og:description" content="{% notebook 2016-09-30-scripts-and-modules.ipynb cells[2:] %}"/>
+        <meta property="og:description" content="You can type all the instructions in the Python interpreter. But for longer sets of instructions you definitely need to change track and write the code in text files, that are usually called scripts. Ways of running scripts¶ There are several ways of executing, or running, a script. If you …"/>
         <meta property="article:published_time" content="2016-09-30" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="basics" />
@@ -108,7 +108,513 @@ Python Group UEA            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>{% notebook 2016-09-30-scripts-and-modules.ipynb cells[2:] %}</p>
+                <p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can type all the instructions in the Python interpreter. But for longer sets of instructions you definitely need to change track and write the code in text files, that are usually called <em>scripts</em>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ways-of-running-scripts">Ways of running scripts<a class="anchor-link" href="#Ways-of-running-scripts">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are several ways of executing, or running, a script. If you frequently work in a command line, you would run a Python script just by typing</p>
+<div class="highlight"><pre><span></span>$ python some_script.py
+</pre></div>
+<p>where <code>some_script</code> is of course the name of your script.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On Unix machines, if the script starts with <strong><code>#!/usr/bin/env python</code></strong> and the script is executable, you can just type the name of the script to run it:</p>
+<div class="highlight"><pre><span></span>$ ./demo.py
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you want to run a script from a Python interpreter, you need to use <code>execfile</code> command:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">execfile</span><span class="p">(</span><span class="s1">&#39;some_script.py&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The IPython console offers another way of running a script. Yes, you guessed it, it's just literally <code>run</code> command:</p>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> demo.py
+</pre></div>
+<p>In this case, not only the script was executed, but also the variables defined in the script are now available inside the interpreter's namespace.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Debugging-and-profiling-in-IPython">Debugging and profiling in IPython<a class="anchor-link" href="#Debugging-and-profiling-in-IPython">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This section is shamelessly taken from <a href="https://github.com/drivendata/data-science-is-software/blob/master/notebooks/lectures/3.0-refactoring.ipynb">here</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Standard-Python-debugger:-pdb">Standard Python debugger: pdb<a class="anchor-link" href="#Standard-Python-debugger:-pdb">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Interrupt execution with:</p>
+<ul>
+<li><code>%debug</code> magic: drops you out into the most recent error stacktrace in pdb</li>
+<li><code>import q; q.d()</code>: drops you into pdb, even outside of IPython</li>
+</ul>
+<p>Interrupt execution on an <code>Exception</code> with <code>%pdb</code> magic. Use pdb the Python debugger to debug inside a notebook.</p>
+<p><strong>Key commands for pdb are:</strong></p>
+<ul>
+<li><code>p</code>: Evaluate and print Python code</li>
+<li><code>w</code>: Where in the stack trace am I?</li>
+<li><code>u</code>: Go up a frame in the stack trace.</li>
+<li><code>d</code>: Go down a frame in the stack trace.</li>
+<li><code>c</code>: Continue execution</li>
+<li><code>q</code>: Stop execution</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="IPython-profiler">IPython profiler<a class="anchor-link" href="#IPython-profiler">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes your code is slow. See which functions are called, how many times, and how long they take!
+The <code>%prun</code> magic reports these to you right in the Jupyter notebook!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The-world-beyond-Jupyter">The world beyond Jupyter<a class="anchor-link" href="#The-world-beyond-Jupyter">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Modern graphical IDEs are shipped with built-in profiling and debugging interfaces. One of the most powerful Python IDEs is PyCharm. It has tons of integrations with the normal development flow. Some of the features include:</p>
+<ul>
+<li>git integration</li>
+<li>interactive graphical debugger</li>
+<li>flake8 linting</li>
+<li>smart refactoring/go to</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reusing-code-by-importing-modules">Reusing code by importing modules<a class="anchor-link" href="#Reusing-code-by-importing-modules">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you want to write larger and better organized programs (compared to simple scripts), where some objects are defined, (variables, functions, classes) and that you want to reuse several times, you have to create your own modules.</p>
+<p>Let us create a module demo contained in the file demo.py:</p>
+<div class="highlight"><pre><span></span><span class="c1"># A demo module</span>
+
+
+<span class="k">def</span> <span class="nf">show_me_a</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints a.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">show_me_b</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints b.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this file, we defined two functions <code>show_me_a</code> and <code>show_me_b</code>. Suppose we want to call the <code>show_me_a</code> function from the interpreter. We could execute the file as a script, but since we just want to have access to the function <code>show_me_a</code>, we are rather going to import it as a module. The syntax is as follows.</p>
+<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">demo</span>
+
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">demo</span><span class="o">.</span><span class="n">show_me_a</span><span class="p">()</span>
+<span class="n">a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Pythonic-import-statements">Pythonic import statements<a class="anchor-link" href="#Pythonic-import-statements">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Good"><font color="green">Good</font><a class="anchor-link" href="#Good">&#182;</a></h4><p>import <font color='green'>sys</font></p>
+<p>from os import <font color='green'>path</font></p>
+<p>import statistics <font color='green'>as stats</font></p>
+<p>from custom_package import <font color='green'>mode</font></p>
+<p>from statistics import <font color='green'>mean, median</font></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Bad:-silently-overwrites-previous-imports"><font color="red">Bad:</font> silently overwrites previous imports<a class="anchor-link" href="#Bad:-silently-overwrites-previous-imports">&#182;</a></h4><p>from pylab import <font color='red'><b>*</b></font></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Module-caching">Module caching<a class="anchor-link" href="#Module-caching">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Modules are cached: if you modify <code>demo.py</code> and re-import it in the
+old session, you will get the old one.</p>
+<p>Solution:</p>
+<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">reload</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+</pre></div>
+<p>In Python 3 instead <code>reload</code> is not builtin, so you have to import the <code>importlib</code> module first and then do:</p>
+<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Auto-reloading-in-IPython">Auto-reloading in IPython<a class="anchor-link" href="#Auto-reloading-in-IPython">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="c1"># always reload modules marked with &quot;%aimport&quot;</span>
+<span class="o">%</span><span class="k">autoreload</span> 1
+<span class="c1"># reload all</span>
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us test it out! First we import the module using the magic:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+<span class="kn">import</span> <span class="nn">demo</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">demo</span><span class="o">.</span><span class="n">show_me_a</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then we change that function to so that it prints something else:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># A demo module</span>
+
+
+<span class="k">def</span> <span class="nf">show_me_a</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints a.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Something else&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">show_me_b</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints b.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now <code>demo.show_me_a()</code> prints out "Something else" instead of "a".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="'__main__'-and-how-to-use-it"><code>'__main__'</code> and how to use it<a class="anchor-link" href="#'__main__'-and-how-to-use-it">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes we want code to be executed when a module is run directly, but not when it is imported by another module. <code>if __name__ == '__main__'</code> allows us to check whether the module is being run directly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So now if the script demo.py looks like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_me_a</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints a.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Something else&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">show_me_b</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints b.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="c1"># show_me_b() runs on import</span>
+<span class="n">show_me_b</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># show_me_a() is only executed when the module is run directly.</span>
+    <span class="n">show_me_a</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-packages-and-creating-your-own-modules">Using packages and creating your own modules<a class="anchor-link" href="#Using-packages-and-creating-your-own-modules">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to import your local modules, you must do three things:</p>
+<ul>
+<li>put the .py file in a separate folder</li>
+<li>add an empty <code>__init__.py</code> file to the folder</li>
+<li>add that folder to the Python path with <code>sys.path.append()</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you are getting too good at writing code and it's becoming useful for other projects or people, you should consider refactoring it into a standalone package. You can then make it available online via PyPi or Anaconda. There are great templates out there. To name but a few:</p>
+<ul>
+<li><a href="https://github.com/wdm0006/cookiecutter-pipproject">Cookiecutter</a></li>
+<li><a href="https://github.com/uwescience/shablona">Shablona</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Resources">Resources<a class="anchor-link" href="#Resources">&#182;</a></h2><ul>
+<li><a href="https://training.talkpython.fm/courses/details/write-pythonic-code-like-a-seasoned-developer">TalkPython course "Write Pythonic Code Like a Seasoned Developer"</a></li>
+<li><a href="http://www.scipy-lectures.org/intro/language/reusing_code.html">SciPy lectures</a></li>
+<li><a href="https://www.youtube.com/watch?v=EKUy0TSLg04&amp;index=10&amp;list=WL">Data Science is Software. SciPy 2016 Tutorial by Peter Bull &amp; Isaac Slavitt</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2016-09-30-scripts-and-modules.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -188,7 +694,7 @@ Python Group UEA            </a>
                             binder
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
+                    <li class="list-group-item tag-2">
                         <a href="https://ueapy.github.io/tag/cartopy.html">
                             cartopy
                         </a>

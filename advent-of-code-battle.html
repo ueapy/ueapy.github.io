@@ -13,13 +13,13 @@
 
         <meta name="author" content="Mark Prosser" />
         <meta name="keywords" content="oop" />
-        <meta name="description" content="{% notebook 2018-02-05-oop-vs-procedural.ipynb cells[2:] %}" />
+        <meta name="description" content="Instructions for the example in the code can be found here: https://adventofcode.com/2015/day/21 And other approaches to this problem (including other languages) can be found on Reddit: https://www.reddit.com/r/adventofcode/comments/3xspyl/day_21_solutions/ First, we import Packages In [3]: import numpy as np …" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Advent of Code Battle"/>
         <meta property="og:url" content="https://ueapy.github.io/advent-of-code-battle.html"/>
-        <meta property="og:description" content="{% notebook 2018-02-05-oop-vs-procedural.ipynb cells[2:] %}"/>
+        <meta property="og:description" content="Instructions for the example in the code can be found here: https://adventofcode.com/2015/day/21 And other approaches to this problem (including other languages) can be found on Reddit: https://www.reddit.com/r/adventofcode/comments/3xspyl/day_21_solutions/ First, we import Packages In [3]: import numpy as np …"/>
         <meta property="article:published_time" content="2018-02-05" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="oop" />
@@ -108,7 +108,798 @@ Python Group UEA            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>{% notebook 2018-02-05-oop-vs-procedural.ipynb cells[2:] %}</p>
+                <p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Instructions for the example in the code can be found here: <a href="https://adventofcode.com/2015/day/21">https://adventofcode.com/2015/day/21</a>
+And other approaches to this problem (including other languages) can be found on Reddit: <a href="https://www.reddit.com/r/adventofcode/comments/3xspyl/day_21_solutions/">https://www.reddit.com/r/adventofcode/comments/3xspyl/day_21_solutions/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, we import Packages</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Procedural-code-version">Procedural code version<a class="anchor-link" href="#Procedural-code-version">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">startbosshp</span> <span class="o">=</span> <span class="mi">104</span>
+<span class="n">bossdamage</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">bossarmor</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">startplayerhp</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">playerdamage</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">playerarmor</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Named-tuples-tuples-but-BETTER!">Named tuples tuples but BETTER!<a class="anchor-link" href="#Named-tuples-tuples-but-BETTER!">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+<span class="n">Item</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;cost&#39;</span><span class="p">,</span> <span class="s1">&#39;damage&#39;</span><span class="p">,</span> <span class="s1">&#39;armor&#39;</span><span class="p">])</span>
+
+<span class="n">weaponsnt</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Dagger&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Shortsword&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Warhammer&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Longsword&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Greataxe&#39;</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">armornt</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Leather&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Chainmail&#39;</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Splintmail&#39;</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Bandedmail&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Platemail&#39;</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Naked&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">ringsnt</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Damage +1&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Damage +2&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Damage +3&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Defense +1&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Defense +2&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="s1">&#39;Defense +3&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Set-up-arrays">Set up arrays<a class="anchor-link" href="#Set-up-arrays">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wn</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#weapons</span>
+<span class="n">an</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1">#armor</span>
+<span class="n">rn</span> <span class="o">=</span> <span class="mi">22</span> <span class="c1">#rings</span>
+
+<span class="n">comb</span> <span class="o">=</span> <span class="n">wn</span> <span class="o">*</span> <span class="n">an</span> <span class="o">*</span> <span class="n">rn</span> <span class="c1">#total number of possibilities</span>
+
+<span class="c1">#setup arrays</span>
+<span class="n">player_spent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">wn</span><span class="p">,</span> <span class="n">an</span><span class="p">,</span> <span class="n">rn</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">player_damage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">wn</span><span class="p">,</span> <span class="n">an</span><span class="p">,</span> <span class="n">rn</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="c1">#damage</span>
+<span class="n">player_armor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">wn</span><span class="p">,</span> <span class="n">an</span><span class="p">,</span> <span class="n">rn</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="c1">#cost</span>
+
+<span class="c1">#setup arrays</span>
+<span class="c1">#weapons = np.full((wn, 3), 0)</span>
+<span class="n">armor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">an</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">rings0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">rings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">rn</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">weapons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">armor</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">53</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">102</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">rings0</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-itertool-package-to-get-15-combinations-of-2-rings">Use itertool package to get 15 combinations of 2 rings<a class="anchor-link" href="#Use-itertool-package-to-get-15-combinations-of-2-rings">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ring_combs</span> <span class="o">=</span> <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ring_combs</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5), (3, 4), (3, 5), (4, 5)]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-[Cost,-Damage,-Armor]-of-the-22-ring-combinations">The [Cost, Damage, Armor] of the 22 ring combinations<a class="anchor-link" href="#The-[Cost,-Damage,-Armor]-of-the-22-ring-combinations">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ring_combs</span><span class="p">)):</span>
+    <span class="n">rings</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rings0</span><span class="p">[</span><span class="n">ring_combs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">rings0</span><span class="p">[</span><span class="n">ring_combs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]][</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#spent</span>
+    <span class="n">rings</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rings0</span><span class="p">[</span><span class="n">ring_combs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">rings0</span><span class="p">[</span><span class="n">ring_combs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]][</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#damage</span>
+    <span class="n">rings</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rings0</span><span class="p">[</span><span class="n">ring_combs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">rings0</span><span class="p">[</span><span class="n">ring_combs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]][</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#armor</span>
+<span class="n">rings</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">rings0</span><span class="p">[:,:]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">rings</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 75   3   0]
+ [125   4   0]
+ [ 45   1   1]
+ [ 65   1   2]
+ [105   1   3]
+ [150   5   0]
+ [ 70   2   1]
+ [ 90   2   2]
+ [130   2   3]
+ [120   3   1]
+ [140   3   2]
+ [180   3   3]
+ [ 60   0   3]
+ [100   0   4]
+ [120   0   5]
+ [ 25   1   0]
+ [ 50   2   0]
+ [100   3   0]
+ [ 20   0   1]
+ [ 40   0   2]
+ [ 80   0   3]
+ [  0   0   0]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fill-3x-660-cell-3D-arrays-with-the-cost,-damage-and-armor-for-each-kit-combination">Fill 3x 660-cell 3D arrays with the cost, damage and armor for each kit-combination<a class="anchor-link" href="#Fill-3x-660-cell-3D-arrays-with-the-cost,-damage-and-armor-for-each-kit-combination">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">wn</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">an</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rn</span><span class="p">):</span>
+            <span class="n">player_spent</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">weapons</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">armor</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">rings</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="n">player_damage</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">weapons</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">armor</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">rings</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">player_armor</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">weapons</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">armor</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">rings</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="E.g.-[0,0,0]-=-rings:-dam+1,-dam+2,-leather,-dagger">E.g. [0,0,0] = rings: dam+1, dam+2, leather, dagger<a class="anchor-link" href="#E.g.-[0,0,0]-=-rings:-dam+1,-dam+2,-leather,-dagger">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">playerspent</span> <span class="o">=</span> <span class="n">player_spent</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;playerspent=&#39;</span><span class="p">,</span><span class="n">playerspent</span><span class="p">)</span>
+<span class="n">playerdamage</span> <span class="o">=</span> <span class="n">player_damage</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;playerdamage=&#39;</span><span class="p">,</span><span class="n">playerdamage</span><span class="p">)</span>
+<span class="n">playerarmor</span> <span class="o">=</span> <span class="n">player_armor</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;playerarmor=&#39;</span><span class="p">,</span><span class="n">playerarmor</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>playerspent= 96.0
+playerdamage= 7.0
+playerarmor= 1.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="660-boss-vs-player-battles">660 boss vs player battles<a class="anchor-link" href="#660-boss-vs-player-battles">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bestspend</span> <span class="o">=</span> <span class="mi">999</span>
+<span class="n">wi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ai</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ri</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">worstspend</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">wi2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ai2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ri2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">win_no</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lose_no</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">wn</span><span class="p">):</span> <span class="c1">#length=5</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">an</span><span class="p">):</span> <span class="c1">#length=6</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rn</span><span class="p">):</span>  <span class="c1">#length=22</span>
+            <span class="c1">#get 1 of 660</span>
+            <span class="n">playerspent</span> <span class="o">=</span> <span class="n">player_spent</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span>
+            <span class="n">playerdamage</span> <span class="o">=</span> <span class="n">player_damage</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span>
+            <span class="n">playerarmor</span> <span class="o">=</span> <span class="n">player_armor</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span>
+            <span class="n">bosshp</span> <span class="o">=</span> <span class="n">startbosshp</span>
+            <span class="n">playerhp</span> <span class="o">=</span> <span class="n">startplayerhp</span>
+
+            <span class="n">playeractdam</span> <span class="o">=</span> <span class="n">playerdamage</span> <span class="o">-</span> <span class="n">bossarmor</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">playeractdam</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">playeractdam</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#             playactdam = max(playeractdam, 1)</span>
+            <span class="n">bossactdam</span> <span class="o">=</span> <span class="n">bossdamage</span> <span class="o">-</span> <span class="n">playerarmor</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">bossactdam</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">bossactdam</span> <span class="o">=</span> <span class="mi">1</span>
+
+            <span class="k">while</span> <span class="p">(</span><span class="n">bosshp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">playerhp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span> 
+                <span class="c1">#bosshp = bosshp - playeractdam</span>
+                <span class="n">bosshp</span> <span class="o">-=</span> <span class="n">playeractdam</span>
+                <span class="c1">#playerhp = playerhp - bossactdam</span>
+                <span class="n">playerhp</span> <span class="o">-=</span> <span class="n">bossactdam</span>
+                
+            <span class="k">if</span> <span class="n">playerhp</span> <span class="o">&gt;</span> <span class="n">bosshp</span><span class="p">:</span> <span class="c1">#if I win</span>
+                <span class="c1">#win_no = win_no += 1</span>
+                <span class="n">win_no</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">playerspent</span> <span class="o">&lt;</span> <span class="n">bestspend</span><span class="p">:</span>
+                    <span class="n">bestspend</span> <span class="o">=</span> <span class="n">playerspent</span>
+                    <span class="n">wi</span> <span class="o">=</span> <span class="n">w</span>
+                    <span class="n">ai</span> <span class="o">=</span> <span class="n">a</span>
+                    <span class="n">ri</span> <span class="o">=</span> <span class="n">r</span>
+                    
+            <span class="k">if</span> <span class="n">playerhp</span> <span class="o">&lt;</span> <span class="n">bosshp</span><span class="p">:</span> <span class="c1">#if I lose</span>
+                <span class="c1">#lose_no = lose_no + 1</span>
+                <span class="n">lose_no</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">playerspent</span> <span class="o">&gt;</span> <span class="n">worstspend</span><span class="p">:</span>
+                    <span class="n">worstspend</span> <span class="o">=</span> <span class="n">playerspent</span>
+                    <span class="n">wi2</span> <span class="o">=</span> <span class="n">w</span>
+                    <span class="n">ai2</span> <span class="o">=</span> <span class="n">a</span>
+                    <span class="n">ri2</span> <span class="o">=</span> <span class="n">r</span>
+
+
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lowest cost while still winning =&#39;</span><span class="p">,</span><span class="n">bestspend</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">weaponsnt</span><span class="p">[</span><span class="n">wi</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">armornt</span><span class="p">[</span><span class="n">ai</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ringscombi&#39;</span><span class="p">,</span><span class="n">rings</span><span class="p">[</span><span class="n">ri</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ai</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;highest cost while still losing =&#39;</span><span class="p">,</span><span class="n">worstspend</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">weaponsnt</span><span class="p">[</span><span class="n">wi2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">armornt</span><span class="p">[</span><span class="n">ai2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ringscombi&#39;</span><span class="p">,</span><span class="n">rings</span><span class="p">[</span><span class="n">ri2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wi2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ai2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ri2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;win_no=&#39;</span><span class="p">,</span><span class="n">win_no</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lose_no=&#39;</span><span class="p">,</span><span class="n">lose_no</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>lowest cost while still winning = 91.0
+item(name=&#39;Longsword&#39;, cost=40, damage=7, armor=0)
+item(name=&#39;Chainmail&#39;, cost=31, damage=0, armor=2)
+ringscombi [20  0  1]
+3
+1
+18
+-
+highest cost while still losing = 158.0
+item(name=&#39;Dagger&#39;, cost=8, damage=4, armor=0)
+item(name=&#39;Naked&#39;, cost=0, damage=0, armor=0)
+ringscombi [150   5   0]
+0
+5
+5
+-
+win_no= 525
+lose_no= 135
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Test-a-specific-combination-of-weapons,-armor-and-rings">Test a specific combination of weapons, armor and rings<a class="anchor-link" href="#Test-a-specific-combination-of-weapons,-armor-and-rings">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ww</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">aa</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">rr</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">playerspend</span> <span class="o">=</span> <span class="n">player_spent</span><span class="p">[</span><span class="n">ww</span><span class="p">,</span> <span class="n">aa</span><span class="p">,</span> <span class="n">rr</span><span class="p">]</span>
+<span class="n">playerdamage</span> <span class="o">=</span> <span class="n">player_damage</span><span class="p">[</span><span class="n">ww</span><span class="p">,</span> <span class="n">aa</span><span class="p">,</span> <span class="n">rr</span><span class="p">]</span>
+<span class="n">playerarmor</span> <span class="o">=</span> <span class="n">player_armor</span><span class="p">[</span><span class="n">ww</span><span class="p">,</span> <span class="n">aa</span><span class="p">,</span> <span class="n">rr</span><span class="p">]</span>
+<span class="n">bosshp</span> <span class="o">=</span> <span class="n">startbosshp</span>
+<span class="n">playerhp</span> <span class="o">=</span> <span class="n">startplayerhp</span>
+
+<span class="n">playeractdam</span> <span class="o">=</span> <span class="n">playerdamage</span> <span class="o">-</span> <span class="n">bossarmor</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">playeractdam</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">playeractdam</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">bossactdam</span> <span class="o">=</span> <span class="n">bossdamage</span> <span class="o">-</span> <span class="n">playerarmor</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">bossactdam</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">bossactdam</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">bosshp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">playerhp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span> 
+    <span class="n">bosshp</span> <span class="o">=</span> <span class="n">bosshp</span> <span class="o">-</span> <span class="n">playeractdam</span>
+    <span class="n">playerhp</span> <span class="o">=</span> <span class="n">playerhp</span> <span class="o">-</span> <span class="n">bossactdam</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bosshp=&#39;</span><span class="p">,</span><span class="n">bosshp</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;playerhp=&#39;</span><span class="p">,</span><span class="n">playerhp</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>bosshp= 96.0
+playerhp= 92.0
+-
+bosshp= 88.0
+playerhp= 84.0
+-
+bosshp= 80.0
+playerhp= 76.0
+-
+bosshp= 72.0
+playerhp= 68.0
+-
+bosshp= 64.0
+playerhp= 60.0
+-
+bosshp= 56.0
+playerhp= 52.0
+-
+bosshp= 48.0
+playerhp= 44.0
+-
+bosshp= 40.0
+playerhp= 36.0
+-
+bosshp= 32.0
+playerhp= 28.0
+-
+bosshp= 24.0
+playerhp= 20.0
+-
+bosshp= 16.0
+playerhp= 12.0
+-
+bosshp= 8.0
+playerhp= 4.0
+-
+bosshp= 0.0
+playerhp= -4.0
+-
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="OOP-code-version">OOP code version<a class="anchor-link" href="#OOP-code-version">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Make-the-boss-and-player-class-individually-or..">Make the boss and player class individually or..<a class="anchor-link" href="#Make-the-boss-and-player-class-individually-or..">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># class Boss:</span>
+<span class="c1">#     def __init__(self, hp, damage, armor):</span>
+<span class="c1">#         self.hp = hp</span>
+<span class="c1">#         self.damage = damage</span>
+<span class="c1">#         self.armor = armor</span>
+        
+<span class="c1">#     def calc_actdamage(self, playerarmor):</span>
+<span class="c1">#         self.actdamage = self.damage - playerarmor</span>
+<span class="c1">#         if (self.actdamage &lt; 1):</span>
+<span class="c1">#             self.actdamage = 1</span>
+        
+<span class="c1"># class Player:</span>
+<span class="c1">#     def __init__(self, spent, hp, damage, armor):</span>
+<span class="c1">#         self.spent = spent</span>
+<span class="c1">#         self.hp = hp</span>
+<span class="c1">#         self.damage = damage</span>
+<span class="c1">#         self.armor = armor</span>
+    
+<span class="c1">#     def calc_actdamage(self, bossarmor):</span>
+<span class="c1">#         self.actdamage = self.damage - bossarmor</span>
+<span class="c1">#         if (self.actdamage &lt; 1):</span>
+<span class="c1">#             self.actdamage = 1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="...Use-inheritance">...Use inheritance<a class="anchor-link" href="#...Use-inheritance">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">RpgChara</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">armor</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="n">hp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">damage</span> <span class="o">=</span> <span class="n">damage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">armor</span> <span class="o">=</span> <span class="n">armor</span>
+        
+    <span class="k">def</span> <span class="nf">calc_actdamage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enemyarmor</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actdamage</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">damage</span> <span class="o">-</span> <span class="n">enemyarmor</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actdamage</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">actdamage</span> <span class="o">=</span> <span class="mi">1</span>
+            
+<span class="k">class</span> <span class="nc">Boss</span><span class="p">(</span><span class="n">RpgChara</span><span class="p">):</span>
+    <span class="k">pass</span>
+    
+<span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">RpgChara</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spent</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">armor</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hp</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">armor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spent</span> <span class="o">=</span> <span class="n">spent</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="another-660-fights,-OOP-style">another 660 fights, OOP style<a class="anchor-link" href="#another-660-fights,-OOP-style">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bestspend</span> <span class="o">=</span> <span class="mi">999</span> <span class="c1">#too high in order to come down</span>
+<span class="n">wi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ai</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ri</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">worstspend</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#too low in order to go up</span>
+<span class="n">wi2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ai2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ri2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">win_no</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lose_no</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">wn</span><span class="p">):</span> <span class="c1">#length5</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">an</span><span class="p">):</span> <span class="c1">#length6</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rn</span><span class="p">):</span> <span class="c1">#length22</span>
+            <span class="c1">#get 1 of 660 instances per loop         </span>
+            <span class="n">boss_i</span> <span class="o">=</span> <span class="n">Boss</span><span class="p">(</span><span class="n">startbosshp</span><span class="p">,</span> <span class="n">bossdamage</span><span class="p">,</span> <span class="n">bossarmor</span><span class="p">)</span>
+            <span class="n">player_i</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="n">player_spent</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">],</span> <span class="n">startplayerhp</span><span class="p">,</span> <span class="n">player_damage</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">],</span> \
+                              <span class="n">player_armor</span><span class="p">[</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">])</span>
+            
+            <span class="c1">#but what is their actual damage</span>
+            <span class="n">boss_i</span><span class="o">.</span><span class="n">calc_actdamage</span><span class="p">(</span><span class="n">player_i</span><span class="o">.</span><span class="n">armor</span><span class="p">)</span>
+            <span class="n">player_i</span><span class="o">.</span><span class="n">calc_actdamage</span><span class="p">(</span><span class="n">boss_i</span><span class="o">.</span><span class="n">armor</span><span class="p">)</span>
+            
+            <span class="k">while</span> <span class="p">(</span><span class="n">boss_i</span><span class="o">.</span><span class="n">hp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">player_i</span><span class="o">.</span><span class="n">hp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span> 
+                <span class="n">boss_i</span><span class="o">.</span><span class="n">hp</span> <span class="o">-=</span> <span class="n">player_i</span><span class="o">.</span><span class="n">actdamage</span>
+                <span class="n">player_i</span><span class="o">.</span><span class="n">hp</span> <span class="o">-=</span> <span class="n">boss_i</span><span class="o">.</span><span class="n">actdamage</span>
+            
+            <span class="k">if</span> <span class="n">player_i</span><span class="o">.</span><span class="n">hp</span> <span class="o">&gt;</span> <span class="n">boss_i</span><span class="o">.</span><span class="n">hp</span><span class="p">:</span> <span class="c1">#if I win</span>
+                <span class="n">win_no</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">player_i</span><span class="o">.</span><span class="n">spent</span> <span class="o">&lt;</span> <span class="n">bestspend</span><span class="p">:</span>
+                    <span class="n">bestspend</span> <span class="o">=</span> <span class="n">player_i</span><span class="o">.</span><span class="n">spent</span>
+                    <span class="n">wi</span> <span class="o">=</span> <span class="n">w</span>
+                    <span class="n">ai</span> <span class="o">=</span> <span class="n">a</span>
+                    <span class="n">ri</span> <span class="o">=</span> <span class="n">r</span>
+                
+            <span class="k">if</span> <span class="n">player_i</span><span class="o">.</span><span class="n">hp</span> <span class="o">&lt;</span> <span class="n">boss_i</span><span class="o">.</span><span class="n">hp</span><span class="p">:</span> <span class="c1">#if I lose</span>
+                <span class="n">lose_no</span> <span class="o">+=</span> <span class="mi">1</span>   
+                <span class="k">if</span> <span class="n">player_i</span><span class="o">.</span><span class="n">spent</span> <span class="o">&gt;</span> <span class="n">worstspend</span><span class="p">:</span>
+                    <span class="n">worstspend</span> <span class="o">=</span> <span class="n">player_i</span><span class="o">.</span><span class="n">spent</span>
+                    <span class="n">wi2</span> <span class="o">=</span> <span class="n">w</span>
+                    <span class="n">ai2</span> <span class="o">=</span> <span class="n">a</span>
+                    <span class="n">ri2</span> <span class="o">=</span> <span class="n">r</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lowest spend while still winning =&#39;</span><span class="p">,</span><span class="n">bestspend</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">weaponsnt</span><span class="p">[</span><span class="n">wi</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">armornt</span><span class="p">[</span><span class="n">ai</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ringscombi&#39;</span><span class="p">,</span><span class="n">rings</span><span class="p">[</span><span class="n">ri</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;highest spend while still losing =&#39;</span><span class="p">,</span><span class="n">worstspend</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">weaponsnt</span><span class="p">[</span><span class="n">wi2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">armornt</span><span class="p">[</span><span class="n">ai2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ringscombi&#39;</span><span class="p">,</span><span class="n">rings</span><span class="p">[</span><span class="n">ri2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ri2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;win_no=&#39;</span><span class="p">,</span><span class="n">win_no</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lose_no=&#39;</span><span class="p">,</span><span class="n">lose_no</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>lowest spend while still winning = 91.0
+item(name=&#39;Longsword&#39;, cost=40, damage=7, armor=0)
+item(name=&#39;Chainmail&#39;, cost=31, damage=0, armor=2)
+ringscombi [20  0  1]
+18
+-
+highest spend while still losing = 158.0
+item(name=&#39;Dagger&#39;, cost=8, damage=4, armor=0)
+item(name=&#39;Naked&#39;, cost=0, damage=0, armor=0)
+ringscombi [150   5   0]
+5
+-
+win_no= 525
+lose_no= 135
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2018-02-05-oop-vs-procedural.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -188,7 +979,7 @@ Python Group UEA            </a>
                             binder
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
+                    <li class="list-group-item tag-2">
                         <a href="https://ueapy.github.io/tag/cartopy.html">
                             cartopy
                         </a>

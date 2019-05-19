@@ -13,13 +13,13 @@
 
         <meta name="author" content="Denis Sergeev" />
         <meta name="keywords" content="basics,oop" />
-        <meta name="description" content="{% notebook 2017-11-13-building-classes.ipynb cells[2:] %}" />
+        <meta name="description" content="First, let&#39;s refresh the terminology of object-oriented programming. class¶Tell Python to make a new type of thing. object¶Two meanings: the most basic type of thing, and any instance of some thing. instance¶What you get when you tell Python to create a class. def¶How you define a …" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Building classes"/>
         <meta property="og:url" content="https://ueapy.github.io/building-classes.html"/>
-        <meta property="og:description" content="{% notebook 2017-11-13-building-classes.ipynb cells[2:] %}"/>
+        <meta property="og:description" content="First, let&#39;s refresh the terminology of object-oriented programming. class¶Tell Python to make a new type of thing. object¶Two meanings: the most basic type of thing, and any instance of some thing. instance¶What you get when you tell Python to create a class. def¶How you define a …"/>
         <meta property="article:published_time" content="2017-11-13" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="basics" />
@@ -111,7 +111,1069 @@ Python Group UEA            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>{% notebook 2017-11-13-building-classes.ipynb cells[2:] %}</p>
+                <p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, let's refresh the terminology of object-oriented programming.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="class">class<a class="anchor-link" href="#class">&#182;</a></h6><p>Tell Python to make a new type of thing.</p>
+<h6 id="object">object<a class="anchor-link" href="#object">&#182;</a></h6><p>Two meanings: the most basic type of thing, and
+any instance of some thing.</p>
+<h6 id="instance">instance<a class="anchor-link" href="#instance">&#182;</a></h6><p>What you get when you tell Python to create a class.</p>
+<h6 id="def">def<a class="anchor-link" href="#def">&#182;</a></h6><p>How you define a method of a class.</p>
+<h6 id="self">self<a class="anchor-link" href="#self">&#182;</a></h6><p>Inside the methods in a class, self is a variable for
+the instance/object being accessed.</p>
+<h6 id="inheritance">inheritance<a class="anchor-link" href="#inheritance">&#182;</a></h6><p>The concept that one class can inherit traits from
+another class, much like you and your parents.</p>
+<h6 id="attribute">attribute<a class="anchor-link" href="#attribute">&#182;</a></h6><p>A property that classes have that are from composition
+and are usually variables.</p>
+<h6 id="is-a">is-a<a class="anchor-link" href="#is-a">&#182;</a></h6><p>A phrase to say that something inherits from another, as in
+a "salmon" is-a "fish."</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-am-I-really-missing-out-on-by-not-writing-classes?">What am I really missing out on by not writing classes?<a class="anchor-link" href="#What-am-I-really-missing-out-on-by-not-writing-classes?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-More-convenient-collections-of-fields">1. More convenient collections of fields<a class="anchor-link" href="#1.-More-convenient-collections-of-fields">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You might end up with lots of <code>list</code>s or <code>dict</code>s that share the same keys to access different kinds of data associated with a single logical (geographical) object:</p>
+<div class="highlight"><pre><span></span><span class="n">obs_temperature</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Temperature at the observational point No. 23</span>
+<span class="n">obs_humidity</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span> <span class="o">=</span> <span class="mi">75</span>  <span class="c1"># Humidity at the observational point No. 23</span>
+<span class="n">obs_name</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;research_vessel&#39;</span>  <span class="c1"># Name of the obs. point No. 23</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By switching to classes you could have a single list of objects, each of which has several named fields on it to address the associated data:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Everyting at the point No. 42</span>
+<span class="n">obs</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">obs</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span><span class="o">.</span><span class="n">humidity</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="n">obs</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;research_vessel&#39;</span>
+</pre></div>
+<p>Now you can keep all of the fields under one roof, which makes accessing and passing these objects around much more convenient.</p>
+<p>It's also easier to pass around big tuples of stuff from function to function.</p>
+<p><em>Note: we will have a look at Python's <code>namedtuples</code> in a future session.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-The-ability-to-chain-objects-together-and-let-them-interact-in-an-expressive-way">2. The ability to chain objects together and let them interact in an expressive way<a class="anchor-link" href="#2.-The-ability-to-chain-objects-together-and-let-them-interact-in-an-expressive-way">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The OOP version:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">garage</span><span class="o">.</span><span class="n">is_full</span><span class="p">:</span>
+    <span class="n">garage</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">my_car</span><span class="p">)</span>
+    <span class="n">my_car</span><span class="o">.</span><span class="n">turn_off</span><span class="p">()</span>
+    <span class="n">garage</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>vs the non-OOP / procedural version:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">is_garage_full</span><span class="p">(</span><span class="n">garage</span><span class="p">):</span>
+    <span class="n">add_car_to_garage</span><span class="p">(</span><span class="n">my_car</span><span class="p">,</span> <span class="n">garage</span><span class="p">)</span>
+    <span class="n">turn_off_car</span><span class="p">(</span><span class="n">my_car</span><span class="p">)</span>
+    <span class="n">close_garage</span><span class="p">(</span><span class="n">garage</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.--Code-written-using-OOP-is-less-prone-to-error.">3.  Code written using OOP is less prone to error.<a class="anchor-link" href="#3.--Code-written-using-OOP-is-less-prone-to-error.">&#182;</a></h3><ul>
+<li>OOP enables you to mostly eliminate lengthy argument lists</li>
+<li>It is much more difficult for a function to accidentally process data it should not process. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.-Programs-written-using-OOP-are-more-easily-extended">4. Programs written using OOP are more easily extended<a class="anchor-link" href="#4.-Programs-written-using-OOP-are-more-easily-extended">&#182;</a></h3><ul>
+<li>New cases are easily added by creating new classes that have the interface methods defined for them</li>
+<li>Functionality is also easily added by just adding new methods/attributes</li>
+<li>Any changes to class definitions automatically propagate to all instances of the class.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="5.-Domain-specific-models">5. Domain-specific models<a class="anchor-link" href="#5.-Domain-specific-models">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>E.g. GUI applications</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="6.-Custom-Exceptions">6. Custom Exceptions<a class="anchor-link" href="#6.-Custom-Exceptions">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyDescriptiveError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Special-methods-(aka-Magic-methods)">Special methods (aka Magic methods)<a class="anchor-link" href="#Special-methods-(aka-Magic-methods)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>A class can implement certain operations that are invoked by special syntax (such as arithmetic operations or subscripting and slicing) by defining methods with special names. This is Python's approach to operator overloading, allowing classes to define their own behavior with respect to language operators.</li>
+<li>For instance, if a class defines a method named <code>__getitem__()</code>, and <code>x</code> is an instance of this class, then <code>x[i]</code> is roughly equivalent to <code>type(x).__getitem__(x, i)</code>.</li>
+<li>Except where mentioned, attempts to execute an operation raise an exception when no appropriate method is defined (typically <code>AttributeError</code> or <code>TypeError</code>).</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong> Note: dunder-methods vs private attributes </strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Let's-build-a-class!">Let's build a class!<a class="anchor-link" href="#Let's-build-a-class!">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-1:-create-a-custom-class-with-__init__-method">Exercise 1: create a custom class with <code>__init__</code> method<a class="anchor-link" href="#Exercise-1:-create-a-custom-class-with-__init__-method">&#182;</a></h3><ul>
+<li>the class will describe an observational point, e.g. a weather station</li>
+<li>the class constructor should take <strong>temperature</strong> and <strong>pressure</strong> as input arguments</li>
+<li>example of usage:<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">OP</span> <span class="o">=</span> <span class="n">ObsPoint</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="mi">1013</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">OP</span><span class="o">.</span><span class="n">temperature</span>
+<span class="mi">20</span>
+</pre></div>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ObsPoint</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Observational Point</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    temperature: float</span>
+<span class="sd">        Air temperature (K)</span>
+<span class="sd">    pressure: float</span>
+<span class="sd">        Air pressure (Pa)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">pressure</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span> <span class="o">=</span> <span class="n">ObsPoint</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="mi">1013</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-can-this-class-be-useful?">How can this class be useful?<a class="anchor-link" href="#How-can-this-class-be-useful?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Inheritance!</li>
+<li>Can be used as a base class for a range of different observing platforms</li>
+<li><p>For example:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">WeatherBuoy</span><span class="p">(</span><span class="n">ObsPoint</span><span class="p">):</span>
+  <span class="c1"># ... other code ...</span>
+
+  <span class="k">def</span> <span class="nf">calculate_wave_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># ...</span>
+</pre></div>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2:-add-a-method-to-calculate-atmospheric-density">Exercise 2: add a method to calculate atmospheric density<a class="anchor-link" href="#Exercise-2:-add-a-method-to-calculate-atmospheric-density">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ObsPoint</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">pressure</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Use ideal gas law equation $p = \rho R T$</li>
+<li>Name it <code>calc_density</code> or <code>calc_rho</code></li>
+<li>Make specific gas constant $R$ an optional argument with the default value being $R=287~J~kg^{-1}~K^{-1}$</li>
+<li>Initialise a new instance of <code>ObsPoint</code> with $T=25^{\circ}C$ and $p=1020~hPa$. CHECK THE UNITS!</li>
+<li>Calculate the density using the new method and check your answer.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ObsPoint</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">pressure</span>
+        
+<span class="c1">#         self.density = self.pressure / (self.temperature * Rd)</span>
+    <span class="k">def</span> <span class="nf">calc_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rd</span><span class="o">=</span><span class="mi">287</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*</span> <span class="n">Rd</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span> <span class="o">=</span> <span class="n">ObsPoint</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mi">102000</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">298</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Result:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span><span class="o">.</span><span class="n">calc_density</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;bound method ObsPoint.calc_density of &lt;__main__.ObsPoint object at 0x7fefd4274710&gt;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span><span class="o">.</span><span class="n">calc_density</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.1926197881346023</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A possible improvement: store the result as an attribute</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ObsPoint</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">pressure</span>
+        
+    <span class="k">def</span> <span class="nf">calc_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rd</span><span class="o">=</span><span class="mi">287</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*</span> <span class="n">Rd</span><span class="p">)</span>  <span class="c1"># store the result as an attribute</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">density</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span> <span class="o">=</span> <span class="n">ObsPoint</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mi">102000</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">298</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">OP</span><span class="o">.</span><span class="n">calc_density</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span><span class="o">.</span><span class="n">density</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.1926197881346023</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-3:-Add-a-title/name/location-attribute-to-ObsPoint-and-change-object-representation">Exercise 3: Add a title/name/location attribute to <code>ObsPoint</code> and change object representation<a class="anchor-link" href="#Exercise-3:-Add-a-title/name/location-attribute-to-ObsPoint-and-change-object-representation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">OP</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;__main__.ObsPoint object at 0x7fefd42b9d68&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="__str__-vs-__repr__"><code>__str__</code> vs <code>__repr__</code><a class="anchor-link" href="#__str__-vs-__repr__">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>You can control to-string conversion in your own classes using the <code>__str__</code> and <code>__repr__</code> "dunder" methods.
+Writing your own Java-esque "tostring" methods is considered unpythonic.</li>
+<li>The result of the <code>__str__</code> method should be readable. The result of  <code>__repr__</code> should be unambiguous.</li>
+<li>You should always add a <code>__repr__</code> to your classes. The default implementation for <code>__str__</code> just calls <code>__repr__</code> internally, so by implementing <code>repr</code> support you'll get the biggest benefit.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ObsPoint</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Unknown Observational Point&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">pressure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        
+    <span class="k">def</span> <span class="nf">calc_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rd</span><span class="o">=</span><span class="mi">287</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*</span> <span class="n">Rd</span><span class="p">)</span>  <span class="c1"># store the result as an attribute</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">density</span>
+    
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{self.title}</span><span class="se">\n</span><span class="s1">with:</span><span class="se">\n</span><span class="s1">temperature = </span><span class="si">{self.temperature:4.2f}</span><span class="s1"> K</span><span class="se">\n</span><span class="s1">pressure = </span><span class="si">{self.pressure:4.1f}</span><span class="s1"> Pa&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;ObsPoint(temperature=</span><span class="si">{self.temperature!r}</span><span class="s1">, pressure=</span><span class="si">{self.pressure!r}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span> <span class="o">=</span> <span class="n">ObsPoint</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mi">102000</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">298</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">OP</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Unknown Observational Point
+with:
+temperature = 298.00 K
+pressure = 102000.0 Pa
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">OP</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;ObsPoint(temperature=298, pressure=102000)&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Or if you're lazy, at least add <code>__repr__</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ObsStation</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Unknown Observational Point&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">pressure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        
+    <span class="k">def</span> <span class="nf">calc_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rd</span><span class="o">=</span><span class="mi">287</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*</span> <span class="n">Rd</span><span class="p">)</span>  <span class="c1"># store the result as an attribute</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">density</span>
+    
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># __str__ falls back to __repr__</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{self.__class__.__name__}</span><span class="s1">(title=</span><span class="si">{self.title!r}</span><span class="s1">, temperature=</span><span class="si">{self.temperature!r}</span><span class="s1">, pressure=</span><span class="si">{self.pressure!r}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span> <span class="o">=</span> <span class="n">ObsStation</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;UEA automatic weather station&#39;</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="mi">102000</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">298</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">OP</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ObsStation(title=&#39;UEA automatic weather station&#39;, temperature=298, pressure=102000)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;ObsStation&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Useful-trick-to-avoid-repetition">Useful trick to avoid repetition<a class="anchor-link" href="#Useful-trick-to-avoid-repetition">&#182;</a></h4><ul>
+<li>use the object's <code>__class__.__name__</code> attribute, which will always reflect the class' name as a string.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="s1">&#39;{self.__class__.__name__}(&#39;</span>
+            <span class="n">f</span><span class="s1">&#39;{self.pressure!r}, {self.temperature!r})&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-4:-make-the-class-callable">Exercise 4: make the class <em>callable</em><a class="anchor-link" href="#Exercise-4:-make-the-class-callable">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Use <code>__call__</code> method</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ObsPoint</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Unknown Observational Point&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">pressure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        
+    <span class="k">def</span> <span class="nf">calc_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rd</span><span class="o">=</span><span class="mi">287</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*</span> <span class="n">Rd</span><span class="p">)</span>  <span class="c1"># store the result as an attribute</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">density</span>
+    
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># __str__ falls back to __repr__</span>
+        <span class="k">return</span> <span class="s1">&#39;ObsPoint(title=</span><span class="si">{self.title!r}</span><span class="s1">, temperature=</span><span class="si">{self.temperature!r}</span><span class="s1">, pressure=</span><span class="si">{self.pressure!r}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Print summary &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">some_value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Very-very-very long summary&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span> <span class="o">=</span> <span class="n">ObsPoint</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mi">102000</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">298</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>ObsPoint(title=&#39;Unknown Observational Point&#39;, temperature=298, pressure=102000)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now call this instance:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">OP</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Very-very-very long summaryVery-very-very long summaryVery-very-very long summaryVery-very-very long summaryVery-very-very long summaryVery-very-very long summaryVery-very-very long summaryVery-very-very long summaryVery-very-very long summaryVery-very-very long summary
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ul>
+<li><a href="https://dbader.org/blog/6-things-youre-missing-out-on-by-never-using-classes-in-your-python-code">6 things you’re missing out on by never using classes in your Python code</a></li>
+<li><a href="https://dbader.org/blog/python-repr-vs-str">Python String Conversion 101: Why Every Class Needs a "repr"</a></li>
+<li><a href="https://dbader.org/blog/python-dunder-methods">Enriching Your Python Classes With Dunder (Magic, Special) Methods</a></li>
+<li><a href="https://docs.python.org/3.6/reference/datamodel.html">The Python Language Reference</a></li>
+<li><a href="http://www.ceda.ac.uk/static/media/uploads/ncas-reading-2015/20_ceda-oop.pdf">NCAS Python course</a></li>
+<li><a href="http://www.johnny-lin.com/pyintro/ed01/free_pdfs/ch07.pdf">A Hands-On Introduction to Using Python in the Atmospheric and Oceanic Sciences. Chapter 7.</a></li>
+<li><a href="http://www.johnny-lin.com/pyintro/ed01/free_pdfs/ch08.pdf">A Hands-On Introduction to Using Python in the Atmospheric and Oceanic Sciences. Chapter 8.</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2017-11-13-building-classes.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -191,7 +1253,7 @@ Python Group UEA            </a>
                             binder
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
+                    <li class="list-group-item tag-2">
                         <a href="https://ueapy.github.io/tag/cartopy.html">
                             cartopy
                         </a>
