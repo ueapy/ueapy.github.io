@@ -3,6 +3,7 @@ channels:
 - conda-forge
 dependencies:
 - ghp-import
+- ipython
 - markdown
 - pelican
 - python=3.7

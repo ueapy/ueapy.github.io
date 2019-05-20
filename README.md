@@ -5,6 +5,7 @@ Built using [pelican](https://github.com/getpelican/pelican) static website gene
 ## Requirements for building the website
 ### Packages
 - ghp-import
+- ipython
 - markdown
 - pelican
 - python>=3.6
@@ -44,5 +45,5 @@ git checkout master
 
 git pull origin master  # download and merge changes
 
-git checkout src  # switch back to src  branch
+git checkout src  # switch back to src branch
 ```
