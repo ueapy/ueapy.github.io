@@ -13,13 +13,13 @@
 
         <meta name="author" content="Denis Sergeev" />
         <meta name="keywords" content="jupyter,hpc,anaconda" />
-        <meta name="description" content="{% notebook 2015-12-18-meeting-summary.ipynb cells[2:] %}" />
+        <meta name="description" content="This week one of the group&#39;s members asked how to use Jupyter on our UEA&#39;s supercomputer cluster Grace. So today we tried to walk through that. We also discussed other Jupyter capabilities and advantages. Those who are still sceptical or have no idea what is Jupyter, go and try it …" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Running Jupyter Notebook with remote kernels"/>
         <meta property="og:url" content="https://ueapy.github.io/running-jupyter-notebook-with-remote-kernels.html"/>
-        <meta property="og:description" content="{% notebook 2015-12-18-meeting-summary.ipynb cells[2:] %}"/>
+        <meta property="og:description" content="This week one of the group&#39;s members asked how to use Jupyter on our UEA&#39;s supercomputer cluster Grace. So today we tried to walk through that. We also discussed other Jupyter capabilities and advantages. Those who are still sceptical or have no idea what is Jupyter, go and try it …"/>
         <meta property="article:published_time" content="2015-12-18" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="jupyter" />
@@ -114,7 +114,525 @@ Python Group UEA            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>{% notebook 2015-12-18-meeting-summary.ipynb cells[2:] %}</p>
+                <p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This week one of the group's members asked how to use Jupyter on our UEA's supercomputer cluster <a href="http://rscs.uea.ac.uk/high-performance-computing">Grace</a>. So today we tried to walk through that. We also discussed other Jupyter capabilities and advantages.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Those who are still sceptical or have no idea what is Jupyter, go and <a href="https://try.jupyter.org/">try it on their official server</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>&lt;div class="alert alert-success", style="font-size: 150%"&gt;
+This post is outdated! Update is <a href=http://ueapy.github.io/update-on-using-jupyter-notebook-on-grace>here</a>.
+&lt;/div&gt;</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Jupyter-Kernels">Jupyter Kernels<a class="anchor-link" href="#Jupyter-Kernels">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One of the greatest advantages of Jupyter project is its modular ecosystem: it has a user interface that you see in a browser, but all computations are done by a kernel of your choice. Although initially Jupyter was made for Python (IPython kernel), it has recently become language-agnostic, and you can use a kernel that calls R or Julia or Matlab. In fact, here is a <a href="https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages">full list</a> of languages that you can use with Jupyter.</p>
+<p>As Jupyter documentation <a href="https://jupyter.readthedocs.org/en/latest/subprojects.html#kernels">states</a>, kernels are programming language specific processes that run independently and interact with the Jupyter Applications and their user interfaces.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But what is even more important for us here is that Jupyter and a kernel do not have to be on the same machine. Say, for example, you have a large dataset on a remote server and you don't want to transfer it all to a local PC. The solution here is to use a remote kernel.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post we will look at the simplest case of connecting Jupyter interface to a <strong>Python</strong> kernel on <strong>Grace</strong> via <strong>ssh</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-warning">
+The following instruction has been tested only on a Linux PC so far. Note that all the necessary packages are installed using Anaconda.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Anaconda-environment-on-Grace">Anaconda environment on Grace<a class="anchor-link" href="#Anaconda-environment-on-Grace">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Make sure you have a working Python distribution on Grace. Luckily, Grace has Anaconda module, and so you can load it and create a local environment following the instruction <a href="http://ueapy.github.io/13-november-meeting-summary.html#Launching-Python-on-Grace-using-Anaconda">here</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To make sure that you use the correct Python environment every time you enter Grace, here's what you can do. Create a bash script that looks like that:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>#!/bin/bash
+module load python/anaconda/2.3.0
+env_name=~/.conda/envs/myenv
+. $env_name/bin/activate myenv
+unset PYTHONHOME</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Call it <code>load_anaconda_env.sh</code> for example. Then add this line to your <code>~/.bashrc</code> file (before <code>export LOGIN_INVOKE=0</code>):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>. load_anaconda_env.sh</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next time you ssh to Grace, you'll get the output similar to:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>discarding /gpfs/grace/anaconda/2.3.0/bin from PATH
+prepending /gpfs/home/abc12xyz/.conda/envs/myenv/bin to PATH`
+(myenv)[abc12xyz@login00 ~]$</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-the-utility-to-manage-remote-kernels">Install the utility to manage remote kernels<a class="anchor-link" href="#Install-the-utility-to-manage-remote-kernels">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will use one of the simplest add-ons for managing Jupyter kernels: <a href="https://github.com/korniichuk/rk">rk</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>&lt;div class="alert alert-warning", style="white-space: pre"&gt;Windows users should instead use <a href=https://bitbucket.org/tdaff/remote_ikernel>remote_ikernel</a> utility</p>
+<p>remote_ikernel manage --add 
+                      --name='Python on Grace' 
+                      --kernel_cmd='ipython kernel -f {connection_file}' 
+                      --interface=ssh --verbose 
+                      --host='abc12xyz@grace.uea.ac.uk'&lt;/div&gt;</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The GitHub page has already a very clear instruction and even a short YouTube demonstration. One thing that can be unclear for an unexperienced pythonista is how to use the utility without root access. So if you are on a university PC with Linux and no admin rights, follow my steps.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Install-the-latest-rk-version">Install the latest rk version<a class="anchor-link" href="#Install-the-latest-rk-version">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>pip install git+git://github.com/korniichuk/rk#egg=rk</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Check-that-rk-is-installed-in-your-anaconda-folder-and-edit-the-config-file">Check that rk is installed in your anaconda folder and edit the config file<a class="anchor-link" href="#Check-that-rk-is-installed-in-your-anaconda-folder-and-edit-the-config-file">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>ls ~/anaconda/lib/python2.7/site-packages/rk</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Its contents should look like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ~/anaconda/lib/python2.7/site-packages/rk/config/rk.ini
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>config_argparse_rel_path = &#34;config/argparse.txt&#34;
+config_kernels_rel_path = &#34;config/kernels.json&#34;
+config_messages_rel_path = &#34;config/messages.txt&#34;
+connection_file = &#34;{connection_file}&#34;
+display_name = &#34;Template&#34;
+img_location = &#34;resources/img&#34;
+interpreter = &#34;python&#34;
+kernel_name = &#34;template&#34;
+kernels_location = &#34;/usr/local/share/jupyter/kernels&#34;
+language = &#34;python&#34;
+logo_name_srt = &#34;logo-{0}x{0}.png&#34;
+remote_host = &#34;remote_username@remote_host&#34;
+rk_log_location = &#34;/tmp/rk/log&#34;
+script = &#34;rkscript&#34;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You have to change the default <code>kernels_location</code> to</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>kernels_location = "~/.ipython/kernels"</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Passwordless-login-to-Grace">Passwordless login to Grace<a class="anchor-link" href="#Passwordless-login-to-Grace">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Make sure that you can login to Grace without entering password. How? On a local machine run <code>ssh-keygen</code> and then <code>ssh-copy-id abc12xyz@grace.uea.ac.uk</code>.</p>
+<p>Just follow these 2 simple steps: <a href="http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/">http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You have to be able to run this command (with your login obviously) without entering a password:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>ssh abc12xyz@grace.uea.ac.uk</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-a-Jupyter-kernel-template">Create a Jupyter kernel template<a class="anchor-link" href="#Create-a-Jupyter-kernel-template">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To install a template of a remote jupyter kernel to kernels location run this command:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>rk install-template</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check that Jupyter sees your kernels:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter kernelspec list
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>Available kernels:
+  template    /local/abc12xyz/.ipython/kernels/template
+  python2     /local/abc12xyz/anaconda/lib/python2.7/site-packages/ipykernel/resources</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The latter is the default kernel, while the new kernel is installed in a <code>template</code> directory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Edit-the-template">Edit the template<a class="anchor-link" href="#Edit-the-template">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>gedit /local/abc12xyz/.ipython/kernels/template/kernel.json</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The .json file should look like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>{
+ "argv": [
+  "rkscript", 
+  "python", 
+  "{connection_file}", 
+  "abc12xyz@grace.uea.ac.uk"
+ ],  
+ "display_name": "Python 2 on Grace", 
+ "language": "python"
+}</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that I replaced the host&amp;login line with my details and renamed the kernel <code>display_name</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Launch-Jupyter-notebook-and-open-the-new-kernel">Launch Jupyter notebook and open the new kernel<a class="anchor-link" href="#Launch-Jupyter-notebook-and-open-the-new-kernel">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On your local PC, in your command line (or however you launch Jupyter) run</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>jupyter notebook</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And then select the new kernel in the drop-down menu:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../figures/select_jupyter_kernel.png" alt="Select the new kernel"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wait for couple of seconds and then once it says that kernel is connected (little blue box in the upper right corner), you can execute cells.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../figures/jupyter_grace.png" alt="Select the new kernel"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check the command line from where you run Jupyter for any disconnection errors. You might have to refresh the page or restart Jupyter if this does not work.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2015-12-18-meeting-summary.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+</p>
             </div>
             <!-- /.entry-content -->
     <hr />
