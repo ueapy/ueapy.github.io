@@ -149,8 +149,7 @@ Python Group UEA            </a>
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import pickle</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -237,7 +236,8 @@ Python Group UEA            </a>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>After you've run the code block above once, or you are using the example data, simply load the stored bathymetry data</p>
+<h3 id="Note-on-bathymetry-data">Note on bathymetry data<a class="anchor-link" href="#Note-on-bathymetry-data">&#182;</a></h3><p>To save space and time I have subset the bathymetry plotted in this example. If you wish to map a different area you will need to download the GEBCO topography data found <a href="https://www.gebco.net/data_and_products/gridded_bathymetry_data">here</a>.</p>
+<p>You can find a notebook intro to using xarray for netcdf <a href="https://ueapy.github.io/introduction-to-xarray.html">here</a> on the UEA python website. Or go to <a href="https://github.com/callumrollo/cartopy-basemap/blob/master/cartopy_ex.ipynb">Callum's github</a> for a worked example using GEBCO data.</p>
 
 </div>
 </div>
@@ -247,12 +247,9 @@ Python Group UEA            </a>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bathy_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;../data/bathy.nc&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Open prepared bathymetry dataset</span>
+<span class="n">bathy_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;../data/bathy.nc&#39;</span><span class="p">)</span>
 <span class="n">bathy_lon</span><span class="p">,</span> <span class="n">bathy_lat</span><span class="p">,</span> <span class="n">bathy_h</span> <span class="o">=</span> <span class="n">bathy_ds</span><span class="o">.</span><span class="n">bathymetry</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">bathy_ds</span><span class="o">.</span><span class="n">bathymetry</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">bathy_ds</span><span class="o">.</span><span class="n">bathymetry</span><span class="o">.</span><span class="n">values</span>
-
-<span class="c1"># do not use pickle</span>
-<span class="c1"># bathy_data = pickle.load(open(&quot;../data/bathy.pkl&quot;, &quot;rb&quot;))</span>
-<span class="c1"># bathy_lon, bathy_lat, bathy_h = map(bathy_data.get, (&quot;bathy_lon&quot;, &quot;bathy_lat&quot;, &quot;bathy_h&quot;))</span>
 </pre></div>
 
     </div>
