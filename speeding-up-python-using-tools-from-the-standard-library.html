@@ -731,19 +731,17 @@ Done in 4.05 sec.
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">pool = multiprocessing.Pool() # Make a pool ready to recieve taks</span>
-<span class="sd">results = [] # empty list for results</span>
-<span class="sd">for n in range(1, processor_count + 1): # Loop for assigning a number of tasks</span>
-<span class="sd">    result = pool.appy_async(function, (arguments)) # make a task by passing it a function and arguments</span>
-<span class="sd">    results.append(result) # append the result(s) of this task to the list</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">()</span> <span class="c1"># Make a pool ready to recieve taks</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list for results</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">processor_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># Loop for assigning a number of tasks</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">appy_async</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="p">(</span><span class="n">arguments</span><span class="p">))</span> <span class="c1"># make a task by passing it a function and arguments</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># append the result(s) of this task to the list</span>
 
-<span class="sd">pool.close() # tell async there are no more tasks coming</span>
-<span class="sd">pool.join() # start running the tasks concurrently</span>
+<span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># tell async there are no more tasks coming</span>
+<span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span> <span class="c1"># start running the tasks concurrently</span>
 
-<span class="sd">for t in results:</span>
-<span class="sd">    t.get() # ret`rieve your results, You could print or assign each result to a variable</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="c1"># ret`rieve your results, You could print or assign each result to a variable</span>
 </pre></div>
 
     </div>
