@@ -1,0 +1,3529 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Back to basics: NumPy arrays - Python Group UEA</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://ueapy.github.io/back-to-basics-numpy-arrays.html">
+
+        <meta name="author" content="Denis Sergeev" />
+        <meta name="keywords" content="numpy" />
+        <meta name="description" content="Today we refreshed our knowledge of python numerical arrays and their basic features. Basic data containers in Python include high-level number objects: integer, floating point, complex, etc. containers: lists (costless insertion and append), dictionaries (fast lookup) Why not to use lists?¶ In [3]: from IPython.display import Image Image(&#39;https …" />
+
+        <meta property="og:site_name" content="Python Group UEA" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Back to basics: NumPy arrays"/>
+        <meta property="og:url" content="https://ueapy.github.io/back-to-basics-numpy-arrays.html"/>
+        <meta property="og:description" content="Today we refreshed our knowledge of python numerical arrays and their basic features. Basic data containers in Python include high-level number objects: integer, floating point, complex, etc. containers: lists (costless insertion and append), dictionaries (fast lookup) Why not to use lists?¶ In [3]: from IPython.display import Image Image(&#39;https …"/>
+        <meta property="article:published_time" content="2016-02-19" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="numpy" />
+            <meta property="article:author" content="Denis Sergeev" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://ueapy.github.io/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="https://ueapy.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://ueapy.github.io/theme/css/pygments/default.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ueapy.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://ueapy.github.io/extra/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://ueapy.github.io/" class="navbar-brand">
+Python Group UEA            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://ueapy.github.io/pages/meeting-ideas.html">
+                             Ideas for meetings
+                          </a></li>
+                         <li><a href="https://ueapy.github.io/pages/meeting-calendar.html">
+                             Meetings calendar
+                          </a></li>
+                         <li><a href="https://ueapy.github.io/pages/resources.html">
+                             Resources
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://ueapy.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://ueapy.github.io/back-to-basics-numpy-arrays.html"
+                       rel="bookmark"
+                       title="Permalink to Back to basics: NumPy arrays">
+                        Back to basics: NumPy arrays
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-02-19T12:51:00+00:00"> Fri 19 February 2016</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://ueapy.github.io/author/denis-sergeev.html"><i class="fa fa-user"></i> Denis Sergeev</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://ueapy.github.io/tag/numpy.html">numpy</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Today we refreshed our knowledge of python numerical arrays and their basic features.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Basic data containers in Python include</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>high-level number objects: integer, floating point, complex, etc.</li>
+<li>containers: lists (costless insertion and append), dictionaries (fast lookup)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why-not-to-use-lists?">Why not to use lists?<a class="anchor-link" href="#Why-not-to-use-lists?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s1">&#39;https://mlpforums.com/uploads/monthly_01_2014/post-6104-0-95171600-1390631637.jpg&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_jpeg output_subarea output_execute_result">
+<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA+Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcg
+SlBFRyB2ODApLCBkZWZhdWx0IHF1YWxpdHkK/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMP
+FB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEc
+ITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgB
+wgJYAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMC
+BAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYn
+KCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeY
+mZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5
++v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwAB
+AgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpD
+REVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ip
+qrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMR
+AD8A87opuaK3OYWjOKbnmkzQFhc80mcHio5Z44VLOwA9M02CC91EjyEMMJP+sccn6Cmk3sNLQJrt
+IAGYkseijkmnwWV/qIyVNvCerPyxHsK17HRbayIcqZZO7vySfYVpY7dPatY0r6sTlbYpWOlW1gN0
+SkyHq55J/HtV5Sc80oFLjFbxio7ENt7hRRSE1QBmjNFIaQC5ozSZGarX2o29hAZJ2IHoBkn8KTkk
+rspXZZzVe5vYLRN00gUe5rIOq3mow/8AEuiMcZOPNmOCeuSB6DGPr+OCHToYiZr2Xz5TwTIcgHrw
+MVk6r+QnZO3UdJrF5eEpp8JVc/66Tp+AqOHSF83z7qRp5uvznKg+wrWggurlQLW1ZlxgMw2qPzq6
+mgX8oBlu44Ceqou44+p4/SuaeIpxd5M66GX4uv8ABCxmqNqgAcDsOAKeuWOByfQda04PCsCMfNv7
+6QHkr5xUfgBinHwhojnMlqztnJLysSf1rnlj4LY9CPDWJesmrmaUYAkqQB1OKb1GRyK1D4P0HjGn
+gY7h2z/Omy+FbJkKW91e2w7BJiR+RzQswg3ZhPhrEJXTuZtFWZNA1a2BMNxDeAjASRdjAfUcE/Ws
+97n7M/l3sMlnITgeYPlP0YcfniuiGJpz0T1PLxGWYmhrOOhPSUuOhGCCMgjkEUlbnA13ClpMUY/z
+zQIKWkooAWiiigAoopMc0ALRRRQAUUUUAFJS0nTpQAtFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFF
+FFABRRSCgBaTNGBRgE5oYCE9en41l6khgljvkALRnDAHqO9apGTn+lMlhWSNlYZBGCO1KSuhxdmK
+rrLCsqHKsMg560ueaztKlVGl08kh4j8ue4PXA/KtE8Hjp2oi9LDnHW4velpAaWmSFFFGcUAFFITS
+H1FAC5xRmm5H40mcAknAAySaG0ikhxPNIDjrVK41S1thmSVTkdF5J/Cs+XW55RttbY7TwGf/AAou
+ilCT6G6xC5JIAx3orm/sl7eA+dMxB4IHAoqdS1SLpOBmjPNMaRUBZmwB3zioEknvXKWUJcZwZCOB
+9TWau9jVKxPLKkSlnYAD1qGEXd/JttYiI+vmOMD/AOvWpaeHolYSXj+fJ1wT8o+graRAo2qFUDgA
+DAx6VrGk3qwcktEY9loEEDeZcHz5uuW6D6CtdVwcEAAdABjFOxz+lOxyK6FGMVZEczegmKTFOxQe
+1VcQhFKOgozTeTyKAHetNNJn1NQ3N3BaR7p5VQe5/kKltLcdifIqC4u4LZS0soUDsSKyJdWur07d
+PiZYweZXGARTYdJUyCW6czuecN0H4Vk5u9kDaW4+XVrq8JXToQqdDNJwB9BUcenIMT3sv2iXkkvk
+gc9AOlaESl5ha26b5ypZUHAAyBknoBz/APWrpNP0iO2Ikm2yTE5AI+VPoD1PvXJXxMaau9Wehgcu
+r42Xuq0e5jWelXt8AzD7NB0yRl2+g6AfWty00e0tDuWMSOOPMkO45/HpWhyeKMYryKuKqVH2R9lg
+8ow2GWkbvuJzxxnHv0/ClyB1paKwbvueolZWsJwehFLg0UUgsFHPbijAowKNOwJajcdc9+tNliSS
+IxvGroeCrAEH86fijFNOzuhOClo9Tnbvw0IiZdKlNq+cmBwWib8P4fqKyvNeOc293Ebe47Kx+Vvd
+T0P0612/t6VXvLG3v7dobqNZIz2xyp7EHsa7KOMnB2ex4WPyOjXTlTXLI5XnPNFLe2Fzo5DMzXFi
+M4kAy8foGA6j3poIZQysGVhkEHII9RXr0qsaiumfEYvB1cLPkqIWiiitDlCiiigAooooAKKKKACi
+iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKPwzRRQBga67afeWt/C
+CCGIfHQ/Xnrgen49K24po7iJJoyCjDI/rUWoW32uwmgUKWZSF3dAexrN0CSWKFrG5VkkTlAR2qFe
+MvI2dpQ80bVGQKZnJHb1oDAd8Vd0Y77Ck5oJPaq1xqNrb5EkqggdAcmsyTXHkyLWBiD0LjFK90XG
+DaNvOOSeB71UudTtYAd8oJ/uryaxymoXhPmylVPZOPzqxb6REhBbqOpPJNCUuhoqa6hJrssh220B
+I6AtwBVcw6heH99MwQ9VXgVrR2saDIUZHqKl2+wp8ncpJLYzrfSIoyCVyfU85q6tskZ+VRU4+lLi
+qSSLuNAwORRTsUUCKlroBdhLfSeYeyLwo+tbccSRIBEiqo6ADAp+OetOAGK0jCMVoS22JjnFOxxS
+ZHpS1YhMUucUGm5zQA7NJTQSDg1DcXcFpGXmcKB2zyfwqW0mMmJNQXN5BaxlppAoA6ZGayZNWur1
+iljEUQ8ea4x+lNj0pTJ5t05nk7ljwPoKzc29hNpbjn1W6vGKWMRVTx5jjGPfFNi0tS/m3bGeX1fo
+PoKvqgUYXAGMYAxT1BrP4tzOVRvYYqAKAoAA4wBgCmu8xnjtbVBJcy/cB6KO7H2FSSypBE8z8hRn
+A6k9gPqa2tB0prSA3VyM3lwNzE/wg9FHsBXNiKypRstz08oy94yt73wotaTpUOl25RMvOxBllI5Z
+vr6e1aWMDrk9zSdB160mDnrxXhyk5O7Z+h0qUaUVCCskL9aWjvRUmwUUUUAFFFFABRRRQAUUUUAF
+JnByeaWkAPOTmgHcaUUq2VBBBBB6EVyupaXLpqtdWSM9oSWltxyY/VlH8xXVkH8KCOtbUq0qbTTO
+HGYKniqbhNa9zi4pUmjWSNgysMgjvT6n1fTm0uV722jLWkhJmiUf6s/3gOw9RVcEMoZSCpGQQeo9
+a92jWVWN+p+d4/A1MJVcJ7dBaKKK1OEKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo
+ooAKKKKACiiigAoopM0ALRSE5HWmGRVGSQPUk0XGk2SUmazbnWbSAlQxkYdkqhLqd7dDbDGY1Pc8
+kClfsWqcmb7zRxqS7KoHqaxNRu7eOeK6gkUtG3zhByR3z61CmmTT4M8jN9TxVqPSlC4crjPQDtQ4
+t6GkYWI5df8ANJ+y27Nn+JhgD8KrMNRvT+9lKL6JxWzHaQR/dQcdM1NgDpgfShQ7lJJO6Rjw6QgI
+Zsse5PJq/HaxxDCqPqeasY96UDirSSGMAwMDGPalAH1pxFAFMAAHYUEUtFIBtOoooAKKKKANPFOI
+4puaM56VuQh1Ge1NzzUFxdwWkZeeRUA6Ank0m0lqOxNkg4qC4vILVczSBcc4zWS+r3N7lLGFlQ8G
+RxgfhTItKUv5l07TSe54BrGVRt2Qm0tySTVrm8JjsIiqf89XGAPoO9Mi0xTIZbp2uJccFuQD7CtA
+IEACgAAYwBgUuKjV7kSqPZCKu0cDAxgAf4UoGOMdKdjijFO1jJt31DAPPU0tFAZUUu4+RFLEDuAC
+cUN21GkOsLYahrSIwzBaKJJMdC56D8BzXXqSeQMcmsTwvbGPSBcSA+ZdMZWz1wTwD+FbnA6V8/ia
+rqTfkfpOUYRYfDRXVi0UUVznrBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABTWOBTqac5JIGO1MTEc
+B0wQCDwQehFchfWjaRfeSATZXDExMekbHqvsD2rsOSRgcd6rX9nDf2j2kwykg6/3SOhHpW+HrSpy
+8jzcywEcXRcXujl8YOMHIoqCB5EaS0uSFuoGKsCcbgOjD1yKnwRjIxXvQmpJNH5vWpSpScZLYKKK
+KoyCiiigAooooAKKKKACiiigAooooAKKKKACiikNAC0UUdKACikzRkfWgYucUhOBUE93DApMsiLz
+0zzWXca2XOy0iLn+8elJyXQag2bDyKgJYgAc9cVQuNZtoAArh26YXms37JeXrF55G56hTgY9Kswa
+TFFgkDP0pq7NVTS3In1e6nysEOzsCaiWyu7lt1xK5z2BwK10gjTgKOKkwPTFCj3LSS2M+DTIouoB
+/CrscCIOBj8KlxRjgVSSQ9RuD9B2p4pcYNFMApDSnpRQAmKWiigAooopAFFFFABRRSGgBaKTPrRQ
+BpmoLi7gtELTSKoPqeayJNWvL0lbGEqhP+scYz9KIdLUuJbl2nl6neeB+FNzb0RDaW4Sarc3hKWM
+RVCceY/AP0oh0tS/m3LtPIeSWOQD7Cr4RVAAGB2wMClArPV7mcql9EIEAAAGB0AxxS4xTscUYppW
+2M229w7UYowB3paACiiigAqrqWDYtFyDMyxKR2JI/pmrVQyBZLuwhI+9cqT+AJrOq7QbOjCQU60I
+vqzs7dBFBHEBgKoAH0FSqeKQEnJxQtfOyd22fqsUlHlXQdRRRUlhRRRQAUUUUAFFFHFAXCiijmgL
+oKKKKACiiigApO1LQaAYmcjOcCkyMnv2qtqU09vp8ktqgklUZCnuB1pum6jDqdmk8TAkjDL3U9wa
+fK7XRg6sOfkYl3pFjfsTdW6uePmPDce4rA1DSZtJU3FtI9xZqMvE5y6D1B7geldWevtSOVC/MAQe
+CCM5BralXnTaObF5fRxMWpR17nHKyugdGDIwypHcHpS1GsItLy9slB2W8xCE/wB1hkD+f5VJXvU5
+88VLufmuIpeyqyh2CiiirMQooooAKKKKACiiigAooooAKKM0hIA9KBi01jxio5bmOFSZGVfqaz7j
+W7ZBiImRyOAo4pcyKUJPY0wSCMnio5LuGIAu4X2JrBe71G7I2jyx7c0sekPId0zFjnJyad29i1T7
+ly412FTthUyNngjpVN7vUbsEL+6U+nWr8OnwxAfKPbirSRKOAAKOVlqKWxjxaSWIaVmc9yxzWhFZ
+RRAAKB9Kt4AHSggHtkU1FIvUbgYAAwKXFLgZoFUIQLSgUtFACYpaKKACiiigAooooAKKKQnmgBaK
+bmjNACk84pM000jSKgyzAD3NK6Cw/IFGeeuKoy6pbREruLsOyjNRC7v7kf6LalVPQyCi6HZmixGM
+54HrRVRdGu7gA3d2QD1ROKKWoWRpBNvAAA7YHFKAc04UUrHI7vVhjilxRRQIMUUUUAFFFFABRRRQ
+AVDM6xT2Ux4K3KD8DkVNVbUAzWEzIpaSMCRR6FSDn8s1FVXg0dGFmoVoyfRndLwSAc0o7/Wq9jOt
+3ZQzqciRAwI78VY6DFfONWbR+qU5KUVJdRaKKKk0CiiigAooooAQ/pSZycY470pBPAppZVVmLBQo
+ySegFO19ERJ21ZT1a8/s/TLi5BAMcZK57nsPzp+nTSz6dbzT8SSIGYDsSK5vVWuPFUxsLBwljCw8
+2cjhmHIx610Gl2NzZQGO5u2uTxtLADAA6CtZRUYa7nHSqzqVnZe4vzL4paT0xS1j01O5BRRRQMKD
+RSd6AKmpJdNp8y2RxOy4Uk4xk/4VhxeFHsVSbT7+WC6xmQnlWJ65FdRTevWtITklY5quGhVlzS3O
+ex4oiAAezm/2mBWk87xUACbayYDtvIzXRcZxg0YBPB4qlU7oz+rvbmdjhppL+DULifVLTyFnKgPG
+dyAgEDJ7detWcDGevTBB4+orrZY45YWimRXjYYKnkEelcg9q2mag9gzFoipltmPXYTyv1BP5V6WD
+xKl7jPk87yl0b14O6e4tFHeivQPmAoopDwM0DsLRSBgaMigQtFIxA57VBNewQKWllVQO2eaLpFJN
+7E5pCwHJIFYs2uhiVtYWc+p4FViL69bMjlB6LwKSd3oWqberNi51K2thy4ZvQHJrLk1G7vTtt0Ma
+9yeTUtvpSIwaT5jnJzzWikSJnaoH0pqLe5pGCRjJpElwQ87sSeuTn9KuwaZDCSQARn0q/n2ozTUU
+irjFjC/dUAe1OIOMfrTqKoBuOntTgMUUUAFFFFABSd6WigAooooAKKCeKaDkUALmkzRmmkkjg0Xs
+DHZ9qMimlgByQPrVeXULaAENKpb0B5pcyBJstZoJFZn9oTzHFtbOxPALDAp407UrkgzTCIdwnWp5
+m9htWLclxDECXkVSPU1TfV4jlYEeZu20cGrcOg2qHdKWmb1c5rTit4oVAjRVA9B0ppSFzJbmCker
+3QBWJIFPQuckVOugCUhru5eRhyQDgVtlc/4+tJtJHvVcqW5MpvoVLfTrW2ACQqB69TVsgAAAACjB
+zTjx2qkkTzMZjJFFP/CigepWooorI5wooooAKKKKACiiigAooooAKBjOCMgggj1B6iiigZpeFZ2+
+xS2LnMlpIVH+6eRj2xW/jLZ7elcda3I07Wbe6OBFMPIlPYZ+6f6V2Qx0yCBxkV4OKpck35n6NkuK
+WIwq7oWiiiuU9kKKKKAA0UdRSYJYDvTV72Qm+5HcTxW1u88zqkaAksx4Armf9M8UyHJe20lTgY4e
+XHf6VJdsfEmsmyVj/ZtqwMxH/LR+y+4FdGiLEgRFAVRhQBgAela/w15s4NcTJ/yr8RltaQ2cCQQI
+EjUYCj+Z96n4/LpTQOcnqaU9Kzbb1Z2xiorlWwtJ+NAGegJx1yOlQz3VtAMzXECD/acChJvZA5xW
+7sZ2q6lc6XcRTsgexI2yYHzKT3+laccqSxCWNtyOMqQcgis641vRXiaGe/t2RgVZQ2eDWZ4W1CI3
+F3pUU6zRxNvhcZ5U9Rz6VryNxvaxwrEqNblck0zp2IUAk9Mk1jeH7y51F7y6kctCZSsQzwAOP51p
+XbkWc7L1CEjvzisPwNo2veJbCKx0mI2lojH7RfyDgEkkhR3NOlT54uxGNxkcPOPO9Dbnv7azBa6u
+I4QezMAT+FZx8S2krhLG2u71yeBBCT/SvUtD+FHhvSyJryFtTuzy012d4J9QDwPwrtraytbWMJb2
+0USrwAiAY/KuiOFitZHi1s+qSf7tWPnqfUtXgtZLl/DGopBEN7vIu0KB1PNZOneNv7WvEsrHS557
+h8lUQglscnH4V9J67pUet6HeaXMzJHdRNGWHUZ715P4F+C114Z8XR6xfahFNFbZMKxKQWJGASfoa
+v6vTMP7axXc5mbWbm1B+3aFqdooHLvCSo/GsvXNT06+0+K8tbhGms5QxQ5DFTwwwe2DX0+8aSD51
+Vh6EAj9a4L4g+AdC1fw7qN5/Z0UV7DA8kc0Q2sWAJAOOo4pxw8YtOJNTN6tWk6VVJpni/GTjscAg
+5BGKKgsnzp9sxOSYlJJPcqCf5mpGdVBLYA9ScV6iasj5hx1dh+QOKYSTxnFZ1zrNrAdqt5jjsgrP
+kvdQvSViQQoePUkUnJ9ClBvc2Zry3t8GSRV/HrWdNryglbeNpCDwccVFFo2SGlcsepyc1eisYoxg
+KDj2ppNmihEzXn1G9OA3loeoWnw6Rk7pWLHuSc1rrGFGAAPwpwGKaiikrbFWOzjjAAUE/SrIRQMA
+Yp2KWmkkPUQDHSjNLSd6YBmg0tISBQAtFICD0paACiikzxQAtFNzQDQApNJnmjI6470mRnOOlJtI
+NOguaM46VBNcwQgmSVVH15qm+qq522sMkzHjIGBS5kwUWaZOQe9Rs6oMswUDqSapJBq10clUt1x1
+6k1PFoCE7rmZ5n68nAou+iB2W7IpNVt0BCMXbPAUZJNME2pXTYt7Xygf4pD0/CtqCxtoABHEox0O
+OasgHoSDT5WxcyMJNDnmbdeXrEHosfAq7b6PZQDKwqxHd+Sa0NvNGMGmopbkuT6DFRVGAoGOgAxi
+lwcdM0/FGKpJdBXfUaB7Yp2KXHFFMQlFFLQAmKWkpaAEPSig9KKQFaiiisjEKKKKACiiigAooooA
+KKKKACiiigBksS3ELwvwrrjPoeoP4HBre8P6h9t04JKQLm3xHKM85HAP0NYlMiuf7M1SO/yfJfEV
+wM8YJwrH6dK48ZR54XW6PcyPHfV6/LJ+6ztuD0pKaCOCDwRkEdvT9KdXiNWdmfoKktGtmLRRRSLE
+I4rK8Qag+m6PJJGSZ5CI4gOpYnH6da1h1xXOa0wuPEui2jDMYdpSPUqMjitaS945cVJxp2XU0dH0
+1dL02K348w/NI3dmPUn860DgYJOPrVe+vrfT7Z7i6kWOIc5J6n0Hqal0Twt4k8ZqJl3aRo7HImkX
+Msq/7I7D3NXClKo7nNXxtDBwUW/kVL/WrDTmVJ58yscLFGNzt7ADvXMa/wCM77TJVgXTXt2Zdym5
+GGKnodvb8a+gfDfw/wDD/htA9rZLLcn71xP88jH1yen4Vh/EL4T2nji+gv1vWs7mNfLYqm4Muc/n
+XXHDRjufP4jOq1RtQ0Rx/gfwT/wnOhxavf8AiK8aJ2Ktb26iPYR1BPOeCPSu+svhH4Os9pbTPtDj
+q08jOT9QTitrwf4Vs/B+gQ6VZszqpLPIwwXY9Sf89q6DH0rZRitkeXOvUqP35NmHD4N8N26gRaJY
+LgY4gXP54rzP4m6PY6N4o0C8sraO2WcvBIIlCgjGRkCvaDXkvxicvqfhq3HJa4Zs454FKolysvCN
+qvC3c590DKy4wGUqR+FdZ8F75R4dvNHbCz2FywYdyrHIP0rls4BOefWqNnqsvg/xVB4giVmspgIb
+5B6E8Nj2rhwtRRk0z6fOsNKrRU4q7R9BEYXAOOfSlHU5OeagtbqC+tYrm3kWSKVQyMpyCCOoqwo7
+4r0tD4+2uouAccUYFFLSGJgCuc8e36ad4E1q4ZgpW1cLnuxGAPxJAroyQBnIHpmvGvjH4kW7kh8L
+2bqTGRcXjDkKRzGhx3JwSPQU0m3ZA9NWeLJql1FAlrDCN0ShC56cAD+hphtL28YmeVsHsDgVrW1h
+DbRhVySBgk9T7/rVjYARjFdcYWWpzu17ozrbSoogDtGe5PJrQSJEPAH5U8DApa0slsLfcTHtRilo
+oAKKKKACiikz70ALSHpS0h6UAFJ2paTg+9IABxSk03IzgUySVIxl3CgdycUXsFiQHPQZoznoKz5N
+Vtw22HdM3pGDTQ+q3YzDbrEnTMh5H4UuYdu5olgpySABySTiqk2o20GN0oLdQFOTSJoUswBu7t3z
+1VeB9K0INJsoCAkKgr0J6/nRyt7CvFGUt/c3JxaWjsD1dxgCnjTNSuc+fdCIH+GMf1reAx2A9KcB
+xTUO5Ln2RkwaBZRYZ1aVx1LnOT9K0kjSMAIiqBwAAMVJg9KMc1aikLmdhDk9cGjHtSgUtMW+40A9
+qcAR1opaBBSUtFABRRRQAUUUUAFFFFABRRRQAh6UUHpRSArUUlLWRiFFFFABRRRQAUUUUAFFFFAB
+RRRQAUhVJFZJVDRsCrA9wf8AOaWihq+jGnbVGr4cvmeF9OnYme2OFbOS8Z+6fwHBrdGRwfzFcPPI
+9pJDf26nzrcneAPvxk/MOnbqPxrsreeO6to7iI5jdQyn2Irw8XRdOd1sfoWSY9Ymhyy3iT9qKBzz
+RXGe6J3rmfE0qadqOl6s4YxwSFJNoyQpHNdMeKz9Y01dT0q4tXIDOCUbrtYcg/nWlNqM1fqcmMhK
+VJ8u/Q6bwH4DfWpIPE3iWHIOHsrFxxGvZmB6kjBAr15Y1VQAAAOgAxjtXG/DTxQPEXhaFJ+NRscW
+15GeCGUYDY9wAfTr6V2oP8uterFJLQ+CrTnObdTcAMdOaMfhS0VRmJilpCcUmQTj9KAsLnjtmvDP
+Gmof218TWjjYtBpMO088CQ8nH4V6Z428WW3hPQJrtzuuZAY7aIdZHPAwPavHdGs5ba2ee6O68unM
+szE9WPOPwrnxNRQhY9XKMM62IU+iNHG4c8UyaNZo2jdAyMCGBGQRUmMcUDIGK8xO1mfaNJpq2hW8
+N+L774dXAtb1JLzw7KxKOnLWxJ6e49q9q0XxFpXiC1W60u9huY2GTsb5l9iOoPtXjcsSzqySKrxs
+CGQgEEfjXFX/AIYu9Hv/AO0dDuLmJc/PHbylHX1wQeR7V6FHEJq0j5bMMnlGXtKGqZ9XZ9ePSmSz
+JFGXldUQclmIAA/GvnHS/Eev30Oyz8ZXqsow0M0as6n3yMn61JPpN3qnOsa3qV+D1iknIQ/QDArW
+deEUcNHKcRU22O+8V/FWJGl0rwqq6hqJBUzrzFD7k9CR6V41D9pEl0t9IZL0XDfaJCcmRichs+mC
+APxrtrWzgtIPJtoViReNgAAH+J9zk1zGuQiDxGXAH+k24bPupwfzyPyow2IU6qRvj8p+r4bnv7xV
+ooor1j50KKKTIxQAtFJmgnjIoC4tJxSE460mTnnjPrRoA49KSkzx149aqTajawEh5lJHYAE0m0NJ
+sujpnt60hI6Ems0ahPcsRaWTyDoHYYFSLpurT4MtwkKHqqDJApX7INtyzLPHEMyOqDtk1SOqrI+2
+2hedhxkDj86tw+HrcNvnZ539ZDkD8q1IbaGBdsaKoHYCizYuZIw1tNWuxy0dup6gckCp4vDkAYNc
+PJMw/vtwa2s/5xS96pRVtSXN9CvDZW8AxFEqntgcipmAA6fpT6QjIpqyJu3uMxkUAU4DFLVCExQB
+ilooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigBD0ooPSikBWooorIxCiiigAooooAK
+KKKACiiigAooooAKKKSgBQSDnrirfh+7+x3z6Y5/cSgy2xJ6H+JB9Cc/SqnfrUNzHK8QeAlbiJvM
+hIJ4Ydvxxj8awxFJVINdT0ctxjwtdSvp1O56UVR0vUI9T02G7i4DqNy91PQg/Q1ezXz7VpNM/S6d
+RTgpLZgQCOaaQSMGlz1pTRdmljPjudR8M62viDRfnOAt5aHgXCDr9GA6V7T4a8VaT4q01b3TrhXI
+AEkJ4eJu4YdRz36GvJCM45FZ0mlNDff2lpN5NpmogY86A4DezDoRXXRxPL7sj53Mso9o3Vo79j6I
+DA4xS5+mK8WsfiV4w0weVqOi2upqP+W9tJ5bN/wE9/er8nxh1J02weDr0S4/5aSqFz9fSutVI73P
+nngsQnbkZ6yTXKeLvHmk+E4CksguNQcYisoTmRz2yB0Hua811Hxj4515DGZbbRLVhhltz5kuPZsY
+FYi2mm6DbzahOzyzEEvcTsWkc9gCe59KmVeK0judeHyqrP3qnuxLDnUtd1Y61r7b7o5+z2w5jt17
+ADoT71pfqT3rH0Fr+6jmvr12VJzmGAkkIo7/AFNbAGBivPqyblZn1eBowpUkoKwvaiiisjtsgHFJ
+jBJGAaWj8cUegmlYyNS8P2mpsJiDBcjkTwnawPv61Qa81zRNovLf+0bReksQw+PcdzXS8g5FIQNo
+GM89+1aqelnqcs8LG/NDRmbYa7puoD9xcoJM/wCqkO11PoQcZ/DNZPib/kNWK5wRbu2BzwWA/Kta
+/wBB03USZJ7ZTL08xPlYe4IrBufCt5azi5sb1rhtnl+TcsSdpIOFbt0row8qcailsedmNPFVMPKH
+Lcr5H9aKiMpSfyJ4nt5xk+XMoBbHdSDhh9PTp3Lyw53V7kZxkrp3PiJwlCXLJWYHnNFV5ry3gBEs
+qqR1GeaptqpkO20tpp2PAOCB+dDl2JsaY3Y5GQKY0ioCWYADkkmqa2msXbDzGjtl745YCrC+HIWO
+65mlmOeSxxn8B0oTkw0XUrSavbIcIxkf0QZyaRJdTuyBb2hiU9WkP9K3ILC1tgBFAg/CrAAHQYp8
+r3Fzq2hhDQbi4Oby9dj/AHUGBV620aytsFYQzD+JuT+taOaSmoq5PO2IqqoAAAx0wABTh1pO9Lmq
+sTcKKM0UgCiiigAoNFBoASiiiqAKKSloAKKKKACiiigAoopKAFooooAKKKSgBaTIpskiQxmWWVI0
+HG52CjPpk96IpYp4w8MqSJ0DIwYZ9MjvS5le19R8rte2g/NFJS0xBRRRQAh6UUHpRSArUUUVkYhR
+RRQAUUUUAFFFJkUALSZFGR60lAC5ozxSd8YOaaSBySMfWhtIFd7C5yMjpSggDPOKp3Gp2tscPKCw
+7Dk1my6zczkrawlRnh27j6UrroWoSZvFgBkkAe5qrLqNtDx5i7gOgPNY4t727O6eZ8HsOBVyDS40
+ALDJ9QaPeZapLqaXhTWFXU5rZ1CRXTsVUfwyDkAexHP1zXcAkjnrXn0lovkv9mQLOCJIiAAdynIG
+ffkfjXbaZfpqenW92hBEqgkAdD0I/Ag14+Oo8kuZdT7fIsX7Sm6L3RcA4NFGfSiuD0Po+ghOCMAm
+kxk9cU6kI7/pTEIzBSAxAB6EnGaZJcwRKS80agDJyw4qrqWlW2poi3AkwnTY5B/SqMfhPSFILwSS
+n/ppIT/WqSh1Oabq3tGIt14nso38qzV7656COIZGe2SKgttGutRulvtbZSVO6K0Q5RD7+prat7K2
+tFCW0EcIHGEUDP1PU1YwOtU5xStEmNCU3eq9OwmCBwBgDAHt6Cl5PbFLRWdzrSSCiiikMBRRRQAC
+kx74paDTuFhpJzjaSPWlPT/Cg5xx1pASc+1C13J8ypfabbanAYLuJXjI4IGCp9QeoNcVq+iXNldQ
+pc3chsWbaLkDJXjgOfyGfzr0E/Wo5Yo54XimjEkTAhlI4INb0a8qct9Dzsdl1LFRbtaRxEGg2dty
+yGR/70hyT7+lX44kjAVEAA7AYFRSW0miXyWkjM1jKSLWQnO0/wBwn+X5VZxivfo1I1IqUT4DE0Kl
+Co4T0DGDx+dKaSitrHOFFFFMAooooAKKKKADvS5pKKTQC0UneloAKKKKQBSUppKYBSUtJTAKWiig
+AooooAKKKKACiiigAo9KKXKoCzHCqMn6Dmk3YER6VaxalrFxPMokgtCIo0YZG/GWODwatato/lA3
+2mRLFOozJCgwsqjkggcZ681N4VgKaLHK3LzO0jHHXJOP0xW2fWvnaleSrOSZ9/g8upSwahKOrRyc
+M8dzAs0R+VhwD1BHUEdiDxT6Zf266Xq52jbbXpLLg8LIOo9sjnHtT+9e7QqqrBS6nxWMw0sNWdNi
+0UUVscoh6UUHpRSArUUY5pCSOlZGItJketGfekPWgBc+9GaaeAcmkJB70Nha4/NNyM96rT31vAPn
+mUH06ms+XXQ522sDOx7ngUrlqDZsc4zn61Wn1G2tl/eSj2A5NZBXUb3O+Uoh/hTgVNDpEaMGc7iO
+55NFm3oaKmluEmtyvlbaBjnozcVXaG/uyDNMwU/wDgCtaO3jQYAA/CpQuOMmmo33LSSM6DSYouW5
+Pcnk1eSCNPugD6ipeAOmaOSeRiqSQxuB0/pTx0o20CmAoJBBBwQcg1f8NXP2bUrvTzxHKPtEIz0y
+cMB6YI6e9UKjkma0uLW/XObaQFuONjEA59hwa5sVTU6b7o78txDoYiMr6HejGBjj2PalpqEFQQcg
+8g+oNOr55q2h+ixd1dBRRRRcdgNFFFK7CwnOelLRRRr1BBRRRQAUUUZoBuwUUZA70ZptBcKTjFL2
+NUrnVba1vobSfKNKMq2OCfTPrTSb2InUUFdls4xjseKztaivJbMTWMpS4hbzAg4VgOoPvWgoz1HA
+yAfWl6kqenWlF2ZFSPPG1ylpWpxapYLcINrg4kTujdxV7PIrmLlRoGvx3agiwviEmHZJOx9s102e
+AeOOcjvV1IpWa2Znh6ja5Z/Eirf2EWpWMtpOuVccY/hPYj6GuZtHlUS2lyR9qtSEkIGN4/hYfUdf
+ce9diDkEdCa5zxFB9llg1WPOIz5NwB3jJ4P4HB/CurBV3TkovY8nPcCq1J1Yr3okWeaU0gGDxgjs
+R0NL2r37nwolFLikoTAKKOaKLAFFFKaLgJ3pc0lFDQC0UlLQwCiiikAU3NONV7m8S1MalWkkkOEi
+jGWY/TsPehyUVdsqMXJ2irsmpar2VybuyjmaPymO4Mm7OCGI64Hp6VYpppq6E007MKKKKYgooooA
+KKKKACjrRS4pNgGKqanKYtOn2j5mHlqARnLHH+NW2IAySAMZ5IFVrWAavrMHlHfbWxEkkgGVLDoo
+PQ1hXqqEHqdeDw8q9WMYrqdRYwC0sIIByI4wpx7Cp26YxnPajjORk/WnV81J3bfc/TIR5YpLoZmu
+2H27SZIkOJlw8LD+FhyPz6Vg2VyLuzjnwAWGGA7MOCPwINdjiuPNuNP1q9tAAI5MXMQ9QeGA+hA/
+OvSy6taXIz5jiLCXiqy3J6KTpxz+NLXtnx4h6UUHpRSAq5HrTSefaopbiKFcyOoHuazpdbiBxAjS
+HvgcVldEKDZrZHGT16VFNcw265ldVHbJ5rDafUbsHBESHsOv50+HSAxDyuzn/aOaWvQuNJLcml1t
+TkW0TyHsSMCqxfULw4Zti+icH860o7SOIcKAfpVgKBjAxjr701HqzRRijKi0hA2ZSWJ7mr8drHEA
+FUZHepyOKUDiqshjQAMAYx7CilxS4pgJn2FLijFLQAmKMClJ4puaAFozSZoJGcUALxSSQi4ikgbO
+2VShPpkYB/A4NJmmyXaQRlmcALyOeeKl2aaYRb5jrPD92b3QrSZv9YECP6hlJBB/KtPrXLeDboS2
+99AD92YSr9HAYj8DkV1Hp7183WjyzaP0nAVva4eE32FooorI7FqFFFFABSZoJAFZ+paxZaVAHu5t
+hPIAGSfwqoxcnZakTqRpq8nZGhmjNc9Z+NNGvJfKE7RsTgGQYB/Gt9WUoHDBlbkEHIIpuEoq7VjO
+niKdX4Hcf3pCQMY7+tFIBzg881Om7NW7mZaao8mq3OnXKCOSPDREdGXua0xjAx6msDxNBJB9n1e3
+4ktWG/A+8hPNbcEyzwRzJgq6hgR71pKKcVJHNQnLmdOW5MTgZrN1nTV1TTmhGRMp3QsOqsORzWl1
+4pOhyDjHIPpURlZ3N6lNTi4sy9A1P+0NMDTELPEfLlXuGHGfxrTXOAffFc2UXSvF4HSDUlwQOAJB
+z+GRXS8EkDjgGrqRSaa6mGGm5RcZboo6tYJqmmz2rDDMo2EdmHQ1W8OXz32kqsxAuIGMUq55DLxn
+8a1+mMcEnr6Vzduv9m+MpoydsWoxCRR/tr1H9acPeg090RWXs6sZrZ6M6PgDNQ3dsl3aywOMrIhX
+B7ZHU1OQDig8g/lWSbTR1yjzJp9TjNMdjZCKQkyW7tA5I6lTgEfUY/WrlQSqlr4i1GA9ZhHOoHQc
+EMfxwKnr6XDz56aZ+Y4yl7HETgtrhRRRWxzAaTFLiincBKKU0lCYBRRRTAWikpaloAooPAzTZJEi
+ieWVgkaAliewFAJXIbu5MCKqIZJ5TtijH8Te/oB1JrY0bR108me4bzr6X/WSEcKPRfQCq3h2weVz
+q12pE0oxDGf+WSdvxPU1v8Ak9wOT614eLxLnLljsj7fJ8rVGHtKivJo4nSs+Xdpg4ju5UH/fWf61
+eqtagRXmqW/8S3jP+DKpH9atV7GHd6aPkMXHlrzXZhRRRWxzhRRRQAUUc0tJsAqOeZbeB5nICopY
+59qk9qz9S3T/AGeyQndcTKuPUA5OfwrOpLlg5GtGDnUjFdWaWleHrO5s0u9Sg865l+fLsSFB6AD6
+V0MMEVvGI4IlijHRUUAU9ECKFAACgDHpgU7vXzVSo5t3Z+lYbC06MEoLUMYooorM60hCfWue8SRC
+Gewv84CyGGQj+6w4/IgGuhPSs3XbU3ei3kSjL+WWU+hHIP6VrRnyVEzjx9FVsPODXQyjkEg9QaSo
+7af7TaxTg58xAxPuRUlfTxd1c/MWmnZiHpRQelFMDlY9IZ+ZnZj7nir0dlFF0XntxVoD2oIPpWaS
+RqMCADAGOaeBxgUAe1LgZpgGM8GjFAoJGaYBilpM0mR60AKfajPvSZFIWGM44oAdmjIx1phIALE4
+AGSSeKqy6lbRHmQMf7q8mlfuBcJ60nQetZgvLu5bba2rEDnc4xUyaVf3JJnufLB/hQc/nSbfQenU
+llu4IBl5lHt1qt/aZnYJawSTHrkDArQt9Cs4cFk3sOpc5zWikSRjCoFHYAYoUWS5LoYItNVuzl3W
+3U9ABk4q1F4ftguZmklc9Sx4z9K18ccGg9KrkXUlzfQraCq2Pic26DbFNbFVHqVbP8jXZen0FcW5
+MOv6Vc5wvnGL67lP/wASK7Tk14OOio1ND7rh+rz4XlfQO5paQDvS1xWPeWwUUUUAISByegGa8V8R
+alLqWs3ErElVcquT0AOK9pkUtGwHUgj9K8Lu4XOoToEct5jcAEnrXbhEt2fO5/KfLGMdinvY49u9
+d34H8ROs66ZdyFo3/wBUSeh9K5+z8KavehWitXCHu3ArZbwTe6TZPqTzqJLch/LXnofWuio4SVrn
+kYKniaFRVIp26nphJHFBzioLK4F1aW84IIkjDE++KsmvMas7H2sJKSTIbiFbi3eB+VkUqQenNYvh
+WZks59PlP7yylMeCegJ4re74I6jFc8oFh41dAPlvIA3sWHU1cfei4nNXXLUjP+tTo/b0oJABzSEn
+I7880E8Y61kdiZg+K4GbR/tUYzNayrMv4EZ/TNbFnOtzawzryJEDA9jkUXUC3NpNA3IkQrj6gisn
+wlM03h+JX+9C7REemCcVt8UPQ417mI/xfobg4yT2Nc74oHlf2Xfrw8N2q577WByP0FdET8wHaud8
+Xf8AIIhXPP2qPHuc0qXxaDxn8FvsdGDnn3opqZKA+wzThyR055rN7nVF+7c5PUyo8XsOMmxAH13j
+/wCvUlV2lF1r+pT4ysZSBG9cAlh+BIqxX0WETVJXPzfNJqeLm1sFFFFdJ54UUUGgApO9FHenbQBa
+KKKQBRRRQAVVa3Op6tDp+CYYwJrk+oH3VP15OPpVh3SONpHOEQFmPsBk1f8ADNsyae17Mv768Yyt
+nqAeFH4AfrXFja3s4WW7PYyXB/WMQm9omyAFGAMAADHtSkc/UYox+NJjGOuAcmvBbe5+gJWOSmQQ
++J9UB6yrDIv0CsCfzxU1GsRiHxNbTNnNxaPEMeqsGz+QpckjpgCvosHK9FH5zm9Pkxc13EooorrP
+NCiiilcBaO/eiq99O1taSOhAkI2oCOrHgVMpJJt9CoRcmkt2I19axz+U86hweQTwD6E9jUulIt74
+jMyHdFaxYz1BduuPcCtex0W1g0yO1khV9ygyFhksx5JJ9au21nb2UYitoljTrhRgE+tePXxznFxR
+9hgMidGrCrJljA4+n50UUV5h9QtgooooAKawDAqejAg/jxTqaQCQPemnZ3JkrqzOM0khLR7cDH2e
+V4s+uCcfoRV2qsGI9S1ODABW5L/gyg1ar6ag700z8vxcOSvKPmIe1FB6UVsc5m4ozSZOaTNSkajs
+0gNGRSEgY460noAoIB60Z5OTUE11BAvzygfjVP8AtQO222hkmPsMCjmCxp4BFMklSNcswUepNU1t
+tWuskmO3RugJ5FTR+HoSQ1zLJOw65OAfwpavYfurcryatAG2R7pW9EGaFfUro4igEa9i/wDhWzFZ
+W8A/dQopA4IGKsY4AGRT5GyedLYw00SWXm6unY9SqHAq/b6XZW+PLgXd6nk1d2kHNKAQc0+SxLk7
+6ChQvAAGfSl49KKKqxLYUUUUwCiio5p0gjDuTyQFCjLMT0AHcn0pNpK7BJvYo6qCsthIPuxXcbn/
+AL6x/Wu7I64rktf0HxFY6BFqt9pi2untcRZLNmVFLZBIHA5AH411anIBByCAQfwrwsfJSlzRPs+H
+LqlNMcDxRSDOORg5pa88+nCiiigBD7VWjsLSGQyJaxhySS20Zz65q0aTmmm1sROEZbq4gyDk8ew6
+VV1OLzdLuk65jbAP0q3TJE3qVP3SCCKcX7ydyZxvFpdjL8LymTw5Zk9VTafwJrXzkD1rn/CZ22Fx
+b/xQ3Dgj0BOQK6D8KqorSMsI70l5Biud18GHXdHuhxiQxfmK6P8AlXP+JgC+lY4IvFp03qTjf4Wn
+Rr8zfBBJxSUgBUEE80oOAAetZtPU6YvqOzjBrnPCY2pqUQ+6l44A/WuhcgDJOMDNc94Q+exvLjHE
+907Ke5GTWkfgbOap/vEPn+h0WMtxXO+KCJn0mzUZklulkx7KDn+ddCDlj2B6k9q42e/km8Sx6itp
+Lc2NoWgjKEcvgbiAeoGQD7kVdCDk7pGOY14UoWm7XsdkcKCAeM5ArP1bUl0zTpJmGZGysSDqzHpV
+CXxISALbT7iRzgDeAqgnpk+lZ6xT3N39u1CRZJwMRxqPkiBHOPU+prejgpzneS0ODHZzQpUuWk7y
+aCxtjbWiq5DTOxklI7s3JP8AIfhVmiivbjFRSS6HxE5OTcnuwoooqiQoNFBoATvS0nelpsAozQaT
+vQAtHPaiikBT1BWmjgslJDXUoj/4D1b9B+tdjGixxqijCqAo+gGK5axT7T4ptwTuS3gMhHoxJAP5
+CuqB7ZzXhZhNupY+34coqOHc3ux1Ie/0paQ9QfSuA+jexg+Jk2f2deYGYbpVYnoEcFWP6iqpGDj0
+/wA/4VsazZm/0W8th96SIlfqOR+oFYVrL9osba4JGZowxAPIOSCD6HINe1ls7x5WfEcR0eWsppbk
+tFFFeofOBg0ppO1VryaUCO2tQDdTttjBGdo7sfoP1rOclFOT6F06cpyUIq7ZcdApUb0JI3FQwJA9
+wORWZcZuNYsLTqGlDH8Of6Vqz+GEisUaxYLfRHd5rnmQ9wT3BqDStJvH1pb68g8lYkIVc5yx4yPa
+vPqYyE6bR71HJ61HEw5ldHV9zjpRSD8qWvGPuI7BRRRSGFFFFABQOSKDwM+lIGAwxHA5/Cn5Ck7I
+4yEF9a1acHhrgKPqFGf51cqlppZ1u5SDtkupHU+ozj+lXa+lw6apxTPy/GyUsRNruNPSig9KK3OY
+zCQOScD1NVZ9QtoSN0oJPYc01NEmmA+23rsOpRBgfSr8Gk2VsQY4VyB1bk1GvQ1bSMkX887EWto7
+AdyMVKum6jcf6+cRg9Qg5x9a3QgHC8Y6Y4xTtvIyafJfVkua6GXb6HaRMGcGRh3c5rQSJIxhFVfY
+DAqQrmlANNRQuZiYJHPU/pS4OMAUuKdmmtCSMA5p2KWimAlLSUtABSUtFABRRRQADB7gDGST0A9T
+Xd/C3wsupSHxVfxboySmnROOFUcGQjuSenoK4OOwl1e/stHgYrJfzCFmH8MfVz+XH419JWVnDYWM
+FpboEhgjEaKOgUAAfyrzMdWa9xM6aEPtFHxHosPiHw7f6VMAVuoiqk/wt1U/gcH8K8M8PXMsunGz
+uQReWUjW84PUFSQCfqMV9DkdRzg14p8RdNHhbxlHrqrt07Vh5V0QOI5RyG49a82Pvxa6ntZXivYV
+1d6Mi4JJzweKd0qOF1liWRGDqwBVgcgg81JkYzmsGmnqfaxaa0dwooyM4zRmpKCiiigApo5yDmnU
+05wMdc80Ckc5ppNh4p1G1YgC4AmQep6ECuk9qwPENrLFLb6vbJvmtW+ZB1ZO4/CtSy1G31C2W4gc
+FW5IByVPoa3qLmSkjjw75JSpP1Rb6cZrmPEdxGNb0a1kcKpl8wk9sdK6C5uobSBp55FjiUZLE4/L
+1rmrfTB4jmu9RvUZI5RstsfeUDow+tKlHlfNIjGTc0qVPVnVg5JJGDQQC2c844Fc3Hf6ppBFvf2b
+3kS8JcQjJI9x61LL4mklG2x0m6kmPC+YhVQfcml7P3rplxxULaqzJ/EV+bPTDFHzc3AMUK9yTwT+
+GTWFoOuz2GlRW39kySCPKl43GGIJBPPuDWzp2kXD3Y1LVnWS76IgPyxD0A9ateCvAtv4kbW4Rqdz
+aXtneELsIKMpyQSp/GumiqduWWx42ZV8RSarx06Ixru/1LVoBEVFjbt/rAGzKwzyMjgDFSRqsUMc
+MahY4xhVHQD/AB963Ne8Fa/4Zhe6uY0v9PUZae2GHjHqy9x9Kw1dXRXRw6MAVYHgjsa9TDRpJe4f
+L4vE168r1WLjHSiiiuo4woooNABQaM0lOwBmiiimAUUd6U0gA0nejvS5otoAUUUUgHaAi/2/qswy
+fliQf98gn9TXSgYNcz4WJe41NiMn7QAT7BRium6GvnMU37Vs/Rcmio4SFhaQ9vc0tGM1zHq9BpJB
+BHYjFchHGLLU77T8EKHM8I9UY8j8D/OuwwSCCOvSue8TW7RLBqsaEvatiUActEeCPqOo+ldmDq+z
+qa7M8XOsL7fDNpaxIeM0UAggFSGUgEEdCDyCPwqCe7t7Yqs0oVnztUAkn8Bz+Ne+5JK7eh8Cotuy
+WpMTgDPfp707QYvter3d9jMcGIIs8jPViPfPH4VUEt3fsLewgmLMcGaVCqoD355J9q6fTrKPTrCO
+1iztTOSerE9Sa8zH4mPLyxe59JkWXT9r7apGyRaI9uPSk5PXmnDHpRXkJu1j7O3kGKKKKQ15hRRR
+QAUUUUAIelV7+dbXTbmduBHEx/Q1YPTNYnieXOmx2YOHupViP+7nLfkBV04uU0kc2LqKnRlN9EZO
+mxtDptvGxGRGCfqeT/OrRoIAOAAAOABSV9RBWSR+YTk5Sb7iHpRQelFUSN2jNLinUUwG4OelLS0U
+AFFFFABRRRQAUUlLQAlLSUtABRRRQAUDqMdaSgRXV3dQWFhEZb+6bZCgGdvq59AOue5FRKSim2OM
+XJ2R2Xwm00X/AIpvtWdQYrCIW0LEcCRuXP1xgV7T2rC8KeHrfwx4ettMg+YxjMshHMjnlmPqSc1u
+dq+er1OebZ3xVkkB6/hWF4s8OweKvDd3pNwAPNUmNyOUccqw9wcVu4/lTcdQO9ZxbTuhu/Q+ZtC0
+bW7K3uo7A+dd6e5ivdNkODkHhoz6ECtSx1y0u5zAxa1uxw1vcDawPcDPWu5+IGlz6Fq8HjPTYSwi
+Ah1OJR/rIieGx3IqTUdB0LxZYR3E0EcySqGiuEwGAI4ww54966/ZwrRutzWlnmIwMlGXvQZy4OcH
+HXv60pJ9KhuvBHiHSAW0bUlvoB0t7wfMB7MP0FZcut3enMI9Z0a8s26eYi+Yh98joK554acXofT4
+XPsHXS96zNrng44pazrXXdLuyBDfRE91ZtpH4HFX1ZZBlGDD1U5H6VhKMk9UexTrU5q8WmOpARk0
+vTqCKTgGp6WNNGNIOScZB6j2rDuPDNq9y09pLPZSMcsYWwD+Fb2aMd8GrjKS0MatGnV+NGDH4Xga
+ZZb67uLzachZW+XPuO9biqEUKAAoGAAMACnbC3QED6VBJd21uCZriJAOpdwMfhQ3KRMKdKlqrJk+
+MgjPHfNIAOCABkdjzWNP4n0xWKwPJdyDjZbRlqs21j4r1sAWlgumwHrNdEFiPUKK0jRqM4sTmuDo
+azkrj9S1K1061Mly5UnhEHLOfQDrVz4Yzalp3xDdtSg+zrrlm0sMRPICHjPocZrZ0LwDp+lXAvr1
+31G/ByJZxkKf9kdAKXxGwsvGvg7UQMMb1rZj6BxgD8zXXCio033PkMdn316rGlBe4j1d0V1KMAys
+MEHkEe9eGeM/A914V1CXUNNgefQpmLvHGNzWjHk4A6oTzjtXupOM4GeMimsAQQRkHgg/4d6wpVpU
+5aGUoqSsz5mininjDwypIp7qc4OM4PocdjT8j9cV7Fr/AMMfD+su1xBE2m3pyfPs8IWJ/vDoenOa
+8z13wb4i8NF5bm3/ALRsRki5tV+dRkklk9OR0/KvVo4uE9Huc0qLWqMnNBqKGeG4TfDIrr0JB6ex
+HUH61J79q7U01dGDTTswopTSUAFFFFMAooooAKKO9LSbAKKKOe1ICTwsMXOqLjnzwfzUV0n61zOg
+SEa/qcRAXKxuMHr8uCf0rpiQT/SvnMUrVWfo2Tu+EgFFFFcx6gUx41kjaNwGVgQwPQgjkU+g5A4O
+OKd2tiZRUotPqcejW2jPe2eozlEghaSzAHMw/hQHtg4H0rU0XSjawC6ukEl7cAPIxA+UdlGegHTF
+U/EcMd5rOjWhQFvOMhPUhRzjPpXTAjgYwcZ6V2Vq83CMTw8Hl1Kniak0roAcjoRz68UvA+lB7UvW
+uNtvc9yKSVkrBRRRSKCiiigAooooAKKKD70AxD0yPwrltRmF54iCDmOxi5/66Px+gB/OuhvLuKys
+5bqU/JEpOPX0FcppqSC0M03+uuWM0mc5yeg59BgV34ClzVOZnznEGK9nR9knrIt9+tFFFe+fECHp
+RQelFIBaKKKYBRRRQAUUUUAFFFFACUtFFACUtFFABR7UlMmmWCMM2SSQqIgyzsegA7k0m0ldgk27
+IbPK8flpFE01xKwjhhQZaRj0A9vU9q9n8AeCB4btTf34WbWLoDzXAyIl6hF9AO/qap/D3wMdIQa3
+rCK+qzL+7jPItUPO0e57nvXog5GQMZrxcVinN8q2OynT5Vdi84oooriNgoxRRSsBFcRR3FvJDMgk
+ikUq6EcEEYIryK0ik8AeJz4funJ0W+cyadM/SMk5MRP8q9hrE8UeHLLxToc2nXgwW5ilA+aOQdGH
+uDW1Go4PXYyrUlVi4sze5B7HHPb296R1VwVdAw9GGQR9DXL+GdZuorubw1r3y6xZYCuTgXEY4Dgn
+rx1rqOeOTz3I5+leimmrnz1SnKlKxiah4P8ADupktdaTbEnuq7T9cisSb4X6JktaXOoWhzwIrg7R
++BBrt/woNJpPdFwxNanrGTPP3+HF6gxa+KL2Mdg6B/14qP8A4QHxEn3fFRI9Xthn9DXog560nT1q
+fZxfQ645tjorSo7Hnn/CCeJD18Trj2th/jSr8Pdcc/vfFsoz1CWwH9a9CyPel+nWj2UOwSzjHNfx
+GcHF8MYXP+ma9qc56EK+zP5D+tZPhbwZok/ifX7S9tmuxZTKkJncsVUjPPPNepdSBnB+tcXo4+xf
+FHW7bHF1bpcDPcjimopbIn65iKqlzydzqbTS7CwAFpZQQYGAY0AJH4CrZJI6njuaOmMZ49KDyM1R
+wuTb953D8elcd8RMw2Oj3YODa6nC+fTLAV2I5OM9eM1598VNZs7bSbPTDJm8muopFjzkqqsCSfTp
+xSlszXCJ+1i0e2jG0c5yKXrTUA2r64p9eU9z6IKaRkEEAg8YxTqDSQzh/Evw00fXZGu7UHTdSxkX
+FuAAxzwGXowzXk+t6JrPhacxa3a5tyTsvrcExMP9odVP1496+j8Z61DcQRXMLwzxpJGwIZHAIIPY
+g100sVODS6Gc4KSPmtSGUMpDKRkEHII9QR1pe9X9T8D6hpfjy80jS50Ec6G5sLaY4SUZyyK38JHO
+OxrNLvHdyWd1BJaXsf37eYYYD1HYjryK9inXjUS11OWdNxJDSUDmlxitzMSilNJQmAUtJR3oaAWj
+1opKQEdrJ9m8T2spACXETQ57lgcj9DXWZyc4/wDrVxmpK62oni/1tu4mUgc4HUD6jNddbzpc20U8
+Z+WRQwwfUZrxMwhafMfbcOV1Kg6b3RNRRRXnH0gUjDIpaDQBnyad5utwaiZPlhiZAmO5zzV8c8/l
+R1FGMU3JtWZnCnGDbjuxe9FAopGgYooooAKKKKACiijNACdqQkdCMZpTzjB61n6vqUem2RmPzTMd
+sMfUsx6CqjFtpLdmVWpGnFzm9EZWuzi9votMQgxQkTXJB4J/hXH4ZppOTn1qvZW728TGVt9xKxkm
+c92PYew6Cp+9fRYWiqUEup+cZhi3ia7n06BRRRXUcIh6fjRQelFIBaKKKYBRRRQAUUUUAFFFFABR
+SUUALRSUZ6ngAc5NADZJY4YmllcIijJY/wAvr7V6J8N/BDSyw+JtZhAcjNjauOYlP8bD+8f0rF+H
+3hRvFGpJq17Gf7GtXzCjDAuZR/ER3UdvU17iAAAMAADAA7CvIxmJu+SLOulTsrsUd+OvWl9qKK84
+3CiiigAooooAKacelOpMDOaAOQ8b+Dh4ktY7yxk+zazZ5e1uAMcjna3qD0rj9J+IOn+b/Zmvt/Ze
+sQ/u5o5xtQsOMhu4PXmvX25HSvP/AIh/D238TwLqNnDEur2wJQuo2zgfwP657HtXRRq20ZzYjDQq
+x13NCOWKZBJC6yRkA7kbcBn3FPOK8t8P6FBfCZdD1G+8Paxbki5sGYyRKRxkI3UH1GcVti+8e6Pg
+XOnWWtQqceZauYpCPUg8flXandXR408PyuyZ2/NGK4yP4kWEB26tpmqac4+8Zbcsg/4Evb8K07Xx
+z4YvcCHW7XPo5KH/AMeAFN6mbo1F5o6CiqMWs6TMMpqdkw9BcJn8s1KdR08c/wBoWgHvcIP60KyJ
+5JbWLPJ6dc1xWtj+zviVoV+WxFdxNbSHpkgcCuiuPEeiWozPq9ig9p1P8jmuE8c+LdD1KztF0u9+
+2ajaXKzRRwRM2cHkdMdPei5vRpz5tj04DJxg++aa7pFG0sjKsagkuTgAD1J4riF8WeJtYQLoXheW
+FSADcag21VPc7Rz19KVPBGo6zIs3ivW5rtQQRZ2zeXCo9CRyR+tBPsVH42Tah40lv7h9M8J2/wDa
+N6Rh7oD9xDnuSepHt3rnvFPhddI8KS3l7cG81e8vIBPcP1++DtUdhn0r0uxsLTTbVLWxt4reFSMJ
+GoAx7nufc5Nct8RcyadpFqOtxqkK4HQgMDUy2dzWhVXPGMFoeuoBtXHYCnGkAwAAe3NKa8x7nuhR
+RRUjCkwO4yRS0UwOD+J2mTHSbXX7Ff8AT9GmFymOrID8w/LPFXtT0DQviH4etLueL5poxLb3MfEs
+RIzwR6Hsa6e5gS6gkgkAKSKVIIzwRg1wfwxnfThrHhWckSaXct5QPUwscqf1rWMny6dBNannPiLw
+1q3hCYf2kouNOJITUY1IAHYSAdD79Kz+CAwOQQCCOQQehB9K+k5oIbiB4ZokkikGGRwCpB9QeteQ
++K/hhcaU0upeGEMtry0umu3K+piPb6E4ruw+N2jMwqUr6xOJyPWlNRQXEdxGWQkFThkcYZCOoI6g
+1JXpppq6OVpp2YUo60lLmmAUUZopABYopYIXwCdgIy3tzxz0/Gp/DE5gNxpTsSbdt0JPeJskfUg8
+VBVW4k+w6hZ6ko4RvImGMZjboT6AH+dcmMpc9N90eplGK9hiVd6M7AYJyM0vekXA4ByOgPqKXvXz
+1raH6JFrdbC0UUUFBQaKKACiiigAooooAKKM0ZoAQnFJjNLTZGCRs7MFRQSzHgADuae+iJlJLd2G
+TzxQQvJM4jjVSWcnAAFcqZJNUvRqU6lIwCLWLP3V/vEep/lS3l22v3AI3DTIjlQeDOw7kf3R+tT1
+7GDwtrTkj4vOs0VV+xpPRbhmkoJor1D5sKKKKYCHpRQaKQC0lLRTAKKKKACiiigAooooASlopKAD
+860PD3h6fxfrY0yJmSyiIa+nXsvZAfU98dBWNdzXIK22n28l1qEvEUMSlmPq2B2HvXpHhSXxf4d0
+OGz03wQQpG+aS4ulWSRj1JHY+1ceKrcseWL1N6UL+8z1Kys4LCzhtLWJYoIUCoijAAHQYq1Xnv8A
+wsubTHVfEvhjU9Kjzg3GzzIs/Udq7PS9Y0/WrJbvTbuK5gYZDxsD+B9D9a8aUZXuzqRfopueOnvj
+vSg5qBi0UUUAFFFFABRRRQAhGR1P4Um0e+adR9aXQLdTi/Gfgka3ImraRL9i163GYrheBIB/C3qD
+05rC8PeJ21C4fStVhNjrdudstu3G8D+JD0IP416h0Ax0xjFcx4s8GWHimBHctbahDzb3kRw8bdsk
+dR7V00q7jo9jmr4aNVdmQMFkXa6rIp6hgCD9QRWbdeHtFveLrSLKX6wgfqMViWniHUPD+opo3i+M
+RTk4t9RA/czjtk9Aa6xCHUMpBB5BHII9Qa7U1LVM8WcatGXKznH+H/hN2ydDtl9dm4fyNMHw78Jj
+P/EniPsWY/1rqPY/4UmR1IP4DrTsiPa1O5gweB/C1u26PQrMH1Kkn9TWtbafY2YC21lbwgdAkYGP
+xHNWfwwe4oosTKpJ7yAkkdTn1zzQP8jFFFNC3d2GSQBkYHTPauR8XgT+I/B1ptJ36oshHsoBrru1
+ctcr9t+Lvhi1zxbW0s7D0OCBUSfus6cGuatHyPVjwcHjA7Uvak7Ype1eWfQBRRRQAUUUUgEYHqAD
+/hXnWuj/AIR/4r6Nqq/LBqkZs7g4IBYcqT79q9G6jvXEfFOwkuvBkt3bgm50+RbqLA5BU5P6VpTd
+nYTO1GMkYzSnp1we1UdF1BNV0Syv0IIuIVkJHTJAz+uavEZHf8KhqzsNbHB+NPhxa+IHfUtLKWOr
+qMeYBhJx6SAfz615DMlzZX0mnajbNaX0Qy8TDhh03Ke6n1H419NY7j9a53xX4O03xZYiK7Ux3MeT
+BdJw8TeoPceoPFdmHxUqbs9jKdNSR4RRVjVdK1Hw5qf9m6vGFds+RcKMRzgeh7HHUflVfkHkYr2Y
+TjNXickouLswpaTvS9AecVRIAE9Aaz765sLqxuYGvIDujIwJVzkDI4z1BA4rRgsn1fVdP0eIsrX0
+4jcp1WMDLH24wM+9eveIbLwZ4f0/T9M1PR7dbC4fyEk8gFImxwWbsSe5rjr4hQfJvc3p0/tHmuhX
+ZvtFsrljlmiAY+44rSHNYXhAKujPEhBWK4lRcHjAbj9K3R/+sV4VRWmz9IwU+ehCXkLRRRWZ1hRR
+RQAUUUUAFFFFAAc9qTnHIz/SjPbvVW9vbewt2nupAkYHTuT6AdyapJt2RE5KKvJ2SJpZUiiaSRgs
+aglmJwAPc1y13dvrrFFDppanIBGGuCPfsv8AOm3EtxrbiW7Qw2QOYrboWx0Ln09qsdAABgAYAHYe
+lethcHa0pnx2bZy6l6VF6BgAAAAADAAGAB6D0FGaDSc16iR8yFFFFUAUUUUAIelFB6UUgCilopgF
+FFFABRRRQAUUUUAIelMllSGJpXyVUdB1J7Ae5NP/AMM11Pw78Mf8JLrQ1W6jzpVi/wC6BHE8o7/Q
+fzrGvVVOF2XCHMzr/hn4PbSrQ63qUKjU7xQVUjJgj7KPQnqa9Bwe5oAwewp1fP1Jucr3O5JLRDJI
+1ljaORVdWGCrDII9MGuB1nwFNpt22teC5v7P1AndLaEnyLgf3SvQH3Feg03GT049O1EZtDscv4Q8
+YQeJYZbeeJrPVrUhbmzk4ZCOCR6g+tdTnoe1cL458L3EskfifQMRa5ZDcQowLmPvG2OuR0Nb3hbx
+Ha+J9Cg1GD5XPyzRH70cg4KkdiD+lOUbrmQjdzRSUtZjCiiimAUUUUAFFFIeB0zSAD0pOo7jtilJ
+4ziuQ8W+PdM8LRiEk3eoyA+XaQ8sT2JPYfWqinIEm2kldmzrthpep6TNb6zHC9nglvOIAX3BPQj1
+rw5fElx4c1ibTPC1y+v6WASgmBxAfQN3AqTUJNb8Wz/afENyUts5j0+BiEA/2iOpq5b28VtCIreN
+Io14AQYx+XWtPaKmrJ3Z6+HyJ10pV9EU7iXxVqx3X+siyjYf6izUKQPTd1pfDtzqOk+NrLT01O7v
+La6iYyx3LltuO4NX/lUHcRgDJOOwrE8O6jNZa/P4mv8ATbiTSWzbQ3aDcsWDgkjrg+tXQqznK72D
+OMBhMJhHGlD3mewd+g49KWoLO9ttRtkubOZJoX5V0OQfbip8cZrv0a0Pz9qzs1YKKKKELUPb1rnP
+CwGofF/WrrGUsbKOBT2DEgkfXiuj6c5xjmsX4Txm6XxDrRHF/qMmw99qnGPpkGsa7tA9DLo3nzHp
+FBoFFece0FFFFABRRRSAKrX9sl7p9xauMrNGyH6EEVZNIeTjtTTtqJnCfCi6Y+F5tKlJ83S7qS2w
+TyFBJUn8DXeV534ezpHxb8QabjbHfwx3i+mRwQK9DznrVVFrdBcWj6UUVAIytb0Gw8Q6ZJYalCss
+Ljg9GU9mB7Ee1eFeJfDt/wCDb5YL5mm0+RttteBSQSeivjo3v0NfRVUtS0yz1ewlsb+BJraUEMjj
+I+o9CPWuihiJUpeRM4KS1PnIDB5GCaM8ZHrWv4r8LXfg28Cuzz6TK2ILo8mMnojn+RrHPOe/bHrX
+t06sakeZHFKDi7HV/CuwF549u74q22wtBGM8gs5yfxAAr2HU9LtNY06ewv4Vmtp1KshHX3+oIyDX
+CfBmyKeGr3UiM/b7t5EJHO0HaB9MCvSMZOM5/CvExE3Ko2uh2xjaNmeAat4bvfhxdtG0Ul14elcv
+HdKuWgJ6hgOfx9qtwzRTwo8UgeIjKsDkEGvcJ7eK5gkgmjSWGQEOjqCGB7EHg15X4i+F93pkr6h4
+QlAUks+myt8jH/YJ6fSs5JT9T3MvzZ0EqdTWJjZXOARml61kpraRT/Y9Tgl068BwY7ldoJ9j0IrV
+QhkyGBGM8HP41jOEo9D6ejiadWKlCQ40hOKTIxS4Hap0Nrig5oopOMc0WKuGfSjOemMZx+NNZ0iQ
+u7bUUZJJwAPeuau9fk1GR7bSXUIpxJdEZC5HRR3PHWrp0pVJJRWhx4rGU8NFymzT1PWobBhDGpnu
+2B2QJySR3J7D3rCMEt3cC71FxPMCDHGCdkXsB3PuafbWsdoCYyzOxy8jnLMfc+ntU5r28Pg401d6
+s+JzHN6mKfKtIhkk5J5PWig0ma7TxxaSjIoqgCiiigAooooAQ9KKD0opALRSUtMAoopKAFooooAK
+KKjuJ1ggaVgTjgADlieAB6kmk2krsEruyLOn6Zda/rEGi2WQ85zNIORFH3J9Cegr6H0nS7XRtLg0
++yjCW8KBVAHp3Pua5L4beE20HRTe3sY/tS+xJMSOVX+FB6YHWu6AwK8LFV3Vm0tkdtOCihaKKK5L
+GoUUUUwE6cjNeaXy/wDCBfEGK/jwmh66/lzpnCw3HZsdAD0NemVg+LvD8Xibwze6XJgPKhMT/wB2
+Qcqc/XFXTlrZ7CN0EHGOc+nSlz2rkPh3r02t+FolvCRqFkxtrpT1Drxkj3Az+Ndd1GamSswuLRRR
+UjCiiimAhI70hdcEk4HfNDEEHnkDtXk3jvxrdalfSeGvD02wrxe3q8iMd1U+pqoRvq9iqcJVJKMN
+Wyz4z+IkzXcmh+GCsl3jbPedUgHcD1NcdYaRFZF53ke4vZDmW4lOWY/j0qbT9Pg022WGBTgcknqx
+PUk9zVypnU6RPr8vyyGHSlPWQ0Ajv196BwOAfWnU13VAWY4UAkn2FZJX0W56stjJ1ZpruW20axyb
+zUHEQx1VT94/TFe56RodnpWgW+kRwo1tFEI2RgCGOOSR3yc15t8K9JOq6reeKbiPMakwWYI6AdWH
+1r10dOldDbjFRR8RmWKeIrtr4Uecav8ADy70q5k1Pwbci2kJLS6fISYZfUD+6TVXSPF0N1dnTNVt
+203VU4MEwwG91J4Ir1Ijpgc+tYfiLwnpPie08nUbYM45jmTh0PqCOa2p13HRnjV8LCqvMzjx7UYO
+M9s1yN1a+J/AhzOsut6GvAmQZmgX0I7getb2k61p+t2q3FhcJMh6gHDKfQj1rrjJSWh49XDzpO7V
+0Q+J9R/srwxqN9naYoW2n0YggfqRWz8OdL/sjwHpNu67ZmhEsgP95uT+pri/HobUho/h6Ikvqd6q
+yKOpiU5Y49sV61CixRJGo+VAFHHTAx/SufFS0UT0cvhy0+Z9SWiiiuM9EKKKKACiiigApDS0hyKT
+QHnfjF/7L+I/hXVh8sczSWcp9d3IB/KvROh/GuB+LNuw8KwakgxJp93FOv4HB/Q13NpKLi0gnBz5
+savx7gGtJO8ExdSaiiis0hpBQeaKKLAVL/T7bU7KWzvYEmt5VKvGwyCP6H3rwHx14Yu/BDSbBJPp
+koItZwMtEx6I3tnoa+iTXnnxQJv38P6ArAi/1BTIvfYvJP0zXRQqSg7J6EyimdN4N0waR4P0qy27
+Wjt13j/aIyf1JrcA9qRAFRVA4AAH4U6sZO8myktBDmmupLAjtT6KleQGXrHh/StftjBqljDcqRwX
+UZHGOD1HWvPtQ+D8ltIZfDmsy2wGSLa5zJGPYHqB7V6rSEZq1NrzKhOdN3g7Hg13pHjPRQRf6H9s
+jH/LWyYOSPUjqKzP+EnsUk8q6W4s5BwyXERXB9MkYr6Lx0Pfv6VWu9Osr+Mpd2kE691kjDD9RReD
+3R6VLOMTTVr3PDYNUsbnBhvIXHs4NNv9VtdPiDO293OI4k5Zj2AA5r0+++GfhC/YvLosCH1hyn6A
+1iT/AAU8P/akurK6v7OWM5Qxy5K/QnpTUKdzqln83GyjqYnh74e6l4naO/8AEhaz004aOwQ4eQdi
+57D2pPiV4VtPD72Or6bbpBaNi1uI4xhcH7rfUHqa9J8N6Dd6DBNDcaxdakHIKm4xlR6AjrVX4h2k
+d74C1aKTACwlwT2I5FaU6vLNcux4depOs3Ob1PDmPPf0ozUVu5kt4nIwWQEj8BUle+tVc8t6BRRR
+VAFFFFACUtFFABRRRQAh6UUHpRSAWiikpgLRRz0ooAKKMUYNK4Ce3eum+Hvhv/hI/EH2+5QNpmnO
+CARkSy9vqB/OuYWC5vru306yAa7unEcY/ug9WPsBk19DeHdDtvDmh22mWqgJEoDHuzHkk+5Nefjq
+/KuRbnRRhfVmoOBTqKK8c67BRRRTEFFFFABTcZOMdf0NOox3pIDzm2P/AAjHxhntQNllr8AnXsBO
+vDD6kc16L0PtXn/xVge30XT/ABDAp+0aPexzgj/nmSA2fbFd3bzx3VrFcRHdHKgkUjuCMg/rWtRX
+ipIRNRRRWY1sFISMUEjHNVNRvoNN0+e9uGCwwRmRifQDNOKu0hXOI+JXi+bSLWPRdKbOrXwIUjkx
+J3Y+h9K4PTdOi0y0FuhLOSGkkJyXY9ST3NVdMnuNb1K98R32ftF65EKn/lnECcAenFa9FR8vuo+t
+yjAqnTVWS95i896KKKwPcSA1ka9LK9pFYW2Tc30ggjA6jJwT+Vaxo8K2Q1X4pWSPzHp9u0+O248D
+Na0knK7POzSu6OHbXU9e0HSIdC0Kz02BQI7eILx3OOT+JzWmOnApB19adVSd3c+HWodqQjmloqUg
+sNIBBBGR0x2NcJ4h+G9td3T6poFwdJ1TrmIfu5D1wy9OfWu960h6c8VUZyi9GDimrM8Q0++vdJ+J
+dnd+OIRZLb2xhtZ0BMLSE4LZ7EjNe1QTRXMSTQSLJGwBVkIII7YNQ6hp1nqdo9tfWsdxC3VJFBB+
+npXBS+Etf8Hu934QujcWYJZ9KumJXB6hG7fStJSVTVvUmMVFWR6T7d6DXIeHfiBpuszGxvEfTdVT
+iS0uRtJPcqTwR9K64H3rOUXEq4tFGaKm+gXCiiigYUUUUwMDxtZDUPBWr2xXcWtmKj3AyP5VF4Bv
+Tf8AgXR5ycv9nCMSecjg/wAq3rqMTWk0TDIdCCPqDXDfCSUjwtc2L5D2V7LGQew3ZH6Va1hYXU7+
+iiis1sNMKKKKYAa87uw2r/G20iwDHpNgZCOwaQ8fjivRD0NcvoXhq407xVr2sXUySPfyL5W0HKRg
+YCnPerg0m7iZ04OenSloH5Ud6z7sEFFFFMYUUUUAFIeOcUtFLUGhvBGeRQBjoSfrTqKYrAK4b4r6
+iLDwHdxBsS3TLBGPUk8/pXcZrxH4vat/aHimw0WJyY7NDNKByA7cLn3ArahDmqIUnZM5KMbYkUYw
+FA49hinUmAMY9OaWvoVpoeewoooxRcAowaUUUXASilNJRcAooopgIelFB6UUgFxS4oopAJgZ6Clx
+RRQAnFLkAEkgADJJ7CiptN0qXxFr1nokOQJzvuGH8EQPJ9s9KipNQi5FRjzOx33wo8PB0l8T3UZE
+k4MdoGHKxjq31J/SvVAOATUNpaw2VpDbW6BIYlCIoHAAGBU5r56pNzk2zvSskkFFFFSMKKKKACii
+igAooooAzPEOnR6v4c1HTpBlbi3dDj1xx+oFYPwv1J9S+H2mGYkz2ytbSA9QYyVGfwA/Ouxxk5xn
+2rzv4ck6fr3i7QT1ttQNyg9FlAIx7cGtI6waF1PQwMDHpSmkHfNLWY0Nb17+leX/ABd1dpbbT/DF
+s5EmoSB7gg8rEpBOfTJ/lXqDEdT0rwG4vj4g8cazrJO6GGT7Hb+gVfvEfUk1cNLyOrA0Pb4iMOhb
+iiSONEjUKigKoHYDipKTHI7UvWudtt3Z95FJJJBRRRSKA1f+GOP+Fh67nlhbptPtWeau/DTj4kau
+PW0U/rW1LqeLnv8Au69T2THNLSdxS0HyCCiiigYUGiilYAxSdsUtHNHoKxg+IvCWj+JoCmo2oMqj
+5J4/lkQ+oYc1yRHjLwHyu7xDoiE9Ti5iXk/8CA/pXpfOPekI4xxitIz6MLGB4d8YaP4ogD6fdDzl
++/byfLJGfQqea3wRgH9a5HxD8P8AStbuBfW+/TdUU5S7tTtbPbIHBH1rGXxN4n8GuIfE1m2paaDh
+dTtFyyj1dR09zQ4KWsQPSO9FZmk67puvWi3OmXkdxEeSUPI9iOoNaQP1/GoaaGLRRRSWwCdDk9K8
+98AH7J4u8X6ceP8ATFnUegYY/nXoR6c159pZ+yfGvWIsALd2Ebj3IPJrSGqaEz0GloorNAgooopj
+A0mDS0UA0AooooBIKKKKACiiigAooooAKKKDQBWvbmOysp7qY4jiQux9gM181G5fVtQu9amyZr6Z
+pASeiA4UfkK9l+K+ptp3ga5ijJE16y2yY6jccEj8K8djQRRpGDkIoUfQDAr0sBTv7zOevKysOxQO
+KKK9Q5QooooAKKKKAA0CiigA4pKWg0ANPSig9KKYDqKKKQBRRRQAjEIrMxAVQSSewHWvUPhJoDWu
+kza/cx4utROYww5SEcKPbPWvNbDTX13W7DRYsk3co80j+GJeWJ+oGPxr6PggjggjhiQLHGoRFA4A
+AwB+VeZjqrT5EdNGHVkmDz2HpS0UV5Z0hRRRTAKKKKAMD/hOfCIP/I06J/4MIv8A4qnxeNPCs7lI
+vEujSMFZyEv4iQqglj97oACT6AVwPwW8N+HdY+HUD6j4f0q6vILmaGWW4so3ckNuGWIycBgK5r9o
+DQtL8P2+gXGjaXZacZDcxSm0t0i3gqgw20DPBbr6muv6su5PMewf8Jz4R/6GrRP/AAYRf/FVIPGX
+hZoHnHiXRzCjKjSC+i2qzAlQTuwCQrYHfafSq2kfD/wrBotjDceGNGkmjt41keSwiZmYKASSVyTn
+vXi3i7QrKx+PmnaJb2FrFpV9eWNw9mkKrCwXKkbAMYPz5GOcmj6su4cx7d/wnPhH/oadE/8ABhF/
+8VXCWPinw7Y/GTU7hde0v7DqGnRu9wLyPyvMQldu7OM4PSvQv+EE8H/9Cpof/guh/wDia8f+C2i6
+D4g8Q+NpL3RdNuoEu42to5rVHWFWebhARhRgLwPQelVGgl1Fc9Y/4Tnwj/0NOif+DCL/AOKpf+E5
+8I/9DVon/gwi/wDiq8y+PvhrQdG8C2NxpeiabYztqcaNJa2qRMV8qU4JUA4yAcewruPBfgvwrdeB
+fD1xceGtGmnl0y2eSSSwiZnYxKSSSuSSec1P1Vdx8wviL4g+GLTw9qE9r4i0me4SBvKjhvY3dmI4
+wA2TXjfh3U9KtdEtYpdUshOw8yTNwmdzHJB5rQe00HTP2mLjSZ9G01tJuPKtltXtUMUbvboylUxg
+EvjkD+I+td78VvBHh2D4Z6zcab4f0u0u4I0lSa3s443ULIpbBUA/dyKr6uuXludmCxrws3NRucTL
+relQytFLqdlHIhwytOoKn0IzxT4NX026mWG31G0mlbokcysx/AGt34KeGNG13wbeavrOi6dfXN5q
+M0iyXVqkpC4XgFgeN2786xPHFnpMHxd0/TdE0uwsY9NsWmufstukW55AQAdoGcAoRn1NYywqjFyu
+e3h87qVa8aSgrN2+RJc3ltZRiS6uIYIydoaVwoJ9Mn6Gqn9v6N/0F7D/AMCU/wAai1eCG61fwtb3
+EUc0EuvWiSRyKGV1LEEEHggjjFeseKvhr4b1Twrqdnp/h7SrW9kt2+zzQWccbrIBlcMACOQAfYmp
+o4dVI8zZtmGbzwtb2UYpnmE+saZbSmKfUbSKRcZSSdVIyMjgn0q58NdZ0kfETUnk1SxXzoo4bfdc
+IPNcnAVefmOewql8BtL0zxNdeJJNc0iyvpIEso0+126ylMLIpxuBwTsGfpXZfETw1oOjTeDbjS9E
+02xnbxPZI0lrapExX5zglQDjIBx7CtY4dQTdzx8fmssVH2fLZXO81fXNL8P2f2zVr+CztwcB5nA3
+H0A6k+w5rkz8afh8D/yMH/knP/8AEVy/g3w/F8VPEmoeM/EYN1pUFw1tpdi/+r2KfvMO46cdznPA
+Ar1zzdF0yS30vfYWjzgiC0ykZkx1Cpxn8BTjhlb3meVcyfD/AI28NeKSy6Lq9vdSKMmLlJMeuxgG
+x74o/wCE58I/9DVon/gwi/8Aiq5X4lfDeyn0ubxJ4cgXTPEGnA3Uctooj87byQQOC2M4PXseKg+E
+HhPw3qfwt0a8v/D+lXd1J5++aeyjkdsTyAZYjJwAB+FH1ZX3DmOx/wCE58I/9DVon/gwi/8AiqP+
+E58I/wDQ1aJ/4MIv/iqn/wCEE8H/APQqaH/4Lof/AImj/hBPB/8A0Kmh/wDguh/+Jp/Vl3DmNCyv
+rPUrRLuwuoLq2kzsmgkDo2CQcMODyCPwrMn8ZeF7W4lt7jxJo8M8TlJI5L6JWRgcEEFsgg9q5z4K
+/wDJJND/AO2//o+SqHw88NaDrM3jK41TRNNvp18T3qLJdWqSsFyhwCwJxkk49zWMKSlJx7DbOu/4
+Tnwj/wBDVon/AIMIv/iqnsvFfhzUruO0sNf0q6uZM7IYLyN3bAJOFByeAT+FH/CCeD/+hU0P/wAF
+0P8A8TXkfxlt4PBWueFL3wppdjp9/KL2JTZ2yRlmdI4wflAyR5hxnoTWrwy6MXMema98QfCXhm5+
+y6trdvDcj70SK0rr/vKgJX8ayP8Ahcfw9nPlHXkIfgh7ScKfrlMVc8CfDDRvCenRS3NtDfa1IN9z
+ezrvbeeSEz0Ge45PU10zLoHiW3ntmGm6pDEximj+SYI3dWHOD7VSw8e4rnEXHgrS9W2a/wCDNWSw
+uXyyz2UgaGU+jKOD71Q8P/Fi1h1NdH8R3+lb8YTUbS8jaB8f3iD8v41QbR/+FV/FHSk0p5F8N+I5
+Dbvaliwhn4C4z7lcH0LDsK0vhB4T8N6n8LdGvL/w/pV3dSefvmnso5HbE8gGWIycAAfhQqWrTC52
+kXjLwvMkrx+JNHdIU3yst9EQi7guT83A3Moye5A70z/hOfCP/Q1aJ/4MIv8A4qvGvi5pOm6N4g12
+30vT7SxgbwxA7RWsKxKWOoxDJCgDOAOfYV7Z/wAIJ4P/AOhU0P8A8F0P/wATUrDLXUfMVz458I/9
+DTon/gwi/wDiq5W5vbWX4yaJeWN1Dc215Yyp5sMgdSQRwCOK62b4d+DJ1Kv4W0gA/wByzRD+agV5
+V478D2Xwy1XS/G3htJIbOC7RL2zLllCseqk8jPIwScEjFNYflTswuetXvivw7pt49pf6/pVrcx43
+wz3kaOuQCMqTkZBB/GoP+E58I/8AQ1aJ/wCDCL/4quU0HQtH1v4t+P8A+1dKsb/yv7O8v7XbpLsz
+Ac43A4zgfkK7L/hBPB5/5lTQ/wDwXxf/ABNTHDppO4XHWXinw9qVwtvYa9pd1O3SOC8jdj+AOata
+jqunaPbrcanqFrYwM4RZLmZYlLYJwCxAzgHj2Nctr/we8Ga5ZSRRaTDp1yR+7uLJfLMbdjtHyn6E
+flXl66lfajpmjeE/EhW9vNG8Y2VnM0w3ieFhIF3Z+8DtYc9RjNEsPZqzDmPZv+E58I/9DVon/gwi
+/wDiqP8AhOfCP/Q1aJ/4MIv/AIqp/wDhBPB//QqaH/4Lof8A4msPxp4L8K2vgXxDcW/hrRoZ4tMu
+XjkjsIlZGETEEELkEHnNV9WXcOY1f+E58I/9DVon/gwi/wDiqP8AhOfCP/Q1aJ/4MIv/AIqvMvgF
+4a0HWfAt9capomm3066nIiyXVqkrBfKiOAWBOMknHua9SbwD4OcYPhXRPwsIh/JaPqy7hzFnTvEG
+jaw7Jpmr2F6yjLLbXKSED32k1o15h47+E2jLos+s+Frb+yNb09DcwPZsUDlRkrt6AkA4IxzjtWN4
+g8Z6t4p+H3hDT9LmNvqfiiQ200yjG1YzsmIx0Bbn/dyKznh2mkuo1I7jVfil4J0W8a0vfEFuJ0OG
+WFHm2nuCUUgH2qtbfGLwDdTpDH4hjV3OAZbeWNfxZkAH4mtjwt4D8OeC9MSKxsoPNRcy3sygyuR1
+JY9B7DAFXbrTfDPjPSyZoNO1azkyolTbKM99rjoR6g5Fa/Vo9xcxoQTw3UEc9vLHNDIoZJI2DKwP
+cEcEVieIPG3hvwsQus6xb2shGRFkvJj12KC2PfFeRX+p3nwR1vWNGt7mWfR76xe60pZvm8ifOAPo
+DnPr8vfNdr8Ofhnp1lpdvr/iCBdU1+/QXM014PM8osMgAHjIzyeuc44rOOG11egcxZ/4XT8Pv+hg
+/wDJO4/+IrqtE8RaN4ktTc6PqVveRDG7ynyUz2Zeqn6gVY+2aFeXcmjfaNNnuY1/eWO9GdV94+oH
+4V5V8RPB6eBLiHx94PhFlJaSKL+yi+WKaJmAPyjoM4BA47jBGTUsMraMOYX4u3pn17SNMUkCBGuZ
+PQ9l/U1w3Wr3iHWYvEXi6/1S2YvatHFHAx/u7Qx/mKo16WFhy00clZ3lYKKKK6TIKKKKACiiigAo
+oooAKDRRQAh6UUHpRQAtFFFABRkdzj60VBeSPFZytFkykBIwBklmOBx9SKTaSbY0rtI9F+D+kmaf
+UvEMqEhm+y2xPOFB+Yj2J/lXrXb2rG8KaKnh7wvp+mKADBEBJjuxGWP4nNbPb6V89Vm5zbZ3xVkk
+LRRRWZQUUUUAFFFFAHnPwikWC/8AHGlou1LbX53RfRWOB+iVn/HfTv7Sg8Jwbc+dqyW//fYx/Sr/
+AINdLP42ePLBF2rPFaXIHqRGNx/OQ1vePNO/tG+8HqFyYtfhm/BIpX/9lFenB3imZs7GvHPHWnbv
+2gPBF1t4liK/Uxl2/wDZq9R1LVo9Ov8ASbV8btQumt19sRSSZ/8AHAPxrmvFWnfaPiR4EvdvEE14
+hP8AvW5I/VKoDrNVuxYaRe3hOBbwPL/3ypP9K8M/ZoVlbxTuzki0PPv5xr1T4lXn2H4aeIps4zYy
+RA+7jZ/7NXC/BG3S11nxFEi7R/Z2jMR/tNaFm/UmlfWwEn7R3/JPNP8A+wrH/wCipa9A8Cf8k88N
+f9gq1/8ARS10FFMD5R+LN3PZfGDXLq14uLaeyuUbHIKQIc/mR+VfR2qCLxZ8P7v7MN0eqaYxi7/6
+yPK/zFeG+MdOXUfjX4sjk/1bWsUZPput4xmvSvgdq76j8OYLOcn7Tpc8lnID1AB3L+QYD/gNQpXk
+0bzouNKFTo7/AIGp8J9NOk/C7QYXG1nt/tDZ/wCmjFx+jCvHNGvf7f8AEviTxKTuW9vWSAnr5ScL
++m0f8Br2r4j6wnhr4b6xdxYiZbYwQBeNrP8AIuB7bs/hXjvhmx/s7w5Y2xBDiIO4PUM3zEfmcVji
+pWhbuepkVHnxPO/sr8Xp/mSah/yMHhH/ALGCz/8AQzX0XXzpqH/IweEf+xgs/wD0M19F08L/AAyM
+8/3t+iPN/APh7/hHPiR48gRNtvdNaXcHptk84nHsG3D8Kn+K33PBn/Y1WP8A7PXdxRQNM15EFLzR
+opkH8SDcV/D52/OuD+LDrHD4Nd2CovimyLMxwAPn5Nby2Z44nwPjCfCTR2A5dp2P/f5x/SuE+KTs
+P2hPBIDEAfYuPrdODXffBL/kkOhf9vH/AKUSV5/8U/8Ak4XwV/24/wDpW9MD3yeMS28kbDIdSp/E
+V802OjXumfAGPxXYeKfEdpcx52WkGoGO2XN0YzhAMjIJPXqc19NV89/82kf5/wCf+s6jatbuNH0J
+Xjnhzw5e+MNS8VXd34w8VWn2XX7u0hhstTMcaxqQVAUg4xuI44wBxXsdedfDD73jX/sar7/2SlWk
+4wugW503hfw7Z+E/DtrolhJPJbW2/Y87Audzs5yQAOrHtXlfxL8Mp4L0LUtc0bxL4ltb/U9R3x2l
+vfeXA88rbm+VFB+6Gxzngcmva68u8YD/AISX4xeEvDgy1tpytqt0AcjIPyAj6oB9JK5aLk5lPY9J
+0GyuNO8P6fZXdzLc3MNuiTTyyF2kcAbmLHk5Oa8P+KmrjVPjb4S0Zfmh0+7thJ7SSyqSP++VSvfn
+dY42kdgqKCWY9AB3r5s09X1i5sfGUysG1jx1ZrBuHSGPzNuP++tv/AK7m7EH0rXgP7M7s/8AwlO5
+icm1bn1PnZr36vn/APZl/wCZp/7dP/a1MDu/ivGDL4Ikx8y+J7NR+O7/AAqX4Jf8kh0L/t4/9KJK
+h+L9xHaWXhG5lOI4fE1nI59gJCam+CX/ACSHQv8At4/9KJKXUDz743f8jRrf/Yq2/wD6co6+ga+f
+vjd/yNGt/wDYq2//AKco6+gaFuwPBfhXdTj49eN7QSv9nZ72Qx7jtLC6UA49cMfzruPjeob4Ra0T
+/CYCP+/8Y/rXA/Cz/k4Xxr/2/f8ApWlegfG3/kkOu/8Abv8A+lEdMBng05+LPxDPqNM/9ENWJ+0Y
+zJ8P9OZGKsNWjIIOCP3Uta/gVxJ8UfHzjoyaWf8AyXNdj4gHh82UI8RjTDa+cPK/tHy9nm4ONu/j
+djd05xmph8KAZ4QmnuPBWgz3Ts9xJp1u8rOclnMakk++c14n4g8sfF3UfLxt/wCEt0HOPXyZc/rm
+vddUj1CbR5E0K5tLe7KfuJJ4jJGOOOAR+fP0NfOOiJcQ38UOsGRvESeOtP8A7QkY5DDEuwj2z5n4
+EUSA+nq+efCVtofiTwTbXHib4o6zbXl2kqXVlJ4gRF272UAo+TgqBweufQ19DV5P8X/CfhvTPhbr
+N5YeH9KtLqPyNk0FlHG65njBwwGRkEj8aJRbWjsBc+CmnQ6PovibTLdnaCz8RXVvG0hBYqixqCcA
+DOB6VR+K888HxG+GbW8jozak6NsOMqZIAwPsQTWz8Kvu+NP+xqvv/ZK7C+/sb+1NP+3/AGD+0cv9
+h8/Z5ueN/lZ5/u52+2acdgL02zyJPMxs2ndn0xzXz74DjEv/AAp5WGQG1hvyLH+lem/FK98UWfg6
+/fw7ZW0ymBxcSmU+bGhHzMiYwSBk53Z9jXA+EUs0vvg4LF2eHyNTJLDB8wxZkH4PuH4VMt1/XQZ6
+v45Yr8PvEjKcEaVdEH/tk1eV/ATxPoWkeBLy21XXNOspjqUjpFdXaRMUMcfIDEHGQefY16n47/5J
+54l/7BV1/wCimryvw18AvCus+FdI1S41DWVnvbKG4kWOaIKGdAxAzGTjJ9TViMn483dj4s1Hw1B4
+aurfWbvbcq0WmyC4cAeWwyqZPQMfwPpXo8fxSSKJI18B+NwqqFA/sjsP+B15r4p+H+m/DXxHpVxo
+N9qRnudN1d/MnlXdG0dmxUoUVSDljz7Cu48NfDyTWfCukapceOfGiz3tlDcSLHqxChnQMQMqTjJ9
+TUtyvZAcX4RsJ1+Mmka7dadqGnz6vrGrusV9C0UhgECvHlT7yMOMjI68V7N8QYlm+HPiVWGQNMuG
+/ERsR+org9I+HXiXS/jFYanNqeo6n4esIpGt7jUb7zpFZ4ijLg4IO45yABgDnNd38QZkg+HPiR3I
+AOmXCc+rRlR+pFNXtqB83+H4/L0K1znLoHP+foBWnVTSudHsf+veP/0EVbrvgrRSOOTvJhRRRVkh
+RRRQAUUUUAFFFFABRRRmgBD0opD0ooAdRRRQAVqeFNN/tjx1o9oVzFBIbuXHTCDIBHoSR+VZdd98
+H7DztR1rVmX7nl2cZ7ED5mx+JxXLi58lPTqa0Y3lc9aHI6ClpKWvCOxBRRRTGFFFFABRRRQB5uXS
+w/aNgCjb/aGgEN/tMshP8oxXpFxaJcz2kr9baUyp9SjJ/JzXm/jNksPi/wDD+/Aw8zXVq7eoKAKP
+zc16hXoUXeCIe55L8V9d/szx78PoQ+FGoGWX2UsiZ/Jnr0+7sVuruwnON1pO0q/jG6f+z18+fHBn
+v/Hd3LFIVbQtIhuFH/TRrlF/lKD+FfRFpcpeWUF1H9yaNZF+hGR/OtRHnvx0ujb/AArv4V+9dTQw
+j3/eBv8A2Wl8C28dp8UfH9tEu2KJNLjQegFuwFU/jZeWsdv4Ts76RY7SbXIZLhm6CJM7ifbDZpfh
+nrNn4g+Inj7U9PZ2tJjp/ls6FSwWJ1zg9uOPbFQ/jQFH9o7/AJJ5p/8A2FY//RUtegeBP+SeeGv+
+wVa/+ilrz/8AaO/5J5p//YVj/wDRUtegeBP+SeeGv+wVa/8AopasDyHXV/4vH4xb0WzH/kBT/St3
+4Lxi38U+OLdCfK820lCk8BnWRmP5/wAqw9c/5K94y/7cv/ScVv8Awe/5HHxx/wBuH/ouSuaL/fv0
+/wAj2q0V/ZVOX95/+3Fz47xi48J6JauSIrjXLeKQA/eUpJx/KuYrqvjf/wAi/wCHP+xgtv8A0CSu
+VrHGbo9Dh1L2c35ozdQ/5GDwj/2MFn/6Ga+i6+c9Q/5D/hH/ALGCz/8AQzX0ZW+G/hnm55/vb9Ec
+X8KNb/t74aaNcs26aGH7LLzzujO3n3IAP41gfHaFLjwvoEEgykmvW6MM4yCkoNcv+zZrebfWtBkb
+7rLeQr6g/I/8k/Ous+N//Iv+HP8AsYLb/wBAkreWzPLpK9SKfdF34IOG+EeigfwmcH/v/If61wXx
+TBP7QvgrA/58f/Sp60Pgx4qtdBkvPA+rTLbzxXDS2Ekp2rMjfwg+ueR67iO1er6h4V0PVNdsdbvd
+Pjm1Gx/49p2ZgU5yOAcHBJIyDjtQndXRM4uEnGW6NaVxHE7noqkmvn3/AJtJ/wA/8/8AXo/xS8d2
+PhLwzdWyTrJrF5E0NrbIcuCwI3kdgOvuRivGr/xXBY/A9vB0+mX0F1sTbM6jYW+0CVs88dwKzq/Z
+9RxhJptLY+oq86+GH3vGv/Y1X3/slei15z8MW2t404/5mq+/9kqcR8BKdmd9XmHwsA8Q+NPGPjNs
+PFPdCws3HQxRgcj6gRn65r04EEcVwvwPijj+EejMigNI07OR/EfOcZ/IAfhWWFWrY5MufFvXf7A+
+Gmrzo+2a5j+yReu6T5Tj3C7j+FeVp4o8LSeGvh34c0bUhcXtjrdjNcRiGRADljIcsoB+d/XvX0XX
+h37QMN/Nq3hA6ZG0l5D9tuI1UZP7tYpCQO+ApOPauqUU7N9CT3GvAP2ZgR/wlOR3tB/6Or1zwZ4z
+0vxroUOoWEyebtH2i23fPA/cEdcZ6HuKtaF4W0Lwsl3/AGPYRWS3UnmzlWY7jz6k4AyeBwM1QHA/
+HqF7vwzoFnECZZ9bgRAOpJSQD9SK1/gl/wAkh0L/ALeP/SiSub13W4fiF8VvD+jaJJ9o03Qbj7fe
+3cfzR+YuCqg9DyMcddx9K6T4Jf8AJIdC/wC3j/0okpJq9gPPvjd/yNGt/wDYq2//AKco6+ga+f8A
+43f8jRrf/Yq2/wD6co6+gKFuwPAvhXGx/aA8bygHYrXqk+5ulx/I13vxtOPhDrnv9n/9Hx12ltpu
+m6dLcXFrZWtrJcOZJ5IolQysSSWYgcnJJyfWvKfjX4osNS0KLwdpNzFe6rqNzGrxQMH8pFbdliOh
+yBx6ZPamBc+FM/2rxp4xnznfbaSf/JY1V/aO/wCSeaf/ANhWP/0VLVL4Bztc6t4rkb7wi05D/wAB
+jkX+lex3+mafqsKQ6jY215EjiREuIlkVWAIDAMDg4J59zSjsgMvwPvHgDw5vzv8A7Ltt2eufKWvG
+/EiKnxf1AKMD/hK9AP4mCUmvdb3VNN0m2aa+vbW0gjXJaWRUAA+tfPS6gfEXixvE8KN/Z9/410qG
+2kYY3iFZVzj6Mp/GlID6Sr5d8Ff8Kd/4RGx/4Sr/AJDX7z7T/wAff/PRtv8Aq/l+7t6fzr6ioolH
+mVr2A83+Dl7b6lpviu/tJPMtrnxLdzQvtI3IwjKnB5HBHWsn4usU+InwxKnB/tRh+BltxTf2cf8A
+knmof9hWT/0VFR8X/wDkofwx/wCwqf8A0bb00raAevSIJI2RhlWBBHtXz94AYK3wfJ9dZH57q+g6
++bLNbzSfhP8AD/xjaRNMuhXty1xGvUxSTsGP/joX/gVTN2a9f0Gj3Px3z8PfEo/6hV1/6KauI/Z8
+vr2++Hlx9sup7jyNQaGHzpC/lxrFFtRc9FHOAOBXoWm6npHi3QRc2U0V7p13GUYA5BBGGVh2POCD
+VDTY/DHgp9O8M6esNi99JI1taq5ZnIUszEkk9Fxkn0FWI4L41f8AIb8P/wDYK1z/ANI6s+E/i/4E
+0zwbodhea75d1a6fbwzJ9knO11jUMMhMHBB6VW+NX/Ib8P8A/YK1z/0jr0HwJ/yTzw1/2CrX/wBF
+LS6gcNZfGuK+8RarbaZoGra5pMDRmC70q0d2AZBkOjAEfOHwTjOOnGa4z4i+P9c8Zn/hGbfRb3RN
+PfEtyb+MpPKgOR8vZc49ckDkDNejeGnWP4t/EZ2OFUacSfTFu1eValqB1vxFqmrsSy3ExSEntGhw
+PwJyaKTc6jh2JnLljcrxRrDFHEgwiKFUegFOqOSeKEAyypHnpuYDNSV6JxhRRRTAKKKKACiiigAo
+oooABQetGaSmkAh6UUHpRQA6igf54opANkcRxs7fdUEkjngDNez/AAtsDYfD/T2YYe63XTEjkFyS
+P0xXiF+sktm0ER/eTssKD1LMBgfgT+VfTOn2q2WnWtqihVhiVABwBgYrzMwnoonVQXUtUUmDS15Z
+ugooopjCiiigAozRVLVZ7u102aaxtBeXKrlIC4XcfTJ6UJXdgKPiTwjoXi63gt9dsBdxwOXjHmuh
+UkYPKkGucPwW+HwUk6ABj1vLj/45UXmfFDWCFW30bQoyPvsxnfH06Zo/4Vnd6qd3ifxXqmpA8m3h
+fyYs+wHOK1ScftCMq9sfhL4PtdQsVht2e+jEFxawXMs8kig5C/eJXkA8Y6CuV/4V3ZeKPl8O+BF0
+m0bpe6peThiPVYw5/WvY9G8G+H/D6r/Zuk20MgGDJsBc/VjyT7mt4DHOMZ7Zp+05fh1EeXeGPgZ4
+b0SWK51APqV1GwYeYSsYP+6Dzj3rf1b4WeDNb1KXUNQ0VZbqUKHdbiWMHaoUAKrgDgDoK7OgVDqT
+b3A4D/hS3w+/6AH/AJOT/wDxdcN8T/hv4S8O6JY3GlaT9nklvY4Xb7RK/wApPIwzEV7vXnHxsiH/
+AAgX2nvb3kMg/wC+gD/OnCcnLcuCXMrnCaVomnaL5o0+28nzcb/nZt2M46k+pqC+8KaJqV5Jd3dl
+5k8mNz+a4zgADgHHQCtgYOCD15H0pawc5J3vqfoCw9GVNQcVZdLKxhW/g3QLW5iuIbDbLE4dG86Q
+4YHIPLVu0UUnJy3ZdOjTpK1OKXorFLU9KstYtlt7+HzolcOF3svzYIzwR6msr/hBvDn/AEDv/I8n
+/wAVXRUU1OS0TJqYajUfNOCb80mYD+CvD0ixq2ngiNdq/vpBgZJ/vc8k0638G6Ba3MVxDYbZYnDo
+3nSHDA5B5at2ij2k+7J+p4e9/Zx+5Gbq+g6drcYW+tw7KMLIpwy/Q/06VXh0K8tYBb2/irxLDABg
+Rx6gVUD6AYrapD6U41JxVkyauCw9aXNOCbMTTvCum6fdm8xNc3hOftF0+98+vpn361pX9lbalaSW
+l4nm28mNybiM4IPbB6gVZxQcA5xnHUZpOcm+a5UcNShD2cYq3yMDwd4X8DHxJqumeJba3WNQklrJ
+PeSRAA9VyGXP416jpOt/DjwNpsljpOq2FtbSSmZo47tpyXIAJ5LHoo/KuCutOsr9l+12sU5UYDOv
+NMi0bTYW3RWNunqRGMn9K3dWMlqzwKuRylUbjJJdD06y+KHgu9uFgg1yESNwPNVkB/FgBVCP4NfD
+yVFdNCDKwyrLezkEfXfXB3Gm2d3E0M9rC6kYwUAwPY103wy8Y6fp/heew1rWLeB9PuGhQ3MoVjHn
+5evUDoKaaavBnnY7LZ4WzbubH/Cl/h7/ANAD/wAnLj/4utDRfhj4O8O6vBqmlaR9nvYN3ly/aZn2
+7lKnhnIPBI6VTvfi94Ns5PLTUpLpvS1haQH8cYrOHxq0LdltM1dYv+en2fj8qP3j3ZwKnJq6Rd1b
+4Q+F9S1T+07U32j3rEs0ulz+SWJ74IIH4AVBdfB+w1CIQ6h4s8W3sHeG51IOjD0IKV1fh3xVo3ii
+1afSbxJtuN8ZG10z03KeRW0OmeuannnHS4mrOzMnw94Y0bwrp/2HRrGO1hJy5XJZz6sx5J+tcs/w
+X+H4VsaB24/0yf8A+Lr0CkIyCMHkY6URlK+4nseNfDP4feFtS0PW1vNL81pLmSzk/wBIlXMSyK6r
+ww6MinPXjr1rqP8AhSvw+/6F/wD8nLj/AOLqP4WZj/4SaA8eXq0gA+tehVU5yUtGCRwP/Clfh9/0
+L/8A5OXH/wAXW1oPgHwt4Zd5NI0aC3lcFTKS0jgHsGckgewNdJSHpkDpUc8nux2PFPCnw68Kat4l
+8R6drmk/aLy1ud8bfaJU/dt04VgK67/hS3w+/wChf/8AJy4/+OVV8UsfCfj7TPEwBFjegWd8QOFJ
+Pysfx4r0VGDKGDAgjII6EdjVznKyaZKOGT4MfD9HDDw+CQc83c5H5F63dU8EeG9Z0K30S90qI6Zb
+SCWG2hZoVRgGGRsI7M351v0VDnJ9SrHA/wDClfh9/wBC/wD+Tlx/8XR/wpX4ff8AQv8A/k5cf/F1
+31FHtJ9wsjgf+FK/D7/oX/8AycuP/i6P+FK/D7/oX/8AycuP/i676ij2k+4WRwP/AApX4ff9C/8A
++Tlx/wDF11eleH9K0XQo9EsbNE01FdRbuTIuGJZgdxJIJY9fWtOik5Se7Cx523wa8PwajLeaPqeu
+6I0v3o9MvfKX9VJ/DOKbD8EvCTXEtxqraprU8mMy6hesWGPdNpP45r0aiq9rPuFkcTZ/CPwNp87T
+Wuh+XI0UkJP2uc5SRGRxy/dWYfjxzWD4l+EngfTtEe4tNCRJzNDErPdXDBd8qITjzBnAY16pWZ4g
+06bVdHe1gkRJfNilQyA7cpIr4OOeduPxqJzqcr5XqJrTQ8atLXT/AAloniBdNuo7C3aVLTUGitpH
+YjJVTHvlb5vnIJ6deOBWHc6W2k64+ij7ZdR28QZGsrUSSsuFIyCwCjk5YnHA9afrV7cXMniHR4zb
+yQz3amS5QtgOrFiqDuAeMnFST6vcXd7qlxc2VtJFqUMUM1v5jqAI/ukOOe5yO9Y0KGaRTkm3dd4/
+3den977um5yyetmaOnaZLY+JruwV2uGm0OaaEsmxsOVAVhkjcCP1rMh0W5OuW+ipdI1wkG68YRZW
+BgoYqvOXIBA7ZLD3oOr3v9o/bEtrSMjSzpqxozBVXOQw75Hp+tNGq6gNTstRxB9rt4PIlkIJF0Mb
+cuvGDjPIPp6Yp0sNmsZyqdZRte6+JJ2b/re3S5F0N1CymsbfT7kLfCG+kMaxT2e25jZWAI8sH5sj
+JGMdKsT6PIi6TIst1CmoXos2jvLZUmiY87sBiCMA/pVG0aLTtas9U03Tbe0ltt/7vz5JRLuGCCW+
+7gZxgd+9TfbpYodOgtbC0t4bG/F8iCV3LNgjaxPJ69fpxWsoZtaKjfZ/y/3t9XqtLPW/lrc90uTa
+RZW9nd3MmtyeXY3n2S6Is+c5wNnze4yTx146ZbJodxFqur2Zkmmi0tUd2tbffNN5gBRUTOM9cn26
+c8Z9xc3dxp+qWZjgVdQvftrsCcxtnO0DuOOtW5tWuLnUtTu7i1tpItSRI7m0LsFZUUBSHGCCME59
+6lUc4in7zf8A4D3jttr8S+4PdJW0OVdVurOa9MEcOm/2isr2/wAxTOMOmeCMNkA9u1WIPD9rdXWn
+wQ61JnUrYz2m+054GTv+bgew568+uLauNPn1CSxsreBL2za0aLzXfYG/i3NyT7cCrVrq15aXei3C
+w27HSbdreNSzDzQy4yfQ/nSqUc4esZPb+6teX5/atfXuHukukaRPqlhY3btdRrfStFD9ntfOWLac
+F5TkYXdkDHYZz6VYLa5uNQj05Qi3b3BtjnJUMrEMfcDaTTIJUXSINMvrG3v7aB2khDzSQtGzcsMr
+1UnJwfz9ILJHsBaNaxW8Nxa3DzpcLuLNk5CMCfujJHXJFdlJZlGVTm1vfl2st7Pe/ZNWF7pe1Cxj
+g027vbG+e4SzuhaXAmgCEMTtDphjld3GDzVyfw8yeKIdCg1PzZmdvOc2+FhjCbwc5+Z/bpyKpX99
+Je2M9pDZ2tnFcXH2qcRu7+dKDkfe+6uecDv+r31i+bxQmsxtY211LPuxPKVgUeVtIZsZ5C9fUiub
+kzWNNylJq0ZNX5d7K17efM9PK49BJ7KBdIg1Sz1CS4glvDbBJIAjABGbJwTzwPwPY0VZ1G7tRoNl
+psH2ATLePdPFp8xmjhTYygFz1Ylunp0GBRXpZPVq1aDnVbfvO197dNiZbmYO1Ooor1BMSD/kOaH/
+ANhS3/8AQq+me5+tFFePj/jR10PhFooorgNgooopgFFFFABS9qKKTAbSj+lFFJDE7UvaiimISjtR
+RSW4xTXAfGT/AJJnqX+9H/6EKKK0p7ocd0cTF/qV+gqSiisHuz9Dp/CgooopFhRRRQAUUUUAFFFF
+A0FIelFFCEB/wooooAaxIxgn7w/mKxb/AE6yl1tzJZ27njlolPY+1FFdVA8nNfgRqW0ENtEPIiSL
+j/lmoX+VTozZ6nr60UUVR4f4Cp4N/c/Gu3WL92slq+8LwG+vrXvR/wBX+BoopS3XofJ4r+NI828V
+6lfwF/JvbmPj+CVh/I143r3ijxBDcgR67qaDI4W7kHf60UVVPc5eh6j8CJpZrPXXlkeR2vQWZmJJ
+OD1r19elFFKr8bGLQaKKy6lHGfFJQ3w71fIBxGpGR0ORWv4PZn8J6SWJJ+zLyT7Ciitf+XZPU2+9
+LRRWZQUUUUAFFFFABRRRQAUUUUAFVNUYrptyQSD5T8j6Giimt0D2PmbS/wDjwH/XWX/0I1boor6K
+l8CPPn8TCiiirJCiiigAoNFFHUOo2looqluUFFFFUIKKKKBgepooorOW4I//2Q==
+"
+width=200
+height=200
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>Lists in Python are quite general, can have arbitrary objects as elements.</p>
+</li>
+<li><p>Addition and scalar multiplication are defined for lists, but not what we want for numerical computation, e.g.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Addition results in concatenation</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 10, 20, 30]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And multiplication results in repeating:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[2, 3, 2, 3, 2, 3]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="NumPy,-show-me-what-you-got!">NumPy, show me what you got!<a class="anchor-link" href="#NumPy,-show-me-what-you-got!">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Aside:-import-conventions">Aside: import conventions<a class="anchor-link" href="#Aside:-import-conventions">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="NumPy-arrays">NumPy arrays<a class="anchor-link" href="#NumPy-arrays">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>NumPy’s main object is the homogeneous multidimensional array. It is a table of elements (usually numbers), all of the same type, indexed by a tuple of positive integers. In Numpy dimensions are called axes. The number of axes is rank.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Why it is useful:</strong> Memory-efficient container that provides fast numerical operations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Let's-compare-it-to-list-operations">Let's compare it to list operations<a class="anchor-link" href="#Let's-compare-it-to-list-operations">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> [i**2 for i in l]
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1000 loops, best of 3: 284 µs per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> a**2
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The slowest run took 194.61 times longer than the fastest. This could mean that an intermediate result is being cached 
+1000000 loops, best of 3: 1.67 µs per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-arrays">Creating arrays<a class="anchor-link" href="#Creating-arrays">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Manually">Manually<a class="anchor-link" href="#Manually">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([3, 4, 5, 6])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The class is called</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>numpy.ndarray</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Scalar array</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a0</span><span class="o">.</span><span class="n">ndim</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[10, 20, 30],
+       [ 9,  8,  7]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">]]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(2, 2, 1)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Common-mistakes">Common mistakes<a class="anchor-link" href="#Common-mistakes">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># WRONG, throws ValueError</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>only 2 non-keyword arguments accepted
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="c1"># RIGHT</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Do not use <code>np.ndarray</code> function to create an array</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[[[  6.90888959e-310,   6.90888959e-310,   6.90889049e-310,
+            6.90888014e-310],
+         [  6.90888923e-310,   6.90886687e-310,   6.90889049e-310,
+            6.90886687e-310],
+         [  6.90888923e-310,   6.90886687e-310,   6.90889049e-310,
+            6.90886687e-310]],
+
+        [[  6.90888923e-310,   6.90886687e-310,   6.90889049e-310,
+            6.90886687e-310],
+         [  6.90888923e-310,   6.90886687e-310,   6.90889049e-310,
+            6.90886687e-310],
+         [  6.90888923e-310,   6.90886687e-310,   6.90889049e-310,
+            6.90886687e-310]]]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Functions-for-creating-arrays">Functions for creating arrays<a class="anchor-link" href="#Functions-for-creating-arrays">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="evenly-spaced">evenly spaced<a class="anchor-link" href="#evenly-spaced">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># start, end (exclusive), step</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 3, 5, 7])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="by-a-number-of-points">by a number of points<a class="anchor-link" href="#by-a-number-of-points">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>   <span class="c1"># start, end, num-points</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0. ,  0.2,  0.4,  0.6,  0.8,  1. ])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([  1.00000000e-03,   6.81292069e-03,   4.64158883e-02,
+         3.16227766e-01,   2.15443469e+00,   1.46779927e+01,
+         1.00000000e+02])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="filled-with-specific-number">filled with specific number<a class="anchor-link" href="#filled-with-specific-number">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Zeros</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0.,  0.,  0.],
+       [ 0.,  0.,  0.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Ones</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 1.,  1.],
+       [ 1.,  1.],
+       [ 1.,  1.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Empty</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0.,  0.,  0.],
+       [ 0.,  0.,  0.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The function <code>empty</code> creates an array whose initial content is random and depends on the state of the memory. By default, the dtype of the created array is float64.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Random numbers</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>       <span class="c1"># uniform in [0, 1]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0.19151945,  0.62210877,  0.43772774,  0.78535858])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># Gaussian</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([-0.72058873,  0.88716294,  0.85958841, -0.6365235 ])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Special-cases">Special cases<a class="anchor-link" href="#Special-cases">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 1.,  0.,  0.],
+       [ 0.,  1.,  0.],
+       [ 0.,  0.,  1.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, 0, 0, 0],
+       [0, 2, 0, 0],
+       [0, 0, 3, 0],
+       [0, 0, 0, 4]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Array-attributes"><a href="https://docs.scipy.org/doc/numpy-dev/user/quickstart.html#the-basics">Array attributes</a><a class="anchor-link" href="#Array-attributes">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[10, 20, 30],
+       [ 9,  8,  7]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="ndarray.ndim">ndarray.ndim<a class="anchor-link" href="#ndarray.ndim">&#182;</a></h4><p>the number of axes (dimensions) of the array. In the Python world, the number of dimensions is referred to as rank.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">ndim</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="ndarray.shape">ndarray.shape<a class="anchor-link" href="#ndarray.shape">&#182;</a></h4><p>the dimensions of the array. This is a tuple of integers indicating the size of the array in each dimension. For a matrix with n rows and m columns, shape will be (n,m). The length of the shape tuple is therefore the rank, or number of dimensions, ndim.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(2, 3)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="ndarray.size">ndarray.size<a class="anchor-link" href="#ndarray.size">&#182;</a></h4><p>the total number of elements of the array. This is equal to the product of the elements of shape.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that <code>size</code> is not equal to <code>len()</code>. The latter returns the length of the first dimension.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="ndarray.dtype">ndarray.dtype<a class="anchor-link" href="#ndarray.dtype">&#182;</a></h4><p>an object describing the type of the elements in the array. One can create or specify dtype’s using standard Python types. Additionally NumPy provides types of its own. numpy.int32, numpy.int16, and numpy.float64 are some examples.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>dtype(&#39;int64&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="ndarray.itemsize">ndarray.itemsize<a class="anchor-link" href="#ndarray.itemsize">&#182;</a></h4><p>the size in bytes of each element of the array.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">itemsize</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="ndarray.data">ndarray.data<a class="anchor-link" href="#ndarray.data">&#182;</a></h4><p>the buffer containing the actual elements of the array. Normally, we won’t need to use this attribute because we will access the elements in an array using indexing facilities.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;memory at 0x7f2e580c7708&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Copies-and-mutability"><a href="https://docs.scipy.org/doc/numpy-dev/user/quickstart.html#copies-and-views">Copies and mutability</a><a class="anchor-link" href="#Copies-and-mutability">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A common source for confusion and mistakes is that numpy arrays are mutable, meaning they can be changed after creation. Other common mutable objects are lists and dictionaries, while tuples are inmutable.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It also implies that when operating and manipulating arrays, their data is sometimes copied into a new array and sometimes not.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Create an array</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Change its 6th element</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([   0,    1,    2,    3,    4, 1000,    6,    7,    8,    9,   10,
+         11])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Simple-assignment-==-no-copy-at-all">Simple assignment == no copy at all<a class="anchor-link" href="#Simple-assignment-==-no-copy-at-all">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>a</code> and <code>b</code> are two names for the same <code>ndarray</code> object</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="ow">is</span> <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Change the shape and the 3rd element of <strong><code>b</code></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
+<span class="n">b</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span>
+
+<span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[  0,   1],
+       [999,   3],
+       [  4,   5]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>But</strong> <code>a</code> is also changed!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[  0,   1],
+       [999,   3],
+       [  4,   5]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python passes mutable objects as references, so function calls make no copy neither.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="View-==-shallow-copy">View == shallow copy<a class="anchor-link" href="#View-==-shallow-copy">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="ow">is</span> <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>c</code> is a <code>view</code> of the data owned by <code>a</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
+<span class="n">a</span> <span class="c1"># a&#39;s data changes</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([  0,   1, 999,   3,   4,   5])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># a&#39;s shape doesn&#39;t change</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(6,)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Slicing an array returns a view of it:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">s</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[56]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([999,   3,   4])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="p">[:]</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># s[:] is a view of s. Note the difference between s=10 and s[:]=10</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[58]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0,  1, 10, 10, 10,  5])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="How-to-avoid-confusement?-Use-deep-copy.">How to avoid confusement? Use deep copy.<a class="anchor-link" href="#How-to-avoid-confusement?-Use-deep-copy.">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Create a copy using <code>copy()</code> attribute</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The copy doesn't share anything with the original array:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="ow">is</span> <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[61]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[62]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[64]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([   0,    1,    2,    3,    4, 1000])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[65]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 1, 2, 3, 4, 5])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Looking-for-help">Looking for help<a class="anchor-link" href="#Looking-for-help">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Interactive help</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>np.rollaxis<span class="o">??</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>np.*space*<span class="o">?</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>with NumPy: a built-in search engine</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">lookfor</span><span class="p">(</span><span class="s1">&#39;create array&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Search results for &#39;create array&#39;
+---------------------------------
+numpy.array
+    Create an array.
+numpy.memmap
+    Create a memory-map to an array stored in a *binary* file on disk.
+numpy.diagflat
+    Create a two-dimensional array with the flattened input as a diagonal.
+numpy.fromiter
+    Create a new 1-dimensional array from an iterable object.
+numpy.partition
+    Return a partitioned copy of an array.
+numpy.ma.diagflat
+    Create a two-dimensional array with the flattened input as a diagonal.
+numpy.ctypeslib.as_array
+    Create a numpy array from a ctypes array or a ctypes POINTER.
+numpy.ma.make_mask
+    Create a boolean mask from an array.
+numpy.ctypeslib.as_ctypes
+    Create and return a ctypes object from a numpy array.  Actually
+numpy.ma.mrecords.fromarrays
+    Creates a mrecarray from a (flat) list of masked arrays.
+numpy.ma.mvoid.__new__
+    Create a new masked array from scratch.
+numpy.lib.format.open_memmap
+    Open a .npy file as a memory-mapped array.
+numpy.ma.MaskedArray.__new__
+    Create a new masked array from scratch.
+numpy.lib.arrayterator.Arrayterator
+    Buffered iterator for big arrays.
+numpy.ma.mrecords.fromtextfile
+    Creates a mrecarray from data stored in the file `filename`.
+numpy.asarray
+    Convert the input to an array.
+numpy.ndarray
+    ndarray(shape, dtype=float, buffer=None, offset=0,
+numpy.recarray
+    Construct an ndarray that allows field access using attributes.
+numpy.chararray
+    chararray(shape, itemsize=1, unicode=False, buffer=None, offset=0,
+numpy.pad
+    Pads an array.
+numpy.sum
+    Sum of array elements over a given axis.
+numpy.asanyarray
+    Convert the input to an ndarray, but pass ndarray subclasses through.
+numpy.copy
+    Return an array copy of the given object.
+numpy.diag
+    Extract a diagonal or construct a diagonal array.
+numpy.load
+    Load arrays or pickled objects from ``.npy``, ``.npz`` or pickled files.
+numpy.sort
+    Return a sorted copy of an array.
+numpy.array_equiv
+    Returns True if input arrays are shape consistent and all elements equal.
+numpy.dtype
+    Create a data type object.
+numpy.choose
+    Construct an array from an index array and a set of arrays to choose from.
+numpy.nditer
+    Efficient multi-dimensional iterator object to iterate over arrays.
+numpy.swapaxes
+    Interchange two axes of an array.
+numpy.ma.mrecords.MaskedRecords.__new__
+    Create a new masked array from scratch.
+numpy.full_like
+    Return a full array with the same shape and type as a given array.
+numpy.ones_like
+    Return an array of ones with the same shape and type as a given array.
+numpy.empty_like
+    Return a new array with the same shape and type as a given array.
+numpy.zeros_like
+    Return an array of zeros with the same shape and type as a given array.
+numpy.asarray_chkfinite
+    Convert the input to an array, checking for NaNs or Infs.
+numpy.diag_indices
+    Return the indices to access the main diagonal of an array.
+numpy.ma.choose
+    Use an index array to construct a new array from a set of choices.
+numpy.chararray.tolist
+    a.tolist()
+numpy.matlib.rand
+    Return a matrix of random values with given shape.
+numpy.savez_compressed
+    Save several arrays into a single file in compressed ``.npz`` format.
+numpy.ma.empty_like
+    Return a new array with the same shape and type as a given array.
+numpy.ma.make_mask_none
+    Return a boolean mask of the given shape, filled with False.
+numpy.ma.mrecords.fromrecords
+    Creates a MaskedRecords from a list of records.
+numpy.around
+    Evenly round to the given number of decimals.
+numpy.source
+    Print or write to a file the source code for a Numpy object.
+numpy.diagonal
+    Return specified diagonals.
+numpy.histogram2d
+    Compute the bi-dimensional histogram of two data samples.
+numpy.fft.ifft
+    Compute the one-dimensional inverse discrete Fourier Transform.
+numpy.fft.ifftn
+    Compute the N-dimensional inverse discrete Fourier Transform.
+numpy.busdaycalendar
+    A business day calendar object that efficiently stores information</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ul>
+<li><a href="https://docs.scipy.org/doc/numpy-dev/user/quickstart.html">NumPy docs</a></li>
+<li><a href="http://www.scipy-lectures.org/">SciPy lectures</a></li>
+<li><a href="https://class.coursera.org/scicomp-003">High Performance Scientific Computing</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[69]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2016-02-19-numpy-arrays-basics.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <!-- AddThis Button END -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'back-to-basics-numpy-arrays';
+                var disqus_url = 'https://ueapy.github.io/back-to-basics-numpy-arrays.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+            <li class="list-group-item"><a href="https://ueapy.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/anaconda.html">
+                            anaconda
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/animation.html">
+                            animation
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/argparse.html">
+                            argparse
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://ueapy.github.io/tag/basics.html">
+                            basics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/binder.html">
+                            binder
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/cartopy.html">
+                            cartopy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/command-line.html">
+                            command line
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/dask.html">
+                            dask
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/dataviz.html">
+                            dataviz
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/debugging.html">
+                            debugging
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/folium.html">
+                            folium
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/functions.html">
+                            functions
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/gis.html">
+                            gis
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/git.html">
+                            git
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/github.html">
+                            github
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/hpc.html">
+                            hpc
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/io.html">
+                            io
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/ipywidgets.html">
+                            ipywidgets
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/iris.html">
+                            iris
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/jupyter.html">
+                            jupyter
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/latex.html">
+                            latex
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/maps.html">
+                            maps
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://ueapy.github.io/tag/matplotlib.html">
+                            matplotlib
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/multiprocessing.html">
+                            multiprocessing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/netcdf.html">
+                            netcdf
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/networkx.html">
+                            networkx
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://ueapy.github.io/tag/numpy.html">
+                            numpy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/oop.html">
+                            oop
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/optimisation.html">
+                            optimisation
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/pandas.html">
+                            pandas
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/parallel-computing.html">
+                            parallel computing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/pdf.html">
+                            pdf
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/profiling.html">
+                            profiling
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/publications.html">
+                            publications
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/py3k.html">
+                            py3k
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/questions-and-answers.html">
+                            Questions and answers
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/revealjs.html">
+                            reveal.js
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/text-format.html">
+                            text format
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/text-processing.html">
+                            text processing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/version-control.html">
+                            version control
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/xarray.html">
+                            xarray
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/xray.html">
+                            xray
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="https://ueapy.github.io/pythoncourse2018" target="_blank">
+                Python Course 2018
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://bafflednerd.com/learn-python-online" target="_blank">
+                Learn Python online
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://pyvideo.org/" target="_blank">
+                Python Videos
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/" target="_blank">
+                From Python to Numpy
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://earthpy.org/" target="_blank">
+                EarthPy
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://ocefpaf.github.io/python4oceanographers/" target="_blank">
+                Python4Oceanographers
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://pyaos.johnny-lin.com/" target="_blank">
+                PyAOS
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://pyhogs.github.io/" target="_blank">
+                PyHOGs
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://jakevdp.github.io/" target="_blank">
+                Pythonic Perambulations
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://dennissergeev.github.io/" target="_blank">
+                Meteodenny
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2019 Python Group
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://ueapy.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://ueapy.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://ueapy.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar": false};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-564e4d3ff0b9f071"></script>
+</body>
+</html>

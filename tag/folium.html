@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>folium - Python Group UEA</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="Python Group" />
+    <meta name="keywords" content="folium" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Python Group UEA" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Python Group UEA"/>
+        <meta property="og:url" content="https://ueapy.github.io"/>
+        <meta property="og:description" content="Python Group UEA"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://ueapy.github.io/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="https://ueapy.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://ueapy.github.io/theme/css/pygments/default.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ueapy.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://ueapy.github.io/extra/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://ueapy.github.io/" class="navbar-brand">
+Python Group UEA            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://ueapy.github.io/pages/meeting-ideas.html">
+                             Ideas for meetings
+                          </a></li>
+                         <li><a href="https://ueapy.github.io/pages/meeting-calendar.html">
+                             Meetings calendar
+                          </a></li>
+                         <li><a href="https://ueapy.github.io/pages/resources.html">
+                             Resources
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://ueapy.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="https://ueapy.github.io/meeting-location-folium-example.html">Meeting location (folium example)</a></h2>
+                <div class="summary"><div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">folium</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">map_osm</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">52.621</span><span class="p">,</span> <span class="mf">1.236</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">([</span><span class="mf">52.6211</span><span class="p">,</span> <span class="mf">1.23596</span><span class="p">],</span> <span class="n">popup</span><span class="o">=</span><span class="s1">&#39;Python Group meeting: QUEENS 2.02&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">map_osm</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">map_osm</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;base64,CiAgICAgICAgPCFET0NUWVBFIGh0bWw+CiAgICAgICAgPGhlYWQ+CiAgICAgICAgICAgIAogICAgICAgIAogICAgICAgICAgICA8bWV0YSBodHRwLWVxdWl2PSJjb250ZW50LXR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDsgY2hhcnNldD1VVEYtOCIgLz4KICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9sZWFmbGV0LzAuNy4zL2xlYWZsZXQuanMiPjwvc2NyaXB0PgogICAgICAgIAogICAgICAgIAogICAgICAgIAogICAgICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vYWpheC5nb29nbGVhcGlzLmNvbS9hamF4L2xpYnMvanF1ZXJ5LzEuMTEuMS9qcXVlcnkubWluLmpzIj48L3NjcmlwdD4KICAgICAgICAKICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9qcy9ib290c3RyYXAubWluLmpzIj48L3NjcmlwdD4KICAgICAgICAKICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL3Jhd2dpdGh1Yi5jb20vbHZvb2dkdC9MZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy8yLjAvZGV2ZWxvcC9kaXN0L2xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLmpzIj48L3NjcmlwdD4KICAgICAgICAKICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9sZWFmbGV0Lm1hcmtlcmNsdXN0ZXIvMC40LjAvbGVhZmxldC5tYXJrZXJjbHVzdGVyLXNyYy5qcyI+PC9zY3JpcHQ+CiAgICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIAogICAgICAgIAogICAgICAgICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC5tYXJrZXJjbHVzdGVyLzAuNC4wL2xlYWZsZXQubWFya2VyY2x1c3Rlci5qcyI+PC9zY3JpcHQ+CiAgICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIAogICAgICAgIAogICAgICAgICAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL2xlYWZsZXQvMC43LjMvbGVhZmxldC5jc3MiIC8+CiAgICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIAogICAgICAgIAogICAgICAgICAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzMuMi4wL2Nzcy9ib290c3RyYXAubWluLmNzcyIgLz4KICAgICAgICAKICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiAvPgogICAgICAgIAogICAgICAgIAogICAgICAgIAogICAgICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2ZvbnQtYXdlc29tZS80LjEuMC9jc3MvZm9udC1hd2Vzb21lLm1pbi5jc3MiIC8+CiAgICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIAogICAgICAgIAogICAgICAgICAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vcmF3Z2l0LmNvbS9sdm9vZ2R0L0xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLzIuMC9kZXZlbG9wL2Rpc3QvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgICAgIAogICAgICAgIAogICAgICAgIAogICAgICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9sZWFmbGV0Lm1hcmtlcmNsdXN0ZXIvMC40LjAvTWFya2VyQ2x1c3Rlci5EZWZhdWx0LmNzcyIgLz4KICAgICAgICAKICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC5tYXJrZXJjbHVzdGVyLzAuNC4wL01hcmtlckNsdXN0ZXIuY3NzIiAvPgogICAgICAgIAogICAgICAgIAogICAgICAgIAogICAgICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgICAgIAogICAgICAgIAogICAgICAgIAogICAgICAgICAgICAKICAgICAgICAgICAgPHN0eWxlPgoKICAgICAgICAgICAgaHRtbCwgYm9keSB7CiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTsKICAgICAgICAgICAgICAgIG1hcmdpbjogMDsKICAgICAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAjbWFwIHsKICAgICAgICAgICAgICAgIHBvc2l0aW9uOmFic29sdXRlOwogICAgICAgICAgICAgICAgdG9wOjA7CiAgICAgICAgICAgICAgICBib3R0b206MDsKICAgICAgICAgICAgICAgIHJpZ2h0OjA7CiAgICAgICAgICAgICAgICBsZWZ0OjA7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIDwvc3R5bGU+CiAgICAgICAgICAgIAogICAgICAgIAogICAgICAgICAgICAKICAgICAgICAgICAgPHN0eWxlPiAjbWFwXzM0MmQ2M2FkYWZiMjRiYmRhZWY3ZGE4YTU2OWE3ZThkIHsKICAgICAgICAgICAgICAgIHBvc2l0aW9uIDogcmVsYXRpdmU7CiAgICAgICAgICAgICAgICB3aWR0aCA6IDEwMC4wJTsKICAgICAgICAgICAgICAgIGhlaWdodDogMTAwLjAlOwogICAgICAgICAgICAgICAgbGVmdDogMC4wJTsKICAgICAgICAgICAgICAgIHRvcDogMC4wJTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAKICAgICAgICAKICAgICAgICAKICAgICAgICA8L2hlYWQ+CiAgICAgICAgPGJvZHk+CiAgICAgICAgICAgIAogICAgICAgIAogICAgICAgICAgICAKICAgICAgICAgICAgPGRpdiBjbGFzcz0iZm9saXVtLW1hcCIgaWQ9Im1hcF8zNDJkNjNhZGFmYjI0YmJkYWVmN2RhOGE1NjlhN2U4ZCIgPjwvZGl2PgogICAgICAgIAogICAgICAgIAogICAgICAgIAogICAgICAgIDwvYm9keT4KICAgICAgICA8c2NyaXB0PgogICAgICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCgogICAgICAgICAgICB2YXIgc291dGhXZXN0ID0gTC5sYXRMbmcoLTkwLCAtMTgwKTsKICAgICAgICAgICAgdmFyIG5vcnRoRWFzdCA9IEwubGF0TG5nKDkwLCAxODApOwogICAgICAgICAgICB2YXIgYm91bmRzID0gTC5sYXRMbmdCb3VuZHMoc291dGhXZXN0LCBub3J0aEVhc3QpOwoKICAgICAgICAgICAgdmFyIG1hcF8zNDJkNjNhZGFmYjI0YmJkYWVmN2RhOGE1NjlhN2U4ZCA9IEwubWFwKCdtYXBfMzQyZDYzYWRhZmIyNGJiZGFlZjdkYThhNTY5YTdlOGQnLCB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjZW50ZXI6WzUyLjYyMSwxLjIzNl0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB6b29tOiAxOCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1heEJvdW5kczogYm91bmRzLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGF5ZXJzOiBbXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgIAogICAgICAgICAgICB2YXIgdGlsZV9sYXllcl82NTBjMDA5MThkZTk0ZWRjOWZkMTQwMTE1YzI5MjJkOSA9IEwudGlsZUxheWVyKAogICAgICAgICAgICAgICAgJ2h0dHBzOi8ve3N9LnRpbGUub3BlbnN0cmVldG1hcC5vcmcve3p9L3t4fS97eX0ucG5nJywKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBtYXhab29tOiAxOCwKICAgICAgICAgICAgICAgICAgICBtaW5ab29tOiAxLAogICAgICAgICAgICAgICAgICAgIGF0dHJpYnV0aW9uOiAnRGF0YSBieSA8YSBocmVmPSJodHRwOi8vb3BlbnN0cmVldG1hcC5vcmciPk9wZW5TdHJlZXRNYXA8L2E+LCB1bmRlciA8YSBocmVmPSJodHRwOi8vd3d3Lm9wZW5zdHJlZXRtYXAub3JnL2NvcHlyaWdodCI+T0RiTDwvYT4uJywKICAgICAgICAgICAgICAgICAgICBkZXRlY3RSZXRpbmE6IGZhbHNlCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgKS5hZGRUbyhtYXBfMzQyZDYzYWRhZmIyNGJiZGFlZjdkYThhNTY5YTdlOGQpOwoKICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCgogICAgICAgICAgICB2YXIgbWFya2VyXzhiYWJlYzA0Y2QyMjRmODE5NDBhOWI4NTM2ZDhkNDkxID0gTC5tYXJrZXIoCiAgICAgICAgICAgICAgICBbNTIuNjIxMSwxLjIzNTk2XSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBpY29uOiBuZXcgTC5JY29uLkRlZmF1bHQoKQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIC5hZGRUbyhtYXBfMzQyZDYzYWRhZmIyNGJiZGFlZjdkYThhNTY5YTdlOGQpOwogICAgICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgICAgIHZhciBwb3B1cF9hMWM5YzI0YmFlNzI0NWE1YjAwNGJhNmI2NTY4Nzc0MiA9IEwucG9wdXAoe21heFdpZHRoOiAnMzAwJ30pOwoKICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB2YXIgaHRtbF80OTM5OWI2YTVmZjQ0YWQyODgzNDZkZjExYjE2NTQ0NSA9ICQoJyAgICAgICAgIDxkaXYgaWQ9Imh0bWxfNDkzOTliNmE1ZmY0NGFkMjg4MzQ2ZGYxMWIxNjU0NDUiICAgICAgICAgICAgICAgICBzdHlsZT0id2lkdGg6IDEwMC4wJTsgaGVpZ2h0OiAxMDAuMCU7Ij4gICAgICAgICAgICAgICAgIFB5dGhvbiBHcm91cCBtZWV0aW5nOiBRVUVFTlMgMi4wMjwvZGl2PiAgICAgICAgICAgICAgICAgJylbMF07CiAgICAgICAgICAgICAgICBwb3B1cF9hMWM5YzI0YmFlNzI0NWE1YjAwNGJhNmI2NTY4Nzc0Mi5zZXRDb250ZW50KGh0bWxfNDkzOTliNmE1ZmY0NGFkMjg4MzQ2ZGYxMWIxNjU0NDUpOwogICAgICAgICAgICAKCiAgICAgICAgICAgIG1hcmtlcl84YmFiZWMwNGNkMjI0ZjgxOTQwYTliODUzNmQ4ZDQ5MS5iaW5kUG9wdXAocG9wdXBfYTFjOWMyNGJhZTcyNDVhNWIwMDRiYTZiNjU2ODc3NDIpOwoKICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAg" style="position:absolute;width:100%;height:100%;left:0;top:0;"></iframe></div></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython …</p></small></div></div></div></div></div>
+                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/meeting-location-folium-example.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+            <li class="list-group-item"><a href="https://ueapy.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/anaconda.html">
+                            anaconda
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/animation.html">
+                            animation
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/argparse.html">
+                            argparse
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://ueapy.github.io/tag/basics.html">
+                            basics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/binder.html">
+                            binder
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/cartopy.html">
+                            cartopy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/command-line.html">
+                            command line
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/dask.html">
+                            dask
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/dataviz.html">
+                            dataviz
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/debugging.html">
+                            debugging
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/folium.html">
+                            folium
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/functions.html">
+                            functions
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/gis.html">
+                            gis
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/git.html">
+                            git
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/github.html">
+                            github
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/hpc.html">
+                            hpc
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/io.html">
+                            io
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/ipywidgets.html">
+                            ipywidgets
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/iris.html">
+                            iris
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/jupyter.html">
+                            jupyter
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/latex.html">
+                            latex
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/maps.html">
+                            maps
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://ueapy.github.io/tag/matplotlib.html">
+                            matplotlib
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/multiprocessing.html">
+                            multiprocessing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/netcdf.html">
+                            netcdf
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/networkx.html">
+                            networkx
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://ueapy.github.io/tag/numpy.html">
+                            numpy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://ueapy.github.io/tag/oop.html">
+                            oop
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/optimisation.html">
+                            optimisation
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/pandas.html">
+                            pandas
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/parallel-computing.html">
+                            parallel computing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/pdf.html">
+                            pdf
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/profiling.html">
+                            profiling
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/publications.html">
+                            publications
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/py3k.html">
+                            py3k
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/questions-and-answers.html">
+                            Questions and answers
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/revealjs.html">
+                            reveal.js
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/text-format.html">
+                            text format
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/text-processing.html">
+                            text processing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/version-control.html">
+                            version control
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://ueapy.github.io/tag/xarray.html">
+                            xarray
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/xray.html">
+                            xray
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="https://ueapy.github.io/pythoncourse2018" target="_blank">
+                Python Course 2018
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://bafflednerd.com/learn-python-online" target="_blank">
+                Learn Python online
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://pyvideo.org/" target="_blank">
+                Python Videos
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/" target="_blank">
+                From Python to Numpy
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://earthpy.org/" target="_blank">
+                EarthPy
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://ocefpaf.github.io/python4oceanographers/" target="_blank">
+                Python4Oceanographers
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://pyaos.johnny-lin.com/" target="_blank">
+                PyAOS
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://pyhogs.github.io/" target="_blank">
+                PyHOGs
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://jakevdp.github.io/" target="_blank">
+                Pythonic Perambulations
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://dennissergeev.github.io/" target="_blank">
+                Meteodenny
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Python Group
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://ueapy.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://ueapy.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://ueapy.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
