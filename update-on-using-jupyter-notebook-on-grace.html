@@ -13,13 +13,13 @@
 
         <meta name="author" content="Denis Sergeev" />
         <meta name="keywords" content="jupyter,hpc,anaconda" />
-        <meta name="description" content="Today&#39;s meeting was a walk-through of how to create Python environment using Anaconda on Grace and how to spawn a remote Python kernel from Jupyter. As a result, here is an update of the old post. The update is about: Using remote_ikernel utility instead of rk (the latter is only …" />
+        <meta name="description" content="{% notebook 2016-02-12-jupyter-grace-update.ipynb cells[2:] %}" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Update on using Jupyter Notebook on Grace"/>
         <meta property="og:url" content="https://ueapy.github.io/update-on-using-jupyter-notebook-on-grace.html"/>
-        <meta property="og:description" content="Today&#39;s meeting was a walk-through of how to create Python environment using Anaconda on Grace and how to spawn a remote Python kernel from Jupyter. As a result, here is an update of the old post. The update is about: Using remote_ikernel utility instead of rk (the latter is only …"/>
+        <meta property="og:description" content="{% notebook 2016-02-12-jupyter-grace-update.ipynb cells[2:] %}"/>
         <meta property="article:published_time" content="2016-02-12" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="jupyter" />
@@ -114,97 +114,7 @@ Python Group UEA            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Today's meeting was a walk-through of how to create Python environment using Anaconda on <a href="http://rscs.uea.ac.uk/high-performance-computing">Grace</a> and how to spawn a remote Python kernel from Jupyter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a result, here is an update of the <a href="http://ueapy.github.io/running-jupyter-notebook-with-remote-kernels.html">old post</a>. The update is about:</p>
-<ul>
-<li><p>Using <a href="https://bitbucket.org/tdaff/remote_ikernel">remote_ikernel</a> utility instead of rk (the latter is only available on Linux and lacks some options required by Grace)</p>
-</li>
-<li><p>Using Grace's interactive queue instead of login nodes (which are not for computations!)</p>
-</li>
-<li><p>Packing all the necessary set-up commands into a bunch of scripts</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>&lt;div class="alert alert-warning", style="font-size: 120%"&gt;
-remote_ikernel is still not fully compatible with Windows! Update to follow.
-&lt;/div&gt;</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>To cut a long story short, the instructions are available in our GitHub repository: <a href="https://github.com/ueapy/grace-python">grace-python</a>.</strong></p>
-<p>You have to download the scripts or git-clone the repo. The README.md will get you started.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Any comments/complaints/suggestions are welcomed.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-
-    <small>
-    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
-    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2016-02-12-jupyter-grace-update.ipynb">nbviewer</a>.</p>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
- 
-
-</p>
+                <p>{% notebook 2016-02-12-jupyter-grace-update.ipynb cells[2:] %}</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -384,7 +294,7 @@ remote_ikernel is still not fully compatible with Windows! Update to follow.
                             networkx
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-1">
                         <a href="https://ueapy.github.io/tag/numpy.html">
                             numpy
                         </a>
@@ -394,7 +304,7 @@ remote_ikernel is still not fully compatible with Windows! Update to follow.
                             oop
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://ueapy.github.io/tag/optimisation.html">
                             optimisation
                         </a>
@@ -407,6 +317,11 @@ remote_ikernel is still not fully compatible with Windows! Update to follow.
                     <li class="list-group-item tag-4">
                         <a href="https://ueapy.github.io/tag/parallel-computing.html">
                             parallel computing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/parallel-processing.html">
+                            parallel processing
                         </a>
                     </li>
                     <li class="list-group-item tag-3">

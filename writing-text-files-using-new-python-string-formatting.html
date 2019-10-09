@@ -13,13 +13,13 @@
 
         <meta name="author" content="Maria Zamyatina" />
         <meta name="keywords" content="text format" />
-        <meta name="description" content="Sometimes in order to run some programming software we need to prepare an input description file which specifies the model setup (e.g., chemical mechanism, intergration method, desired type of results, etc). If we are planning to run the model several times with different, for example, initial conditions, constracting such …" />
+        <meta name="description" content="{% notebook 2016-01-22-string-formatting.ipynb cells[2:] %}" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Writing text files using new Python string formatting"/>
         <meta property="og:url" content="https://ueapy.github.io/writing-text-files-using-new-python-string-formatting.html"/>
-        <meta property="og:description" content="Sometimes in order to run some programming software we need to prepare an input description file which specifies the model setup (e.g., chemical mechanism, intergration method, desired type of results, etc). If we are planning to run the model several times with different, for example, initial conditions, constracting such …"/>
+        <meta property="og:description" content="{% notebook 2016-01-22-string-formatting.ipynb cells[2:] %}"/>
         <meta property="article:published_time" content="2016-01-22" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="text format" />
@@ -108,287 +108,7 @@ Python Group UEA            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Sometimes in order to run some programming software we need to prepare an input description file which specifies the model setup (e.g., chemical mechanism, intergration method, desired type of results, etc). If we are planning to run the model several times with different, for example, initial conditions, constracting such a file using a script could be beneficial. During our last meeting we discussed how to assemble such a file with Python, and here is what we did.</p>
-<p>Let's assume that we need to construct a file containing the following information:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>{!-*- F90 -*-}
-#INITVALUES
-O3  =7.50e+11;
-CH4 =4.55e+13;
-CO  =2.55e+12;
-#INLINE F90_INIT
-TSTART = 0*3600
-TEND = TSTART + 7*3600
-DT = 3600
-TEMP = 298
-#ENDINLINE</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The first line of this file is a header. Since it is not going to change in our model runs, we can store it in a separate file:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">header_text</span> <span class="o">=</span> <span class="s1">&#39;{!-*- F90 -*-}&#39;</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;header.inp&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">header_file</span><span class="p">:</span>
-    <span class="n">header_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">header_text</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The next four lines define the #INITVALUES section of the file, where the initial concentrations (actually, number densities) of chemical compounds of interest are set. If we want to change only numerical values in this section, it is logical to create a text template which would take into account the syntax of the target sortware and include some sort of 'gaps' to fill in with our initial values. One way of achieving that is to define a function that creates a multline string and has a number of arguments determining the initial concentrations of our chemical species:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gen_concs_string</span><span class="p">(</span><span class="n">O3</span><span class="o">=</span><span class="mf">7.50e+11</span><span class="p">,</span> <span class="n">CH4</span><span class="o">=</span><span class="mf">4.55e+13</span><span class="p">,</span> <span class="n">CO</span><span class="o">=</span><span class="mf">2.55e+12</span><span class="p">):</span>
-    <span class="n">concs_string</span> <span class="o">=</span> \
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">#INITVALUES</span>
-<span class="sd">O3\t={O3_nd:.2e};</span>
-<span class="sd">CH4\t={CH4_nd:.2e};</span>
-<span class="sd">CO\t={CO_nd:.2e};&quot;&quot;&quot;</span>\
-<span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">O3_nd</span><span class="o">=</span><span class="n">O3</span><span class="p">,</span> <span class="n">CH4_nd</span><span class="o">=</span><span class="n">CH4</span><span class="p">,</span> <span class="n">CO_nd</span><span class="o">=</span><span class="n">CO</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">concs_string</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>For convinience we can even set default values for each of the arguments (e.g., here default ozone initial concentration is $7.5\times 10^{11}$ molecules per $cm^{3}$).</p>
-<p>By the way, we have just used a new style of string formatting in Python! An old way of doing the same would include a '%' sign in front of the function agruments inside the string expression and a line of code starting with '%' afterwards, like this</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>"""
-#INITVALUES
-O3\t=%(O3_nd).2e;
-CH4\t=%(CH4_nd).2e;
-CO\t=%(CO_nd).2e;"""\
-%{"O3":O3_nd, "CH4":CH4_nd, "CO_nd":CO_nd}</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>but using a new style makes your code more readable. For more examples on differences between old and new styles of string formatting in Python follow this link: <a href="https://pyformat.info/">PyFormat</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Well, let's reinforce our knowledge and apply a new style of string formatting to reproduce the last section of the input file, which specifies model integration time and temperature:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gen_time_str</span><span class="p">(</span><span class="n">tstart</span><span class="p">,</span> <span class="n">nhours</span><span class="p">,</span> <span class="n">timestep</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
-    <span class="n">time_string</span> <span class="o">=</span> \
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">#INLINE F90_INIT</span>
-<span class="sd">TSTART = {tstart}*{timestep}</span>
-<span class="sd">TEND = TSTART + {nhours}*3600</span>
-<span class="sd">DT = {timestep}</span>
-<span class="sd">TEMP = {temp}</span>
-<span class="sd">#ENDINLINE&quot;&quot;&quot;</span>\
-<span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tstart</span><span class="o">=</span><span class="n">tstart</span><span class="p">,</span> <span class="n">nhours</span><span class="o">=</span><span class="n">nhours</span><span class="p">,</span> <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="n">temp</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">time_string</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>And finally let's assemble our input description file:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read header</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;header.inp&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">header_file</span><span class="p">:</span>
-    <span class="n">header_text</span> <span class="o">=</span> <span class="n">header_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="c1"># Use default inital concentrations and set model integration time and temperature</span>
-<span class="n">concstr</span> <span class="o">=</span> <span class="n">gen_concs_string</span><span class="p">()</span>
-<span class="n">timestr</span> <span class="o">=</span> <span class="n">gen_time_str</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3600</span><span class="p">,</span><span class="mi">298</span><span class="p">)</span>
-<span class="c1"># Combine all strings together</span>
-<span class="n">full_str</span> <span class="o">=</span> <span class="n">header_text</span> <span class="o">+</span> <span class="n">concstr</span> <span class="o">+</span> <span class="n">timestr</span>
-
-<span class="c1"># Create function that writes a string to file</span>
-<span class="k">def</span> <span class="nf">write_str_to_file</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;model.def&#39;</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">def_file</span><span class="p">:</span>
-        <span class="n">def_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-<span class="c1"># Call this function with your string</span>
-<span class="n">write_str_to_file</span><span class="p">(</span><span class="n">full_str</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Creating-a-file-mask">Creating a file mask<a class="anchor-link" href="#Creating-a-file-mask">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of other ways to use a new string formatting in Python to your advantage. For example, you could use it to create file names in a loop:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_mask</span> <span class="o">=</span> <span class="s1">&#39;+</span><span class="si">{one}</span><span class="s1">hours_</span><span class="si">{two}</span><span class="s1">UTC.jpg&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">file_mask</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">one</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">two</span><span class="o">=</span><span class="n">j</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>+1hours_4UTC.jpg
-+2hours_5UTC.jpg
-+3hours_6UTC.jpg
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-
-    <small>
-    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
-    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2016-01-22-string-formatting.ipynb">nbviewer</a>.</p>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
- 
-
-</p>
+                <p>{% notebook 2016-01-22-string-formatting.ipynb cells[2:] %}</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -568,7 +288,7 @@ CO\t=%(CO_nd).2e;"""\
                             networkx
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-1">
                         <a href="https://ueapy.github.io/tag/numpy.html">
                             numpy
                         </a>
@@ -578,7 +298,7 @@ CO\t=%(CO_nd).2e;"""\
                             oop
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://ueapy.github.io/tag/optimisation.html">
                             optimisation
                         </a>
@@ -591,6 +311,11 @@ CO\t=%(CO_nd).2e;"""\
                     <li class="list-group-item tag-4">
                         <a href="https://ueapy.github.io/tag/parallel-computing.html">
                             parallel computing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://ueapy.github.io/tag/parallel-processing.html">
+                            parallel processing
                         </a>
                     </li>
                     <li class="list-group-item tag-3">

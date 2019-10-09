@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python 3, miscellaneous ideas - Python Group UEA</title>
+    <title>Speeding up python using tools from the standard library - Python Group UEA</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,22 +9,24 @@
 
 
 
-<link rel="canonical" href="https://ueapy.github.io/python-3-miscellaneous-ideas.html">
+<link rel="canonical" href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html">
 
-        <meta name="author" content="Matthew Bone" />
-        <meta name="keywords" content="py3k,version control" />
-        <meta name="description" content="{% notebook 2015-12-04-meeting-summary.ipynb cells[2:] %}" />
+        <meta name="author" content="Callum Rollo" />
+        <meta name="keywords" content="basics,optimisation,numpy,parallel processing" />
+        <meta name="description" content="{% notebook 2019-10-08-speedy-python.ipynb cells[2:] %}" />
 
         <meta property="og:site_name" content="Python Group UEA" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Python 3, miscellaneous ideas"/>
-        <meta property="og:url" content="https://ueapy.github.io/python-3-miscellaneous-ideas.html"/>
-        <meta property="og:description" content="{% notebook 2015-12-04-meeting-summary.ipynb cells[2:] %}"/>
-        <meta property="article:published_time" content="2015-12-04" />
+        <meta property="og:title" content="Speeding up python using tools from the standard library"/>
+        <meta property="og:url" content="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html"/>
+        <meta property="og:description" content="{% notebook 2019-10-08-speedy-python.ipynb cells[2:] %}"/>
+        <meta property="article:published_time" content="2019-10-08" />
             <meta property="article:section" content="misc" />
-            <meta property="article:tag" content="py3k" />
-            <meta property="article:tag" content="version control" />
-            <meta property="article:author" content="Matthew Bone" />
+            <meta property="article:tag" content="basics" />
+            <meta property="article:tag" content="optimisation" />
+            <meta property="article:tag" content="numpy" />
+            <meta property="article:tag" content="parallel processing" />
+            <meta property="article:author" content="Callum Rollo" />
 
 
     <!-- Bootstrap -->
@@ -82,10 +84,10 @@ Python Group UEA            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://ueapy.github.io/python-3-miscellaneous-ideas.html"
+                    <a href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html"
                        rel="bookmark"
-                       title="Permalink to Python 3, miscellaneous ideas">
-                        Python 3, miscellaneous ideas
+                       title="Permalink to Speeding up python using tools from the standard library">
+                        Speeding up python using tools from the standard library
                     </a>
                 </h1>
             </header>
@@ -95,23 +97,27 @@ Python Group UEA            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-04T13:57:00+00:00"> Fri 04 December 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2019-10-08T13:37:00+01:00"> Tue 08 October 2019</time>
     </span>
 
 
             <span class="label label-default">By</span>
-            <a href="https://ueapy.github.io/author/matthew-bone.html"><i class="fa fa-user"></i> Matthew Bone</a>
+            <a href="https://ueapy.github.io/author/callum-rollo.html"><i class="fa fa-user"></i> Callum Rollo</a>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://ueapy.github.io/tag/py3k.html">py3k</a>
+	<a href="https://ueapy.github.io/tag/basics.html">basics</a>
         /
-	<a href="https://ueapy.github.io/tag/version-control.html">version control</a>
+	<a href="https://ueapy.github.io/tag/optimisation.html">optimisation</a>
+        /
+	<a href="https://ueapy.github.io/tag/numpy.html">numpy</a>
+        /
+	<a href="https://ueapy.github.io/tag/parallel-processing.html">parallel processing</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>{% notebook 2015-12-04-meeting-summary.ipynb cells[2:] %}</p>
+                <p>{% notebook 2019-10-08-speedy-python.ipynb cells[2:] %}</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -131,8 +137,8 @@ Python Group UEA            </a>
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'python-3-miscellaneous-ideas';
-                var disqus_url = 'https://ueapy.github.io/python-3-miscellaneous-ideas.html';
+                    var disqus_identifier = 'speeding-up-python-using-tools-from-the-standard-library';
+                var disqus_url = 'https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html';
 
             var disqus_config = function () {
                 this.language = "en";
