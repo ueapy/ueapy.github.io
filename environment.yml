@@ -4,6 +4,7 @@ channels:
 dependencies:
 - ghp-import
 - ipython
-- markdown
+- markdown==2.6.11
 - pelican
 - python=3.7
+- nbconvert

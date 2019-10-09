@@ -6,9 +6,11 @@ Built using [pelican](https://github.com/getpelican/pelican) static website gene
 ### Packages
 - ghp-import
 - ipython
-- markdown
+- markdown==2.6.11
 - pelican
-- python>=3.6
+- python=3.7
+- nbconvert
+
 
 You can create a separate conda environment using the [environment.yml](environment.yml) file provided in this repo.
 ```bash
