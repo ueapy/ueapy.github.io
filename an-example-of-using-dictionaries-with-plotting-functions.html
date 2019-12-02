@@ -132,8 +132,8 @@ Python Group UEA            </a>
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.basemap</span> <span class="kn">import</span> <span class="n">Basemap</span>
 <span class="kn">from</span> <span class="nn">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="o">&lt;...&gt;</span>
 
@@ -143,7 +143,7 @@ Python Group UEA            </a>
 
     <span class="c1"># Plot data on a map</span>
     <span class="k">if</span> <span class="n">maps</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Plotting {:d} sample location maps&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tot_maps</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Plotting </span><span class="si">{:d}</span><span class="s1"> sample location maps&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tot_maps</span><span class="p">))</span>
         <span class="c1"># plot maps for MI and derived parameters</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">majorions</span><span class="p">)</span> <span class="p">:</span>
             <span class="n">tot_maps</span> <span class="o">+=</span> <span class="n">MI_maps</span>
@@ -215,11 +215,11 @@ Python Group UEA            </a>
 
     <span class="n">s_map</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plons</span><span class="p">,</span> <span class="n">plats</span><span class="p">,</span> <span class="s1">&#39;yo&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latlon</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
     <span class="n">s_map</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">longitudes</span><span class="p">,</span> <span class="n">latitudes</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">latlon</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
-    <span class="n">ttl</span> <span class="o">=</span> <span class="s1">&#39;Places where {title} was measured </span><span class="se">\n</span><span class="s1">(n = {count:g})</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="n">ttl</span> <span class="o">=</span> <span class="s1">&#39;Places where </span><span class="si">{title}</span><span class="s1"> was measured </span><span class="se">\n</span><span class="s1">(n = </span><span class="si">{count:g}</span><span class="s1">)</span><span class="se">\n</span><span class="s1">&#39;</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">ttl</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
                             <span class="n">count</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">longitudes</span><span class="p">))))</span>
 
-    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;{}.{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">picformat</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">picformat</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 
