@@ -636,7 +636,7 @@ Python Group UEA            </a>
 <span class="n">processor_count</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
 <span class="c1"># processor_count = 2 # we can Python to use a specific number of cores if desired</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Computing with </span><span class="si">{</span><span class="n">processor_count</span><span class="si">}</span><span class="s2"> processor(s)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Computing with </span><span class="si">{processor_count}</span><span class="s2"> processor(s)&quot;</span><span class="p">)</span>
 <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">processor_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="n">task</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">do_maths</span><span class="p">,</span> <span class="p">(</span><span class="mi">30000000</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">processor_count</span><span class="p">,</span>
