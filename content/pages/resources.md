@@ -38,6 +38,9 @@ Some modern Python programming tutorials and resources
 * [xarray tutorial](https://geohackweek.github.io/nDarrays/)
 * [Iris and Cartopy tutorials](https://github.com/SciTools/courses)
 
+### Domain Specific
+* [CO2SYS](https://pyco2sys.readthedocs.io/en/latest/) Carbonate Python
+
 ### Matlab to Python
 * [NumPy for Matlab users](https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html)
 * [Webinar: Python for MATLAB Users](https://www.youtube.com/watch?v=YkCegjtoHFQ)
