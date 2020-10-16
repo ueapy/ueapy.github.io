@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python Group UEA</title>
+    <title>Ideas for meetings - Python Group UEA</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13103,15 +13103,16 @@ jQuery(document).ready(function($) {
 
 
 
-<link rel="canonical" href="https://ueapy.github.io">
-        <meta name="author" content="Python Group" />
+<link rel="canonical" href="https://ueapy.github.io/pages/meeting-ideas.html">
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="Python Group UEA" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Python Group UEA"/>
-        <meta property="og:url" content="https://ueapy.github.io"/>
-        <meta property="og:description" content="Python Group UEA"/>
+        <meta name="author" content="Python Group" />
+        <meta name="description" content="Python Basic programming Running scripts from command line and argument parsing Timing scripts Using try/except and creating your own excceptions Regular expressions Regridding, interpolating and extrapolating What is the best way to interpolate observational data? How to compare model data with irregularly spaced observations? Jupyter Using Jupyter notebooks on …" />
+
+    <meta property="og:site_name" content="Python Group UEA" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Ideas for meetings"/>
+    <meta property="og:url" content="https://ueapy.github.io/pages/meeting-ideas.html"/>
+    <meta property="og:description" content="Python Basic programming Running scripts from command line and argument parsing Timing scripts Using try/except and creating your own excceptions Regular expressions Regridding, interpolating and extrapolating What is the best way to interpolate observational data? How to compare model data with irregularly spaced observations? Jupyter Using Jupyter notebooks on …" />
 
 
     <!-- Bootstrap -->
@@ -13143,7 +13144,7 @@ Python Group UEA            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://ueapy.github.io/pages/meeting-ideas.html">
+                         <li class="active"><a href="https://ueapy.github.io/pages/meeting-ideas.html">
                              Ideas for meetings
                           </a></li>
                          <li><a href="https://ueapy.github.io/pages/resources.html">
@@ -13162,205 +13163,127 @@ Python Group UEA            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://ueapy.github.io/making-a-geographic-grid-with-pyproj.html">Making a geographic grid with pyproj</a></h2>
-                <div class="summary"><div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">geopy</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The aim of this notebook is to create a spatial grid of uniform spacing from a user defined origin point</p>
-<p>Along the way I will introudice some functionality of geopy …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/making-a-geographic-grid-with-pyproj.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/an-overview-of-the-plotly-library-for-making-interactive-plots.html">An overview of the plotly library for making interactive plots</a></h2>
-                <div class="summary"><div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Intro">Intro<a class="anchor-link" href="#Intro">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Plotly is an open source graphing library, developed and maintained by the company Plotly. It is available and documented for Python, JavaScript and R. Behind the scenes, plotly's visualisations are powered by the JavaScript library <a href="https://d3js.org/">D3</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../figures/Schematic-view-of-the-Python-scientific-software-ecosystem-Figure-taken-from-Jake_W640.jpeg" width="700"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The following distinguish …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/an-overview-of-the-plotly-library-for-making-interactive-plots.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/become-a-10x-programmer-lessons-from-academia-and-industry.html">Become a 10x programmer, lessons from academia and industry</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Anthony De Gol spoke to us about lessons learned form academia and industry on how to be a 10x better programmer with a few simple tools and techniques. Here are Callum's notes from the talk.</p>
-<p>Anthony's recommendations fall into three broad groups:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.-Version-Control">1. Version Control<a class="anchor-link" href="#1.-Version-Control">&#182;</a></h3><p>Use a version control system …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/become-a-10x-programmer-lessons-from-academia-and-industry.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html">Speeding up python using tools from the standard library</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To demonstrate Python's performance, we'll use a short function</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cart2pol</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As the name suggest <strong>cart2pol</strong> converts a pair …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/pleasing-maps-with-cartopy.html">Pleasing maps with cartopy</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To make a pretty, publication grade map for your study area look no further than <a href="https://scitools.org.uk/cartopy/docs/latest/">cartopy.</a></p>
-<p>In this tutorial we will walk through generating a basemap with:</p>
+    <section id="content" class="body">
+        <h1 class="entry-title">Ideas for meetings</h1>
+        
+        <div class="entry-content">
+            <h2>Python</h2>
+<h3>Basic programming</h3>
 <ul>
-<li>Bathymetry/topography</li>
-<li>Coastline</li>
-<li>Scatter data</li>
-<li>Location labels</li>
-<li>Inset map</li>
-<li>Legend</li>
+<li>Running scripts from command line and argument parsing</li>
+<li>Timing scripts</li>
+<li>Using <code>try</code>/<code>except</code> and creating your own excceptions</li>
+<li>Regular expressions</li>
 </ul>
-<p>This code can be generalised to any region you wish to map</p>
+<h3>Regridding, interpolating and extrapolating</h3>
+<ul>
+<li>What is the best way to interpolate observational data?</li>
+<li>How to compare model data with irregularly spaced observations?</li>
+</ul>
+<h3>Jupyter</h3>
+<ul>
+<li>Using Jupyter notebooks on a remote server</li>
+<li>Teaching with Jupyter notebooks</li>
+<li>Making slides from notebooks</li>
+</ul>
+<h3>Basic plotting: Matplotlib</h3>
+<ul>
+<li>Preparing publication-quality figures</li>
+<li>Best way of handling matplotlib instances: figures, axes, colorbars, etc.</li>
+<li>Grid of subplots</li>
+<li>Applications of pcolor/pcolormesh/contourf/imshow</li>
+</ul>
+<h3>Advanced visualisation</h3>
+<ul>
+<li>Interactive plots in Jupyter Notebooks</li>
+<li>3D-vis libraries</li>
+</ul>
+<h3>Pandas</h3>
+<ul>
+<li>Cleaning up data</li>
+<li>Basic statistics</li>
+</ul>
+<h3>IO</h3>
+<ul>
+<li>Working with NetCDF, HDF, PP files</li>
+<li>Reading Excel files</li>
+</ul>
+<h3>Rewriting or calling programs written in other languages</h3>
+<ul>
+<li>FORTRAN</li>
+<li>R</li>
+<li>Matlab</li>
+</ul>
+<h3>Learning special packages</h3>
+<h4>Cartographic tools and GIS</h4>
+<ul>
+<li>cartopy</li>
+<li>gdal</li>
+<li>pykml</li>
+<li>geopandas</li>
+<li>shapely</li>
+</ul>
+<h4>Atmospheric and Oceanic Sciences</h4>
+<ul>
+<li>iris and xarray</li>
+<li>skewt and tephi</li>
+<li>eofs and windspharm</li>
+</ul>
+<h3>Creating and deploying Python packages</h3>
+<ul>
+<li>Testing</li>
+<li>Versioning</li>
+<li>Publishing on PyPi</li>
+</ul>
+<h2>Other tools</h2>
+<h3>Git</h3>
+<ul>
+<li>using Git</li>
+<li>using GitHub / BitBucket</li>
+</ul>
+<h3>Command line</h3>
+<ul>
+<li>Using make to automatise tasks</li>
+<li>Shell for Python</li>
+<li>Tweaking Vim for Python</li>
+</ul>
+<h2>Side projects</h2>
+<ul>
+<li>Raspberry Pi</li>
+<li>Building static websites and documentation</li>
+</ul>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>First …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/pleasing-maps-with-cartopy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
 
-        <ul class="pagination">
-                <li class="prev disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a
-                            href="https://ueapy.github.io/index.html">1</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index2.html">2</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index3.html">3</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index4.html">4</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index5.html">5</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index6.html">6</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index7.html">7</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index8.html">8</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index9.html">9</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index10.html">10</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index11.html">11</a></li>
-                <li class="next"><a
-                        href="https://ueapy.github.io/index2.html">&raquo;</a></li>
-        </ul>
+                    var disqus_identifier = 'page-meeting-ideas';
+                var disqus_url = 'https://ueapy.github.io/pages/meeting-ideas.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </div>
+    </section>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python Group UEA</title>
+    <title>Debugging and profiling - Python Group UEA</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13103,15 +13103,24 @@ jQuery(document).ready(function($) {
 
 
 
-<link rel="canonical" href="https://ueapy.github.io">
-        <meta name="author" content="Python Group" />
+<link rel="canonical" href="https://ueapy.github.io/debugging-and-profiling.html">
 
-    <!-- Open Graph tags -->
+        <meta name="author" content="Denis Sergeev" />
+        <meta name="keywords" content="optimisation,debugging,profiling,basics" />
+        <meta name="description" content="Today we went through some basic tools to inspect Python scripts for errors and performance bottlenecks. Debugging¶ Python DeBugger (PDB)¶ The standard Python tool for interactive debugging is pdb, the Python debugger. This debugger lets the user step through the code line by line in order to see what might …" />
+
         <meta property="og:site_name" content="Python Group UEA" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Python Group UEA"/>
-        <meta property="og:url" content="https://ueapy.github.io"/>
-        <meta property="og:description" content="Python Group UEA"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Debugging and profiling"/>
+        <meta property="og:url" content="https://ueapy.github.io/debugging-and-profiling.html"/>
+        <meta property="og:description" content="Today we went through some basic tools to inspect Python scripts for errors and performance bottlenecks. Debugging¶ Python DeBugger (PDB)¶ The standard Python tool for interactive debugging is pdb, the Python debugger. This debugger lets the user step through the code line by line in order to see what might …"/>
+        <meta property="article:published_time" content="2018-02-19" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="optimisation" />
+            <meta property="article:tag" content="debugging" />
+            <meta property="article:tag" content="profiling" />
+            <meta property="article:tag" content="basics" />
+            <meta property="article:author" content="Denis Sergeev" />
 
 
     <!-- Bootstrap -->
@@ -13162,61 +13171,47 @@ Python Group UEA            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://ueapy.github.io/making-a-geographic-grid-with-pyproj.html">Making a geographic grid with pyproj</a></h2>
-                <div class="summary"><div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">geopy</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://ueapy.github.io/debugging-and-profiling.html"
+                       rel="bookmark"
+                       title="Permalink to Debugging and profiling">
+                        Debugging and profiling
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-02-19T16:56:00+00:00"> Mon 19 February 2018</time>
+    </span>
 
-    </div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The aim of this notebook is to create a spatial grid of uniform spacing from a user defined origin point</p>
-<p>Along the way I will introudice some functionality of geopy …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/making-a-geographic-grid-with-pyproj.html">more ...</a>
+            <span class="label label-default">By</span>
+            <a href="https://ueapy.github.io/author/denis-sergeev.html"><i class="fa fa-user"></i> Denis Sergeev</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://ueapy.github.io/tag/optimisation.html">optimisation</a>
+        /
+	<a href="https://ueapy.github.io/tag/debugging.html">debugging</a>
+        /
+	<a href="https://ueapy.github.io/tag/profiling.html">profiling</a>
+        /
+	<a href="https://ueapy.github.io/tag/basics.html">basics</a>
+    
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/an-overview-of-the-plotly-library-for-making-interactive-plots.html">An overview of the plotly library for making interactive plots</a></h2>
-                <div class="summary"><div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+                <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Intro">Intro<a class="anchor-link" href="#Intro">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Plotly is an open source graphing library, developed and maintained by the company Plotly. It is available and documented for Python, JavaScript and R. Behind the scenes, plotly's visualisations are powered by the JavaScript library <a href="https://d3js.org/">D3</a>.</p>
+<p>Today we went through some basic tools to inspect Python scripts for errors and performance bottlenecks.</p>
 
 </div>
 </div>
@@ -13224,7 +13219,21 @@ Python Group UEA            </a>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../figures/Schematic-view-of-the-Python-scientific-software-ecosystem-Figure-taken-from-Jake_W640.jpeg" width="700"></p>
+<h2 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python-DeBugger-(PDB)">Python DeBugger (PDB)<a class="anchor-link" href="#Python-DeBugger-(PDB)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The standard Python tool for interactive debugging is <code>pdb</code>, the Python debugger.</p>
 
 </div>
 </div>
@@ -13232,18 +13241,10 @@ Python Group UEA            </a>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The following distinguish …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/an-overview-of-the-plotly-library-for-making-interactive-plots.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/become-a-10x-programmer-lessons-from-academia-and-industry.html">Become a 10x programmer, lessons from academia and industry</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Anthony De Gol spoke to us about lessons learned form academia and industry on how to be a 10x better programmer with a few simple tools and techniques. Here are Callum's notes from the talk.</p>
-<p>Anthony's recommendations fall into three broad groups:</p>
+<ul>
+<li>This debugger lets the user step through the code line by line in order to see what might be causing a more difficult error.</li>
+<li>The IPython-enhanced version of this is <code>ipdb</code>, the IPython debugger.</li>
+</ul>
 
 </div>
 </div>
@@ -13251,17 +13252,41 @@ Python Group UEA            </a>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.-Version-Control">1. Version Control<a class="anchor-link" href="#1.-Version-Control">&#182;</a></h3><p>Use a version control system …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/become-a-10x-programmer-lessons-from-academia-and-industry.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html">Speeding up python using tools from the standard library</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<h4 id="Using-in-the-command-line">Using in the command line<a class="anchor-link" href="#Using-in-the-command-line">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To demonstrate Python's performance, we'll use a short function</p>
+<ul>
+<li>We went through this excellent <a href="https://github.com/spiside/pdb-tutorial">pdb tutorial</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>An even more convenient version is <a href="https://pypi.python.org/pypi/pdbpp/">pdbpp</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Using-PDB-in-IPython-or-Jupyter">Using PDB in IPython or Jupyter<a class="anchor-link" href="#Using-PDB-in-IPython-or-Jupyter">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, we import a function to insert breakpoints:</p>
 
 </div>
 </div>
@@ -13271,25 +13296,43 @@ Python Group UEA            </a>
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.debugger</span> <span class="kn">import</span> <span class="n">set_trace</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Define a simple function, insert a breakpoint:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cart2pol</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">):</span>
+    <span class="n">set_trace</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">foo</span> <span class="o">+</span> <span class="n">bar</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># fun(1, 2)</span>
 </pre></div>
 
     </div>
@@ -13300,27 +13343,7 @@ Python Group UEA            </a>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As the name suggest <strong>cart2pol</strong> converts a pair …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/pleasing-maps-with-cartopy.html">Pleasing maps with cartopy</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To make a pretty, publication grade map for your study area look no further than <a href="https://scitools.org.uk/cartopy/docs/latest/">cartopy.</a></p>
-<p>In this tutorial we will walk through generating a basemap with:</p>
-<ul>
-<li>Bathymetry/topography</li>
-<li>Coastline</li>
-<li>Scatter data</li>
-<li>Location labels</li>
-<li>Inset map</li>
-<li>Legend</li>
-</ul>
-<p>This code can be generalised to any region you wish to map</p>
+<p>(Uncomment it to run with debugger)</p>
 
 </div>
 </div>
@@ -13328,39 +13351,775 @@ Python Group UEA            </a>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/pleasing-maps-with-cartopy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+<p>In IPython, perhaps the most convenient interface to debugging is the <code>%debug</code> magic command. If you call it after hitting an exception, it will automatically open an interactive debugging prompt at the point of the exception. The <code>ipdb</code> prompt lets you explore the current state of the stack, explore the available variables, and even run Python commands!</p>
 
-        <ul class="pagination">
-                <li class="prev disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a
-                            href="https://ueapy.github.io/index.html">1</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index2.html">2</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index3.html">3</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index4.html">4</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index5.html">5</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index6.html">6</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index7.html">7</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index8.html">8</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index9.html">9</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index10.html">10</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index11.html">11</a></li>
-                <li class="next"><a
-                        href="https://ueapy.github.io/index2.html">&raquo;</a></li>
-        </ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Example:-2-functions,-one-of-which-calls-another">Example: 2 functions, one of which calls another<a class="anchor-link" href="#Example:-2-functions,-one-of-which-calls-another">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">func1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">func2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-7-7cb498ea7ed1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>func2<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-6-586ccabd0db3&gt;</span> in <span class="ansi-cyan-fg">func2</span><span class="ansi-blue-fg">(x)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     a <span class="ansi-blue-fg">=</span> x
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     b <span class="ansi-blue-fg">=</span> x <span class="ansi-blue-fg">-</span> <span class="ansi-cyan-fg">1</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> func1<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> b<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-6-586ccabd0db3&gt;</span> in <span class="ansi-cyan-fg">func1</span><span class="ansi-blue-fg">(a, b)</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> func1<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> b<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> a <span class="ansi-blue-fg">/</span> b
+<span class="ansi-green-intense-fg ansi-bold">      3</span> 
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">def</span> func2<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     a <span class="ansi-blue-fg">=</span> x
+
+<span class="ansi-red-fg">ZeroDivisionError</span>: division by zero</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %debug</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you'd like the debugger to launch automatically whenever an exception is raised, you can use the <code>%pdb</code> magic function to turn on this automatic behavior:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pdb</span> <span class="n">on</span>
+</pre></div>
+<p>...some code to debug...</p>
+
+<pre><code>%pdb off</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Timing-and-Profiling">Timing and Profiling<a class="anchor-link" href="#Timing-and-Profiling">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Simple-timing">Simple timing<a class="anchor-link" href="#Simple-timing">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In IPython and Jupyter you can use special magics to measure how much time a snippet of code takes to run.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> sum(range(100))
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.59 µs ± 229 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that because this operation is so fast, <code>%timeit</code> automatically does a large number of repetitions. For slower commands, <code>%timeit</code> will automatically adjust and perform fewer repetitions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Profiling">Profiling<a class="anchor-link" href="#Profiling">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once you have your code working, it can be useful to dig into its efficiency a bit. Sometimes it's useful to check the execution time of a given command or set of commands; other times it's useful to dig into a multiline process and determine where the bottleneck lies in some complicated series of operations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can either use the built in profiler:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cProfile</span>
+<span class="n">cp</span> <span class="o">=</span> <span class="n">cProfile</span><span class="o">.</span><span class="n">Profile</span><span class="p">()</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
+
+<span class="c1"># some code to profile</span>
+
+<span class="n">cp</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">print_stats</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Line-by-line-profiling">Line-by-line profiling<a class="anchor-link" href="#Line-by-line-profiling">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's define a function with a big number of <code>for</code>-loop iterations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_lists</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="o">^</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can now load a <code>line_profiler</code> extension (after we install <code>line_profiler</code> package using pip or conda).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> line_profiler
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And call the function using the special profiler magic:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">lprun</span> -f sum_of_lists sum_of_lists(5000)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Memory-profiling">Memory profiling<a class="anchor-link" href="#Memory-profiling">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the similar manner, we can even do memory profiling (once the <code>memory_profiler</code> package is installed).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> memory_profiler
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">memit</span> sum_of_lists(100000)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>peak memory: 50.20 MiB, increment: 7.16 MiB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Disassembling-and-inspecting-Python-code">Disassembling and inspecting Python code<a class="anchor-link" href="#Disassembling-and-inspecting-Python-code">&#182;</a></h2><h3 id="Tracing-CPython-code-execution">Tracing CPython code execution<a class="anchor-link" href="#Tracing-CPython-code-execution">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's disassemble it with the <code>dis</code> module:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">dis</span>
+<span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  2           0 LOAD_FAST                0 (a)
+              2 LOAD_FAST                1 (b)
+              4 BINARY_ADD
+              6 RETURN_VALUE
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What's-BINARY_ADD?">What's <code>BINARY_ADD</code>?<a class="anchor-link" href="#What's-BINARY_ADD?">&#182;</a></h3><p>We crack open CPython's source code and take a look inside <code>Python/ceval.c</code>:</p>
+<div class="highlight"><pre><span></span><span class="cm">/* Python/ceval.c */</span>
+<span class="n">TARGET</span><span class="p">(</span><span class="n">BINARY_ADD</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">right</span> <span class="o">=</span> <span class="n">POP</span><span class="p">();</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">left</span> <span class="o">=</span> <span class="n">TOP</span><span class="p">();</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">sum</span><span class="p">;</span>
+    <span class="cm">/* NOTE(haypo): Please don&#39;t try to micro-optimize int+int on</span>
+<span class="cm">       CPython using bytecode, it is simply worthless.</span>
+<span class="cm">       See http://bugs.python.org/issue21955 and</span>
+<span class="cm">       http://bugs.python.org/issue10044 for the discussion. In short,</span>
+<span class="cm">       no patch shown any impact on a realistic benchmark, only a minor</span>
+<span class="cm">       speedup on microbenchmarks. */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">PyUnicode_CheckExact</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+            <span class="n">PyUnicode_CheckExact</span><span class="p">(</span><span class="n">right</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="n">unicode_concatenate</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">next_instr</span><span class="p">);</span>
+        <span class="cm">/* unicode_concatenate consumed the ref to left */</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="n">PyNumber_Add</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span> <span class="c1">// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+        <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">left</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">right</span><span class="p">);</span>
+    <span class="n">SET_TOP</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+    <span class="n">DISPATCH</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What's-PyNumber_Add(left,-right)?">What's <code>PyNumber_Add(left, right)</code>?<a class="anchor-link" href="#What's-PyNumber_Add(left,-right)?">&#182;</a></h3><div class="highlight"><pre><span></span><span class="cm">/* Objects/abstract.c */</span>
+<span class="n">PyObject</span> <span class="o">*</span>
+<span class="nf">PyNumber_Add</span><span class="p">(</span><span class="n">PyObject</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="n">PyObject</span> <span class="o">*</span><span class="n">w</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">binary_op1</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">NB_SLOT</span><span class="p">(</span><span class="n">nb_add</span><span class="p">));</span> <span class="c1">// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">Py_NotImplemented</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">PySequenceMethods</span> <span class="o">*</span><span class="n">m</span> <span class="o">=</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">ob_type</span><span class="o">-&gt;</span><span class="n">tp_as_sequence</span><span class="p">;</span>
+        <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="n">m</span><span class="o">-&gt;</span><span class="n">sq_concat</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">m</span><span class="o">-&gt;</span><span class="n">sq_concat</span><span class="p">)(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">binop_type_error</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="s">&quot;+&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What's-binary_op1()?">What's <code>binary_op1()</code>?<a class="anchor-link" href="#What's-binary_op1()?">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span>
+<span class="nf">binary_op1</span><span class="p">(</span><span class="n">PyObject</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="n">PyObject</span> <span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">op_slot</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">x</span><span class="p">;</span>
+    <span class="n">binaryfunc</span> <span class="n">slotv</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">binaryfunc</span> <span class="n">slotw</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">ob_type</span><span class="o">-&gt;</span><span class="n">tp_as_number</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="n">slotv</span> <span class="o">=</span> <span class="n">NB_BINOP</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">ob_type</span><span class="o">-&gt;</span><span class="n">tp_as_number</span><span class="p">,</span> <span class="n">op_slot</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">w</span><span class="o">-&gt;</span><span class="n">ob_type</span> <span class="o">!=</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">ob_type</span> <span class="o">&amp;&amp;</span>
+        <span class="n">w</span><span class="o">-&gt;</span><span class="n">ob_type</span><span class="o">-&gt;</span><span class="n">tp_as_number</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">slotw</span> <span class="o">=</span> <span class="n">NB_BINOP</span><span class="p">(</span><span class="n">w</span><span class="o">-&gt;</span><span class="n">ob_type</span><span class="o">-&gt;</span><span class="n">tp_as_number</span><span class="p">,</span> <span class="n">op_slot</span><span class="p">);</span> <span class="c1">// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">slotw</span> <span class="o">==</span> <span class="n">slotv</span><span class="p">)</span>
+            <span class="n">slotw</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">slotv</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">slotw</span> <span class="o">&amp;&amp;</span> <span class="n">PyType_IsSubtype</span><span class="p">(</span><span class="n">w</span><span class="o">-&gt;</span><span class="n">ob_type</span><span class="p">,</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">ob_type</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">slotw</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">Py_NotImplemented</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+            <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="cm">/* can&#39;t do it */</span>
+            <span class="n">slotw</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">slotv</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">Py_NotImplemented</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="cm">/* can&#39;t do it */</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">slotw</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">slotw</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">Py_NotImplemented</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="cm">/* can&#39;t do it */</span>
+    <span class="p">}</span>
+    <span class="n">Py_RETURN_NOTIMPLEMENTED</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What's-NB_BINOP()?">What's <code>NB_BINOP()</code>?<a class="anchor-link" href="#What's-NB_BINOP()?">&#182;</a></h3><div class="highlight"><pre><span></span><span class="cp">#define NB_BINOP(nb_methods, slot) \</span>
+<span class="cp">        (*(binaryfunc*)(&amp; ((char*)nb_methods)[slot]))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Cut-to-the-chase:-where's-the-addition-function-for-two-ints-(longs)?">Cut to the chase: where's the addition function for two ints (longs)?<a class="anchor-link" href="#Cut-to-the-chase:-where's-the-addition-function-for-two-ints-(longs)?">&#182;</a></h3><div class="highlight"><pre><span></span><span class="cm">/* Objects/longobject.c */</span>
+<span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span>
+<span class="nf">long_add</span><span class="p">(</span><span class="n">PyLongObject</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">PyLongObject</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">PyLongObject</span> <span class="o">*</span><span class="n">z</span><span class="p">;</span>
+
+    <span class="n">CHECK_BINOP</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">Py_ABS</span><span class="p">(</span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">Py_ABS</span><span class="p">(</span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">PyLong_FromLong</span><span class="p">(</span><span class="n">MEDIUM_VALUE</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">MEDIUM_VALUE</span><span class="p">(</span><span class="n">b</span><span class="p">));</span> <span class="c1">// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">x_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+                <span class="cm">/* x_add received at least one multiple-digit int,</span>
+<span class="cm">                   and thus z must be a multiple-digit int.</span>
+<span class="cm">                   That also means z is not an element of</span>
+<span class="cm">                   small_ints, so negating it in-place is safe. */</span>
+                <span class="n">assert</span><span class="p">(</span><span class="n">Py_REFCNT</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="n">Py_SIZE</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">z</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">x_sub</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">x_sub</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">x_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">PyObject</span> <span class="o">*</span><span class="p">)</span><span class="n">z</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What's-MEDIUM_VALUE()?">What's <code>MEDIUM_VALUE()</code>?<a class="anchor-link" href="#What's-MEDIUM_VALUE()?">&#182;</a></h3><div class="highlight"><pre><span></span><span class="cm">/* Objects/longobject.c */</span>
+<span class="cp">#define MEDIUM_VALUE(x) (assert(-1 &lt;= Py_SIZE(x) &amp;&amp; Py_SIZE(x) &lt;= 1),  \</span>
+<span class="cp">     Py_SIZE(x) &lt; 0 ? -(sdigit)(x)-&gt;ob_digit[0] :  \</span>
+<span class="cp">         (Py_SIZE(x) == 0 ? (sdigit)0 :  \</span>
+<span class="cp">          (sdigit)(x)-&gt;ob_digit[0]))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-so-much-code-for-such-a-simple-operation?">Why so much code for such a simple operation?<a class="anchor-link" href="#Why-so-much-code-for-such-a-simple-operation?">&#182;</a></h2><ul>
+<li>C-level is interpreting bytecodes (<code>BINARY_ADD</code> in this case).</li>
+<li>Polymorphism -- code can handle <code>foo('a', 'b')</code> or any types that support <code>+</code>.</li>
+<li>Works for user-defined types, too, with an <code>__add__</code> or <code>__radd__</code> magic method.</li>
+<li>Error checking everywhere...</li>
+<li>For adding ints, does overflow checking and conversions, etc.</li>
+</ul>
+<p>All these features mean a lot of code at the C level.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-the-performance?">What is the performance?<a class="anchor-link" href="#What-is-the-performance?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> foo(1, 2)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>104 ns ± 1.22 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> foo(&#39;a&#39;, &#39;b&#39;)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>150 ns ± 14.2 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><h3 id="CPython-slowdown-1:-interpreted-bytecode-execution">CPython slowdown 1: interpreted bytecode execution<a class="anchor-link" href="#CPython-slowdown-1:-interpreted-bytecode-execution">&#182;</a></h3><ul>
+<li>Fetching CPython bytecode ops, managing the stack machine, all ops in <code>ceval.c</code>.</li>
+<li>Extensive error checking and handling.</li>
+</ul>
+<h3 id="CPython-slowdown-2:-dynamic-type-resolution">CPython slowdown 2: dynamic type resolution<a class="anchor-link" href="#CPython-slowdown-2:-dynamic-type-resolution">&#182;</a></h3><ul>
+<li>Type introspection, dynamic dispatch on every operation / method call, supporting generic operations.</li>
+<li>And extensive error checking and handling, up-and-down the call stack.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ul>
+<li><a href="https://github.com/kwmsmith/scipy-2017-cython-tutorial">https://github.com/kwmsmith/scipy-2017-cython-tutorial</a></li>
+<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/01.06-errors-and-debugging.html">https://jakevdp.github.io/PythonDataScienceHandbook/01.06-errors-and-debugging.html</a></li>
+<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/01.07-timing-and-profiling.html">https://jakevdp.github.io/PythonDataScienceHandbook/01.07-timing-and-profiling.html</a></li>
+<li><a href="https://toucantoco.com/en/tech-blog/tech/python-performance-optimization">https://toucantoco.com/en/tech-blog/tech/python-performance-optimization</a></li>
+<li><a href="http://mortada.net/easily-profile-python-code-in-jupyter.html">http://mortada.net/easily-profile-python-code-in-jupyter.html</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2018-02-19-debugging-profiling.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <!-- AddThis Button END -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'debugging-and-profiling';
+                var disqus_url = 'https://ueapy.github.io/debugging-and-profiling.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -13706,5 +14465,7 @@ Python Group UEA            </a>
     </script>
     <!-- End Disqus Code -->
 
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar": false};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-564e4d3ff0b9f071"></script>
 </body>
 </html>

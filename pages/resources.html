@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python Group UEA</title>
+    <title>Resources - Python Group UEA</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13103,15 +13103,16 @@ jQuery(document).ready(function($) {
 
 
 
-<link rel="canonical" href="https://ueapy.github.io">
-        <meta name="author" content="Python Group" />
+<link rel="canonical" href="https://ueapy.github.io/pages/resources.html">
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="Python Group UEA" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Python Group UEA"/>
-        <meta property="og:url" content="https://ueapy.github.io"/>
-        <meta property="og:description" content="Python Group UEA"/>
+        <meta name="author" content="Python Group" />
+        <meta name="description" content="Some modern Python programming tutorials and resources General educational resources Codecademy - interactive python course for complete beginners Various providers of massively open online courses (MOOCs), such as Udacity and Couresa have Python introductory Python courses and often offer official certificates of completion. Python Jumpstart by Building 10 Apps Software Carpentry&#39;s …" />
+
+    <meta property="og:site_name" content="Python Group UEA" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Resources"/>
+    <meta property="og:url" content="https://ueapy.github.io/pages/resources.html"/>
+    <meta property="og:description" content="Some modern Python programming tutorials and resources General educational resources Codecademy - interactive python course for complete beginners Various providers of massively open online courses (MOOCs), such as Udacity and Couresa have Python introductory Python courses and often offer official certificates of completion. Python Jumpstart by Building 10 Apps Software Carpentry&#39;s …" />
 
 
     <!-- Bootstrap -->
@@ -13146,7 +13147,7 @@ Python Group UEA            </a>
                          <li><a href="https://ueapy.github.io/pages/meeting-ideas.html">
                              Ideas for meetings
                           </a></li>
-                         <li><a href="https://ueapy.github.io/pages/resources.html">
+                         <li class="active"><a href="https://ueapy.github.io/pages/resources.html">
                              Resources
                           </a></li>
             </ul>
@@ -13162,205 +13163,103 @@ Python Group UEA            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://ueapy.github.io/making-a-geographic-grid-with-pyproj.html">Making a geographic grid with pyproj</a></h2>
-                <div class="summary"><div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">geopy</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The aim of this notebook is to create a spatial grid of uniform spacing from a user defined origin point</p>
-<p>Along the way I will introudice some functionality of geopy …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/making-a-geographic-grid-with-pyproj.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/an-overview-of-the-plotly-library-for-making-interactive-plots.html">An overview of the plotly library for making interactive plots</a></h2>
-                <div class="summary"><div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Intro">Intro<a class="anchor-link" href="#Intro">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Plotly is an open source graphing library, developed and maintained by the company Plotly. It is available and documented for Python, JavaScript and R. Behind the scenes, plotly's visualisations are powered by the JavaScript library <a href="https://d3js.org/">D3</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../figures/Schematic-view-of-the-Python-scientific-software-ecosystem-Figure-taken-from-Jake_W640.jpeg" width="700"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The following distinguish …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/an-overview-of-the-plotly-library-for-making-interactive-plots.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/become-a-10x-programmer-lessons-from-academia-and-industry.html">Become a 10x programmer, lessons from academia and industry</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Anthony De Gol spoke to us about lessons learned form academia and industry on how to be a 10x better programmer with a few simple tools and techniques. Here are Callum's notes from the talk.</p>
-<p>Anthony's recommendations fall into three broad groups:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.-Version-Control">1. Version Control<a class="anchor-link" href="#1.-Version-Control">&#182;</a></h3><p>Use a version control system …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/become-a-10x-programmer-lessons-from-academia-and-industry.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html">Speeding up python using tools from the standard library</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To demonstrate Python's performance, we'll use a short function</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cart2pol</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As the name suggest <strong>cart2pol</strong> converts a pair …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/speeding-up-python-using-tools-from-the-standard-library.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://ueapy.github.io/pleasing-maps-with-cartopy.html">Pleasing maps with cartopy</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To make a pretty, publication grade map for your study area look no further than <a href="https://scitools.org.uk/cartopy/docs/latest/">cartopy.</a></p>
-<p>In this tutorial we will walk through generating a basemap with:</p>
+    <section id="content" class="body">
+        <h1 class="entry-title">Resources</h1>
+        
+        <div class="entry-content">
+            <p>Some modern Python programming tutorials and resources</p>
+<h2>General educational resources</h2>
 <ul>
-<li>Bathymetry/topography</li>
-<li>Coastline</li>
-<li>Scatter data</li>
-<li>Location labels</li>
-<li>Inset map</li>
-<li>Legend</li>
+<li><a href="https://www.codecademy.com/learn/python">Codecademy</a> - interactive python course for complete beginners</li>
+<li>Various providers of massively open online courses (MOOCs), such as <a href="https://www.udacity.com/">Udacity</a> and <a href="https://www.coursera.org/courses?search=python">Couresa</a> have Python introductory Python courses and often offer official certificates of completion.</li>
+<li><a href="https://training.talkpython.fm/courses/explore_python_jumpstart/python-language-jumpstart-building-10-apps">Python Jumpstart by Building 10 Apps</a></li>
+<li><a href="http://swcarpentry.github.io/python-novice-inflammation/">Software Carpentry's Programming with Python</a></li>
 </ul>
-<p>This code can be generalised to any region you wish to map</p>
+<h3>Jupyter Notebooks</h3>
+<ul>
+<li><a href="https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks">A gallery of interesting Jupyter Notebooks</a></li>
+</ul>
+<h3>Blogs and websites</h3>
+<ul>
+<li><a href="http://docs.python-guide.org/en/latest/">The Hitchhiker’s Guide to Python</a></li>
+<li><a href="https://jakevdp.github.io/">Pythonic Perambulations</a></li>
+<li><a href="https://ocefpaf.github.io/python4oceanographers/">python4oceanographers</a></li>
+<li><a href="https://pyaos.github.io/">Python in atmospheric and oceanic sciences (AOS)</a></li>
+<li><a href="http://earthpy.org/">EarthPy</a></li>
+</ul>
+<h3>Videos</h3>
+<ul>
+<li><a href="http://pyvideo.org/">PyVideo.org</a>: all Python-related videos</li>
+<li><a href="https://www.youtube.com/playlist?list=PLYCpMb24GpOC704uO9svUrihl-HY1tTJJ">Reproducible Data Analysis in Jupyter</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLYx7XA2nY5Gf37zYZMw6OqGFRPjB1jCy6">SciPy 2016 playlist</a></li>
+<li><a href="https://www.youtube.com/c/enthought/playlists?view=50&amp;sort=dd&amp;shelf_id=4">SciPy 2020 playlist</a></li>
+</ul>
+<h3>Podcasts</h3>
+<ul>
+<li><a href="https://talkpython.fm/">Talk Python To Me</a></li>
+<li><a href="https://pythonbytes.fm/">Python Bytes</a></li>
+<li><a href="https://www.podcastinit.com/"><code>podcast.__init__</code></a>, especially <a href="https://www.podcastinit.com/episode-100-metpy-with-ryan-may-sean-arms-and-john-leeman/">this</a> episode</li>
+</ul>
+<h2>Scientific Python</h2>
+<ul>
+<li><a href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">Cutting-edge guide to Numerical Python (NumPy)</a></li>
+<li><a href="https://www.labri.fr/perso/nrougier/teaching/matplotlib/">Matplotlib tutorial</a></li>
+<li><a href="https://geohackweek.github.io/nDarrays/">xarray tutorial</a></li>
+<li><a href="https://github.com/SciTools/courses">Iris and Cartopy tutorials</a></li>
+</ul>
+<h3>Domain Specific</h3>
+<ul>
+<li><a href="GIbbs Sea Water">https://teos-10.github.io/GSW-Python/</a> Efficient equations for physical oceanographic properties</li>
+<li><a href="https://pyco2sys.readthedocs.io/en/latest/">CO2SYS</a> for solving the marine carbonate system and calculating related seawater properties</li>
+<li><a href="https://pypi.org/project/argopy/">Argopy</a> for fetching Argo data</li>
+<li><a href="https://unidata.github.io/MetPy/latest/index.html">Metpy</a> for meteorology</li>
+</ul>
+<h3>Matlab to Python</h3>
+<ul>
+<li><a href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html">NumPy for Matlab users</a></li>
+<li><a href="https://www.youtube.com/watch?v=YkCegjtoHFQ">Webinar: Python for MATLAB Users</a></li>
+<li><a href="https://www.enthought.com/wp-content/uploads/Enthought-MATLAB-to-Python-White-Paper.pdf">MATLAB to Python guide</a></li>
+<li><a href="https://www.youtube.com/watch?v=1lBeungEnx4">Scientists of the world unite!</a></li>
+</ul>
+<h2>Data Science Workshops</h2>
+<ul>
+<li><a href="https://software-carpentry.org/workshops/">Software Carpentry workshops</a></li>
+<li><a href="https://unidata.github.io/unidata-python-workshop/">Unidata’s Python Training Workshop</a></li>
+<li><a href="https://github.com/ueapy/pythoncourse2020-materials">Our 3 day course</a></li>
+</ul>
+<p>And finally, <a href="http://lmgtfy.com/?q=how+to+learn+python">use the force</a>, Luke!</p>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>First …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/pleasing-maps-with-cartopy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
 
-        <ul class="pagination">
-                <li class="prev disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a
-                            href="https://ueapy.github.io/index.html">1</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index2.html">2</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index3.html">3</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index4.html">4</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index5.html">5</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index6.html">6</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index7.html">7</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index8.html">8</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index9.html">9</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index10.html">10</a></li>
-                    <li class=""><a
-                            href="https://ueapy.github.io/index11.html">11</a></li>
-                <li class="next"><a
-                        href="https://ueapy.github.io/index2.html">&raquo;</a></li>
-        </ul>
+                    var disqus_identifier = 'page-resources';
+                var disqus_url = 'https://ueapy.github.io/pages/resources.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </div>
+    </section>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
