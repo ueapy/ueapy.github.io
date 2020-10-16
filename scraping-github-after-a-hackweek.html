@@ -13188,7 +13188,7 @@ Python Group UEA            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2020-09-10T17:38:00+01:00"> Thu 10 September 2020</time>
+        <i class="fa fa-calendar"></i><time datetime="2020-09-10T17:53:00+01:00"> Thu 10 September 2020</time>
     </span>
 
 
@@ -13256,7 +13256,7 @@ Python Group UEA            </a>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -13273,7 +13273,7 @@ Python Group UEA            </a>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">credentials</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;credentials-secret.json&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span> <span class="c1">#don&#39;t forget to add your creds here!</span>
@@ -13297,7 +13297,7 @@ Python Group UEA            </a>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -13314,7 +13314,7 @@ Python Group UEA            </a>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13346,16 +13346,16 @@ Python Group UEA            </a>
  &#39;hireable&#39;: None,
  &#39;bio&#39;: &#39;Oceanographer, Pythonista and vim user. Regularly breaks things on Fridays&#39;,
  &#39;twitter_username&#39;: &#39;callum_rollo&#39;,
- &#39;public_repos&#39;: 30,
+ &#39;public_repos&#39;: 36,
  &#39;public_gists&#39;: 0,
- &#39;followers&#39;: 15,
- &#39;following&#39;: 2,
+ &#39;followers&#39;: 18,
+ &#39;following&#39;: 3,
  &#39;created_at&#39;: &#39;2017-05-15T09:23:12Z&#39;,
- &#39;updated_at&#39;: &#39;2020-09-23T16:07:33Z&#39;,
+ &#39;updated_at&#39;: &#39;2020-10-09T14:36:52Z&#39;,
  &#39;private_gists&#39;: 0,
  &#39;total_private_repos&#39;: 7,
  &#39;owned_private_repos&#39;: 7,
- &#39;disk_usage&#39;: 438296,
+ &#39;disk_usage&#39;: 389086,
  &#39;collaborators&#39;: 0,
  &#39;two_factor_authentication&#39;: True,
  &#39;plan&#39;: {&#39;name&#39;: &#39;pro&#39;,
@@ -13380,7 +13380,7 @@ Python Group UEA            </a>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ocefpaf&#39;</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -13397,7 +13397,7 @@ Python Group UEA            </a>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13429,12 +13429,12 @@ Python Group UEA            </a>
  &#39;hireable&#39;: True,
  &#39;bio&#39;: &#39;Physical oceanographer turned research software engineer, and software packaging hobbyist.&#39;,
  &#39;twitter_username&#39;: &#39;ocefpaf&#39;,
- &#39;public_repos&#39;: 1181,
- &#39;public_gists&#39;: 132,
- &#39;followers&#39;: 388,
+ &#39;public_repos&#39;: 1190,
+ &#39;public_gists&#39;: 133,
+ &#39;followers&#39;: 395,
  &#39;following&#39;: 4,
  &#39;created_at&#39;: &#39;2011-07-31T23:10:26Z&#39;,
- &#39;updated_at&#39;: &#39;2020-09-21T19:09:08Z&#39;}</pre>
+ &#39;updated_at&#39;: &#39;2020-10-10T15:23:18Z&#39;}</pre>
 </div>
 
 </div>
@@ -13453,7 +13453,7 @@ Python Group UEA            </a>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="s1">&#39;callumrollo&#39;</span> <span class="o">+</span><span class="s1">&#39;/events&#39;</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -13470,13 +13470,13 @@ Python Group UEA            </a>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;id&#39;: &#39;13616867582&#39;,
+<pre>{&#39;id&#39;: &#39;13873691257&#39;,
  &#39;type&#39;: &#39;PushEvent&#39;,
  &#39;actor&#39;: {&#39;id&#39;: 28703282,
   &#39;login&#39;: &#39;callumrollo&#39;,
@@ -13484,22 +13484,27 @@ Python Group UEA            </a>
   &#39;gravatar_id&#39;: &#39;&#39;,
   &#39;url&#39;: &#39;https://api.github.com/users/callumrollo&#39;,
   &#39;avatar_url&#39;: &#39;https://avatars.githubusercontent.com/u/28703282?&#39;},
- &#39;repo&#39;: {&#39;id&#39;: 298024499,
-  &#39;name&#39;: &#39;callumrollo/adcp-glider-guide&#39;,
-  &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/adcp-glider-guide&#39;},
- &#39;payload&#39;: {&#39;push_id&#39;: 5738901395,
+ &#39;repo&#39;: {&#39;id&#39;: 48320187,
+  &#39;name&#39;: &#39;ueapy/ueapy.github.io&#39;,
+  &#39;url&#39;: &#39;https://api.github.com/repos/ueapy/ueapy.github.io&#39;},
+ &#39;payload&#39;: {&#39;push_id&#39;: 5868625550,
   &#39;size&#39;: 1,
   &#39;distinct_size&#39;: 1,
-  &#39;ref&#39;: &#39;refs/heads/main&#39;,
-  &#39;head&#39;: &#39;06de9d302a0de253babf425ca48c0dc1d4648e35&#39;,
-  &#39;before&#39;: &#39;07d98d0de85a094da6455574371c700bf8df28db&#39;,
-  &#39;commits&#39;: [{&#39;sha&#39;: &#39;06de9d302a0de253babf425ca48c0dc1d4648e35&#39;,
+  &#39;ref&#39;: &#39;refs/heads/master&#39;,
+  &#39;head&#39;: &#39;0b70258f3668dbd25fe8e9681b9324af62e3066f&#39;,
+  &#39;before&#39;: &#39;f9c3596cef28b24cfd4d7c27ba91a1c038c943b6&#39;,
+  &#39;commits&#39;: [{&#39;sha&#39;: &#39;0b70258f3668dbd25fe8e9681b9324af62e3066f&#39;,
     &#39;author&#39;: {&#39;email&#39;: &#39;c.rollo@outlook.com&#39;, &#39;name&#39;: &#39;Callum Rollo&#39;},
-    &#39;message&#39;: &#39;point to pdf for reading&#39;,
+    &#39;message&#39;: &#39;Generate Pelican site&#39;,
     &#39;distinct&#39;: True,
-    &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/adcp-glider-guide/commits/06de9d302a0de253babf425ca48c0dc1d4648e35&#39;}]},
+    &#39;url&#39;: &#39;https://api.github.com/repos/ueapy/ueapy.github.io/commits/0b70258f3668dbd25fe8e9681b9324af62e3066f&#39;}]},
  &#39;public&#39;: True,
- &#39;created_at&#39;: &#39;2020-09-23T16:11:06Z&#39;}</pre>
+ &#39;created_at&#39;: &#39;2020-10-16T17:42:00Z&#39;,
+ &#39;org&#39;: {&#39;id&#39;: 15898025,
+  &#39;login&#39;: &#39;ueapy&#39;,
+  &#39;gravatar_id&#39;: &#39;&#39;,
+  &#39;url&#39;: &#39;https://api.github.com/orgs/ueapy&#39;,
+  &#39;avatar_url&#39;: &#39;https://avatars.githubusercontent.com/u/15898025?&#39;}}</pre>
 </div>
 
 </div>
@@ -13518,7 +13523,7 @@ Python Group UEA            </a>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -13534,7 +13539,7 @@ Python Group UEA            </a>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13559,7 +13564,7 @@ Python Group UEA            </a>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tgt_user</span> <span class="o">=</span> <span class="s1">&#39;callumrollo&#39;</span>
@@ -13615,13 +13620,14 @@ Page: 5 total events fetched: 150
 Page: 6 total events fetched: 180
 Page: 7 total events fetched: 210
 Page: 8 total events fetched: 240
-Page: 9 total events fetched: 259
+Page: 9 total events fetched: 270
+Page: 10 total events fetched: 299
 
 callumrollo: all your events are belong to us now
 
 events span the range 
-2020-06-23T16:12:03Z
-2020-09-23T16:11:06Z
+2020-07-22T15:01:25Z
+2020-10-16T17:42:00Z
 </pre>
 </div>
 </div>
@@ -13641,10 +13647,10 @@ events span the range
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">])</span>
 </pre></div>
 
@@ -13662,197 +13668,7 @@ events span the range
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>PushEvent
-CreateEvent
-CreateEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-CreateEvent
-ForkEvent
-WatchEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-CreateEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-CreateEvent
-CreateEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-WatchEvent
-CreateEvent
-CreateEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-IssuesEvent
-WatchEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-PullRequestEvent
-PushEvent
-PullRequestEvent
-PushEvent
-PullRequestEvent
-PushEvent
-PushEvent
-PullRequestEvent
-PullRequestEvent
-PushEvent
-PullRequestEvent
-CreateEvent
-PushEvent
-PullRequestEvent
-CreateEvent
-PushEvent
-IssuesEvent
-IssuesEvent
-PushEvent
-PushEvent
-PullRequestEvent
-PullRequestEvent
-CreateEvent
-PushEvent
-CreateEvent
-PushEvent
-IssueCommentEvent
-IssueCommentEvent
-IssuesEvent
-IssueCommentEvent
-PushEvent
-PullRequestEvent
-IssueCommentEvent
-CreateEvent
-IssuesEvent
-IssueCommentEvent
-IssueCommentEvent
-PushEvent
-PushEvent
-PullRequestEvent
-PushEvent
-IssueCommentEvent
-PushEvent
-IssueCommentEvent
-IssueCommentEvent
-PushEvent
-IssueCommentEvent
-IssueCommentEvent
-IssueCommentEvent
-PullRequestEvent
-PushEvent
-ForkEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-IssueCommentEvent
-ForkEvent
-IssuesEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-CreateEvent
-CreateEvent
-PushEvent
-PushEvent
-CreateEvent
-CreateEvent
-CreateEvent
-CreateEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-CreateEvent
-PushEvent
-PushEvent
-CreateEvent
+<pre>CreateEvent
 CreateEvent
 WatchEvent
 WatchEvent
@@ -13862,65 +13678,6 @@ PushEvent
 PushEvent
 PushEvent
 PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PullRequestEvent
-IssuesEvent
-CreateEvent
-ForkEvent
-PushEvent
-PushEvent
-PullRequestEvent
-PushEvent
-CreateEvent
-PushEvent
-ForkEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-CreateEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-WatchEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-ForkEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-PushEvent
-CreateEvent
-CreateEvent
 </pre>
 </div>
 </div>
@@ -13931,7 +13688,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">commit_events</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13951,13 +13708,13 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>177</pre>
+<pre>186</pre>
 </div>
 
 </div>
@@ -13978,7 +13735,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tgt_username</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span>
@@ -13996,7 +13753,7 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -14013,7 +13770,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_commits</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14038,7 +13795,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">user_commits</span><span class="p">)</span>
@@ -14054,13 +13811,13 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>174</pre>
+<pre>182</pre>
 </div>
 
 </div>
@@ -14079,7 +13836,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">commit_names</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14113,13 +13870,13 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(&#39;Callum Rollo&#39;, 225)]</pre>
+<pre>[(&#39;Callum Rollo&#39;, 232)]</pre>
 </div>
 
 </div>
@@ -14130,7 +13887,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;From {len(data)} events we have extracted {len(commit_names)} commits by </span><span class="si">{tgt_username}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -14150,7 +13907,7 @@ CreateEvent
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>From 259 events we have extracted 225 commits by Callum Rollo
+<pre>From 299 events we have extracted 232 commits by Callum Rollo
 </pre>
 </div>
 </div>
@@ -14169,7 +13926,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -14200,12 +13957,12 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14218,7 +13975,7 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -14260,107 +14017,52 @@ CreateEvent
   </thead>
   <tbody>
     <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
+      <th>2020-10-16 17:42:00+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422927661</td>
-      <td>Finalised scraper function</td>
-      <td>callumrollo/github-scraper</td>
-      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
+      <td>13873691257</td>
+      <td>Generate Pelican site</td>
+      <td>ueapy/ueapy.github.io</td>
+      <td>0b70258f3668dbd25fe8e9681b9324af62e3066f</td>
+      <td>https://api.github.com/repos/ueapy/ueapy.githu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
+      <th>2020-10-16 17:41:23+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422927661</td>
-      <td>detailed time breakdown histograms</td>
-      <td>callumrollo/github-scraper</td>
-      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
+      <td>13873684842</td>
+      <td>Added notebook on webscraping</td>
+      <td>ueapy/ueapy.github.io</td>
+      <td>3364fd1e786612c16b4e999cbb832e9584818804</td>
+      <td>https://api.github.com/repos/ueapy/ueapy.githu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 17:21:13+00:00</th>
+      <th>2020-10-16 16:47:44+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422558148</td>
+      <td>13873114207</td>
+      <td>added beam miss figure and subplot labelling</td>
+      <td>callumrollo/adcp-glider</td>
+      <td>ad7aeeac2527b92cb5a98aa8cfc134bf355571e6</td>
+      <td>https://api.github.com/repos/callumrollo/adcp-...</td>
+    </tr>
+    <tr>
+      <th>2020-10-16 16:43:06+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13873061051</td>
       <td>Generate Pelican site</td>
       <td>callumrollo/callumrollo.github.io</td>
-      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
+      <td>f5e76561f2e5886db6a413e079209d039f0bac74</td>
       <td>https://api.github.com/repos/callumrollo/callu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 17:20:55+00:00</th>
+      <th>2020-10-16 16:42:30+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422557015</td>
-      <td>updated categories</td>
+      <td>13873054646</td>
+      <td>added MATS poster</td>
       <td>callumrollo/callumrollo.github.io</td>
-      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-09-05 16:52:01+00:00</th>
-      <td>Callum Rollo</td>
-      <td>13422458592</td>
-      <td>Generate Pelican site</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>79a6e0329968330e91bd9d202fac5257ce5c9ab2</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 12:32:28+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12567167762</td>
-      <td>ENV East &gt;&gt; Aries</td>
-      <td>ueapy/pythoncourse2020</td>
-      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
-      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:52:40+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12566251693</td>
-      <td>typo</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:49:46+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12566225573</td>
-      <td>nice readme</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-07 18:09:06+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12559178906</td>
-      <td>fixed website url</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-07 18:06:28+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12559164400</td>
-      <td>Generate Pelican site</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>9786f1f7fd493e2951ecf8df11f31ac8430d0e7f</td>
+      <td>30a6802786ba5b479e9cf09594e51e3e5ebcef94</td>
       <td>https://api.github.com/repos/callumrollo/callu...</td>
     </tr>
   </tbody>
 </table>
-<p>248 rows × 6 columns</p>
 </div>
 </div>
 
@@ -14389,11 +14091,11 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sha&#39;</span><span class="p">])</span>
-<span class="n">df</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14406,7 +14108,7 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -14448,107 +14150,52 @@ CreateEvent
   </thead>
   <tbody>
     <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
+      <th>2020-10-16 17:42:00+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422927661</td>
-      <td>Finalised scraper function</td>
-      <td>callumrollo/github-scraper</td>
-      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
+      <td>13873691257</td>
+      <td>Generate Pelican site</td>
+      <td>ueapy/ueapy.github.io</td>
+      <td>0b70258f3668dbd25fe8e9681b9324af62e3066f</td>
+      <td>https://api.github.com/repos/ueapy/ueapy.githu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
+      <th>2020-10-16 17:41:23+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422927661</td>
-      <td>detailed time breakdown histograms</td>
-      <td>callumrollo/github-scraper</td>
-      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
+      <td>13873684842</td>
+      <td>Added notebook on webscraping</td>
+      <td>ueapy/ueapy.github.io</td>
+      <td>3364fd1e786612c16b4e999cbb832e9584818804</td>
+      <td>https://api.github.com/repos/ueapy/ueapy.githu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 17:21:13+00:00</th>
+      <th>2020-10-16 16:47:44+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422558148</td>
+      <td>13873114207</td>
+      <td>added beam miss figure and subplot labelling</td>
+      <td>callumrollo/adcp-glider</td>
+      <td>ad7aeeac2527b92cb5a98aa8cfc134bf355571e6</td>
+      <td>https://api.github.com/repos/callumrollo/adcp-...</td>
+    </tr>
+    <tr>
+      <th>2020-10-16 16:43:06+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13873061051</td>
       <td>Generate Pelican site</td>
       <td>callumrollo/callumrollo.github.io</td>
-      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
+      <td>f5e76561f2e5886db6a413e079209d039f0bac74</td>
       <td>https://api.github.com/repos/callumrollo/callu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 17:20:55+00:00</th>
+      <th>2020-10-16 16:42:30+00:00</th>
       <td>Callum Rollo</td>
-      <td>13422557015</td>
-      <td>updated categories</td>
+      <td>13873054646</td>
+      <td>added MATS poster</td>
       <td>callumrollo/callumrollo.github.io</td>
-      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-09-05 16:52:01+00:00</th>
-      <td>Callum Rollo</td>
-      <td>13422458592</td>
-      <td>Generate Pelican site</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>79a6e0329968330e91bd9d202fac5257ce5c9ab2</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 12:32:28+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12567167762</td>
-      <td>ENV East &gt;&gt; Aries</td>
-      <td>ueapy/pythoncourse2020</td>
-      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
-      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:52:40+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12566251693</td>
-      <td>typo</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:49:46+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12566225573</td>
-      <td>nice readme</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-07 18:09:06+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12559178906</td>
-      <td>fixed website url</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-07 18:06:28+00:00</th>
-      <td>Callum Rollo</td>
-      <td>12559164400</td>
-      <td>Generate Pelican site</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>9786f1f7fd493e2951ecf8df11f31ac8430d0e7f</td>
+      <td>30a6802786ba5b479e9cf09594e51e3e5ebcef94</td>
       <td>https://api.github.com/repos/callumrollo/callu...</td>
     </tr>
   </tbody>
 </table>
-<p>231 rows × 6 columns</p>
 </div>
 </div>
 
@@ -14569,7 +14216,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gh_scrape</span><span class="p">(</span><span class="n">tgt_users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials.json&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -14677,12 +14324,12 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;callumrollo&quot;</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">gh_scrape</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials-secret.json&#39;</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14699,7 +14346,7 @@ CreateEvent
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>callumrollo: found 300 events containing 214 unique commits by Callum Rollo
+<pre>callumrollo: found 299 events containing 182 unique commits by Callum Rollo
 
 </pre>
 </div>
@@ -14707,163 +14354,13 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>author</th>
-      <th>datetime</th>
-      <th>id</th>
-      <th>message</th>
-      <th>repo</th>
-      <th>sha</th>
-      <th>url</th>
-    </tr>
-    <tr>
-      <th>datetime</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-09-05T19:16:44Z</td>
-      <td>13422927661</td>
-      <td>Finalised scraper function</td>
-      <td>callumrollo/github-scraper</td>
-      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
-    </tr>
-    <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-09-05T19:16:44Z</td>
-      <td>13422927661</td>
-      <td>detailed time breakdown histograms</td>
-      <td>callumrollo/github-scraper</td>
-      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
-    </tr>
-    <tr>
-      <th>2020-09-05 17:21:13+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-09-05T17:21:13Z</td>
-      <td>13422558148</td>
-      <td>Generate Pelican site</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-09-05 17:20:55+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-09-05T17:20:55Z</td>
-      <td>13422557015</td>
-      <td>updated categories</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-09-05 16:52:01+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-09-05T16:52:01Z</td>
-      <td>13422458592</td>
-      <td>Generate Pelican site</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>79a6e0329968330e91bd9d202fac5257ce5c9ab2</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 12:32:28+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-08T12:32:28Z</td>
-      <td>12567167762</td>
-      <td>ENV East &gt;&gt; Aries</td>
-      <td>ueapy/pythoncourse2020</td>
-      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
-      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:52:40+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-08T10:52:40Z</td>
-      <td>12566251693</td>
-      <td>typo</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:49:46+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-08T10:49:46Z</td>
-      <td>12566225573</td>
-      <td>nice readme</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-07 18:09:06+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-07T18:09:06Z</td>
-      <td>12559178906</td>
-      <td>fixed website url</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-07 18:06:28+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-07T18:06:28Z</td>
-      <td>12559164400</td>
-      <td>Generate Pelican site</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>9786f1f7fd493e2951ecf8df11f31ac8430d0e7f</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-  </tbody>
-</table>
-<p>231 rows × 7 columns</p>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>210</pre>
 </div>
 
 </div>
@@ -14882,7 +14379,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ohw20_repo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;repo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;ohw20&quot;</span><span class="p">)</span>
@@ -14899,13 +14396,13 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>19</pre>
+<pre>23</pre>
 </div>
 
 </div>
@@ -14924,7 +14421,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
@@ -14939,35 +14436,34 @@ CreateEvent
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df_all</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 <div class="output_wrapper">
 <div class="output">
 
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-16-a22ca5ecef6f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     nest_list <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>csv<span class="ansi-blue-fg">.</span>reader<span class="ansi-blue-fg">(</span>f<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> ohw_participants_list <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>chain<span class="ansi-blue-fg">.</span>from_iterable<span class="ansi-blue-fg">(</span>nest_list<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>df_all <span class="ansi-blue-fg">=</span> gh_scrape<span class="ansi-blue-fg">(</span>ohw_participants_list<span class="ansi-blue-fg">,</span> cred_file<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;credentials-secret.json&#39;</span><span class="ansi-blue-fg">,</span> verbose<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> 
-<span class="ansi-green-intense-fg ansi-bold">      8</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;total commits: {len(df_all)}&#34;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-15-2769574246a7&gt;</span> in <span class="ansi-cyan-fg">gh_scrape</span><span class="ansi-blue-fg">(tgt_users, cred_file, verbose)</span>
-<span class="ansi-green-intense-fg ansi-bold">     84</span>                 commit_all_details <span class="ansi-blue-fg">=</span> requests<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>commit_detail<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;url&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>auth <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>username<span class="ansi-blue-fg">,</span>token<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>json<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     85</span>                 extensions <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#34;&#34;</span>
-<span class="ansi-green-fg">---&gt; 86</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">for</span> file <span class="ansi-green-fg">in</span> commit_all_details<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;files&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     87</span>                     extensions <span class="ansi-blue-fg">=</span> extensions <span class="ansi-blue-fg">+</span> file<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;filename&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;.&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">&#39;, &#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">     88</span>                 commit_subset = {&#34;id&#34;: commit[&#34;id&#34;],
 
-<span class="ansi-red-fg">KeyError</span>: &#39;files&#39;</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>1356</pre>
 </div>
+
 </div>
 
 </div>
@@ -14982,150 +14478,6 @@ CreateEvent
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_min</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[64]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>author</th>
-      <th>extensions</th>
-      <th>message</th>
-      <th>ohw20_repo</th>
-    </tr>
-    <tr>
-      <th>datetime</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2020-08-20 15:08:09+00:00</th>
-      <td>participant-21</td>
-      <td>md</td>
-      <td>Merge pull request #1 from cbirdferrer/patch-1...</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2020-08-17 16:24:17+00:00</th>
-      <td>participant-21</td>
-      <td>ipynb</td>
-      <td>deleting old presentation_figs file</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2020-08-14 20:00:38+00:00</th>
-      <td>participant-21</td>
-      <td>ipynb, ipynb</td>
-      <td>adding improvements to interpolate notebook to...</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2020-08-14 20:00:38+00:00</th>
-      <td>participant-21</td>
-      <td>ipynb</td>
-      <td>merging changes</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2020-08-14 20:00:38+00:00</th>
-      <td>participant-21</td>
-      <td>ipynb, ipynb, ipynb, ipynb, ipynb, ipynb, ipyn...</td>
-      <td>merging interpolate notebook</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2020-08-07 15:58:21+00:00</th>
-      <td>participant-33</td>
-      <td>md</td>
-      <td>change read.md</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2020-08-06 22:26:24+00:00</th>
-      <td>participant-33</td>
-      <td>md, md</td>
-      <td>change new2.md and create new.md</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2020-08-06 22:25:02+00:00</th>
-      <td>participant-33</td>
-      <td>md, md</td>
-      <td>changes in new.md and new2.md</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2020-08-06 22:20:59+00:00</th>
-      <td>participant-33</td>
-      <td>md, md, md</td>
-      <td>edit readme and new, create new2.md</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2020-08-06 22:13:07+00:00</th>
-      <td>participant-33</td>
-      <td>md, md</td>
-      <td>edit readme and add new.md</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-<p>1483 rows × 4 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15138,12 +14490,12 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;payload&#39;</span><span class="p">][</span><span class="s1">&#39;commits&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
 <span class="n">commit_detail</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">commit_detail</span>
+<span class="n">commit_detail</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15156,192 +14508,13 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[40]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;sha&#39;: &#39;9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
- &#39;node_id&#39;: &#39;MDY6Q29tbWl0MjcwMzg1NzgwOjk3ODZmMWY3ZmQ0OTNlMjk1MWVjZjhkZjExZjMxYWM4NDMwZDBlN2Y=&#39;,
- &#39;commit&#39;: {&#39;author&#39;: {&#39;name&#39;: &#39;Callum Rollo&#39;,
-   &#39;email&#39;: &#39;c.rollo@outlook.com&#39;,
-   &#39;date&#39;: &#39;2020-06-07T18:06:22Z&#39;},
-  &#39;committer&#39;: {&#39;name&#39;: &#39;Callum Rollo&#39;,
-   &#39;email&#39;: &#39;c.rollo@outlook.com&#39;,
-   &#39;date&#39;: &#39;2020-06-07T18:06:22Z&#39;},
-  &#39;message&#39;: &#39;Generate Pelican site&#39;,
-  &#39;tree&#39;: {&#39;sha&#39;: &#39;8dae3db710ba56571968e5362275537d7eb8d12b&#39;,
-   &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/git/trees/8dae3db710ba56571968e5362275537d7eb8d12b&#39;},
-  &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/git/commits/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;comment_count&#39;: 0,
-  &#39;verification&#39;: {&#39;verified&#39;: False,
-   &#39;reason&#39;: &#39;unsigned&#39;,
-   &#39;signature&#39;: None,
-   &#39;payload&#39;: None}},
- &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/commits/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
- &#39;html_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/commit/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
- &#39;comments_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/commits/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/comments&#39;,
- &#39;author&#39;: {&#39;login&#39;: &#39;callumrollo&#39;,
-  &#39;id&#39;: 28703282,
-  &#39;node_id&#39;: &#39;MDQ6VXNlcjI4NzAzMjgy&#39;,
-  &#39;avatar_url&#39;: &#39;https://avatars0.githubusercontent.com/u/28703282?v=4&#39;,
-  &#39;gravatar_id&#39;: &#39;&#39;,
-  &#39;url&#39;: &#39;https://api.github.com/users/callumrollo&#39;,
-  &#39;html_url&#39;: &#39;https://github.com/callumrollo&#39;,
-  &#39;followers_url&#39;: &#39;https://api.github.com/users/callumrollo/followers&#39;,
-  &#39;following_url&#39;: &#39;https://api.github.com/users/callumrollo/following{/other_user}&#39;,
-  &#39;gists_url&#39;: &#39;https://api.github.com/users/callumrollo/gists{/gist_id}&#39;,
-  &#39;starred_url&#39;: &#39;https://api.github.com/users/callumrollo/starred{/owner}{/repo}&#39;,
-  &#39;subscriptions_url&#39;: &#39;https://api.github.com/users/callumrollo/subscriptions&#39;,
-  &#39;organizations_url&#39;: &#39;https://api.github.com/users/callumrollo/orgs&#39;,
-  &#39;repos_url&#39;: &#39;https://api.github.com/users/callumrollo/repos&#39;,
-  &#39;events_url&#39;: &#39;https://api.github.com/users/callumrollo/events{/privacy}&#39;,
-  &#39;received_events_url&#39;: &#39;https://api.github.com/users/callumrollo/received_events&#39;,
-  &#39;type&#39;: &#39;User&#39;,
-  &#39;site_admin&#39;: False},
- &#39;committer&#39;: {&#39;login&#39;: &#39;callumrollo&#39;,
-  &#39;id&#39;: 28703282,
-  &#39;node_id&#39;: &#39;MDQ6VXNlcjI4NzAzMjgy&#39;,
-  &#39;avatar_url&#39;: &#39;https://avatars0.githubusercontent.com/u/28703282?v=4&#39;,
-  &#39;gravatar_id&#39;: &#39;&#39;,
-  &#39;url&#39;: &#39;https://api.github.com/users/callumrollo&#39;,
-  &#39;html_url&#39;: &#39;https://github.com/callumrollo&#39;,
-  &#39;followers_url&#39;: &#39;https://api.github.com/users/callumrollo/followers&#39;,
-  &#39;following_url&#39;: &#39;https://api.github.com/users/callumrollo/following{/other_user}&#39;,
-  &#39;gists_url&#39;: &#39;https://api.github.com/users/callumrollo/gists{/gist_id}&#39;,
-  &#39;starred_url&#39;: &#39;https://api.github.com/users/callumrollo/starred{/owner}{/repo}&#39;,
-  &#39;subscriptions_url&#39;: &#39;https://api.github.com/users/callumrollo/subscriptions&#39;,
-  &#39;organizations_url&#39;: &#39;https://api.github.com/users/callumrollo/orgs&#39;,
-  &#39;repos_url&#39;: &#39;https://api.github.com/users/callumrollo/repos&#39;,
-  &#39;events_url&#39;: &#39;https://api.github.com/users/callumrollo/events{/privacy}&#39;,
-  &#39;received_events_url&#39;: &#39;https://api.github.com/users/callumrollo/received_events&#39;,
-  &#39;type&#39;: &#39;User&#39;,
-  &#39;site_admin&#39;: False},
- &#39;parents&#39;: [{&#39;sha&#39;: &#39;554516a8947dfe31684d071c245d5d9ba4078bb3&#39;,
-   &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/commits/554516a8947dfe31684d071c245d5d9ba4078bb3&#39;,
-   &#39;html_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/commit/554516a8947dfe31684d071c245d5d9ba4078bb3&#39;}],
- &#39;stats&#39;: {&#39;total&#39;: 120, &#39;additions&#39;: 60, &#39;deletions&#39;: 60},
- &#39;files&#39;: [{&#39;sha&#39;: &#39;260cdc3ada7e1804883fd4dbc8ff833664bf8884&#39;,
-   &#39;filename&#39;: &#39;404.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/404.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;404&#34;&gt;404 page not found :(&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;c80ebfbf7b83b2b6fb66746255a5f09fb147570f&#39;,
-   &#39;filename&#39;: &#39;archives.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/archives.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Archives&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -133,7 +133,7 @@ &lt;h1 id=&#34;archives&#34;&gt;Archives&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;fd5d029057e3147148056e3335f595e3823747bd&#39;,
-   &#39;filename&#39;: &#39;author/callum-rollo.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/author/callum-rollo.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Posts by Callum Rollo:&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;cc2c3010a433f121366a285917b80b36693df4d5&#39;,
-   &#39;filename&#39;: &#39;authors.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/authors.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Authors&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;authors&#34;&gt;Authors&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;8c8f2b62ca432381a6c6b88b0783cc9da8b9b139&#39;,
-   &#39;filename&#39;: &#39;categories.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/categories.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Categories&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -130,7 +130,7 @@ &lt;h1 id=&#34;categories&#34;&gt;Categories&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;e63fd8d7d4ea7a6c558dad0252b5459f2b1a87f6&#39;,
-   &#39;filename&#39;: &#39;category/test.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/category/test.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Category Test&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;e3b7d620375b1fc8d0c8bfdad15d9816c6bd54ae&#39;,
-   &#39;filename&#39;: &#39;index.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/index.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;51deec3fbde33530e77616c782a13241e3e6311f&#39;,
-   &#39;filename&#39;: &#39;my-super-post.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/my-super-post.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -47,7 +47,7 @@\n &lt;meta property=&#34;article:section&#34; content=&#34;Test&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;pelican&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;publishing&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Testing one two&lt;/title&gt;\n \n@@ -56,7 +56,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -156,7 +156,7 @@ &lt;h1 id=&#34;my-super-post&#34;&gt;Testing one two&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;d6b9fd8e811bc054d2a3dc35b23c2cee76444251&#39;,
-   &#39;filename&#39;: &#39;pages/aboutme.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/pages/aboutme.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;aboutme&#34;&gt;About&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;48a33a9ea36acde473b0291ddf560cb9e766a607&#39;,
-   &#39;filename&#39;: &#39;tag/pelican.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/pelican.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag pelican&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;b72e5f0ccc430355596b997785cf1fb3c29c3cbc&#39;,
-   &#39;filename&#39;: &#39;tag/publishing.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/publishing.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag publishing&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
-  {&#39;sha&#39;: &#39;cb3f6fdb7244b836cae0b9ca51e9dadded1a4f70&#39;,
-   &#39;filename&#39;: &#39;tags.html&#39;,
-   &#39;status&#39;: &#39;modified&#39;,
-   &#39;additions&#39;: 5,
-   &#39;deletions&#39;: 5,
-   &#39;changes&#39;: 10,
-   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
-   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
-   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tags.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tags&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;tags&#34;&gt;Tags&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;}]}</pre>
+<pre>dict_keys([&#39;sha&#39;, &#39;node_id&#39;, &#39;commit&#39;, &#39;url&#39;, &#39;html_url&#39;, &#39;comments_url&#39;, &#39;author&#39;, &#39;committer&#39;, &#39;parents&#39;, &#39;stats&#39;, &#39;files&#39;])</pre>
 </div>
 
 </div>
@@ -15360,7 +14533,40 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;files&#39;</span> <span class="ow">in</span> <span class="n">commit_detail</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">commit_detail</span><span class="p">[</span><span class="s1">&#39;files&#39;</span><span class="p">]</span>
@@ -15376,132 +14582,42 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[50]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[{&#39;sha&#39;: &#39;260cdc3ada7e1804883fd4dbc8ff833664bf8884&#39;,
-  &#39;filename&#39;: &#39;404.html&#39;,
+<pre>[{&#39;sha&#39;: &#39;c90c6b45472c3d1a962024805ce9bacac967066c&#39;,
+  &#39;filename&#39;: &#39;dev-environment.yml&#39;,
+  &#39;status&#39;: &#39;added&#39;,
+  &#39;additions&#39;: 13,
+  &#39;deletions&#39;: 0,
+  &#39;changes&#39;: 13,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/geotiff-generator/blob/1b7056d0bd435af6ca6eec9414dd4dc3cd39d587/dev-environment.yml&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/geotiff-generator/raw/1b7056d0bd435af6ca6eec9414dd4dc3cd39d587/dev-environment.yml&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/geotiff-generator/contents/dev-environment.yml?ref=1b7056d0bd435af6ca6eec9414dd4dc3cd39d587&#39;,
+  &#39;patch&#39;: &#39;@@ -0,0 +1,13 @@\n+name: geotiff-test\n+channels:\n+   - conda-forge\n+dependencies:\n+   - python=3.7\n+   - numpy\n+   - pandas\n+   - xarray\n+   - netcdf4\n+   - gdal\n+   - jupyter\n+   - ipython\n+   - pytest&#39;},
+ {&#39;sha&#39;: &#39;8ddd4f0dc27b9251adaa755485f754ded4ddc3f3&#39;,
+  &#39;filename&#39;: &#39;geotiff_gen.py&#39;,
   &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/404.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;404&#34;&gt;404 page not found :(&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;c80ebfbf7b83b2b6fb66746255a5f09fb147570f&#39;,
-  &#39;filename&#39;: &#39;archives.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/archives.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Archives&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -133,7 +133,7 @@ &lt;h1 id=&#34;archives&#34;&gt;Archives&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;fd5d029057e3147148056e3335f595e3823747bd&#39;,
-  &#39;filename&#39;: &#39;author/callum-rollo.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/author/callum-rollo.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Posts by Callum Rollo:&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;cc2c3010a433f121366a285917b80b36693df4d5&#39;,
-  &#39;filename&#39;: &#39;authors.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/authors.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Authors&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;authors&#34;&gt;Authors&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;8c8f2b62ca432381a6c6b88b0783cc9da8b9b139&#39;,
-  &#39;filename&#39;: &#39;categories.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/categories.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Categories&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -130,7 +130,7 @@ &lt;h1 id=&#34;categories&#34;&gt;Categories&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;e63fd8d7d4ea7a6c558dad0252b5459f2b1a87f6&#39;,
-  &#39;filename&#39;: &#39;category/test.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/category/test.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Category Test&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;e3b7d620375b1fc8d0c8bfdad15d9816c6bd54ae&#39;,
-  &#39;filename&#39;: &#39;index.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/index.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;51deec3fbde33530e77616c782a13241e3e6311f&#39;,
-  &#39;filename&#39;: &#39;my-super-post.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/my-super-post.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -47,7 +47,7 @@\n &lt;meta property=&#34;article:section&#34; content=&#34;Test&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;pelican&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;publishing&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Testing one two&lt;/title&gt;\n \n@@ -56,7 +56,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -156,7 +156,7 @@ &lt;h1 id=&#34;my-super-post&#34;&gt;Testing one two&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;d6b9fd8e811bc054d2a3dc35b23c2cee76444251&#39;,
-  &#39;filename&#39;: &#39;pages/aboutme.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/pages/aboutme.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;aboutme&#34;&gt;About&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;48a33a9ea36acde473b0291ddf560cb9e766a607&#39;,
-  &#39;filename&#39;: &#39;tag/pelican.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/pelican.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag pelican&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;b72e5f0ccc430355596b997785cf1fb3c29c3cbc&#39;,
-  &#39;filename&#39;: &#39;tag/publishing.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/publishing.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag publishing&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
- {&#39;sha&#39;: &#39;cb3f6fdb7244b836cae0b9ca51e9dadded1a4f70&#39;,
-  &#39;filename&#39;: &#39;tags.html&#39;,
-  &#39;status&#39;: &#39;modified&#39;,
-  &#39;additions&#39;: 5,
-  &#39;deletions&#39;: 5,
-  &#39;changes&#39;: 10,
-  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
-  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
-  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tags.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
-  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tags&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;tags&#34;&gt;Tags&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;}]</pre>
+  &#39;additions&#39;: 0,
+  &#39;deletions&#39;: 1,
+  &#39;changes&#39;: 1,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/geotiff-generator/blob/1b7056d0bd435af6ca6eec9414dd4dc3cd39d587/geotiff_gen.py&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/geotiff-generator/raw/1b7056d0bd435af6ca6eec9414dd4dc3cd39d587/geotiff_gen.py&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/geotiff-generator/contents/geotiff_gen.py?ref=1b7056d0bd435af6ca6eec9414dd4dc3cd39d587&#39;,
+  &#39;patch&#39;: &#39;@@ -13,7 +13,6 @@\n import xarray as xr\n from netCDF4 import Dataset\n import copy\n-import glob\n from pathlib import Path\n from osgeo import gdal, osr\n &#39;},
+ {&#39;sha&#39;: &#39;1d901078bfb7d640216b52bc1c76b44bf86718a0&#39;,
+  &#39;filename&#39;: &#39;test_geotiff.py&#39;,
+  &#39;status&#39;: &#39;added&#39;,
+  &#39;additions&#39;: 1,
+  &#39;deletions&#39;: 0,
+  &#39;changes&#39;: 1,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/geotiff-generator/blob/1b7056d0bd435af6ca6eec9414dd4dc3cd39d587/test_geotiff.py&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/geotiff-generator/raw/1b7056d0bd435af6ca6eec9414dd4dc3cd39d587/test_geotiff.py&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/geotiff-generator/contents/test_geotiff.py?ref=1b7056d0bd435af6ca6eec9414dd4dc3cd39d587&#39;,
+  &#39;patch&#39;: &#39;@@ -0,0 +1 @@\n+from geotiff_gen import\n\\ No newline at end of file&#39;}]</pre>
 </div>
 
 </div>
@@ -15521,7 +14637,7 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gh_scrape</span><span class="p">(</span><span class="n">tgt_users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials.json&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -15541,6 +14657,7 @@ CreateEvent
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     
     <span class="k">for</span> <span class="n">tgt_user</span> <span class="ow">in</span> <span class="n">tgt_users</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tgt_user</span><span class="p">)</span>
         <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">tgt_user</span> <span class="o">+</span><span class="s1">&#39;/events&#39;</span>
         <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span>
         <span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">base_url</span><span class="p">]</span>
@@ -15609,6 +14726,8 @@ CreateEvent
                 <span class="n">commit_detail</span> <span class="o">=</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">][</span><span class="n">com_n</span><span class="p">]</span>
                 <span class="n">commit_all_details</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
                 <span class="n">extensions</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="k">if</span> <span class="s1">&#39;files&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">commit_all_details</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="k">continue</span>
                 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">commit_all_details</span><span class="p">[</span><span class="s1">&#39;files&#39;</span><span class="p">]:</span>
                     <span class="n">extensions</span> <span class="o">=</span> <span class="n">extensions</span> <span class="o">+</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span>
                 <span class="n">commit_subset</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
@@ -15634,12 +14753,12 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;callumrollo&quot;</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">gh_scrape</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials-secret.json&#39;</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15656,7 +14775,7 @@ CreateEvent
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>callumrollo: found 300 events containing 214 unique commits by Callum Rollo
+<pre>callumrollo: found 299 events containing 182 unique commits by Callum Rollo
 
 </pre>
 </div>
@@ -15664,7 +14783,7 @@ CreateEvent
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[58]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -15710,129 +14829,62 @@ CreateEvent
   </thead>
   <tbody>
     <tr>
-      <th>2020-09-06 16:03:54+00:00</th>
+      <th>2020-10-16 17:42:00+00:00</th>
       <td>Callum Rollo</td>
-      <td>2020-09-06T16:03:54Z</td>
-      <td>md</td>
-      <td>13426925231</td>
-      <td>Added binder link and to-do list</td>
-      <td>callumrollo/github-scraper</td>
-      <td>ed9da46ca18bfe46c77d70647aa08d6a3827db3b</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
+      <td>2020-10-16T17:42:00Z</td>
+      <td>html, html, html, html, html, html, html, html...</td>
+      <td>13873691257</td>
+      <td>Generate Pelican site</td>
+      <td>ueapy/ueapy.github.io</td>
+      <td>0b70258f3668dbd25fe8e9681b9324af62e3066f</td>
+      <td>https://api.github.com/repos/ueapy/ueapy.githu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
+      <th>2020-10-16 17:41:23+00:00</th>
       <td>Callum Rollo</td>
-      <td>2020-09-05T19:16:44Z</td>
-      <td>ipynb, csv</td>
-      <td>13422927661</td>
-      <td>Finalised scraper function</td>
-      <td>callumrollo/github-scraper</td>
-      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
+      <td>2020-10-16T17:41:23Z</td>
+      <td>md, png, ipynb</td>
+      <td>13873684842</td>
+      <td>Added notebook on webscraping</td>
+      <td>ueapy/ueapy.github.io</td>
+      <td>3364fd1e786612c16b4e999cbb832e9584818804</td>
+      <td>https://api.github.com/repos/ueapy/ueapy.githu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 19:16:44+00:00</th>
+      <th>2020-10-16 16:47:44+00:00</th>
       <td>Callum Rollo</td>
-      <td>2020-09-05T19:16:44Z</td>
-      <td>ipynb, ipynb</td>
-      <td>13422927661</td>
-      <td>detailed time breakdown histograms</td>
-      <td>callumrollo/github-scraper</td>
-      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
-      <td>https://api.github.com/repos/callumrollo/githu...</td>
+      <td>2020-10-16T16:47:44Z</td>
+      <td>ipynb, png, png</td>
+      <td>13873114207</td>
+      <td>added beam miss figure and subplot labelling</td>
+      <td>callumrollo/adcp-glider</td>
+      <td>ad7aeeac2527b92cb5a98aa8cfc134bf355571e6</td>
+      <td>https://api.github.com/repos/callumrollo/adcp-...</td>
     </tr>
     <tr>
-      <th>2020-09-05 17:21:13+00:00</th>
+      <th>2020-10-16 16:43:06+00:00</th>
       <td>Callum Rollo</td>
-      <td>2020-09-05T17:21:13Z</td>
-      <td>html, html, html, html, xml, xml, xml, xml, ht...</td>
-      <td>13422558148</td>
+      <td>2020-10-16T16:43:06Z</td>
+      <td>pdf, html</td>
+      <td>13873061051</td>
       <td>Generate Pelican site</td>
       <td>callumrollo/callumrollo.github.io</td>
-      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
+      <td>f5e76561f2e5886db6a413e079209d039f0bac74</td>
       <td>https://api.github.com/repos/callumrollo/callu...</td>
     </tr>
     <tr>
-      <th>2020-09-05 17:20:55+00:00</th>
+      <th>2020-10-16 16:42:30+00:00</th>
       <td>Callum Rollo</td>
-      <td>2020-09-05T17:20:55Z</td>
-      <td>md, md</td>
-      <td>13422557015</td>
-      <td>updated categories</td>
+      <td>2020-10-16T16:42:30Z</td>
+      <td>pdf, md</td>
+      <td>13873054646</td>
+      <td>added MATS poster</td>
       <td>callumrollo/callumrollo.github.io</td>
-      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 12:32:52+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-08T12:32:52Z</td>
-      <td>png, aux, log, out, pdf, gz, tex, pdf, html, j...</td>
-      <td>12567171570</td>
-      <td>Deployed 63f61e7 with MkDocs version: 1.1.2</td>
-      <td>ueapy/pythoncourse2020</td>
-      <td>21602fb12ce2483e8e6faf3af926345a6359d754</td>
-      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 12:32:28+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-08T12:32:28Z</td>
-      <td>png, pdf, tex, md</td>
-      <td>12567167762</td>
-      <td>ENV East &gt;&gt; Aries</td>
-      <td>ueapy/pythoncourse2020</td>
-      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
-      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:52:40+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-08T10:52:40Z</td>
-      <td>md</td>
-      <td>12566251693</td>
-      <td>typo</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-08 10:49:46+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-08T10:49:46Z</td>
-      <td>md, txt</td>
-      <td>12566225573</td>
-      <td>nice readme</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
-      <td>https://api.github.com/repos/callumrollo/callu...</td>
-    </tr>
-    <tr>
-      <th>2020-06-07 18:09:06+00:00</th>
-      <td>Callum Rollo</td>
-      <td>2020-06-07T18:09:06Z</td>
-      <td>txt, py</td>
-      <td>12559178906</td>
-      <td>fixed website url</td>
-      <td>callumrollo/callumrollo.github.io</td>
-      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
+      <td>30a6802786ba5b479e9cf09594e51e3e5ebcef94</td>
       <td>https://api.github.com/repos/callumrollo/callu...</td>
     </tr>
   </tbody>
 </table>
-<p>231 rows × 8 columns</p>
 </div>
 </div>
 
@@ -15868,36 +14920,13 @@ CreateEvent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-
-    <small>
-    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
-    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2020-09-10-github-scrape.ipynb">nbviewer</a>.</p>
-    
-</div>
-
-</div>
-
 </div>
 </div>
 
