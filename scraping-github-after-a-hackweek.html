@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Questions and answers - Python Group UEA</title>
+    <title>Scraping GitHub after a hackweek - Python Group UEA</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13103,16 +13103,24 @@ jQuery(document).ready(function($) {
 
 
 
+<link rel="canonical" href="https://ueapy.github.io/scraping-github-after-a-hackweek.html">
 
-    <meta name="author" content="Python Group" />
-    <meta name="keywords" content="Questions and answers" />
+        <meta name="author" content="Callum Rollo" />
+        <meta name="keywords" content="requests,github,webscrape,pandas" />
+        <meta name="description" content="A meta-hackweek hack¶I put this notebook together after attending the excellent Oceean Hack Week 2020 (OHW) event. You can read my blog post about it here. A key part of the event was creating collaborative projects on GitHub. I wanted to see if attending the hackweek changed participants pattern …" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="Python Group UEA" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Python Group UEA"/>
-        <meta property="og:url" content="https://ueapy.github.io"/>
-        <meta property="og:description" content="Python Group UEA"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Scraping GitHub after a hackweek"/>
+        <meta property="og:url" content="https://ueapy.github.io/scraping-github-after-a-hackweek.html"/>
+        <meta property="og:description" content="A meta-hackweek hack¶I put this notebook together after attending the excellent Oceean Hack Week 2020 (OHW) event. You can read my blog post about it here. A key part of the event was creating collaborative projects on GitHub. I wanted to see if attending the hackweek changed participants pattern …"/>
+        <meta property="article:published_time" content="2020-09-10" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="requests" />
+            <meta property="article:tag" content="github" />
+            <meta property="article:tag" content="webscrape" />
+            <meta property="article:tag" content="pandas" />
+            <meta property="article:author" content="Callum Rollo" />
 
 
     <!-- Bootstrap -->
@@ -13163,19 +13171,48 @@ Python Group UEA            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://ueapy.github.io/questions-and-answers.html">Questions and answers</a></h2>
-                <div class="summary"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://ueapy.github.io/scraping-github-after-a-hackweek.html"
+                       rel="bookmark"
+                       title="Permalink to Scraping GitHub after a hackweek">
+                        Scraping GitHub after a hackweek
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-09-10T17:38:00+01:00"> Thu 10 September 2020</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://ueapy.github.io/author/callum-rollo.html"><i class="fa fa-user"></i> Callum Rollo</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://ueapy.github.io/tag/requests.html">requests</a>
+        /
+	<a href="https://ueapy.github.io/tag/github.html">github</a>
+        /
+	<a href="https://ueapy.github.io/tag/webscrape.html">webscrape</a>
+        /
+	<a href="https://ueapy.github.io/tag/pandas.html">pandas</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="List-comprehensions">List comprehensions<a class="anchor-link" href="#List-comprehensions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Q: Why doesn't the list comprehension syntax make any sense to me / how can list comprehension be "more readable" than not using a list comprehension.</em></p>
+<h3 id="A-meta-hackweek-hack">A meta-hackweek hack<a class="anchor-link" href="#A-meta-hackweek-hack">&#182;</a></h3><p>I put this notebook together after attending the excellent <a href="https://oceanhackweek.github.io/">Oceean Hack Week 2020</a> (OHW) event. You can read my blog post about it <a href="https://callumrollo.github.io/hackweek.html#hackweek">here</a>. A key part of the event was creating collaborative projects on GitHub. I wanted to see if attending the hackweek changed participants pattern of activity on GitHub. I though the simplest way would be to get info on all the commits by OHW participants to OHW projects.</p>
+<p>It goes without saying that <strong>commits =/= work done on a project</strong>. I freely admit that many of my commits are nonsense! This is just a fun side project for me to explore the github API and try some simple analysis methods.</p>
 
 </div>
 </div>
@@ -13183,12 +13220,2730 @@ Python Group UEA            </a>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>List comprehensions are simply a way to compress a list-building for-loop into a single short, readable line.</p>
-<p>For example, here is a loop …</p></div></div></div>
-                    <a class="btn btn-default btn-xs" href="https://ueapy.github.io/questions-and-answers.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+<p>First off, to access the <a href="https://docs.github.com/">Github API</a> you'll need to edit the credentials file <code>credentials.json</code> to supply your username and a <a href="https://github.blog/2013-05-16-personal-api-tokens/">Github access token</a>.</p>
+
+<pre><code>{
+    "username": "&lt;your-username&gt;",
+    "token": "&lt;your-access-token&gt;"
+}</code></pre>
+<p>Once you have supplied these creds, you are still limited to <a href="https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting">5000 requests per hour</a> so, if you get bounced by the API, leave it some time to cool off. Without credentials the limit is far lower and you will would soon generate an error message like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../figures/rate-limit-anon.png" alt="rate limit reached"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Obviously I have not provided my own credentials! I'm not sure what action github would take if a DDOS on their API originated from my account, but I'm not willing to find out.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let's-get-scraping!">Let's get scraping!<a class="anchor-link" href="#Let's-get-scraping!">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credentials</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;credentials-secret.json&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span> <span class="c1">#don&#39;t forget to add your creds here!</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For a start, let's use the API to get some details on my account</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">user_data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;login&#39;: &#39;callumrollo&#39;,
+ &#39;id&#39;: 28703282,
+ &#39;node_id&#39;: &#39;MDQ6VXNlcjI4NzAzMjgy&#39;,
+ &#39;avatar_url&#39;: &#39;https://avatars0.githubusercontent.com/u/28703282?v=4&#39;,
+ &#39;gravatar_id&#39;: &#39;&#39;,
+ &#39;url&#39;: &#39;https://api.github.com/users/callumrollo&#39;,
+ &#39;html_url&#39;: &#39;https://github.com/callumrollo&#39;,
+ &#39;followers_url&#39;: &#39;https://api.github.com/users/callumrollo/followers&#39;,
+ &#39;following_url&#39;: &#39;https://api.github.com/users/callumrollo/following{/other_user}&#39;,
+ &#39;gists_url&#39;: &#39;https://api.github.com/users/callumrollo/gists{/gist_id}&#39;,
+ &#39;starred_url&#39;: &#39;https://api.github.com/users/callumrollo/starred{/owner}{/repo}&#39;,
+ &#39;subscriptions_url&#39;: &#39;https://api.github.com/users/callumrollo/subscriptions&#39;,
+ &#39;organizations_url&#39;: &#39;https://api.github.com/users/callumrollo/orgs&#39;,
+ &#39;repos_url&#39;: &#39;https://api.github.com/users/callumrollo/repos&#39;,
+ &#39;events_url&#39;: &#39;https://api.github.com/users/callumrollo/events{/privacy}&#39;,
+ &#39;received_events_url&#39;: &#39;https://api.github.com/users/callumrollo/received_events&#39;,
+ &#39;type&#39;: &#39;User&#39;,
+ &#39;site_admin&#39;: False,
+ &#39;name&#39;: &#39;Callum Rollo&#39;,
+ &#39;company&#39;: None,
+ &#39;blog&#39;: &#39;https://callumrollo.github.io/&#39;,
+ &#39;location&#39;: None,
+ &#39;email&#39;: None,
+ &#39;hireable&#39;: None,
+ &#39;bio&#39;: &#39;Oceanographer, Pythonista and vim user. Regularly breaks things on Fridays&#39;,
+ &#39;twitter_username&#39;: &#39;callum_rollo&#39;,
+ &#39;public_repos&#39;: 30,
+ &#39;public_gists&#39;: 0,
+ &#39;followers&#39;: 15,
+ &#39;following&#39;: 2,
+ &#39;created_at&#39;: &#39;2017-05-15T09:23:12Z&#39;,
+ &#39;updated_at&#39;: &#39;2020-09-23T16:07:33Z&#39;,
+ &#39;private_gists&#39;: 0,
+ &#39;total_private_repos&#39;: 7,
+ &#39;owned_private_repos&#39;: 7,
+ &#39;disk_usage&#39;: 438296,
+ &#39;collaborators&#39;: 0,
+ &#39;two_factor_authentication&#39;: True,
+ &#39;plan&#39;: {&#39;name&#39;: &#39;pro&#39;,
+  &#39;space&#39;: 976562499,
+  &#39;collaborators&#39;: 0,
+  &#39;private_repos&#39;: 9999}}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This returns a lot of info. Now, I'll try the account of one of my collaborators <code>ocefpaf</code>. You can specify any user, though the information returned is less than when you look at your own account.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ocefpaf&#39;</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;login&#39;: &#39;ocefpaf&#39;,
+ &#39;id&#39;: 950575,
+ &#39;node_id&#39;: &#39;MDQ6VXNlcjk1MDU3NQ==&#39;,
+ &#39;avatar_url&#39;: &#39;https://avatars1.githubusercontent.com/u/950575?v=4&#39;,
+ &#39;gravatar_id&#39;: &#39;&#39;,
+ &#39;url&#39;: &#39;https://api.github.com/users/ocefpaf&#39;,
+ &#39;html_url&#39;: &#39;https://github.com/ocefpaf&#39;,
+ &#39;followers_url&#39;: &#39;https://api.github.com/users/ocefpaf/followers&#39;,
+ &#39;following_url&#39;: &#39;https://api.github.com/users/ocefpaf/following{/other_user}&#39;,
+ &#39;gists_url&#39;: &#39;https://api.github.com/users/ocefpaf/gists{/gist_id}&#39;,
+ &#39;starred_url&#39;: &#39;https://api.github.com/users/ocefpaf/starred{/owner}{/repo}&#39;,
+ &#39;subscriptions_url&#39;: &#39;https://api.github.com/users/ocefpaf/subscriptions&#39;,
+ &#39;organizations_url&#39;: &#39;https://api.github.com/users/ocefpaf/orgs&#39;,
+ &#39;repos_url&#39;: &#39;https://api.github.com/users/ocefpaf/repos&#39;,
+ &#39;events_url&#39;: &#39;https://api.github.com/users/ocefpaf/events{/privacy}&#39;,
+ &#39;received_events_url&#39;: &#39;https://api.github.com/users/ocefpaf/received_events&#39;,
+ &#39;type&#39;: &#39;User&#39;,
+ &#39;site_admin&#39;: False,
+ &#39;name&#39;: &#39;Filipe&#39;,
+ &#39;company&#39;: None,
+ &#39;blog&#39;: &#39;http://ocefpaf.github.io/python4oceanographers&#39;,
+ &#39;location&#39;: &#39;Florianópolis, SC&#39;,
+ &#39;email&#39;: &#39;ocefpaf@gmail.com&#39;,
+ &#39;hireable&#39;: True,
+ &#39;bio&#39;: &#39;Physical oceanographer turned research software engineer, and software packaging hobbyist.&#39;,
+ &#39;twitter_username&#39;: &#39;ocefpaf&#39;,
+ &#39;public_repos&#39;: 1181,
+ &#39;public_gists&#39;: 132,
+ &#39;followers&#39;: 388,
+ &#39;following&#39;: 4,
+ &#39;created_at&#39;: &#39;2011-07-31T23:10:26Z&#39;,
+ &#39;updated_at&#39;: &#39;2020-09-21T19:09:08Z&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see a user's core stats. How about their commits and other actions taken? Simply append <code>/events</code> to the request query</p>
+<h3 id="Events">Events<a class="anchor-link" href="#Events">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="s1">&#39;callumrollo&#39;</span> <span class="o">+</span><span class="s1">&#39;/events&#39;</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;id&#39;: &#39;13616867582&#39;,
+ &#39;type&#39;: &#39;PushEvent&#39;,
+ &#39;actor&#39;: {&#39;id&#39;: 28703282,
+  &#39;login&#39;: &#39;callumrollo&#39;,
+  &#39;display_login&#39;: &#39;callumrollo&#39;,
+  &#39;gravatar_id&#39;: &#39;&#39;,
+  &#39;url&#39;: &#39;https://api.github.com/users/callumrollo&#39;,
+  &#39;avatar_url&#39;: &#39;https://avatars.githubusercontent.com/u/28703282?&#39;},
+ &#39;repo&#39;: {&#39;id&#39;: 298024499,
+  &#39;name&#39;: &#39;callumrollo/adcp-glider-guide&#39;,
+  &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/adcp-glider-guide&#39;},
+ &#39;payload&#39;: {&#39;push_id&#39;: 5738901395,
+  &#39;size&#39;: 1,
+  &#39;distinct_size&#39;: 1,
+  &#39;ref&#39;: &#39;refs/heads/main&#39;,
+  &#39;head&#39;: &#39;06de9d302a0de253babf425ca48c0dc1d4648e35&#39;,
+  &#39;before&#39;: &#39;07d98d0de85a094da6455574371c700bf8df28db&#39;,
+  &#39;commits&#39;: [{&#39;sha&#39;: &#39;06de9d302a0de253babf425ca48c0dc1d4648e35&#39;,
+    &#39;author&#39;: {&#39;email&#39;: &#39;c.rollo@outlook.com&#39;, &#39;name&#39;: &#39;Callum Rollo&#39;},
+    &#39;message&#39;: &#39;point to pdf for reading&#39;,
+    &#39;distinct&#39;: True,
+    &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/adcp-glider-guide/commits/06de9d302a0de253babf425ca48c0dc1d4648e35&#39;}]},
+ &#39;public&#39;: True,
+ &#39;created_at&#39;: &#39;2020-09-23T16:11:06Z&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the Github API lists only the 30 most recent events</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>30</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To get at more events, we use a short loop to access subsequent pages of results. I found out the hard way that the API restricts you to 10 pages.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tgt_user</span> <span class="o">=</span> <span class="s1">&#39;callumrollo&#39;</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">tgt_user</span> <span class="o">+</span><span class="s1">&#39;/events&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span>
+<span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">base_url</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">page_no</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">repos_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">total_fetched</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="n">response</span>
+    <span class="n">events_fetched</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">total_fetched</span> <span class="o">=</span> <span class="n">events_fetched</span> <span class="o">+</span> <span class="n">total_fetched</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Page: </span><span class="si">{page_no}</span><span class="s2"> total events fetched: </span><span class="si">{total_fetched}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">total_fetched</span> <span class="o">==</span> <span class="mi">300</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">API maxed out! https://docs.github.com/v3/#pagination</span><span class="se">\n\</span>
+<span class="s2">        returning only most recent 300 events by </span><span class="si">{tgt_user}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">events span the range </span><span class="se">\n</span><span class="si">{data[-1][&#39;created_at&#39;]}</span><span class="se">\n</span><span class="si">{data[0][&#39;created_at&#39;]}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">events_fetched</span> <span class="o">==</span> <span class="mi">30</span><span class="p">):</span>
+        <span class="n">page_no</span> <span class="o">=</span> <span class="n">page_no</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s1">&#39;?page=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page_no</span><span class="p">)</span>
+        <span class="n">url_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{tgt_user}</span><span class="s2">: all your events are belong to us now&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">events span the range </span><span class="se">\n</span><span class="si">{data[-1][&#39;created_at&#39;]}</span><span class="se">\n</span><span class="si">{data[0][&#39;created_at&#39;]}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Page: 1 total events fetched: 30
+Page: 2 total events fetched: 60
+Page: 3 total events fetched: 90
+Page: 4 total events fetched: 120
+Page: 5 total events fetched: 150
+Page: 6 total events fetched: 180
+Page: 7 total events fetched: 210
+Page: 8 total events fetched: 240
+Page: 9 total events fetched: 259
+
+callumrollo: all your events are belong to us now
+
+events span the range 
+2020-06-23T16:12:03Z
+2020-09-23T16:11:06Z
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This system logs all events: commits, issues, PRs, forks, stars etc. We are only interested in commits.</p>
+<p>These are referred to as <code>PushEvent</code> in the json entry <code>type</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>PushEvent
+CreateEvent
+CreateEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+CreateEvent
+ForkEvent
+WatchEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+CreateEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+CreateEvent
+CreateEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+WatchEvent
+CreateEvent
+CreateEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+IssuesEvent
+WatchEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+PullRequestEvent
+PushEvent
+PullRequestEvent
+PushEvent
+PullRequestEvent
+PushEvent
+PushEvent
+PullRequestEvent
+PullRequestEvent
+PushEvent
+PullRequestEvent
+CreateEvent
+PushEvent
+PullRequestEvent
+CreateEvent
+PushEvent
+IssuesEvent
+IssuesEvent
+PushEvent
+PushEvent
+PullRequestEvent
+PullRequestEvent
+CreateEvent
+PushEvent
+CreateEvent
+PushEvent
+IssueCommentEvent
+IssueCommentEvent
+IssuesEvent
+IssueCommentEvent
+PushEvent
+PullRequestEvent
+IssueCommentEvent
+CreateEvent
+IssuesEvent
+IssueCommentEvent
+IssueCommentEvent
+PushEvent
+PushEvent
+PullRequestEvent
+PushEvent
+IssueCommentEvent
+PushEvent
+IssueCommentEvent
+IssueCommentEvent
+PushEvent
+IssueCommentEvent
+IssueCommentEvent
+IssueCommentEvent
+PullRequestEvent
+PushEvent
+ForkEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+IssueCommentEvent
+ForkEvent
+IssuesEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+CreateEvent
+CreateEvent
+PushEvent
+PushEvent
+CreateEvent
+CreateEvent
+CreateEvent
+CreateEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+CreateEvent
+PushEvent
+PushEvent
+CreateEvent
+CreateEvent
+WatchEvent
+WatchEvent
+WatchEvent
+CreateEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PullRequestEvent
+IssuesEvent
+CreateEvent
+ForkEvent
+PushEvent
+PushEvent
+PullRequestEvent
+PushEvent
+CreateEvent
+PushEvent
+ForkEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+CreateEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+WatchEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+ForkEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+PushEvent
+CreateEvent
+CreateEvent
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">commit_events</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PushEvent&quot;</span><span class="p">:</span>
+        <span class="n">commit_events</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">commit_events</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>177</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are some complications. Not all of these commits in these events are by the Github user we are querying. For instance, some are commits by other users that our target user has merged in.</p>
+<p>To work around this, we look through the payoad of each <code>PushEvent</code> and retain only the commits associated with the user we are interested in.</p>
+<p><strong>n.b</strong> this approach wil only work if the github username is the exact match for the name the author uses for their git commits. We apply a workaround for when this is not the case later</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tgt_username</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span>
+                            <span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<span class="n">tgt_username</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Callum Rollo&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_commits</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">commit_events</span><span class="p">:</span>
+    <span class="n">commit_list</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span>
+    <span class="n">commit_list_author</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)):</span>
+            <span class="n">commit_username</span> <span class="o">=</span> <span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+            <span class="c1">#print(commit_username)</span>
+            <span class="k">if</span> <span class="n">commit_username</span> <span class="o">==</span> <span class="n">tgt_username</span><span class="p">:</span>
+                <span class="n">commit_list_author</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">commit_list_author</span><span class="p">:</span>
+            <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">commit_list_author</span>
+            <span class="n">user_commits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">user_commits</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>174</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can print out the name associated with the commits we have selected to confirm</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">commit_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">user_commits</span><span class="p">:</span>
+    <span class="n">commit_list</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)):</span>
+            <span class="n">commit_username</span> <span class="o">=</span> <span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+            <span class="n">commit_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_username</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;git usernames and number of commits:&quot;</span><span class="p">)</span>
+<span class="n">Counter</span><span class="p">(</span><span class="n">commit_names</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git usernames and number of commits:
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&#39;Callum Rollo&#39;, 225)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;From {len(data)} events we have extracted {len(commit_names)} commits by </span><span class="si">{tgt_username}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>From 259 events we have extracted 225 commits by Callum Rollo
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The final step of this (almost certainly imperfect) data cleaning is to get info on all the commits by this user. We will pull the author, message, SHA, url, repo and date into a pandas dataframe.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">user_commits</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]:</span>
+        <span class="n">commit_subset</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+                     <span class="s2">&quot;datetime&quot;</span> <span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;created_at&quot;</span><span class="p">],</span>
+                     <span class="s2">&quot;sha&quot;</span> <span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;sha&quot;</span><span class="p">],</span>
+                     <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">],</span>
+                     <span class="s2">&quot;author&quot;</span> <span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                     <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
+                     <span class="s2">&quot;repo&quot;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;repo&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]}</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_subset</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We index by datetime and have a look at our dataframe</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author</th>
+      <th>id</th>
+      <th>message</th>
+      <th>repo</th>
+      <th>sha</th>
+      <th>url</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422927661</td>
+      <td>Finalised scraper function</td>
+      <td>callumrollo/github-scraper</td>
+      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422927661</td>
+      <td>detailed time breakdown histograms</td>
+      <td>callumrollo/github-scraper</td>
+      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:21:13+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422558148</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:20:55+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422557015</td>
+      <td>updated categories</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 16:52:01+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422458592</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>79a6e0329968330e91bd9d202fac5257ce5c9ab2</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 12:32:28+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12567167762</td>
+      <td>ENV East &gt;&gt; Aries</td>
+      <td>ueapy/pythoncourse2020</td>
+      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
+      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:52:40+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12566251693</td>
+      <td>typo</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:49:46+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12566225573</td>
+      <td>nice readme</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-07 18:09:06+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12559178906</td>
+      <td>fixed website url</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-07 18:06:28+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12559164400</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>9786f1f7fd493e2951ecf8df11f31ac8430d0e7f</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+  </tbody>
+</table>
+<p>248 rows × 6 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see an uncharacteristically helpful set of commit messages, and the meta event of a commit I made to this very notebook</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we remove any repeated commits that may have snuck in by a deduplicating on the SHA checksum</p>
+<p><strong>side note</strong> the SHA chescksum uniquely identifies each commit. Even if you had commits by the same author to the same repo with the same message ("added stuff" or something similarly helpful) the SHA will differentiate the two. See more <a href="https://www.lifewire.com/what-is-sha-1-2626011">here</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sha&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author</th>
+      <th>id</th>
+      <th>message</th>
+      <th>repo</th>
+      <th>sha</th>
+      <th>url</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422927661</td>
+      <td>Finalised scraper function</td>
+      <td>callumrollo/github-scraper</td>
+      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422927661</td>
+      <td>detailed time breakdown histograms</td>
+      <td>callumrollo/github-scraper</td>
+      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:21:13+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422558148</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:20:55+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422557015</td>
+      <td>updated categories</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 16:52:01+00:00</th>
+      <td>Callum Rollo</td>
+      <td>13422458592</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>79a6e0329968330e91bd9d202fac5257ce5c9ab2</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 12:32:28+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12567167762</td>
+      <td>ENV East &gt;&gt; Aries</td>
+      <td>ueapy/pythoncourse2020</td>
+      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
+      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:52:40+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12566251693</td>
+      <td>typo</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:49:46+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12566225573</td>
+      <td>nice readme</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-07 18:09:06+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12559178906</td>
+      <td>fixed website url</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-07 18:06:28+00:00</th>
+      <td>Callum Rollo</td>
+      <td>12559164400</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>9786f1f7fd493e2951ecf8df11f31ac8430d0e7f</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 6 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h3 id="Scaling-it-up:-work-from-a-list-of-Github-usernames">Scaling it up: work from a list of Github usernames<a class="anchor-link" href="#Scaling-it-up:-work-from-a-list-of-Github-usernames">&#182;</a></h3><p>Now that we have a method for finding commits by a user, the next step is to loop through a list of users. As a test case, I have analysed the commits from <a href="https://oceanhackweek.github.io/">Oceanhackweek2020</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gh_scrape</span><span class="p">(</span><span class="n">tgt_users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials.json&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Simple scraping function</span>
+<span class="sd">    Supply a list of github usersnames [&#39;jane-doe&#39;, &#39;torvalds&#39;, &#39;satoshi_nakamoto&#39;]</span>
+<span class="sd">    Returns a dataframe of unique commits by these users over the last 90 days</span>
+<span class="sd">    Assumes that the github user is the user with most git commits associated with their github profile</span>
+<span class="sd">    Rate limited by the Github API to 300 events</span>
+<span class="sd">    Requires you to supply a Github API token in a credentials.json file</span>
+<span class="sd">    Verbose switch prints a line for each user with the number of events and commits found</span>
+<span class="sd">    Returns a pandas dataframe of commit info for all usernames in supplied list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get user supplied credentials for the github API</span>
+    <span class="n">credentials</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">cred_file</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">tgt_user</span> <span class="ow">in</span> <span class="n">tgt_users</span><span class="p">:</span>
+        <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">tgt_user</span> <span class="o">+</span><span class="s1">&#39;/events&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span>
+        <span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">base_url</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">page_no</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">repos_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">total_fetched</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">response</span><span class="p">)</span><span class="o">==</span><span class="nb">dict</span><span class="p">:</span>
+                <span class="c1"># Catch when the API returns a dict rather than expected list. Usually a credentials error message</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="n">response</span>
+            <span class="n">events_fetched</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="n">total_fetched</span> <span class="o">=</span> <span class="n">events_fetched</span> <span class="o">+</span> <span class="n">total_fetched</span>
+            <span class="k">if</span> <span class="n">total_fetched</span> <span class="o">==</span> <span class="mi">300</span><span class="p">:</span>
+                <span class="c1"># Requesting more will max out the API</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">events_fetched</span> <span class="o">==</span> <span class="mi">30</span><span class="p">):</span>
+                <span class="c1"># if we fethced 30 events from this page, there will be another one after it</span>
+                <span class="n">page_no</span> <span class="o">=</span> <span class="n">page_no</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s1">&#39;?page=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page_no</span><span class="p">)</span>
+                <span class="n">url_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># We have collected all events by this user</span>
+                <span class="k">break</span>
+        <span class="n">commits_events</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="c1"># We&#39;re only interested in commits, which are classed as &quot;PushEvents&quot;</span>
+            <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PushEvent&quot;</span><span class="p">:</span>
+                <span class="n">commits_events</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commits_events</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># If the user has no commit events, stop processing</span>
+            <span class="k">continue</span>
+            
+        <span class="n">commit_usernames_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">commits_events</span><span class="p">:</span>
+            <span class="c1"># Search though the payload for which git user is associated with each commit</span>
+            <span class="n">commit_list</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>    
+                <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)):</span>
+                        <span class="n">commit_username</span> <span class="o">=</span> <span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>       
+                        <span class="n">commit_usernames_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_username</span><span class="p">)</span>
+        <span class="c1"># Working on the assumption that the git user with the most commits pushed to Github by this user is the one we want</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">commit_usernames_list</span><span class="p">)</span>
+        <span class="n">most_common_username</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">user_commits</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Go back through the commits and pull only the ones by the most common git username</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">commits_events</span><span class="p">:</span>
+            <span class="n">commit_list</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span>
+            <span class="n">commit_list_author</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>    
+                <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)):</span>
+                    <span class="n">commit_username</span> <span class="o">=</span> <span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">commit_username</span> <span class="o">==</span> <span class="n">most_common_username</span><span class="p">:</span>
+                        <span class="n">commit_list_author</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">commit_list_author</span><span class="p">:</span>
+                    <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">commit_list_author</span>
+                    <span class="n">user_commits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        
+        <span class="c1"># Extract the information we&#39;re interested in and put it in a pandas DataFrame</span>
+        <span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">user_commits</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">])):</span>
+                <span class="n">commit_detail</span> <span class="o">=</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">][</span><span class="n">com_n</span><span class="p">]</span>
+                <span class="n">commit_subset</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;datetime&quot;</span> <span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;created_at&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;sha&quot;</span> <span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;sha&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;author&quot;</span> <span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;repo&quot;</span><span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;repo&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]}</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_subset</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sha&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{tgt_user}</span><span class="s2">: found {len(data)} events containing {len(user_commits)} unique commits by </span><span class="si">{most_common_username}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;callumrollo&quot;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">gh_scrape</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials-secret.json&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>callumrollo: found 300 events containing 214 unique commits by Callum Rollo
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author</th>
+      <th>datetime</th>
+      <th>id</th>
+      <th>message</th>
+      <th>repo</th>
+      <th>sha</th>
+      <th>url</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T19:16:44Z</td>
+      <td>13422927661</td>
+      <td>Finalised scraper function</td>
+      <td>callumrollo/github-scraper</td>
+      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T19:16:44Z</td>
+      <td>13422927661</td>
+      <td>detailed time breakdown histograms</td>
+      <td>callumrollo/github-scraper</td>
+      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:21:13+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T17:21:13Z</td>
+      <td>13422558148</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:20:55+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T17:20:55Z</td>
+      <td>13422557015</td>
+      <td>updated categories</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 16:52:01+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T16:52:01Z</td>
+      <td>13422458592</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>79a6e0329968330e91bd9d202fac5257ce5c9ab2</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 12:32:28+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-08T12:32:28Z</td>
+      <td>12567167762</td>
+      <td>ENV East &gt;&gt; Aries</td>
+      <td>ueapy/pythoncourse2020</td>
+      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
+      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:52:40+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-08T10:52:40Z</td>
+      <td>12566251693</td>
+      <td>typo</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:49:46+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-08T10:49:46Z</td>
+      <td>12566225573</td>
+      <td>nice readme</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-07 18:09:06+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-07T18:09:06Z</td>
+      <td>12559178906</td>
+      <td>fixed website url</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-07 18:06:28+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-07T18:06:28Z</td>
+      <td>12559164400</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>9786f1f7fd493e2951ecf8df11f31ac8430d0e7f</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 7 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Quite a few commits. What if we want solely the hackweek ones?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ohw20_repo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;repo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;ohw20&quot;</span><span class="p">)</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ohw20_repo&#39;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>19</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="OHW-analysis">OHW analysis<a class="anchor-link" href="#OHW-analysis">&#182;</a></h3><p>Using the above function and a list of hackweek participants (not included) I grab github commits from the last 90 days</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ohw_participants.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">nest_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">ohw_participants_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">nest_list</span><span class="p">))</span>
+<span class="n">df_all</span> <span class="o">=</span> <span class="n">gh_scrape</span><span class="p">(</span><span class="n">ohw_participants_list</span><span class="p">,</span> <span class="n">cred_file</span><span class="o">=</span><span class="s1">&#39;credentials-secret.json&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-16-a22ca5ecef6f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     nest_list <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>csv<span class="ansi-blue-fg">.</span>reader<span class="ansi-blue-fg">(</span>f<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> ohw_participants_list <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>chain<span class="ansi-blue-fg">.</span>from_iterable<span class="ansi-blue-fg">(</span>nest_list<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>df_all <span class="ansi-blue-fg">=</span> gh_scrape<span class="ansi-blue-fg">(</span>ohw_participants_list<span class="ansi-blue-fg">,</span> cred_file<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;credentials-secret.json&#39;</span><span class="ansi-blue-fg">,</span> verbose<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> 
+<span class="ansi-green-intense-fg ansi-bold">      8</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;total commits: {len(df_all)}&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-15-2769574246a7&gt;</span> in <span class="ansi-cyan-fg">gh_scrape</span><span class="ansi-blue-fg">(tgt_users, cred_file, verbose)</span>
+<span class="ansi-green-intense-fg ansi-bold">     84</span>                 commit_all_details <span class="ansi-blue-fg">=</span> requests<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>commit_detail<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;url&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>auth <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>username<span class="ansi-blue-fg">,</span>token<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>json<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     85</span>                 extensions <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#34;&#34;</span>
+<span class="ansi-green-fg">---&gt; 86</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">for</span> file <span class="ansi-green-fg">in</span> commit_all_details<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;files&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     87</span>                     extensions <span class="ansi-blue-fg">=</span> extensions <span class="ansi-blue-fg">+</span> file<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;filename&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;.&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">&#39;, &#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">     88</span>                 commit_subset = {&#34;id&#34;: commit[&#34;id&#34;],
+
+<span class="ansi-red-fg">KeyError</span>: &#39;files&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you saw when I grabbed the data just from my username, it contains a lot of identifying information. I have anonymised and saved this data for a later notebook of analysis</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_min</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[64]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author</th>
+      <th>extensions</th>
+      <th>message</th>
+      <th>ohw20_repo</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-08-20 15:08:09+00:00</th>
+      <td>participant-21</td>
+      <td>md</td>
+      <td>Merge pull request #1 from cbirdferrer/patch-1...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2020-08-17 16:24:17+00:00</th>
+      <td>participant-21</td>
+      <td>ipynb</td>
+      <td>deleting old presentation_figs file</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2020-08-14 20:00:38+00:00</th>
+      <td>participant-21</td>
+      <td>ipynb, ipynb</td>
+      <td>adding improvements to interpolate notebook to...</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2020-08-14 20:00:38+00:00</th>
+      <td>participant-21</td>
+      <td>ipynb</td>
+      <td>merging changes</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2020-08-14 20:00:38+00:00</th>
+      <td>participant-21</td>
+      <td>ipynb, ipynb, ipynb, ipynb, ipynb, ipynb, ipyn...</td>
+      <td>merging interpolate notebook</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-08-07 15:58:21+00:00</th>
+      <td>participant-33</td>
+      <td>md</td>
+      <td>change read.md</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2020-08-06 22:26:24+00:00</th>
+      <td>participant-33</td>
+      <td>md, md</td>
+      <td>change new2.md and create new.md</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2020-08-06 22:25:02+00:00</th>
+      <td>participant-33</td>
+      <td>md, md</td>
+      <td>changes in new.md and new2.md</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2020-08-06 22:20:59+00:00</th>
+      <td>participant-33</td>
+      <td>md, md, md</td>
+      <td>edit readme and new, create new2.md</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2020-08-06 22:13:07+00:00</th>
+      <td>participant-33</td>
+      <td>md, md</td>
+      <td>edit readme and add new.md</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>1483 rows × 4 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h1 id="Going-deeper">Going deeper<a class="anchor-link" href="#Going-deeper">&#182;</a></h1><p>We can get all the details of a commit by delving deeper into the json structure accessed through the commit url.</p>
+<p><strong>example:</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;payload&#39;</span><span class="p">][</span><span class="s1">&#39;commits&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+<span class="n">commit_detail</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">commit_detail</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;sha&#39;: &#39;9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+ &#39;node_id&#39;: &#39;MDY6Q29tbWl0MjcwMzg1NzgwOjk3ODZmMWY3ZmQ0OTNlMjk1MWVjZjhkZjExZjMxYWM4NDMwZDBlN2Y=&#39;,
+ &#39;commit&#39;: {&#39;author&#39;: {&#39;name&#39;: &#39;Callum Rollo&#39;,
+   &#39;email&#39;: &#39;c.rollo@outlook.com&#39;,
+   &#39;date&#39;: &#39;2020-06-07T18:06:22Z&#39;},
+  &#39;committer&#39;: {&#39;name&#39;: &#39;Callum Rollo&#39;,
+   &#39;email&#39;: &#39;c.rollo@outlook.com&#39;,
+   &#39;date&#39;: &#39;2020-06-07T18:06:22Z&#39;},
+  &#39;message&#39;: &#39;Generate Pelican site&#39;,
+  &#39;tree&#39;: {&#39;sha&#39;: &#39;8dae3db710ba56571968e5362275537d7eb8d12b&#39;,
+   &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/git/trees/8dae3db710ba56571968e5362275537d7eb8d12b&#39;},
+  &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/git/commits/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;comment_count&#39;: 0,
+  &#39;verification&#39;: {&#39;verified&#39;: False,
+   &#39;reason&#39;: &#39;unsigned&#39;,
+   &#39;signature&#39;: None,
+   &#39;payload&#39;: None}},
+ &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/commits/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+ &#39;html_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/commit/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+ &#39;comments_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/commits/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/comments&#39;,
+ &#39;author&#39;: {&#39;login&#39;: &#39;callumrollo&#39;,
+  &#39;id&#39;: 28703282,
+  &#39;node_id&#39;: &#39;MDQ6VXNlcjI4NzAzMjgy&#39;,
+  &#39;avatar_url&#39;: &#39;https://avatars0.githubusercontent.com/u/28703282?v=4&#39;,
+  &#39;gravatar_id&#39;: &#39;&#39;,
+  &#39;url&#39;: &#39;https://api.github.com/users/callumrollo&#39;,
+  &#39;html_url&#39;: &#39;https://github.com/callumrollo&#39;,
+  &#39;followers_url&#39;: &#39;https://api.github.com/users/callumrollo/followers&#39;,
+  &#39;following_url&#39;: &#39;https://api.github.com/users/callumrollo/following{/other_user}&#39;,
+  &#39;gists_url&#39;: &#39;https://api.github.com/users/callumrollo/gists{/gist_id}&#39;,
+  &#39;starred_url&#39;: &#39;https://api.github.com/users/callumrollo/starred{/owner}{/repo}&#39;,
+  &#39;subscriptions_url&#39;: &#39;https://api.github.com/users/callumrollo/subscriptions&#39;,
+  &#39;organizations_url&#39;: &#39;https://api.github.com/users/callumrollo/orgs&#39;,
+  &#39;repos_url&#39;: &#39;https://api.github.com/users/callumrollo/repos&#39;,
+  &#39;events_url&#39;: &#39;https://api.github.com/users/callumrollo/events{/privacy}&#39;,
+  &#39;received_events_url&#39;: &#39;https://api.github.com/users/callumrollo/received_events&#39;,
+  &#39;type&#39;: &#39;User&#39;,
+  &#39;site_admin&#39;: False},
+ &#39;committer&#39;: {&#39;login&#39;: &#39;callumrollo&#39;,
+  &#39;id&#39;: 28703282,
+  &#39;node_id&#39;: &#39;MDQ6VXNlcjI4NzAzMjgy&#39;,
+  &#39;avatar_url&#39;: &#39;https://avatars0.githubusercontent.com/u/28703282?v=4&#39;,
+  &#39;gravatar_id&#39;: &#39;&#39;,
+  &#39;url&#39;: &#39;https://api.github.com/users/callumrollo&#39;,
+  &#39;html_url&#39;: &#39;https://github.com/callumrollo&#39;,
+  &#39;followers_url&#39;: &#39;https://api.github.com/users/callumrollo/followers&#39;,
+  &#39;following_url&#39;: &#39;https://api.github.com/users/callumrollo/following{/other_user}&#39;,
+  &#39;gists_url&#39;: &#39;https://api.github.com/users/callumrollo/gists{/gist_id}&#39;,
+  &#39;starred_url&#39;: &#39;https://api.github.com/users/callumrollo/starred{/owner}{/repo}&#39;,
+  &#39;subscriptions_url&#39;: &#39;https://api.github.com/users/callumrollo/subscriptions&#39;,
+  &#39;organizations_url&#39;: &#39;https://api.github.com/users/callumrollo/orgs&#39;,
+  &#39;repos_url&#39;: &#39;https://api.github.com/users/callumrollo/repos&#39;,
+  &#39;events_url&#39;: &#39;https://api.github.com/users/callumrollo/events{/privacy}&#39;,
+  &#39;received_events_url&#39;: &#39;https://api.github.com/users/callumrollo/received_events&#39;,
+  &#39;type&#39;: &#39;User&#39;,
+  &#39;site_admin&#39;: False},
+ &#39;parents&#39;: [{&#39;sha&#39;: &#39;554516a8947dfe31684d071c245d5d9ba4078bb3&#39;,
+   &#39;url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/commits/554516a8947dfe31684d071c245d5d9ba4078bb3&#39;,
+   &#39;html_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/commit/554516a8947dfe31684d071c245d5d9ba4078bb3&#39;}],
+ &#39;stats&#39;: {&#39;total&#39;: 120, &#39;additions&#39;: 60, &#39;deletions&#39;: 60},
+ &#39;files&#39;: [{&#39;sha&#39;: &#39;260cdc3ada7e1804883fd4dbc8ff833664bf8884&#39;,
+   &#39;filename&#39;: &#39;404.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/404.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;404&#34;&gt;404 page not found :(&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;c80ebfbf7b83b2b6fb66746255a5f09fb147570f&#39;,
+   &#39;filename&#39;: &#39;archives.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/archives.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Archives&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -133,7 +133,7 @@ &lt;h1 id=&#34;archives&#34;&gt;Archives&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;fd5d029057e3147148056e3335f595e3823747bd&#39;,
+   &#39;filename&#39;: &#39;author/callum-rollo.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/author/callum-rollo.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Posts by Callum Rollo:&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;cc2c3010a433f121366a285917b80b36693df4d5&#39;,
+   &#39;filename&#39;: &#39;authors.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/authors.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Authors&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;authors&#34;&gt;Authors&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;8c8f2b62ca432381a6c6b88b0783cc9da8b9b139&#39;,
+   &#39;filename&#39;: &#39;categories.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/categories.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Categories&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -130,7 +130,7 @@ &lt;h1 id=&#34;categories&#34;&gt;Categories&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;e63fd8d7d4ea7a6c558dad0252b5459f2b1a87f6&#39;,
+   &#39;filename&#39;: &#39;category/test.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/category/test.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Category Test&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;e3b7d620375b1fc8d0c8bfdad15d9816c6bd54ae&#39;,
+   &#39;filename&#39;: &#39;index.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/index.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;51deec3fbde33530e77616c782a13241e3e6311f&#39;,
+   &#39;filename&#39;: &#39;my-super-post.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/my-super-post.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -47,7 +47,7 @@\n &lt;meta property=&#34;article:section&#34; content=&#34;Test&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;pelican&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;publishing&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Testing one two&lt;/title&gt;\n \n@@ -56,7 +56,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -156,7 +156,7 @@ &lt;h1 id=&#34;my-super-post&#34;&gt;Testing one two&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;d6b9fd8e811bc054d2a3dc35b23c2cee76444251&#39;,
+   &#39;filename&#39;: &#39;pages/aboutme.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/pages/aboutme.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;aboutme&#34;&gt;About&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;48a33a9ea36acde473b0291ddf560cb9e766a607&#39;,
+   &#39;filename&#39;: &#39;tag/pelican.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/pelican.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag pelican&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;b72e5f0ccc430355596b997785cf1fb3c29c3cbc&#39;,
+   &#39;filename&#39;: &#39;tag/publishing.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/publishing.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag publishing&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+  {&#39;sha&#39;: &#39;cb3f6fdb7244b836cae0b9ca51e9dadded1a4f70&#39;,
+   &#39;filename&#39;: &#39;tags.html&#39;,
+   &#39;status&#39;: &#39;modified&#39;,
+   &#39;additions&#39;: 5,
+   &#39;deletions&#39;: 5,
+   &#39;changes&#39;: 10,
+   &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
+   &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
+   &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tags.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+   &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tags&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;tags&#34;&gt;Tags&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;}]}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The most interesting section is <code>files</code>. This gives a summary of the lines changed on each file altered in this commit</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">commit_detail</span><span class="p">[</span><span class="s1">&#39;files&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[{&#39;sha&#39;: &#39;260cdc3ada7e1804883fd4dbc8ff833664bf8884&#39;,
+  &#39;filename&#39;: &#39;404.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/404.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/404.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;404&#34;&gt;404 page not found :(&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;c80ebfbf7b83b2b6fb66746255a5f09fb147570f&#39;,
+  &#39;filename&#39;: &#39;archives.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/archives.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/archives.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Archives&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -133,7 +133,7 @@ &lt;h1 id=&#34;archives&#34;&gt;Archives&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;fd5d029057e3147148056e3335f595e3823747bd&#39;,
+  &#39;filename&#39;: &#39;author/callum-rollo.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/author/callum-rollo.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/author/callum-rollo.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Posts by Callum Rollo:&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;cc2c3010a433f121366a285917b80b36693df4d5&#39;,
+  &#39;filename&#39;: &#39;authors.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/authors.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/authors.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Authors&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;authors&#34;&gt;Authors&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;8c8f2b62ca432381a6c6b88b0783cc9da8b9b139&#39;,
+  &#39;filename&#39;: &#39;categories.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/categories.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/categories.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Categories&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -130,7 +130,7 @@ &lt;h1 id=&#34;categories&#34;&gt;Categories&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;e63fd8d7d4ea7a6c558dad0252b5459f2b1a87f6&#39;,
+  &#39;filename&#39;: &#39;category/test.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/category/test.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/category/test.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Category Test&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;e3b7d620375b1fc8d0c8bfdad15d9816c6bd54ae&#39;,
+  &#39;filename&#39;: &#39;index.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/index.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/index.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;51deec3fbde33530e77616c782a13241e3e6311f&#39;,
+  &#39;filename&#39;: &#39;my-super-post.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/my-super-post.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/my-super-post.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -47,7 +47,7 @@\n &lt;meta property=&#34;article:section&#34; content=&#34;Test&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;pelican&#34;/&gt;\n &lt;meta property=&#34;article:tag&#34; content=&#34;publishing&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Testing one two&lt;/title&gt;\n \n@@ -56,7 +56,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -156,7 +156,7 @@ &lt;h1 id=&#34;my-super-post&#34;&gt;Testing one two&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;d6b9fd8e811bc054d2a3dc35b23c2cee76444251&#39;,
+  &#39;filename&#39;: &#39;pages/aboutme.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/pages/aboutme.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/pages/aboutme.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n \n \n@@ -49,7 +49,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;aboutme&#34;&gt;About&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;48a33a9ea36acde473b0291ddf560cb9e766a607&#39;,
+  &#39;filename&#39;: &#39;tag/pelican.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/pelican.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/pelican.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag pelican&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;b72e5f0ccc430355596b997785cf1fb3c29c3cbc&#39;,
+  &#39;filename&#39;: &#39;tag/publishing.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tag/publishing.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tag/publishing.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tag publishing&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -144,7 +144,7 @@ &lt;h2&gt;&lt;a href=&#34;/my-super-post.html#my-super-post&#34;&gt;Testing one two&lt;/a&gt;&lt;/h2&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;},
+ {&#39;sha&#39;: &#39;cb3f6fdb7244b836cae0b9ca51e9dadded1a4f70&#39;,
+  &#39;filename&#39;: &#39;tags.html&#39;,
+  &#39;status&#39;: &#39;modified&#39;,
+  &#39;additions&#39;: 5,
+  &#39;deletions&#39;: 5,
+  &#39;changes&#39;: 10,
+  &#39;blob_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/blob/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
+  &#39;raw_url&#39;: &#39;https://github.com/callumrollo/callumrollo.github.io/raw/9786f1f7fd493e2951ecf8df11f31ac8430d0e7f/tags.html&#39;,
+  &#39;contents_url&#39;: &#39;https://api.github.com/repos/callumrollo/callumrollo.github.io/contents/tags.html?ref=9786f1f7fd493e2951ecf8df11f31ac8430d0e7f&#39;,
+  &#39;patch&#39;: &#39;@@ -25,8 +25,8 @@\n     &lt;link href=&#34;/feeds/all.atom.xml&#34; type=&#34;application/atom+xml&#34; rel=&#34;alternate&#34; title=&#34;Callum Rollo Atom&#34;&gt;\n \n \n-    &lt;link rel=&#34;shortcut icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n-    &lt;link rel=&#34;icon&#34; href=&#34;https://callumrollo.github.io//images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;shortcut icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n+    &lt;link rel=&#34;icon&#34; href=&#34;/images/favicon.ico&#34; type=&#34;image/x-icon&#34;&gt;\n \n \n \n@@ -38,7 +38,7 @@\n &lt;meta property=&#34;og:description&#34; content=&#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;/&gt;\n &lt;meta property=&#34;og:locale&#34; content=&#34;en_US&#34;/&gt;\n &lt;meta property=&#34;og:url&#34; content=&#34;&#34;/&gt;\n-&lt;meta property=&#34;og:image&#34; content=&#34;https://callumrollo.github.io//images/mug.jpg&#34;&gt;\n+&lt;meta property=&#34;og:image&#34; content=&#34;/images/mug.jpg&#34;&gt;\n \n   &lt;title&gt;Callum Rollo &amp;ndash; Tags&lt;/title&gt;\n \n@@ -47,7 +47,7 @@\n   &lt;aside&gt;\n     &lt;div&gt;\n       &lt;a href=&#34;&#34;&gt;\n-        &lt;img src=&#34;https://callumrollo.github.io//images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n+        &lt;img src=&#34;/images/mug.jpg&#34; alt=&#34;Callum Rollo&#34; title=&#34;Callum Rollo&#34;&gt;\n       &lt;/a&gt;\n \n       &lt;h1&gt;\n@@ -128,7 +128,7 @@ &lt;h1 id=&#34;tags&#34;&gt;Tags&lt;/h1&gt;\n   &#34;@type&#34; : &#34;Blog&#34;,\n   &#34;name&#34;: &#34; Callum Rollo &#34;,\n   &#34;url&#34; : &#34;&#34;,\n-  &#34;image&#34;: &#34;https://callumrollo.github.io//images/mug.jpg&#34;,\n+  &#34;image&#34;: &#34;/images/mug.jpg&#34;,\n   &#34;description&#34;: &#34;Science should be open. Software should be free. Borders are kind of rubbish &#34;\n }\n &lt;/script&gt;&#39;}]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let's-go-through-our-little-database-and-extract-the-file-extenstions-of-all-the-files-altered-in-each-commit">Let's go through our little database and extract the file extenstions of all the files altered in each commit<a class="anchor-link" href="#Let's-go-through-our-little-database-and-extract-the-file-extenstions-of-all-the-files-altered-in-each-commit">&#182;</a></h3><p>This was originally <a href="https://github.com/ocefpaf">Filipe</a>'s idea</p>
+<p>This requires a small extention to our scraping function. Because we want details at a commit level, this will make an additional API call for every single commit, so adds quite a time penalty. A good target for optimistion with async methods perhaps? <em>This is left as an excercise for the reader</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gh_scrape</span><span class="p">(</span><span class="n">tgt_users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials.json&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Simple scraping function</span>
+<span class="sd">    Supply a list of github usersnames [&#39;jane-doe&#39;, &#39;torvalds&#39;, &#39;satoshi_nakamoto&#39;]</span>
+<span class="sd">    Returns a dataframe of unique commits by these users over the last 90 days</span>
+<span class="sd">    Assumes that the github user is the user with most git commits associated with their github profile</span>
+<span class="sd">    Rate limited by the Github API to 300 events</span>
+<span class="sd">    Requires you to supply a Github API token in a credentials.json file</span>
+<span class="sd">    Verbose switch prints a line for each user with the number of events and commits found</span>
+<span class="sd">    Returns a pandas dataframe of commit info for all usernames in supplied list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get user supplied credentials for the github API</span>
+    <span class="n">credentials</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">cred_file</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">tgt_user</span> <span class="ow">in</span> <span class="n">tgt_users</span><span class="p">:</span>
+        <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.github.com/users/&#39;</span> <span class="o">+</span> <span class="n">tgt_user</span> <span class="o">+</span><span class="s1">&#39;/events&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span>
+        <span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">base_url</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">page_no</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">repos_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">total_fetched</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">response</span><span class="p">)</span><span class="o">==</span><span class="nb">dict</span><span class="p">:</span>
+                <span class="c1"># Catch when the API returns a dict rather than expected list. Usually a credentials error message</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="n">response</span>
+            <span class="n">events_fetched</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="n">total_fetched</span> <span class="o">=</span> <span class="n">events_fetched</span> <span class="o">+</span> <span class="n">total_fetched</span>
+            <span class="k">if</span> <span class="n">total_fetched</span> <span class="o">==</span> <span class="mi">300</span><span class="p">:</span>
+                <span class="c1"># Requesting more will max out the API</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">events_fetched</span> <span class="o">==</span> <span class="mi">30</span><span class="p">):</span>
+                <span class="c1"># if we fethced 30 events from this page, there will be another one after it</span>
+                <span class="n">page_no</span> <span class="o">=</span> <span class="n">page_no</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s1">&#39;?page=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page_no</span><span class="p">)</span>
+                <span class="n">url_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># We have collected all events by this user</span>
+                <span class="k">break</span>
+        <span class="n">commits_events</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="c1"># We&#39;re only interested in commits, which are classed as &quot;PushEvents&quot;</span>
+            <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PushEvent&quot;</span><span class="p">:</span>
+                <span class="n">commits_events</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commits_events</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># If the user has no commit events, stop processing</span>
+            <span class="k">continue</span>
+            
+        <span class="n">commit_usernames_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">commits_events</span><span class="p">:</span>
+            <span class="c1"># Search though the payload for which git user is associated with each commit</span>
+            <span class="n">commit_list</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>    
+                <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)):</span>
+                        <span class="n">commit_username</span> <span class="o">=</span> <span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>       
+                        <span class="n">commit_usernames_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_username</span><span class="p">)</span>
+        <span class="c1"># Working on the assumption that the git user with the most commits pushed to Github by this user is the one we want</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">commit_usernames_list</span><span class="p">)</span>
+        <span class="n">most_common_username</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">user_commits</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Go back through the commits and pull only the ones by the most common git username</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">commits_events</span><span class="p">:</span>
+            <span class="n">commit_list</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span>
+            <span class="n">commit_list_author</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>    
+                <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit_list</span><span class="p">)):</span>
+                    <span class="n">commit_username</span> <span class="o">=</span> <span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">commit_username</span> <span class="o">==</span> <span class="n">most_common_username</span><span class="p">:</span>
+                        <span class="n">commit_list_author</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_list</span><span class="p">[</span><span class="n">com_n</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">commit_list_author</span><span class="p">:</span>
+                    <span class="n">event</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">commit_list_author</span>
+                    <span class="n">user_commits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        
+        <span class="c1"># Extract the information we&#39;re interested in and put it in a pandas DataFrame</span>
+        <span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">user_commits</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">com_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commit</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">])):</span>
+                <span class="n">commit_detail</span> <span class="o">=</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;payload&quot;</span><span class="p">][</span><span class="s2">&quot;commits&quot;</span><span class="p">][</span><span class="n">com_n</span><span class="p">]</span>
+                <span class="n">commit_all_details</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">token</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+                <span class="n">extensions</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">commit_all_details</span><span class="p">[</span><span class="s1">&#39;files&#39;</span><span class="p">]:</span>
+                    <span class="n">extensions</span> <span class="o">=</span> <span class="n">extensions</span> <span class="o">+</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span>
+                <span class="n">commit_subset</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;datetime&quot;</span> <span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;created_at&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;sha&quot;</span> <span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;sha&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;author&quot;</span> <span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">commit_detail</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;repo&quot;</span><span class="p">:</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;repo&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                             <span class="s2">&quot;extensions&quot;</span><span class="p">:</span> <span class="n">extensions</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]}</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">commit_subset</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sha&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{tgt_user}</span><span class="s2">: found {len(data)} events containing {len(user_commits)} unique commits by </span><span class="si">{most_common_username}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;callumrollo&quot;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">gh_scrape</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">cred_file</span> <span class="o">=</span> <span class="s1">&#39;credentials-secret.json&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>callumrollo: found 300 events containing 214 unique commits by Callum Rollo
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[58]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author</th>
+      <th>datetime</th>
+      <th>extensions</th>
+      <th>id</th>
+      <th>message</th>
+      <th>repo</th>
+      <th>sha</th>
+      <th>url</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-09-06 16:03:54+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-06T16:03:54Z</td>
+      <td>md</td>
+      <td>13426925231</td>
+      <td>Added binder link and to-do list</td>
+      <td>callumrollo/github-scraper</td>
+      <td>ed9da46ca18bfe46c77d70647aa08d6a3827db3b</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T19:16:44Z</td>
+      <td>ipynb, csv</td>
+      <td>13422927661</td>
+      <td>Finalised scraper function</td>
+      <td>callumrollo/github-scraper</td>
+      <td>78d24e1e104f616f8026a73a10fd525e67019342</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 19:16:44+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T19:16:44Z</td>
+      <td>ipynb, ipynb</td>
+      <td>13422927661</td>
+      <td>detailed time breakdown histograms</td>
+      <td>callumrollo/github-scraper</td>
+      <td>2445a3d0d800bc3fea933d713ae5cca173bd0f72</td>
+      <td>https://api.github.com/repos/callumrollo/githu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:21:13+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T17:21:13Z</td>
+      <td>html, html, html, html, xml, xml, xml, xml, ht...</td>
+      <td>13422558148</td>
+      <td>Generate Pelican site</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a9e3bb9213139f467fb5058847ff063e851b1ce6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-09-05 17:20:55+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-09-05T17:20:55Z</td>
+      <td>md, md</td>
+      <td>13422557015</td>
+      <td>updated categories</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>aca1fa72ad196df5351661a971b7de8add348fc6</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 12:32:52+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-08T12:32:52Z</td>
+      <td>png, aux, log, out, pdf, gz, tex, pdf, html, j...</td>
+      <td>12567171570</td>
+      <td>Deployed 63f61e7 with MkDocs version: 1.1.2</td>
+      <td>ueapy/pythoncourse2020</td>
+      <td>21602fb12ce2483e8e6faf3af926345a6359d754</td>
+      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 12:32:28+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-08T12:32:28Z</td>
+      <td>png, pdf, tex, md</td>
+      <td>12567167762</td>
+      <td>ENV East &gt;&gt; Aries</td>
+      <td>ueapy/pythoncourse2020</td>
+      <td>63f61e7f654217d5cdc1af9925de2ed593fe154e</td>
+      <td>https://api.github.com/repos/ueapy/pythoncours...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:52:40+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-08T10:52:40Z</td>
+      <td>md</td>
+      <td>12566251693</td>
+      <td>typo</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>e712699f1d08f2294bd7e462bcb92768f6841e04</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-08 10:49:46+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-08T10:49:46Z</td>
+      <td>md, txt</td>
+      <td>12566225573</td>
+      <td>nice readme</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>7f4e591fd2dd9fe043f240430ba3bf7bb0a4d062</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+    <tr>
+      <th>2020-06-07 18:09:06+00:00</th>
+      <td>Callum Rollo</td>
+      <td>2020-06-07T18:09:06Z</td>
+      <td>txt, py</td>
+      <td>12559178906</td>
+      <td>fixed website url</td>
+      <td>callumrollo/callumrollo.github.io</td>
+      <td>a68bb4bc70b5e1090cd82ba113b2fcc989ecc97d</td>
+      <td>https://api.github.com/repos/callumrollo/callu...</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 8 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Success! We have the filetypes used in every commit by this author. This should tell us, in broad strokes, what programming language they are working on and potentially many other things. Are they working on .md files for documentation? Uploading lots of .png iamges? Do they prefer <code>.ipynb</code> notebooks to pure <code>.py</code> files?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Ideas-for-further-analysis">Ideas for further analysis<a class="anchor-link" href="#Ideas-for-further-analysis">&#182;</a></h3><ul>
+<li>Use of different filetypes. Particularly .py vs .ipynb</li>
+<li>word cloud of commit messages</li>
+<li>check out non-commit activity: merge, PR, issue...</li>
+<li>geographical/timezone patterns</li>
+<li>how much "crunch" did we get before presentations on Friday?</li>
+<li>examine links between authors (who merged who? Comments mentioning issues?)</li>
+</ul>
+<h3 id="Github-is-a-rich-mine-of-information">Github is a rich mine of information<a class="anchor-link" href="#Github-is-a-rich-mine-of-information">&#182;</a></h3><p>I hope this notebook has given you some ideas of the kinds of information you can grab from GitHub. It may also serve as a good reminder that everything we put on there is public and scrapable, so write helpful commit messages!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <small>
+    <p> This post was written as an IPython (Jupyter) notebook. You can view or download it using
+    <a href="http://nbviewer.ipython.org/github/ueapy/ueapy.github.io/blob/src/content/notebooks/2020-09-10-github-scrape.ipynb">nbviewer</a>.</p>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <!-- AddThis Button END -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ueapy'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'scraping-github-after-a-hackweek';
+                var disqus_url = 'https://ueapy.github.io/scraping-github-after-a-hackweek.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -13513,7 +16268,7 @@ Python Group UEA            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 Python Group
+         <div class="col-xs-10">&copy; 2020 Python Group
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -13545,5 +16300,7 @@ Python Group UEA            </a>
     </script>
     <!-- End Disqus Code -->
 
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar": false};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-564e4d3ff0b9f071"></script>
 </body>
 </html>
